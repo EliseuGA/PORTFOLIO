@@ -1,593 +1,573 @@
 /* =============================================
-   TRADUÇÕES (i18n)
+   TRADUÇÕES
 ============================================= */
-const translations = {
-    pt: {
-        // Nav
-        "nav.portfolio": "Portfólio",
-        "nav.services":  "Serviços",
-        "nav.about":     "Sobre",
-        "nav.contact":   "Contato",
-        // Hero
-        "hero.eyebrow": "Editor de Vídeo & Motion Designer",
-        "hero.sub":     "Transformo gravações brutas em vídeos que as pessoas assistem até o fim.",
-        "hero.cta":     "Vamos trabalhar juntos →",
-        // Portfolio
-        "portfolio.eyebrow": "// trabalhos selecionados",
-        "portfolio.title":   "MEUS TRABALHOS",
-        "portfolio.motion":  "Motion",
-        "portfolio.long":    "Vídeos Longos",
-        "portfolio.shorts":  "Shorts",
-        // Thumbs
-        "thumbs.eyebrow": "// artes & design",
-        "thumbs.title":   "THUMBNAILS & ARTS",
-        "thumbs.sub":     "Cada arte é pensada para converter o scroll em clique.",
-        // Workflow
-        "workflow.eyebrow":  "// processo real",
-        "workflow.title":    "Do bruto ao luxo",
-        "workflow.play":     "PLAY",
-        "workflow.raw":      "BRUTO",
-        "workflow.edit":     "EDITADO",
-        "workflow.caption":  "O segredo não está no corte, está na <strong>INTENÇÃO!</strong>",
-        // Process
-        "process.eyebrow":     "// transparência total",
-        "process.title":       "Como trabalhamos juntos",
-        "process.sub":         "Sem surpresas. Sem enrolação. Do primeiro \"oi\" até o arquivo na sua mão.",
-        "process.s1.title":    "Briefing",
-        "process.s1.desc":     "Você me conta tudo — estilo, referências, o que quer transmitir. Quanto mais eu entender o seu canal, melhor o resultado final.",
-        "process.s2.title":    "Edição",
-        "process.s2.desc":     "Mergulho no material bruto. Cada corte, cada trilha, cada efeito tem uma razão de existir. Nada é aleatório.",
-        "process.s3.title":    "Revisão",
-        "process.s3.desc":     "Você assiste, aponta o que quer ajustar e eu faço acontecer. Sem julgamento, sem drama. O vídeo é seu.",
-        "process.s4.title":    "Entrega",
-        "process.s4.desc":     "Arquivo em alta qualidade, no formato certo para cada plataforma. Pronto pra postar, pronto pra crescer.",
-        // Services
-        "services.eyebrow": "// o que eu ofereço",
-        "services.title":   "Serviços",
-        "services.sub":     "Escolha o que faz sentido para o seu canal agora.",
-        "sv.badge":          "Mais pedido",
-        "sv.cta":            "Quero esse →",
-        "sv.long.title":     "Vídeos Longos",
-        "sv.long.desc":      "Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.",
-        "sv.long.l1": "Edição completa com ritmo e narrativa",
-        "sv.long.l2": "Trilha sonora e efeitos sonoros",
-        "sv.long.l3": "Color grading e tratamento de imagem",
-        "sv.long.l4": "Textos e legendas animadas",
-        "sv.long.l5": "Entrega em até 5 dias úteis",
-        "sv.pack.title":     "Pacote Completo",
-        "sv.pack.desc":      "A solução total. Do vídeo longo ao short, passando pelo motion e pela arte. Tudo com a mesma identidade.",
-        "sv.pack.l1": "Edição de vídeo longo",
-        "sv.pack.l2": "Corte e edição de Shorts/Reels",
-        "sv.pack.l3": "Motion graphics e intros",
-        "sv.pack.l4": "Thumbnail personalizada",
-        "sv.pack.l5": "Revisões incluídas",
-        "sv.short.title":    "Shorts & Reels",
-        "sv.short.desc":     "Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.",
-        "sv.short.l1": "Edição dinâmica e impactante",
-        "sv.short.l2": "Cortes sincronizados com a música",
-        "sv.short.l3": "Legendas estilizadas",
-        "sv.short.l4": "Formato 9:16 otimizado",
-        "sv.short.l5": "Entrega em até 2 dias úteis",
-        "sv.motion.title":   "Motion + Thumb",
-        "sv.motion.desc":    "A identidade visual do seu canal. Intros, vinhetas, overlays e thumbnails que fazem o algoritmo e o público pararem para olhar.",
-        "sv.motion.l1": "Intro animada sob medida",
-        "sv.motion.l2": "Vinheta de encerramento",
-        "sv.motion.l3": "Lower thirds e overlays",
-        "sv.motion.l4": "Thumbnail pensada para converter",
-        "sv.motion.l5": "Arquivos editáveis na entrega",
-        // Testimonials
-        "test.eyebrow": "// sem filtro",
-        "test.title":   "O que dizem sobre mim",
-        // About
-        "about.eyebrow": "// sobre mim",
-        "about.title":   "Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class=\"accent-cyan\">criador.</span>",
-        "about.p1":      "Cada segundo de vídeo que sai daqui foi pensado por alguém que entende o que é criar conteúdo — a pressão do prazo, a ansiedade com a entrega, a esperança de que o vídeo vai funcionar.",
-        "about.p2":      "Não faço edição no piloto automático. Cada projeto recebe atenção total, do primeiro corte à última trilha. Meu objetivo é que, quando você assistir ao resultado, sinta que valeu cada centavo.",
-        "about.p3":      "Você cria. Eu cuido do resto.",
-        "about.stat1":   "Parcerias feitas",
-        "about.stat2":   "Pessoas alcançadas",
-        "about.stat3":   "De cuidado e foco",
-        // FAQ
-        "faq.eyebrow":   "// dúvidas comuns",
-        "faq.title":     "Perguntas frequentes",
-        "faq.q1":  "Como funciona a cobrança?",
-        "faq.a1":  "A cobrança pode ser feita de duas formas: por <strong>valor fixo por projeto</strong> ou por <strong>hora editada</strong>. O fixo garante previsibilidade para você; a hora é ideal para projetos maiores e mais variáveis. Conversamos qual faz mais sentido no briefing.",
-        "faq.q2":  "Qual é o prazo de entrega?",
-        "faq.a2":  "Vídeos longos saem em até <strong>3 a 5 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>2 dias úteis</strong>. Projetos de motion e identidade combinamos no briefing.",
-        "faq.q3":  "Quantas revisões estão incluídas?",
-        "faq.a3":  "São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.",
-        "faq.q4":  "Como funciona o pagamento?",
-        "faq.a4":  "<strong>50% de entrada</strong> antes de começar, outros 50% na entrega. Aceito Pix, transferência e outros meios que combinamos pelo WhatsApp.",
-        "faq.q5":  "Em quais formatos você entrega?",
-        "faq.a5":  "<strong>MP4 (H.264/H.265)</strong> nas proporções certas para cada plataforma — 16:9 para YouTube, 9:16 para Shorts/Reels/TikTok. Formato diferente? É só pedir.",
-        "faq.q6":  "Como envio o material?",
-        "faq.a6":  "Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Você manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.",
-        "faq.ctaText": "Ficou com alguma dúvida?",
-        "faq.ctaBtn":  "Fala comigo →",
-        // Contact
-        "contact.eyebrow":  "// vamos trabalhar juntos",
-        "contact.title":    "Pronto para criar algo que vale a pena assistir?",
-        "contact.sub":      "Respondo em até 24h. Pode me mandar uma mensagem sem cerimônia — adoro entender o projeto antes de qualquer coisa.",
-        "contact.whatsapp": "WhatsApp",
-        "contact.email":    "E-mail",
-        "contact.avail":    "Aceitando novos projetos",
-        // Form
-        "form.name":    "Seu nome",
-        "form.channel": "Canal / Marca",
-        "form.service": "O que você precisa?",
-        "form.select":  "Selecione um serviço",
-        "form.opt1":    "Edição de vídeos longos",
-        "form.opt2":    "Edição de Shorts / Reels",
-        "form.opt3":    "Motion Graphics / Intro",
-        "form.opt4":    "Thumbnail / Arte",
-        "form.opt5":    "Pacote completo",
-        "form.opt6":    "Outro",
-        "form.message": "Me conta mais",
-        "form.submit":  "Enviar mensagem",
-        "form.note":    "Sem spam. Sem robô. Só eu do outro lado.",
-        // Footer
-        "footer.made":  "Feito com foco e muito café."
-    },
-    en: {
-        // Nav
-        "nav.portfolio": "Portfolio",
-        "nav.services":  "Services",
-        "nav.about":     "About",
-        "nav.contact":   "Contact",
-        // Hero
-        "hero.eyebrow": "Video Editor & Motion Designer",
-        "hero.sub":     "I turn files into HISTORY",
-        "hero.cta":     "LET'S WORK TOGUETHER!",
-        // Portfolio
-        "portfolio.eyebrow": "// selected work",
-        "portfolio.title":   "MY WORKS",
-        "portfolio.motion":  "Motion",
-        "portfolio.long":    "Long Videos",
-        "portfolio.shorts":  "Shorts",
-        // Thumbs
-        "thumbs.eyebrow": "// art & design",
-        "thumbs.title":   "THUMBNAILS & ARTS",
-        "thumbs.sub":     "Every thumbnail is crafted to turn the scroll into a click.",
-        // Workflow
-        "workflow.eyebrow":  "// real process",
-        "workflow.title":    "FROM RAGS TO RICHES",
-        "workflow.play":     "PLAY",
-        "workflow.raw":      "RAW",
-        "workflow.edit":     "EDITED",
-        "workflow.caption":  "The secret isn't in the cut, it's in the <strong>INTENTION.</strong>",
-        // Process
-        "process.eyebrow":     "// full transparency",
-        "process.title":       "HOW WE'LL WORK TOGUETHER?",
-        "process.sub":         "From the first message to the final file in your hands.",
-        "process.s1.title":    "BRIEFING",
-        "process.s1.desc":     "You tell me all about your idea and what you want to convey, and I'll transform it into your visual identity. The more I understand about your channel, the better the final result.",
-        "process.s2.title":    "EDITING",
-        "process.s2.desc":     "I dive into the raw footage. Every cut, every track, every effect has a reason.",
-        "process.s3.title":    "REVIEW",
-        "process.s3.desc":     "You watch, point out what you want to adjust, and I make it happen.",
-        "process.s4.title":    "DELIVERY",
-        "process.s4.desc":     "High-quality file hot off the press. Ready to post, ready to grow!",
-        // Services
-        "services.eyebrow": "// what I offer",
-        "services.title":   "SERVICES",
-        "services.sub":     "Pick what makes sense for your channel right now.",
-        "sv.badge":          "Most requested",
-        "sv.cta":            "I want this →",
-        "sv.long.title":     "Long Videos",
-        "sv.long.desc":      "For creators who need their audience to stay until the end — vlogs, podcasts, gameplays, documentaries.",
-        "sv.long.l1": "Full edit with pacing and narrative",
-        "sv.long.l2": "Soundtrack and sound effects",
-        "sv.long.l3": "Color grading and image treatment",
-        "sv.long.l4": "Animated text and subtitles",
-        "sv.long.l5": "Delivery within 5 business days",
-        "sv.pack.title":     "Full Package",
-        "sv.pack.desc":      "The all-in-one solution. From long video to short, through motion and art — all with the same identity.",
-        "sv.pack.l1": "Long video editing",
-        "sv.pack.l2": "Shorts/Reels cutting and editing",
-        "sv.pack.l3": "Motion graphics and intros",
-        "sv.pack.l4": "Custom thumbnail",
-        "sv.pack.l5": "Revisions included",
-        "sv.short.title":    "Shorts & Reels",
-        "sv.short.desc":     "Vertical content that hooks in under 3 seconds. Made to go viral on YouTube Shorts, Instagram and TikTok.",
-        "sv.short.l1": "Dynamic and impactful editing",
-        "sv.short.l2": "Cuts synced to the music",
-        "sv.short.l3": "Styled subtitles",
-        "sv.short.l4": "Optimized 9:16 format",
-        "sv.short.l5": "Delivery within 2 business days",
-        "sv.motion.title":   "Motion + Thumb",
-        "sv.motion.desc":    "Your channel's visual identity. Intros, outros, overlays and thumbnails that make both the algorithm and the audience stop scrolling.",
-        "sv.motion.l1": "Custom animated intro",
-        "sv.motion.l2": "Outro / end screen",
-        "sv.motion.l3": "Lower thirds and overlays",
-        "sv.motion.l4": "Click-optimized thumbnail",
-        "sv.motion.l5": "Editable files on delivery",
-        // Testimonials
-        "test.eyebrow": "// unfiltered",
-        "test.title":   "What they say about me",
-        // About
-        "about.eyebrow": "// about me",
-        "about.title":   "I'm an editor. A designer.<br>But above all, I'm a <span class=\"accent-cyan\">creator.</span>",
-        "about.p1":      "Every second of video that leaves here was thought through by someone who knows what it feels like to create content — the deadline pressure, the delivery anxiety, the hope that the video will actually work.",
-        "about.p2":      "I don't edit on autopilot. Every project gets my full attention, from the first cut to the last track. My goal is simple: when you watch the result, you should feel it was worth every penny.",
-        "about.p3":      "You create. I handle the rest.",
-        "about.stat1":   "Partnerships made",
-        "about.stat2":   "People reached",
-        "about.stat3":   "Of care and focus",
-        // FAQ
-        "faq.eyebrow":   "// common questions",
-        "faq.title":     "Frequently asked questions",
-        "faq.q1":  "How does pricing work?",
-        "faq.a1":  "Pricing can be either a <strong>fixed project rate</strong> or <strong>per hour edited</strong>. Fixed gives you predictability; hourly works better for larger, more variable projects. We'll figure out what makes more sense during the briefing.",
-        "faq.q2":  "What's the turnaround time?",
-        "faq.a2":  "Long videos ship within <strong>3 to 5 business days</strong> after receiving the footage. Shorts and Reels in up to <strong>2 business days</strong>. Motion and identity projects depend on complexity — we sort that out in the briefing.",
-        "faq.q3":  "How many revisions are included?",
-        "faq.a3":  "<strong>3 revision rounds</strong> are included. If you need more, we'll figure it out together — the goal is for you to be 100% happy.",
-        "faq.q4":  "How does payment work?",
-        "faq.a4":  "<strong>50% upfront</strong> If it's a fixed-price project, 50% down payment before starting, and the remaining 50% upon delivery. I accept Pix, bank transfer, and other methods that we can discuss via WhatsApp.",
-        "faq.q5":  "What formats do you deliver in?",
-        "faq.a5":  "<strong>MP4 (H.264/H.265)</strong> in the right aspect ratio for each platform — 16:9 for YouTube, 9:16 for Shorts/Reels/TikTok. Need something different? Just ask.",
-        "faq.q6":  "How do I send you the footage?",
-        "faq.a6":  "I prefer receiving files via <strong>Google Drive or WeTransfer</strong>. Send me the link with everything — recordings, audio, references — and I'll get started once the deposit is confirmed.",
-        "faq.ctaText": "Still have a question?",
-        "faq.ctaBtn":  "Talk to me →",
-        // Contact
-        "contact.eyebrow":  "// let's work together",
-        "contact.title":    "Ready to create something worth watching?",
-        "contact.sub":      "I respond within 24h. Feel free to reach out — I love learning about the project before anything else.",
-        "contact.whatsapp": "WhatsApp",
-        "contact.email":    "E-mail",
-        "contact.avail":    "Currently accepting new projects",
-        // Form
-        "form.name":    "Your name",
-        "form.channel": "Channel / Brand",
-        "form.service": "What do you need?",
-        "form.select":  "Select a service",
-        "form.opt1":    "Long video editing",
-        "form.opt2":    "Shorts / Reels editing",
-        "form.opt3":    "Motion Graphics / Intro",
-        "form.opt4":    "Thumbnail / Art",
-        "form.opt5":    "Full package",
-        "form.opt6":    "Other",
-        "form.message": "Tell me more",
-        "form.submit":  "Send message",
-        "form.note":    "No spam. No bots. Just me on the other side.",
-        // Footer
-        "footer.made": "Made with focus and lots of coffee."
-    }
+const T = {
+  pt:{
+    "nav.portfolio":"Portfólio","nav.services":"Serviços","nav.about":"Sobre","nav.contact":"Contato",
+    "hero.tag":"Editor de Vídeo & Motion Designer",
+    "hero.w1":"CADEIRANTE","hero.w2":"MAROMBA",
+    "hero.sub":"Transformo arquivos em <strong>HISTÓRIA.</strong>",
+    "hero.cta":"VAMOS TRABALHAR JUNTOS →",
+    "hs.1":"Parcerias","hs.2":"Views","hs.3":"Dedicação",
+    "about.eyebrow":"// sobre mim",
+    "about.l1":"Sou editor.","about.l2":"Sou designer.",
+    "about.l3":"Mas antes de tudo,","about.accent":"criador.",
+    "about.p1":"Cada segundo de vídeo que sai daqui foi pensado por alguém que entende o que é criar conteúdo — a pressão do prazo, a ansiedade com a entrega, a esperança de que o vídeo vai funcionar.",
+    "about.p2":"Não faço edição no piloto automático. Cada projeto recebe atenção total, do primeiro corte à última trilha. Meu objetivo é que, quando você assistir ao resultado, sinta que valeu cada centavo.",
+    "about.p3":"Você cria. Eu cuido do resto.",
+    "about.cta":"Vamos conversar →",
+    "port.eyebrow":"// trabalhos selecionados","port.title":"MEUS TRABALHOS",
+    "tab.long":"LONGOS",
+    "thumbs.eyebrow":"// artes & design","thumbs.title":"THUMBNAILS & ARTES",
+    "thumbs.sub":"Cada arte é pensada para converter o scroll em clique.",
+    "wf.eyebrow":"// processo real","wf.title":"DO BRUTO AO LUXO",
+    "wf.play":"PLAY","wf.raw":"BRUTO","wf.edit":"EDITADO",
+    "wf.caption":"O segredo não está no corte, está na <strong>INTENÇÃO.</strong>",
+    "proc.eyebrow":"// transparência total","proc.title":"COMO TRABALHAREMOS JUNTOS?",
+    "proc.sub":"Do primeiro \"oi\" até o arquivo na sua mão.",
+    "proc.s1.t":"BRIEFING","proc.s1.d":"Você me conta tudo sobre sua ideia. Quanto mais eu entender sobre seu canal, melhor o resultado.",
+    "proc.s2.t":"EDIÇÃO","proc.s2.d":"Mergulho no material bruto. Cada corte, música e efeito marcam sua presença.",
+    "proc.s3.t":"REVISÃO","proc.s3.d":"Você assiste, aponta os ajustes e eu faço acontecer. 3 rodadas inclusas.",
+    "proc.s4.t":"ENTREGA","proc.s4.d":"Arquivo em alta qualidade no formato certo. Pronto pra postar, pronto pra crescer!",
+    "sv.eyebrow":"// o que eu ofereço","sv.title":"SERVIÇOS",
+    "sv.badge":"Mais pedido","sv.cta":"Quero esse →",
+    "sv.long.t":"Vídeos Longos","sv.long.d":"Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.",
+    "sv.long.l1":"Edição completa","sv.long.l2":"Trilha & SFX","sv.long.l3":"Color grading","sv.long.l5":"Até 5 dias úteis",
+    "sv.pack.t":"Pacote Completo","sv.pack.d":"A solução total. Do vídeo longo ao short, passando pelo motion e pela arte.",
+    "sv.pack.l1":"Vídeo longo","sv.pack.l2":"Shorts/Reels","sv.pack.l3":"Motion & Intros","sv.pack.l4":"Thumbnail",
+    "sv.short.t":"Shorts & Reels","sv.short.d":"Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar.",
+    "sv.short.l1":"Edição dinâmica","sv.short.l2":"Sync musical","sv.short.l3":"Legendas","sv.short.l5":"Até 2 dias úteis",
+    "sv.motion.t":"Motion + Thumb","sv.motion.d":"A identidade visual do seu canal. Intros, overlays e thumbnails que param o público.",
+    "sv.motion.l1":"Intro sob medida","sv.motion.l3":"Overlays","sv.motion.l4":"Thumbnail","sv.motion.l5":"Arquivos editáveis",
+    "test.eyebrow":"// sem filtro","test.title":"O QUE DIZEM SOBRE MIM",
+    "faq.eyebrow":"// dúvidas comuns","faq.title":"Perguntas frequentes",
+    "faq.q1":"Como funciona a cobrança?","faq.a1":"A cobrança pode ser feita por <strong>valor fixo por projeto</strong> ou por <strong>hora editada</strong>. O fixo garante previsibilidade; a hora é ideal para projetos maiores.",
+    "faq.q2":"Qual é o prazo de entrega?","faq.a2":"Vídeos longos em até <strong>3 a 5 dias úteis</strong>. Shorts e Reels em até <strong>2 dias úteis</strong>.",
+    "faq.q3":"Quantas revisões estão incluídas?","faq.a3":"<strong>3 rodadas de revisão</strong> inclusas em todos os serviços.",
+    "faq.q4":"Como funciona o pagamento?","faq.a4":"<strong>50% de entrada</strong> antes de começar, outros 50% na entrega. Aceito Pix e transferência.",
+    "faq.q5":"Em quais formatos você entrega?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> — 16:9 para YouTube, 9:16 para Shorts/Reels/TikTok.",
+    "faq.q6":"Como envio o material?","faq.a6":"Via <strong>Google Drive ou WeTransfer</strong>. Mande o link com tudo e começo após a entrada confirmada.",
+    "ct.eyebrow":"// vamos trabalhar juntos","ct.title":"Pronto para criar algo que vale a pena assistir?",
+    "ct.sub":"Respondo em até 24h. Pode me mandar uma mensagem sem cerimônia.",
+    "ct.avail":"DISPONÍVEL PARA NOVOS PROJETOS!",
+    "form.name":"Seu nome","form.channel":"Canal / Marca","form.service":"O que você precisa?","form.message":"Me conta mais",
+    "form.submit":"Enviar mensagem","form.note":"Sem spam. Sem robô. Só eu do outro lado.",
+    "footer.made":"Feito com suor e muito café."
+  },
+  en:{
+    "nav.portfolio":"Portfolio","nav.services":"Services","nav.about":"About","nav.contact":"Contact",
+    "hero.tag":"Video Editor & Motion Designer",
+    "hero.w1":"CADEIRANTE","hero.w2":"MAROMBA",
+    "hero.sub":"I turn files into <strong>HISTORY.</strong>",
+    "hero.cta":"LET'S WORK TOGETHER →",
+    "hs.1":"Partnerships","hs.2":"Views","hs.3":"Dedication",
+    "about.eyebrow":"// about me",
+    "about.l1":"I'm an editor.","about.l2":"I'm a designer.",
+    "about.l3":"But above all,","about.accent":"I'm a creator.",
+    "about.p1":"Every second of video that leaves here was thought through by someone who knows what it feels like to create content — the deadline pressure, the delivery anxiety, the hope that the video will actually work.",
+    "about.p2":"I don't edit on autopilot. Every project gets my full attention, from the first cut to the last track. My goal: when you watch the result, feel it was worth every penny.",
+    "about.p3":"You create. I handle the rest.",
+    "about.cta":"Let's talk →",
+    "port.eyebrow":"// selected work","port.title":"MY WORKS",
+    "tab.long":"LONG VIDEOS",
+    "thumbs.eyebrow":"// art & design","thumbs.title":"THUMBNAILS & ARTS",
+    "thumbs.sub":"Every thumbnail is crafted to turn the scroll into a click.",
+    "wf.eyebrow":"// real process","wf.title":"FROM RAW TO POLISHED",
+    "wf.play":"PLAY","wf.raw":"RAW","wf.edit":"EDITED",
+    "wf.caption":"The secret isn't in the cut — it's in the <strong>INTENTION.</strong>",
+    "proc.eyebrow":"// full transparency","proc.title":"HOW WE'LL WORK TOGETHER?",
+    "proc.sub":"From the first message to the final file in your hands.",
+    "proc.s1.t":"BRIEFING","proc.s1.d":"You tell me everything about your idea. The more I understand your channel, the better the result.",
+    "proc.s2.t":"EDITING","proc.s2.d":"I dive into the raw footage. Every cut, track and effect marks your presence.",
+    "proc.s3.t":"REVIEW","proc.s3.d":"You watch, point out what to fix, and I make it happen. 3 rounds included.",
+    "proc.s4.t":"DELIVERY","proc.s4.d":"High-quality file in the right format. Ready to post, ready to grow!",
+    "sv.eyebrow":"// what I offer","sv.title":"SERVICES",
+    "sv.badge":"Most requested","sv.cta":"I want this →",
+    "sv.long.t":"Long Videos","sv.long.d":"For creators who need their audience to stay until the end — vlogs, podcasts, gameplays, documentaries.",
+    "sv.long.l1":"Full edit","sv.long.l2":"Soundtrack & SFX","sv.long.l3":"Color grading","sv.long.l5":"Up to 5 business days",
+    "sv.pack.t":"Full Package","sv.pack.d":"The all-in-one solution. From long video to short, through motion and art.",
+    "sv.pack.l1":"Long video","sv.pack.l2":"Shorts/Reels","sv.pack.l3":"Motion & Intros","sv.pack.l4":"Thumbnail",
+    "sv.short.t":"Shorts & Reels","sv.short.d":"Vertical content that hooks in under 3 seconds. Made to go viral.",
+    "sv.short.l1":"Dynamic editing","sv.short.l2":"Music sync","sv.short.l3":"Subtitles","sv.short.l5":"Up to 2 business days",
+    "sv.motion.t":"Motion + Thumb","sv.motion.d":"Your channel's visual identity. Intros, overlays and thumbnails that make people stop.",
+    "sv.motion.l1":"Custom intro","sv.motion.l3":"Overlays","sv.motion.l4":"Thumbnail","sv.motion.l5":"Editable files",
+    "test.eyebrow":"// unfiltered","test.title":"WHAT THEY SAY ABOUT ME",
+    "faq.eyebrow":"// common questions","faq.title":"Frequently asked questions",
+    "faq.q1":"How does pricing work?","faq.a1":"Pricing can be a <strong>fixed project rate</strong> or <strong>per hour edited</strong>. Fixed gives you predictability; hourly is ideal for larger projects.",
+    "faq.q2":"What's the turnaround time?","faq.a2":"Long videos in up to <strong>3 to 5 business days</strong>. Shorts and Reels in up to <strong>2 business days</strong>.",
+    "faq.q3":"How many revisions are included?","faq.a3":"<strong>3 revision rounds</strong> included in all services.",
+    "faq.q4":"How does payment work?","faq.a4":"<strong>50% upfront</strong> before starting, the remaining 50% on delivery. I accept Pix and bank transfer.",
+    "faq.q5":"What formats do you deliver in?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> — 16:9 for YouTube, 9:16 for Shorts/Reels/TikTok.",
+    "faq.q6":"How do I send the footage?","faq.a6":"Via <strong>Google Drive or WeTransfer</strong>. Send the link with everything and I start once the deposit is confirmed.",
+    "ct.eyebrow":"// let's work together","ct.title":"Ready to create something worth watching?",
+    "ct.sub":"I respond within 24h. Feel free to reach out without ceremony.",
+    "ct.avail":"AVAILABLE FOR NEW PROJECTS!",
+    "form.name":"Your name","form.channel":"Channel / Brand","form.service":"What do you need?","form.message":"Tell me more",
+    "form.submit":"Send message","form.note":"No spam. No bots. Just me on the other side.",
+    "footer.made":"Made with sweat and lots of coffee."
+  }
 };
 
 /* =============================================
-   ESTADO GLOBAL
+   ESTADO
 ============================================= */
-let currentLang = 'pt';
+let lang = localStorage.getItem('cm-lang') || 'pt';
 
 /* =============================================
-   I18N ENGINE
+   I18N
 ============================================= */
-function applyTranslations(lang) {
-    const t = translations[lang];
-    if (!t) return;
+function applyLang(l) {
+  lang = l;
+  const t = T[l] || T.pt;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (!t[k]) return;
+    const tags = ['P','SPAN','H2','H3','H1','A','BUTTON','LI'];
+    if (tags.includes(el.tagName)) el.innerHTML = t[k];
+    else el.textContent = t[k];
+  });
+  document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-BR' : 'en');
+  document.documentElement.setAttribute('data-lang', l);
+  localStorage.setItem('cm-lang', l);
+}
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (!t[key]) return;
+/* =============================================
+   CURSOR PERSONALIZADO
+============================================= */
+function initCursor() {
+  const ring = document.getElementById('curRing');
+  const dot  = document.getElementById('curDot');
+  if (!ring || !dot) return;
 
-        // Elements that safely render HTML (p, span, h2, h3, label)
-        const htmlTags = ['P', 'SPAN', 'H2', 'H3', 'LABEL', 'A', 'BUTTON'];
-        if (htmlTags.includes(el.tagName)) {
-            el.innerHTML = t[key];
-        } else {
-            el.textContent = t[key];
+  /* Posição com lag suave no ring */
+  let rx = 0, ry = 0, mx = 0, my = 0;
+
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  });
+
+  function tick() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  /* Expande sobre elementos clicáveis */
+  document.querySelectorAll('a, button, .tab, .ti, .vw, .tc, .si').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cur-grow'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cur-grow'));
+  });
+
+  /* Esconde cursor fora da janela */
+  document.addEventListener('mouseleave', () => { ring.style.opacity = '0'; dot.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { ring.style.opacity = '1'; dot.style.opacity = '1'; });
+}
+
+/* =============================================
+   CANVAS — LINHAS QUE SEGUEM O MOUSE (HERO)
+============================================= */
+function initCanvas() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let W, H, mouse = { x: -999, y: -999 };
+  const POINTS = [];
+  const COUNT  = 60;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function makePoint() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - .5) * .4,
+      vy: (Math.random() - .5) * .4,
+    };
+  }
+
+  function build() {
+    POINTS.length = 0;
+    for (let i = 0; i < COUNT; i++) POINTS.push(makePoint());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* Move pontos */
+    for (const p of POINTS) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    }
+
+    /* Conecta pontos entre si */
+    for (let i = 0; i < POINTS.length; i++) {
+      for (let j = i + 1; j < POINTS.length; j++) {
+        const dx = POINTS[i].x - POINTS[j].x;
+        const dy = POINTS[i].y - POINTS[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 140) {
+          ctx.beginPath();
+          ctx.moveTo(POINTS[i].x, POINTS[i].y);
+          ctx.lineTo(POINTS[j].x, POINTS[j].y);
+          ctx.strokeStyle = `rgba(0,229,255,${.06 * (1 - d / 140)})`;
+          ctx.lineWidth = .6;
+          ctx.stroke();
         }
-    });
+      }
 
-    // Translate placeholder attributes
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key]) el.placeholder = t[key];
-    });
+      /* Conecta pontos ao mouse */
+      const dx = POINTS[i].x - mouse.x;
+      const dy = POINTS[i].y - mouse.y;
+      const d  = Math.sqrt(dx * dx + dy * dy);
+      if (d < 180) {
+        ctx.beginPath();
+        ctx.moveTo(POINTS[i].x, POINTS[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(0,229,255,${.18 * (1 - d / 180)})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
 
-    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
-    document.documentElement.setAttribute('data-lang', lang);
-}
+        /* Pequeno círculo no ponto */
+        ctx.beginPath();
+        ctx.arc(POINTS[i].x, POINTS[i].y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,229,255,${.5 * (1 - d / 180)})`;
+        ctx.fill();
+      }
+    }
 
-function toggleLang() {
-    currentLang = currentLang === 'pt' ? 'en' : 'pt';
-    applyTranslations(currentLang);
-    localStorage.setItem('cm-lang', currentLang);
+    requestAnimationFrame(draw);
+  }
+
+  /* Mouse relativo ao canvas */
+  canvas.closest('.hero').addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+  });
+  canvas.closest('.hero').addEventListener('mouseleave', () => {
+    mouse.x = -999; mouse.y = -999;
+  });
+
+  window.addEventListener('resize', () => { resize(); build(); });
+  resize();
+  build();
+  draw();
 }
 
 /* =============================================
-   NAVBAR: scroll behavior
+   NAVBAR — esconde ao descer, aparece ao subir
 ============================================= */
 function initNavbar() {
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-    let ticking = false;
+  const nav = document.getElementById('navbar');
+  if (!nav) return;
+  let last = 0;
+  let raf  = false;
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scroll = window.scrollY;
-
-                // Scrolled style
-                navbar.classList.toggle('scrolled', scroll > 40);
-
-                // Hide on scroll down, show on scroll up
-                if (scroll > 120) {
-                    navbar.style.transform = scroll > lastScroll
-                        ? 'translateY(-110%)'
-                        : 'translateY(0)';
-                } else {
-                    navbar.style.transform = 'translateY(0)';
-                }
-
-                lastScroll = scroll;
-                ticking = false;
-            });
-            ticking = true;
+  window.addEventListener('scroll', () => {
+    if (!raf) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        nav.classList.toggle('stuck', y > 40);
+        if (y > 120) {
+          nav.classList.toggle('gone', y > last);
+        } else {
+          nav.classList.remove('gone');
         }
-    }, { passive: true });
+        last = y;
+        raf = false;
+      });
+      raf = true;
+    }
+  }, { passive: true });
 }
 
 /* =============================================
-   PORTFOLIO CATEGORY SWITCHER
+   SMOOTH SCROLL — com offset da navbar
 ============================================= */
-function initPortfolio() {
-    const btns = document.querySelectorAll('.pmenu-btn');
-    const panels = document.querySelectorAll('.cat-panel');
+function initScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const navH = document.getElementById('navbar')?.offsetHeight || 70;
+      const top  = target.getBoundingClientRect().top + window.scrollY - navH;
 
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const cat = btn.getAttribute('data-cat');
-
-            // Pause all videos and clear sources to free memory
-            panels.forEach(panel => {
-                panel.querySelectorAll('video').forEach(v => {
-                    v.pause();
-                });
-                panel.classList.remove('active');
-            });
-
-            btns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const target = document.getElementById('cat-' + cat);
-            if (!target) return;
-            target.classList.add('active');
-
-            // Lazy-load videos in newly visible panel
-            loadLazyVideos(target);
-        });
+      /* Animação manual — funciona mesmo com overflow-x:hidden */
+      const start = window.scrollY;
+      const dist  = top - start;
+      let t0 = null;
+      const dur = 800;
+      function ease(t){ return t < .5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+      function step(ts) {
+        if (!t0) t0 = ts;
+        const p = Math.min((ts - t0) / dur, 1);
+        window.scrollTo(0, start + dist * ease(p));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     });
+  });
 }
 
 /* =============================================
-   LAZY VIDEO LOADING (performance)
+   REVEAL ON SCROLL
 ============================================= */
-function loadLazyVideos(container) {
-    const videos = container ? container.querySelectorAll('.lazy-video') : document.querySelectorAll('.lazy-video');
-
-    videos.forEach(video => {
-        const sources = video.querySelectorAll('source[data-src]');
-        sources.forEach(source => {
-            if (!source.src || source.src === window.location.href) {
-                source.src = source.getAttribute('data-src');
-            }
-        });
-
-        if (video.readyState === 0) {
-            video.load();
-        }
+function initReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        obs.unobserve(e.target);
+      }
     });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
 /* =============================================
-   INTERSECTION OBSERVER: autoplay muted videos
+   LAZY LOAD DE VÍDEOS
+   — só carrega quando o painel está ativo
+     e o vídeo entra na tela
 ============================================= */
+function loadVideosIn(container) {
+  if (!container) return;
+  container.querySelectorAll('source[data-src]').forEach(src => {
+    if (src.getAttribute('data-src') && !src.getAttribute('src')) {
+      src.setAttribute('src', src.getAttribute('data-src'));
+      src.removeAttribute('data-src');
+      const vid = src.closest('video');
+      if (vid) vid.load();
+    }
+  });
+}
+
+/* IntersectionObserver para autoplay mudo dos vídeos visíveis */
 function initVideoObserver() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-                loadLazyVideos(video.parentElement);
-                video.play().catch(() => {});
-            } else {
-                video.pause();
-            }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const vid = e.target;
+      if (e.isIntersecting) {
+        /* Garante que o src foi atribuído */
+        vid.querySelectorAll('source[data-src]').forEach(s => {
+          if (!s.getAttribute('src')) {
+            s.setAttribute('src', s.getAttribute('data-src'));
+            s.removeAttribute('data-src');
+            vid.load();
+          }
         });
-    }, { threshold: 0.3 });
+        vid.play().catch(() => {});
+      } else {
+        vid.pause();
+      }
+    });
+  }, { threshold: 0.3 });
 
-    document.querySelectorAll('.lazy-video').forEach(v => observer.observe(v));
+  document.querySelectorAll('.lv').forEach(v => obs.observe(v));
 }
 
 /* =============================================
-   YOUTUBE CLICK-TO-LOAD
+   TABS DO PORTFÓLIO
+============================================= */
+function initTabs() {
+  const tabs = document.querySelectorAll('.tab');
+  const cats = document.querySelectorAll('.cat');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const cat = tab.getAttribute('data-cat');
+
+      /* Pausa todos os vídeos antes de trocar */
+      document.querySelectorAll('.lv').forEach(v => v.pause());
+
+      tabs.forEach(t => t.classList.remove('active'));
+      cats.forEach(c => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      const panel = document.getElementById('cat-' + cat);
+      if (!panel) return;
+      panel.classList.add('active');
+
+      /* Carrega lazy e dá play nos vídeos do painel ativado */
+      loadVideosIn(panel);
+    });
+  });
+
+  /* Carrega o painel inicial (motion) */
+  const initial = document.querySelector('.cat.active');
+  if (initial) loadVideosIn(initial);
+}
+
+/* =============================================
+   YOUTUBE — click-to-embed
 ============================================= */
 function initYouTube() {
-    document.querySelectorAll('.vwrap.yt').forEach(wrap => {
-        wrap.addEventListener('click', () => {
-            const vid = wrap.getAttribute('data-vid');
-            if (!vid) return;
+  document.querySelectorAll('.vw.yt').forEach(wrap => {
+    const vid = wrap.getAttribute('data-vid');
+    if (!vid) return;
 
-            wrap.innerHTML = `<iframe
-                src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-            </iframe>`;
-        });
+    /* Corrige thumbnail caso esteja em branco */
+    const img = wrap.querySelector('img');
+    if (img && !img.src) {
+      img.src = `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`;
+    }
+    if (img) {
+      img.onerror = () => {
+        img.src = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+        img.onerror = null;
+      };
+    }
+
+    wrap.addEventListener('click', () => {
+      wrap.innerHTML = `<iframe
+        src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1"
+        frameborder="0"
+        allow="autoplay;encrypted-media;picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>`;
     });
+  });
 }
 
 /* =============================================
-   WORKFLOW PLAYER
+   WORKFLOW — player manual
 ============================================= */
 function initWorkflow() {
-    const wrapper = document.getElementById('workflowWrapper');
-    const video   = document.getElementById('workflowVideo');
-    const overlay = document.getElementById('wfOverlay');
+  const box   = document.getElementById('wfWrapper');
+  const vid   = document.getElementById('wfVideo');
+  const cover = document.getElementById('wfCover');
+  if (!box || !vid || !cover) return;
 
-    if (!wrapper || !video || !overlay) return;
-
-    wrapper.addEventListener('click', () => {
-        if (video.paused) {
-            // Load if not loaded
-            if (video.readyState === 0) video.load();
-            video.muted = false;
-            video.play().catch(() => { video.muted = true; video.play(); });
-            overlay.classList.add('hidden');
-        } else {
-            video.pause();
-            overlay.classList.remove('hidden');
-        }
-    });
+  box.addEventListener('click', () => {
+    if (vid.paused) {
+      if (vid.readyState === 0) vid.load();
+      vid.muted = false;
+      vid.play().catch(() => { vid.muted = true; vid.play(); });
+      cover.classList.add('off');
+    } else {
+      vid.pause();
+      cover.classList.remove('off');
+    }
+  });
 }
 
 /* =============================================
-   THUMBNAIL MODAL
+   MODAL DE IMAGENS
 ============================================= */
 function openModal(el) {
-    const modal   = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-    const img     = el.querySelector('img');
-
-    if (!img || !modal) return;
-
-    modalImg.src = img.src;
-    modalImg.alt = img.alt;
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  const modal = document.getElementById('modal');
+  const mimg  = document.getElementById('modalImg');
+  const img   = el.querySelector('img');
+  if (!modal || !img) return;
+  mimg.src = img.src;
+  mimg.alt = img.alt;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
-    const modal = document.getElementById('imgModal');
-    if (!modal) return;
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
+  const modal = document.getElementById('modal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-});
-
-// Close on backdrop click
-document.getElementById('imgModal')?.addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 /* =============================================
    FAQ ACCORDION
 ============================================= */
 function initFaq() {
-    document.querySelectorAll('.faq-q').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const item   = btn.closest('.faq-item');
-            const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.fq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.fq');
+      const isOpen = item.classList.contains('open');
 
-            // Close all
-            document.querySelectorAll('.faq-item').forEach(i => {
-                i.classList.remove('open');
-                i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-            });
+      document.querySelectorAll('.fq').forEach(f => {
+        f.classList.remove('open');
+        f.querySelector('.fq-q').setAttribute('aria-expanded', 'false');
+      });
 
-            // Open clicked if it was closed
-            if (!isOpen) {
-                item.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
-            }
-        });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
+  });
 }
 
 /* =============================================
-   CONTACT FORM
+   FORMULÁRIO — feedback visual
 ============================================= */
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    const btn  = document.getElementById('submitBtn');
-    if (!form || !btn) return;
+function initForm() {
+  const form = document.getElementById('ctForm');
+  const btn  = document.getElementById('submitBtn');
+  if (!form || !btn) return;
 
-    form.addEventListener('submit', () => {
-        btn.disabled = true;
-        btn.querySelector('span').textContent =
-            currentLang === 'pt' ? 'Enviando...' : 'Sending...';
+  form.addEventListener('submit', () => {
+    btn.disabled = true;
+    const sp = btn.querySelector('[data-i18n="form.submit"]');
+    if (sp) sp.textContent = lang === 'pt' ? 'Enviando...' : 'Sending...';
 
-        // Re-enable after 6s fallback
-        setTimeout(() => {
-            btn.disabled = false;
-            btn.querySelector('span').textContent =
-                translations[currentLang]['form.submit'];
-        }, 6000);
-    });
+    setTimeout(() => {
+      btn.disabled = false;
+      if (sp) sp.textContent = T[lang]['form.submit'];
+    }, 6000);
+  });
 }
 
 /* =============================================
-   SMOOTH SCROLL OFFSET (for fixed navbar)
+   MODAL — fecha ao clicar no fundo
 ============================================= */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', e => {
-            const href = link.getAttribute('href');
-            if (href === '#') return;
-
-            const target = document.querySelector(href);
-            if (!target) return;
-
-            e.preventDefault();
-            const offset = 72; // navbar height
-            const top = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        });
+function initModal() {
+  const modal = document.getElementById('modal');
+  if (modal) {
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
     });
+  }
 }
 
 /* =============================================
-   REVEAL ON SCROLL (subtle, performance-safe)
+   IDIOMA
 ============================================= */
-function initReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+function initLang() {
+  const btn = document.getElementById('langToggle');
+  if (btn) btn.addEventListener('click', () => applyLang(lang === 'pt' ? 'en' : 'pt'));
 
-    document.querySelectorAll(
-        '.scard, .tcard, .tl-item, .thumb-item, .vitem'
-    ).forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
+  /* Aplica idioma salvo */
+  applyLang(lang);
 }
 
 /* =============================================
-   INIT
+   INIT — tudo começa aqui
 ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
-    // Language: restore from localStorage
-    const saved = localStorage.getItem('cm-lang');
-    if (saved && saved !== 'pt') {
-        currentLang = saved;
-        applyTranslations(currentLang);
-    }
-
-    // Lang toggle button
-    document.getElementById('langToggle')?.addEventListener('click', toggleLang);
-
-    // Load active portfolio panel's lazy videos on start
-    const activePanel = document.querySelector('.cat-panel.active');
-    if (activePanel) loadLazyVideos(activePanel);
-
-    initNavbar();
-    initPortfolio();
-    initVideoObserver();
-    initYouTube();
-    initWorkflow();
-    initFaq();
-    initContactForm();
-    initSmoothScroll();
-    initReveal();
+  initLang();
+  initCursor();
+  initCanvas();
+  initNavbar();
+  initScroll();
+  initReveal();
+  initTabs();
+  initVideoObserver();
+  initYouTube();
+  initWorkflow();
+  initFaq();
+  initForm();
+  initModal();
 });
