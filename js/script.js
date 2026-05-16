@@ -221,7 +221,7 @@ function initCanvas() {
           ctx.beginPath();
           ctx.moveTo(POINTS[i].x, POINTS[i].y);
           ctx.lineTo(POINTS[j].x, POINTS[j].y);
-          ctx.strokeStyle = `rgba(0,229,255,${.06 * (1 - d / 140)})`;
+          ctx.strokeStyle = `rgba(255,107,43,${.06 * (1 - d / 140)})`;
           ctx.lineWidth = .6;
           ctx.stroke();
         }
@@ -235,14 +235,14 @@ function initCanvas() {
         ctx.beginPath();
         ctx.moveTo(POINTS[i].x, POINTS[i].y);
         ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(0,229,255,${.18 * (1 - d / 180)})`;
+        ctx.strokeStyle = `rgba(255,107,43,${.18 * (1 - d / 180)})`;
         ctx.lineWidth = 1;
         ctx.stroke();
 
         /* Pequeno círculo no ponto */
         ctx.beginPath();
         ctx.arc(POINTS[i].x, POINTS[i].y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0,229,255,${.5 * (1 - d / 180)})`;
+        ctx.fillStyle = `rgba(255,107,43,${.5 * (1 - d / 180)})`;
         ctx.fill();
       }
     }
