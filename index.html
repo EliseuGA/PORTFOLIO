@@ -36,7 +36,7 @@
   </div>
 </header>
 <div class="pbar"><div class="pbar-fill" id="pbarFill"></div></div>
-<img class="pbar-rider" id="pbarRider" src="img/cadeirante_cadeira.png" alt="">
+<img class="pbar-rider" id="pbarRider" src="img/cadeiranteMascote.png" alt="">
 
 <main>
 
@@ -44,7 +44,6 @@
 <section class="hero" id="inicio">
   <div class="sunburst"></div>
 
-  <!-- decoração de fundo -->
   <span class="spark" style="top:16%;left:6%;--sz:52px"></span>
   <span class="spark amber" style="top:64%;left:3%;--sz:34px;animation-duration:18s"></span>
   <span class="spark aero" style="top:22%;right:8%;--sz:30px;animation-duration:16s"></span>
@@ -55,23 +54,37 @@
   <h1 class="hero-h1">CADEIRANTE<br>MAROMBA</h1>
   <p class="hero-sub" data-i18n="hero.sub">Bruto vira corte. Corte vira <strong>história.</strong></p>
 
-  <div class="crt">
-    <span class="tapefix" style="top:-14px;left:34px;--tilt:-5deg"></span>
-    <span class="tapefix" style="top:-14px;right:34px;--tilt:4deg"></span>
-    <div class="crt-screen" id="crtScreen">
-      <img src="img/hero-poster.jpg" alt="Prévia do showreel" id="crtPoster">
-      <video muted loop playsinline preload="none" id="crtVideo">
-        <source src="videos/introShowreelEXTENDIDA_8mb.mp4" type="video/mp4">
-      </video>
-      <div class="crt-power" id="crtPower">
-        <button class="crt-btn" id="crtBtn" aria-label="Ligar">⏻</button>
+  <div class="crt-zone">
+    <!-- raios de ação estilo mangá ao redor do Trinitron -->
+    <span class="ray"     style="left:-120px;top:12%;width:96px;--rot:-22deg"></span>
+    <span class="ray red" style="left:-140px;top:44%;width:120px;--rot:0deg;animation-delay:.3s"></span>
+    <span class="ray"     style="left:-110px;top:76%;width:86px;--rot:20deg;animation-delay:.6s"></span>
+    <span class="ray"     style="right:-120px;top:12%;width:96px;--rot:202deg"></span>
+    <span class="ray red" style="right:-140px;top:44%;width:120px;--rot:180deg;animation-delay:.45s"></span>
+    <span class="ray"     style="right:-110px;top:76%;width:86px;--rot:158deg;animation-delay:.15s"></span>
+
+    <div class="crt">
+      <span class="tapefix" style="top:-14px;left:34px;--tilt:-5deg"></span>
+      <span class="tapefix" style="top:-14px;right:34px;--tilt:4deg"></span>
+      <div class="crt-screen" id="crtScreen">
+        <div class="crt-colorbars" aria-hidden="true"></div>
+        <img src="img/hero-poster.jpg" alt="Prévia do showreel" id="crtPoster" onerror="this.style.display='none'">
+        <video muted loop playsinline preload="none" id="crtVideo">
+          <source src="videos/introShowreelEXTENDIDA_8mb.mp4" type="video/mp4">
+        </video>
+        <div class="crt-power" id="crtPower">
+          <button class="crt-btn" id="crtBtn" aria-label="Ligar">⏻</button>
+        </div>
+      </div>
+      <span class="crt-label">TRINITRON — REC001</span>
+      <span class="crt-led" id="crtLed"></span>
+      <div class="crt-ctrl" id="crtCtrl">
+        <span>VOL</span>
+        <input type="range" id="crtVol" min="0" max="100" value="60" aria-label="Volume da TV">
       </div>
     </div>
-    <span class="crt-label">TRINITRON — REC001</span>
-    <span class="crt-led" id="crtLed"></span>
   </div>
 
-  <!-- mascote espiando a TV -->
   <div class="bubble hero-bubble" data-i18n="hero.bubble">Se eu fosse você, apertava o play.</div>
   <img class="stkr hero-mascote" src="img/cadeirante_confuso.png" alt="Mascote Cadeirante Maromba">
 
@@ -86,6 +99,14 @@
   <div class="ghost" style="top:10px;right:-40px" aria-hidden="true">PORTFOLIO</div>
   <span class="spark aero" style="top:8%;right:4%;--sz:36px"></span>
   <span class="spark" style="bottom:6%;left:3%;--sz:28px;animation-duration:15s"></span>
+  <!-- adesivo: controle de videogame -->
+  <div class="cutout" style="top:70px;right:4vw;width:110px;--tilt:8deg" aria-hidden="true">
+    <svg viewBox="0 0 120 76"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <rect x="6" y="14" width="108" height="50" rx="22" fill="#17130F"/>
+      <rect x="24" y="30" width="8" height="20" fill="#FBF6EA"/><rect x="18" y="36" width="20" height="8" fill="#FBF6EA"/>
+      <circle cx="86" cy="32" r="6" fill="#E13327"/><circle cx="98" cy="44" r="6" fill="#F0AE34"/>
+    </g></svg>
+  </div>
 
   <div class="sec-head">
     <span class="eyebrow" data-i18n="port.eyebrow">// C:\PORTFOLIO</span>
@@ -141,6 +162,15 @@
   <div class="ghost" style="bottom:-20px;left:-30px" aria-hidden="true">ARTES</div>
   <span class="spark amber" style="top:12%;left:4%;--sz:30px"></span>
   <span class="spark" style="bottom:10%;right:5%;--sz:44px;animation-duration:17s"></span>
+  <!-- adesivo: disco de vinil -->
+  <div class="cutout" style="bottom:60px;right:3vw;width:100px;--tilt:-10deg" aria-hidden="true">
+    <svg viewBox="0 0 100 100"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke">
+      <circle cx="50" cy="50" r="44" fill="#17130F"/>
+      <circle cx="50" cy="50" r="16" fill="#E13327"/>
+      <circle cx="50" cy="50" r="4" fill="#FBF6EA"/>
+      <path d="M18 50a32 32 0 0 1 32-32" fill="none" stroke="#6b6154" stroke-width="2" paint-order="normal"/>
+    </g></svg>
+  </div>
   <div class="sec-head">
     <span class="eyebrow" data-i18n="thumb.eyebrow">// C:\ARTES</span>
     <h2 data-i18n="thumb.title">Thumbnails & Artes</h2>
@@ -169,6 +199,15 @@
 <section class="workflow lazy-sec crop">
   <span class="spark aero" style="top:20%;left:5%;--sz:34px"></span>
   <div class="stamp" style="bottom:40px;right:5vw"><span>DO BRUTO<br>AO<br>LUXO</span></div>
+  <!-- adesivo: fita VHS -->
+  <div class="cutout" style="top:80px;left:3vw;width:130px;--tilt:-6deg" aria-hidden="true">
+    <svg viewBox="0 0 130 80"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <rect x="5" y="8" width="120" height="64" rx="5" fill="#17130F"/>
+      <rect x="14" y="18" width="26" height="44" fill="#E13327"/>
+      <rect x="50" y="28" width="66" height="24" rx="3" fill="#3a342c"/>
+      <circle cx="64" cy="40" r="8" fill="#FBF6EA"/><circle cx="102" cy="40" r="8" fill="#FBF6EA"/>
+    </g></svg>
+  </div>
   <div class="sec-head" style="text-align:center">
     <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">// C:\PROCESSO.MOV</span>
     <h2 data-i18n="wf.title">Do bruto ao luxo</h2>
@@ -182,6 +221,10 @@
           <div class="wf-cover" id="wfCover"><button class="btn3d"><span>▶</span><span data-i18n="wf.play">Play</span></button></div>
           <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
           <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
+          <div class="wf-vol" id="wfVol">
+            <span>VOL</span>
+            <input type="range" id="wfVolRange" min="0" max="100" value="70" aria-label="Volume do vídeo">
+          </div>
         </div>
       </div>
     </div>
@@ -193,6 +236,32 @@
 <section class="process lazy-sec crop">
   <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">SETUP</div>
   <span class="spark" style="top:14%;right:6%;--sz:38px"></span>
+  <!-- adesivo: claquete -->
+  <div class="cutout" style="top:60px;right:4vw;width:110px;--tilt:7deg" aria-hidden="true">
+    <svg viewBox="0 0 110 90"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <rect x="8" y="34" width="94" height="48" rx="4" fill="#17130F"/>
+      <g transform="rotate(-8 12 30)">
+        <rect x="8" y="14" width="94" height="18" fill="#17130F"/>
+        <polygon points="14,14 28,14 22,32 8,32" fill="#FBF6EA"/>
+        <polygon points="42,14 56,14 50,32 36,32" fill="#FBF6EA"/>
+        <polygon points="70,14 84,14 78,32 64,32" fill="#FBF6EA"/>
+      </g>
+      <rect x="18" y="46" width="52" height="6" fill="#6b6154"/>
+      <rect x="18" y="60" width="38" height="6" fill="#6b6154"/>
+    </g></svg>
+  </div>
+  <!-- adesivo: fita cassete -->
+  <div class="cutout" style="bottom:50px;left:3vw;width:120px;--tilt:-8deg" aria-hidden="true">
+    <svg viewBox="0 0 120 78"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <rect x="5" y="6" width="110" height="66" rx="6" fill="#17130F"/>
+      <rect x="14" y="14" width="92" height="26" rx="3" fill="#F0AE34"/>
+      <circle cx="40" cy="52" r="9" fill="#FBF6EA"/><circle cx="80" cy="52" r="9" fill="#FBF6EA"/>
+      <circle cx="40" cy="52" r="3" fill="#17130F"/><circle cx="80" cy="52" r="3" fill="#17130F"/>
+    </g></svg>
+  </div>
+  <!-- recorte de jornal -->
+  <div class="clip" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
+
   <div class="sec-head">
     <span class="eyebrow" data-i18n="proc.eyebrow">// SETUP.EXE</span>
     <h2 data-i18n="proc.title">Como trabalharemos juntos?</h2>
@@ -214,6 +283,14 @@
   <div class="ghost" style="bottom:0;right:-30px" aria-hidden="true">SERVIÇOS</div>
   <span class="spark amber" style="top:10%;left:3%;--sz:40px"></span>
   <span class="spark aero" style="bottom:8%;right:4%;--sz:26px;animation-duration:14s"></span>
+  <!-- adesivo: estrela de xerife (velho oeste) -->
+  <div class="cutout" style="top:90px;left:3vw;width:90px;--tilt:10deg" aria-hidden="true">
+    <svg viewBox="0 0 90 90"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <polygon points="45,6 54,32 82,32 60,49 68,76 45,60 22,76 30,49 8,32 36,32" fill="#F0AE34"/>
+      <circle cx="45" cy="45" r="12" fill="#17130F"/>
+    </g></svg>
+  </div>
+
   <div class="sec-head">
     <span class="eyebrow" data-i18n="sv.eyebrow">// C:\SERVICOS</span>
     <h2 data-i18n="sv.title">Serviços</h2>
@@ -247,6 +324,17 @@
 <section class="testimonials lazy-sec crop">
   <div class="ghost" style="top:10px;right:-60px" aria-hidden="true">FEEDBACK</div>
   <span class="spark" style="top:16%;left:4%;--sz:32px"></span>
+  <!-- adesivo: luva de boxe (aquele espírito de anime de luta) -->
+  <div class="cutout" style="bottom:60px;left:3vw;width:88px;--tilt:-9deg" aria-hidden="true">
+    <svg viewBox="0 0 88 96"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+      <path d="M14 40a30 30 0 0 1 60 0v18a24 24 0 0 1-24 24H38a24 24 0 0 1-24-24z" fill="#E13327"/>
+      <path d="M14 44h18v22H14z" fill="#b8241a"/>
+      <rect x="26" y="78" width="40" height="14" rx="5" fill="#FBF6EA"/>
+    </g></svg>
+  </div>
+  <!-- recorte "PROCURADO" (velho oeste) -->
+  <div class="clip" style="top:90px;right:2vw;--tilt:4deg" data-i18n-html="deco.wanted"><b>Procurado</b> Editor que faz história. Recompensa: 1 inscrição.</div>
+
   <div class="sec-head">
     <span class="eyebrow" data-i18n="test.eyebrow">// GUESTBOOK.TXT</span>
     <h2 data-i18n="test.title">O que dizem sobre mim</h2>
@@ -271,11 +359,18 @@
 <section id="sobre" class="about lazy-sec crop">
   <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">SOBRE</div>
   <span class="spark aero" style="top:12%;right:6%;--sz:36px"></span>
+  <!-- recorte de jornal -->
+  <div class="clip" style="bottom:80px;right:2vw;--tilt:-3deg" data-i18n-html="deco.n2"><b>VIRAL!</b> Vídeo estoura da noite pro dia; edição leva o crédito.</div>
+
   <div class="about-grid">
     <div>
       <span class="eyebrow" data-i18n="about.eyebrow">// README.TXT</span>
       <h2 class="about-h2" data-i18n-html="about.title">Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class="signal-txt">criador.</span></h2>
-      <img class="about-face" src="img/canal_cadeirante_maromba_redondo.png" alt="Cadeirante Maromba">
+      <!-- crachá HELLO desenhado pelo próprio -->
+      <div class="about-hello">
+        <span class="tapefix" style="--tilt:-3deg"></span>
+        <img src="img/hello.png" alt="Hello, my name is Cadeirante Maromba">
+      </div>
     </div>
     <div class="about-r">
       <p data-i18n="about.p1">Cada segundo de vídeo que sai daqui foi pensado por alguém que entende o que é criar conteúdo — a pressão do prazo, a ansiedade da entrega, a esperança de que o vídeo vai funcionar.</p>
@@ -297,13 +392,13 @@
     <img class="faq-mascote" src="img/cadeirante_confuso.png" alt="">
     <div class="sec-head"><span class="eyebrow" data-i18n="faq.eyebrow">// HELP.HLP</span><h2 data-i18n="faq.title">Perguntas frequentes</h2></div>
     <div class="faq-list">
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q1">Como funciona a cobrança?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a1">A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q2">Qual é o prazo de entrega?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a2">Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q3">Quantas revisões estão incluídas?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a3">São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q4">Como funciona o pagamento?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a4"><strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q5">Em quais formatos você entrega?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a5"><strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q6">Como envio o material?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a6">Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q7">E se eu cancelar o projeto?</span><span class="fq-ic">+</span></button><div class="fq-a" hidden><p data-i18n="faq.a7"><strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q1">Como funciona a cobrança?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a1">A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q2">Qual é o prazo de entrega?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a2">Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q3">Quantas revisões estão incluídas?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a3">São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q4">Como funciona o pagamento?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a4"><strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q5">Em quais formatos você entrega?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a5"><strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q6">Como envio o material?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a6">Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q7">E se eu cancelar o projeto?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a7"><strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.</p></div></div>
     </div>
   </div>
 </section>
@@ -313,6 +408,7 @@
   <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">CONTATO</div>
   <span class="spark" style="bottom:12%;left:3%;--sz:36px"></span>
   <div class="stamp" style="top:80px;right:3vw"><span>RESPONDO<br>EM ATÉ<br>24H</span></div>
+
   <div class="contact-in">
     <div class="contact-l">
       <span class="eyebrow" data-i18n="ct.eyebrow">// EXPORTAR.MP4</span>
@@ -356,6 +452,10 @@
       </div>
     </form>
   </div>
+
+  <!-- mascote de costas: clique nele! -->
+  <div class="bubble mascote-bubble" id="mascoteBubble" data-i18n="ct.mascoteBubble">Vamos fazer HISTÓRIA juntos?</div>
+  <img class="contact-mascote" id="contactMascote" src="img/cadeiranteMascote.png" alt="Mascote Cadeirante Maromba de costas — clique!">
 </section>
 
 </main>
