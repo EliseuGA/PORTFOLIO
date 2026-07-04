@@ -49,6 +49,10 @@ const translations = {
     "ct.eyebrow":"// EXPORTAR.MP4","ct.title":"Pronto para criar algo que vale a pena assistir?","ct.sub":"Respondo em até 24h. Procuro entender o seu canal antes de qualquer coisa.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Disponível para novos projetos","ct.formTitle":"novo_projeto.exe",
     "ct.discordCopied":"copiado! ✓",
+    "ct.mascoteBubble":"Vamos fazer HISTÓRIA juntos?",
+    "deco.n1":"<b>EXTRA!</b> Editor local transforma bruto em ouro puro.",
+    "deco.n2":"<b>VIRAL!</b> Vídeo estoura da noite pro dia; edição leva o crédito.",
+    "deco.wanted":"<b>Procurado</b> Editor que faz história. Recompensa: 1 inscrição.",
     "form.name":"Seu nome","form.channel":"Canal / Marca","form.email":"Seu e-mail","form.phone":"Telefone / WhatsApp",
     "form.service":"O que você precisa?","form.select":"Selecione um serviço",
     "form.o1":"Edição de vídeos longos","form.o2":"Edição de Shorts / Reels","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Arte","form.o5":"Pacote completo","form.o6":"Outro",
@@ -100,6 +104,10 @@ const translations = {
     "ct.eyebrow":"// EXPORT.MP4","ct.title":"Ready to create something worth watching?","ct.sub":"I reply within 24h. I like understanding your channel before anything else.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Available for new projects","ct.formTitle":"new_project.exe",
     "ct.discordCopied":"copied! ✓",
+    "ct.mascoteBubble":"Shall we make HISTORY together?",
+    "deco.n1":"<b>EXTRA!</b> Local editor turns raw footage into pure gold.",
+    "deco.n2":"<b>VIRAL!</b> Video blows up overnight; the edit takes the credit.",
+    "deco.wanted":"<b>Wanted</b> Editor who makes history. Reward: 1 subscription.",
     "form.name":"Your name","form.channel":"Channel / Brand","form.email":"Your e-mail","form.phone":"Phone / WhatsApp",
     "form.service":"What do you need?","form.select":"Select a service",
     "form.o1":"Long video editing","form.o2":"Shorts / Reels editing","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Art","form.o5":"Full package","form.o6":"Other",
@@ -139,7 +147,7 @@ function initBoot(){
   setTimeout(()=>boot.classList.add('hide'), 1300);
 }
 
-/* ---------- TASKBAR + BARRA DE PROGRESSO COM MASCOTE ---------- */
+/* ---------- TASKBAR + BARRA COM MASCOTE ---------- */
 function initChrome(){
   const fill = document.getElementById('pbarFill');
   const rider = document.getElementById('pbarRider');
@@ -183,21 +191,31 @@ function initChrome(){
   });
 }
 
-/* ---------- CRT: vídeo só liga com clique (poupa o PC do cliente) ---------- */
+/* ---------- CRT: liga com clique + controle de volume ---------- */
 function initCrt(){
   const btn = document.getElementById('crtBtn');
   const power = document.getElementById('crtPower');
   const video = document.getElementById('crtVideo');
-  const poster = document.getElementById('crtPoster');
   const led = document.getElementById('crtLed');
+  const ctrl = document.getElementById('crtCtrl');
+  const vol = document.getElementById('crtVol');
   video.style.display='none';
+
   btn.addEventListener('click', ()=>{
-    poster.style.display='none';
     video.style.display='block';
     video.load();
-    video.play().catch(()=>{});
+    video.volume = vol.value/100;
+    video.muted = false;
+    video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
     power.classList.add('off');
     led.classList.add('on');
+    ctrl.classList.add('on');
+  });
+
+  vol.addEventListener('input', ()=>{
+    const v = vol.value/100;
+    video.volume = v;
+    video.muted = (v === 0);
   });
 }
 
@@ -251,18 +269,37 @@ function initYouTube(){
   });
 }
 
-/* ---------- WORKFLOW ---------- */
+/* ---------- WORKFLOW + volume ---------- */
 function initWorkflow(){
   const box = document.getElementById('wfBox');
   const video = document.getElementById('wfVideo');
   const cover = document.getElementById('wfCover');
+  const volBox = document.getElementById('wfVol');
+  const vol = document.getElementById('wfVolRange');
+
   box.addEventListener('click', ()=>{
     if(video.paused){
       if(video.readyState===0) video.load();
-      video.muted=false;
-      video.play().catch(()=>{video.muted=true;video.play()});
+      video.volume = vol.value/100;
+      video.muted = false;
+      video.play().catch(()=>{video.muted=true;video.play().catch(()=>{})});
       cover.classList.add('off');
-    } else { video.pause(); cover.classList.remove('off'); }
+      volBox.classList.add('on');
+    } else {
+      video.pause();
+      cover.classList.remove('off');
+      volBox.classList.remove('on');
+    }
+  });
+
+  /* o slider não pode pausar o vídeo ao ser clicado */
+  ['click','pointerdown','input'].forEach(evt=>{
+    volBox.addEventListener(evt, e=>e.stopPropagation());
+  });
+  vol.addEventListener('input', ()=>{
+    const v = vol.value/100;
+    video.volume = v;
+    video.muted = (v === 0);
   });
 }
 
@@ -280,13 +317,16 @@ function closeModal(){
 }
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
 
-/* ---------- FAQ ---------- */
+/* ---------- FAQ (corrigido: sem atributo hidden travando) ---------- */
 function initFaq(){
   document.querySelectorAll('.fq-q').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const item = btn.closest('.fq');
       const open = item.classList.contains('open');
-      document.querySelectorAll('.fq').forEach(i=>{i.classList.remove('open');i.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+      document.querySelectorAll('.fq').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.fq-q').setAttribute('aria-expanded','false');
+      });
       if(!open){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
     });
   });
@@ -332,6 +372,24 @@ function initDiscord(){
   }
 }
 
+/* ---------- MASCOTE DO CONTATO: pop + fala ---------- */
+function initMascote(){
+  const mascote = document.getElementById('contactMascote');
+  const bubble = document.getElementById('mascoteBubble');
+  if(!mascote || !bubble) return;
+  let hideTimer = null;
+  mascote.addEventListener('click', ()=>{
+    /* reinicia a animação de pop */
+    mascote.classList.remove('pop');
+    void mascote.offsetWidth;
+    mascote.classList.add('pop');
+    /* mostra a caixinha de fala */
+    bubble.classList.add('show');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(()=>bubble.classList.remove('show'), 2800);
+  });
+}
+
 /* ---------- REVEAL ON SCROLL ---------- */
 function initReveal(){
   const io = new IntersectionObserver(entries=>{
@@ -344,15 +402,14 @@ function initReveal(){
   });
 }
 
-/* ---------- TAPE MARQUEE (com carinha do mascote) ---------- */
+/* ---------- TAPE MARQUEE — separador losango minimalista ---------- */
 function buildTape(){
   const items = currentLang==='pt'
     ? ['MOTION GRAPHICS','COLOR GRADING','SOUND DESIGN','ROTEIRO','THUMBNAILS','SHORTS & REELS']
     : ['MOTION GRAPHICS','COLOR GRADING','SOUND DESIGN','SCRIPTING','THUMBNAILS','SHORTS & REELS'];
   const track = document.getElementById('tapeTrack');
-  const face = '<img src="img/canal_cadeirante_maromba_redondo.png" alt="" loading="lazy">';
   let html='';
-  for(let r=0;r<2;r++){ items.forEach(i=>{ html += `<span>${i}</span>${face}`; }); }
+  for(let r=0;r<2;r++){ items.forEach(i=>{ html += `<span>${i}</span><i class="tape-dot"></i>`; }); }
   track.innerHTML = html;
 }
 
@@ -375,5 +432,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initFaq();
   initForm();
   initDiscord();
+  initMascote();
   initReveal();
 });
