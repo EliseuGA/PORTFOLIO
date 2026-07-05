@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Editor de vídeo e motion designer especializado em conteúdo para criadores. Motion graphics, vídeos longos, shorts e thumbnails.">
-<title>Cadeirante Maromba — Editor & Motion Designer</title>
+<meta name="description" content="Eliseu — Cadeirante Maromba. Editor de vídeo e motion designer especializado em documentários e conteúdo para YouTube.">
+<title>Cadeirante Maromba — O Arquivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="icon.ico" type="image/x-icon">
 </head>
 <body>
 
-<!-- Filtro "Turbulent Displace" para os títulos -->
+<!-- Filtro "Turbulent Displace" (impressão desalinhada) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="turb" x="-10%" y="-10%" width="120%" height="120%">
     <feTurbulence type="fractalNoise" baseFrequency="0.011 0.019" numOctaves="2" seed="7" result="n"/>
@@ -21,50 +21,57 @@
   </filter>
 </svg>
 
-<!-- BOOT SCREEN -->
+<!-- REGISTRO DE ACESSO -->
 <div id="boot">
-  <img class="boot-face" src="img/canal_cadeirante_maromba_redondo.png" alt="Cadeirante Maromba">
-  <div class="boot-logo">CADEIRANTE MAROMBA<br>SYSTEM v1.0</div>
-  <div class="boot-bar"><div class="boot-fill"></div></div>
-  <div class="boot-log" aria-hidden="true">
-    <span>&gt; montando /midia ............. OK</span>
-    <span>&gt; lendo memory card ........... OK</span>
-    <span>&gt; abrindo arquivo: ARCHIVE .... _</span>
+  <div class="acard">
+    <div class="acard-band">ARQUIVO CADEIRANTE MAROMBA</div>
+    <div class="acard-body">
+      REGISTRO DE ACESSO<br>
+      VISITANTE Nº <b id="visId">----</b><br>
+      DATA: <b id="visDate">--/--/----</b><br>
+      SETOR: ACERVO GERAL
+    </div>
+    <span class="bigstamp">Acesso autorizado</span>
   </div>
 </div>
 
-<!-- TASKBAR -->
+<!-- BARRA DO ARQUIVO -->
 <header class="taskbar" id="taskbar">
   <a href="#inicio" class="tb-start"><img src="img/canal_cadeirante_maromba_redondo.png" alt="">CM<span>.</span></a>
   <nav class="tb-mid">
-    <a href="#trabalhos" class="tb-btn">ARCHIVE</a>
-    <a href="#servicos" class="tb-btn">MEMORY CARD</a>
-    <a href="#sobre" class="tb-btn">PROFILE.DAT</a>
-    <a href="#contato" class="tb-btn">TRANSMISSION</a>
+    <a href="#trabalhos" class="tb-btn" data-i18n="nav.port">INVENTÁRIO</a>
+    <a href="#servicos" class="tb-btn" data-i18n="nav.serv">GAVETA</a>
+    <a href="#sobre" class="tb-btn" data-i18n="nav.about">FICHA</a>
+    <a href="#contato" class="tb-btn" data-i18n="nav.contact">BRIEFING</a>
   </nav>
   <div style="display:flex;gap:8px;align-items:center">
-    <div class="tb-clock">● <span id="tbSection">BOOT</span></div>
+    <div class="tb-clock">REF: <span id="tbSection">CM-00</span></div>
     <button class="tb-lang" id="langBtn"><span class="l-pt">PT</span>/<span class="l-en">EN</span></button>
   </div>
 </header>
 
 <main>
 
-<!-- HERO — camada PAPEL -->
+<!-- A MESA DO EDITOR -->
 <section class="hero" id="inicio">
-  <!-- faixas diagonais (a "linha atrás do nome") -->
   <div class="band" style="top:32%;--rot:-14deg;--h:110px;--op:.12"></div>
   <div class="band aero" style="top:52%;--rot:-14deg;--h:34px;--op:.10"></div>
   <div class="band ink" style="top:12%;--rot:-14deg;--h:10px;--op:.08"></div>
-
   <span class="spark" style="top:16%;left:6%;--sz:52px"></span>
   <span class="spark amber" style="top:64%;left:3%;--sz:34px;animation-duration:18s"></span>
   <span class="spark aero" style="top:22%;right:8%;--sz:30px;animation-duration:16s"></span>
   <span class="spark ink" style="bottom:14%;left:12%;--sz:24px;animation-duration:20s"></span>
 
-  <p class="hero-eyebrow" data-i18n="hero.eyebrow">Editor de Vídeo · Motion Designer · Artista</p>
+  <div class="postit" style="right:6%;top:20%">
+    <span data-i18n="hero.postit">lembrete:<br>fazer HISTÓRIA.</span>
+  </div>
+
+  <p class="hero-eyebrow" data-i18n="hero.eyebrow">Editor de Vídeo · Motion Designer · Documentarista</p>
   <h1 class="hero-h1">CADEIRANTE<br>MAROMBA</h1>
-  <p class="hero-sub" data-i18n="hero.sub">Bruto vira corte. Corte vira <strong>história.</strong></p>
+  <div class="idlabel">
+    <div class="idlabel-band">CADEIRANTE MAROMBA — ARQUIVO GERAL</div>
+    <div class="idlabel-body" data-i18n="hero.label">ITEM Nº 001 · EM ATIVIDADE · INTERIOR DE SP</div>
+  </div>
 
   <div class="crt-zone">
     <div class="crt">
@@ -77,7 +84,7 @@
           <source src="videos/introShowreelEXTENDIDA_8mb.mp4" type="video/mp4">
         </video>
         <div class="crt-power" id="crtPower">
-          <button class="crt-btn" id="crtBtn" aria-label="Ligar">⏻</button>
+          <span class="crt-hint" data-i18n="hero.hint">insira a fita<br>pra assistir ↙</span>
         </div>
       </div>
       <span class="crt-label">TRINITRON — REC001</span>
@@ -87,78 +94,59 @@
         <span>VOL</span>
         <input type="range" id="crtVol" min="0" max="100" value="60" aria-label="Volume da TV">
       </div>
+
+      <!-- A FITA: o botão da cena -->
+      <button class="minidv" id="tapeBtn" aria-label="Inserir a fita do showreel">
+        <span class="minidv-tag" data-i18n="hero.tapetag">assista! →</span>
+        <span class="minidv-body">
+          <span class="minidv-sticker">SHOWREEL_2026 ▸</span>
+          <span class="minidv-reels"><span></span><span></span></span>
+        </span>
+      </button>
     </div>
   </div>
 
-  <a href="#contato" class="btn3d" style="margin-top:36px;position:relative;z-index:2" data-i18n="hero.cta">Vamos trabalhar juntos →</a>
+  <a href="#contato" class="btn3d" style="margin-top:40px;position:relative;z-index:2" data-i18n="hero.cta">Protocolar um briefing →</a>
 </section>
 
-<!-- TAPE MARQUEE -->
+<!-- TARJA DO ACERVO -->
 <div class="tape"><div class="tape-track" id="tapeTrack"></div></div>
 
-<!-- PORTFÓLIO — camada SISTEMA (área de trabalho Win95) -->
+<div class="torn" style="--pv:#17130F;--nx:#C2A06E"></div>
+
+<!-- INVENTÁRIO — caixa de mídias (kraft) -->
 <section id="trabalhos" class="portfolio lazy-sec">
-  <div class="ghost light" style="top:10px;right:-40px" aria-hidden="true">ARCHIVE</div>
-  <span class="spark amber" style="top:8%;right:4%;--sz:36px"></span>
+  <div class="ghost light" style="top:10px;right:-40px" aria-hidden="true">INVENTÁRIO</div>
+  <span class="spark" style="top:8%;right:4%;--sz:36px"></span>
   <span class="spark paperc" style="bottom:6%;left:3%;--sz:26px;animation-duration:15s"></span>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="port.eyebrow">// C:\ARCHIVE — trabalhos selecionados</span>
+    <span class="eyebrow" data-i18n="port.eyebrow">REF: CM-01 · INVENTÁRIO DE MÍDIAS</span>
     <h2 data-i18n="port.title">Trabalhos selecionados</h2>
+    <p class="sec-sub" data-i18n="port.sub">Cada item foi catalogado. Toque para reproduzir.</p>
   </div>
 
   <div class="port-tabs">
-    <button class="folder active" data-cat="motion"><span class="flabel" data-i18n="port.motion">Motion</span></button>
-    <button class="folder" data-cat="longos"><span class="flabel" data-i18n="port.long">Vídeos Longos</span></button>
-    <button class="folder" data-cat="shorts"><span class="flabel" data-i18n="port.shorts">Shorts</span></button>
+    <button class="btab active" data-cat="motion"><span class="btab-band"></span><span class="btab-txt" data-i18n="port.motion">Caixa A — Motion</span></button>
+    <button class="btab" data-cat="longos"><span class="btab-band"></span><span class="btab-txt" data-i18n="port.long">Caixa B — Longos</span></button>
+    <button class="btab" data-cat="shorts"><span class="btab-band"></span><span class="btab-txt" data-i18n="port.shorts">Caixa C — Shorts</span></button>
   </div>
 
-  <div id="cat-motion" class="cat active">
-    <div class="vgrid">
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip01.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introIcebergCaioxpo_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip02.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editVonGusto.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip03.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/badboysRDR2_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip04.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introFnafDoom.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip05.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/cancerDeBOLA_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip06.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introPoppyPlaytime_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip07.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editDarthVader_1920x1080p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip08.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/VideoLisboa FINALIZADO_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip09.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introRVTHEREYET_8mb.mp4" type="video/mp4"></video></div></div>
-    </div>
-  </div>
-
-  <div id="cat-longos" class="cat">
-    <div class="vgrid">
-      <div class="vw yt w95 halftone" data-vid="wfXfG8ULGDY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt w95 halftone" data-vid="nnONog3UGMk"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt w95 halftone" data-vid="2TCUJv1k6Fc"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt w95 halftone" data-vid="jed83po7YzY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt w95 halftone" data-vid="mYKNXIumILY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt w95 halftone" data-vid="C0plDAADgWc"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-    </div>
-  </div>
-
-  <div id="cat-shorts" class="cat">
-    <div class="vgrid sgrid">
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short01.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/rageLol_1080x1920_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short02.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/eraHumano_CONFIA_1080x1920p.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short03.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustaoTapao_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short04.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/sonoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short05.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustoCS2_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short06.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/mavalgasBURRO_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short07.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gritoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-    </div>
-  </div>
+  <div id="cat-motion" class="cat active"><div class="vgrid"></div></div>
+  <div id="cat-longos" class="cat"><div class="vgrid"></div></div>
+  <div id="cat-shorts" class="cat"><div class="vgrid sgrid"></div></div>
 </section>
 
-<!-- THUMBNAILS — camada PAPEL -->
+<div class="torn" style="--pv:#C2A06E;--nx:#E2D7C1"></div>
+
+<!-- IMPRESSÕES — thumbnails -->
 <section class="thumbs lazy-sec crop">
-  <div class="ghost" style="bottom:-20px;left:-30px" aria-hidden="true">ARTES</div>
+  <div class="ghost" style="bottom:-20px;left:-30px" aria-hidden="true">IMPRESSÕES</div>
   <div class="band" style="top:14%;--rot:-14deg;--h:60px;--op:.07"></div>
   <span class="spark amber" style="top:12%;left:4%;--sz:30px"></span>
   <span class="spark" style="bottom:10%;right:5%;--sz:44px;animation-duration:17s"></span>
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="thumb.eyebrow">// C:\ARTES</span>
+    <span class="eyebrow" data-i18n="thumb.eyebrow">REF: CM-02 · IMPRESSÕES E ARTES</span>
     <h2 data-i18n="thumb.title">Thumbnails & Artes</h2>
     <p class="sec-sub" data-i18n="thumb.sub">Cada arte é pensada para converter o scroll em clique.</p>
   </div>
@@ -181,21 +169,21 @@
   <img id="modalImg" src="" alt="Arte expandida">
 </div>
 
-<!-- WORKFLOW — camada PAPEL -->
+<!-- PROVA DE PROCESSO -->
 <section class="workflow lazy-sec crop">
   <div class="band aero" style="top:40%;--rot:-14deg;--h:40px;--op:.08"></div>
   <span class="spark aero" style="top:20%;left:5%;--sz:34px"></span>
   <div class="sec-head" style="text-align:center">
-    <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">// PROCESSO.MOV</span>
+    <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">REF: CM-03 · PROVA DE PROCESSO</span>
     <h2 data-i18n="wf.title">Do bruto ao luxo</h2>
   </div>
   <div class="wf-wrap">
-    <div class="win halftone">
-      <div class="win-bar"><span class="fn">workflow.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div>
+    <div class="rec halftone">
+      <div class="rec-label"><span class="rec-no">CM-0300</span><span class="rec-fn">COMPARATIVO_01.mov</span><span class="st exp">EXPORTADO</span></div>
       <div class="wf-box" id="wfBox">
-        <div class="frame">
+        <div class="frame" style="aspect-ratio:16/9">
           <video id="wfVideo" loop playsinline muted preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
-          <div class="wf-cover" id="wfCover"><button class="btn3d"><span>▶</span><span data-i18n="wf.play">Play</span></button></div>
+          <div class="wf-cover" id="wfCover"><button class="btn3d"><span>▶</span><span data-i18n="wf.play">Reproduzir</span></button></div>
           <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
           <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
           <div class="wf-vol" id="wfVol">
@@ -209,157 +197,198 @@
   </div>
 </section>
 
-<!-- PROCESSO — camada SISTEMA (assistente de instalação) -->
+<!-- PROTOCOLO DE PRODUÇÃO -->
 <section class="process lazy-sec crop">
-  <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">SETUP</div>
+  <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">PROTOCOLO</div>
   <span class="spark" style="top:14%;right:6%;--sz:38px"></span>
-  <div class="clip" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
+  <div class="clipn" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="proc.eyebrow">// SETUP.EXE</span>
+    <span class="eyebrow" data-i18n="proc.eyebrow">REF: CM-04 · PROTOCOLO DE PRODUÇÃO</span>
     <h2 data-i18n="proc.title">Como trabalharemos juntos?</h2>
     <p class="sec-sub" data-i18n="proc.sub">Do primeiro "oi" até o arquivo na sua mão.</p>
   </div>
-  <div class="wiz w95">
-    <div class="w95-bar"><span class="fn">instalador_cm.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div>
-    <div class="w95-body">
-      <div class="wiz-steps"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-      <div class="wiz-grid">
-        <div class="wiz-card"><span class="wiz-n">PASSO 01</span><h3 data-i18n="proc.s1.t">Briefing</h3><p data-i18n="proc.s1.d">Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.</p></div>
-        <div class="wiz-card"><span class="wiz-n">PASSO 02</span><h3 data-i18n="proc.s2.t">Edição</h3><p data-i18n="proc.s2.d">Mergulho no material bruto. Cada corte, cada música e cada efeito marcam sua presença.</p></div>
-        <div class="wiz-card"><span class="wiz-n">PASSO 03</span><h3 data-i18n="proc.s3.t">Revisão</h3><p data-i18n="proc.s3.d">Você assiste, aponta o que quer ajustar, e eu faço acontecer.</p></div>
-        <div class="wiz-card"><span class="wiz-n">PASSO 04</span><h3 data-i18n="proc.s4.t">Entrega</h3><p data-i18n="proc.s4.d">Arquivo em alta qualidade, saindo direto do forno. Pronto pra postar, pronto pra crescer.</p></div>
-      </div>
+  <div class="doc">
+    <div class="doc-head">
+      <span><b>DOC:</b> PROTOCOLO_PADRAO.pdf</span>
+      <span><b>PÁG:</b> 01/01</span>
+      <span><b>REV:</b> 2026</span>
     </div>
+    <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§01</span><span data-i18n="proc.s1.t">Briefing</span></h3><p data-i18n="proc.s1.d">Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.</p></div></div>
+    <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§02</span><span data-i18n="proc.s2.t">Edição</span></h3><p data-i18n="proc.s2.d">Mergulho no material bruto. Cada corte, cada música e cada efeito marcam sua presença.</p></div></div>
+    <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§03</span><span data-i18n="proc.s3.t">Revisão</span></h3><p data-i18n="proc.s3.d">Você assiste, aponta o que quer ajustar, e eu faço acontecer.</p></div></div>
+    <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§04</span><span data-i18n="proc.s4.t">Entrega</span></h3><p data-i18n="proc.s4.d">Arquivo em alta qualidade, saindo direto do forno. Pronto pra postar, pronto pra crescer.</p></div></div>
+    <span class="stampink abs" style="--tilt:-6deg" data-i18n="proc.stamp">Protocolo padrão</span>
   </div>
 </section>
 
-<!-- SERVIÇOS — camada CONSOLE (memory card PS1/PS2) -->
+<div class="torn" style="--pv:#E2D7C1;--nx:#3E4A42"></div>
+
+<!-- GAVETA DE PROJETOS — serviços -->
 <section id="servicos" class="services lazy-sec">
-  <div class="ghost light" style="bottom:0;right:-30px" aria-hidden="true">MEMORY CARD</div>
+  <div class="ghost light" style="bottom:0;right:-30px" aria-hidden="true">GAVETA 02</div>
   <span class="spark amber" style="top:10%;left:3%;--sz:40px"></span>
   <span class="spark aero" style="bottom:8%;right:4%;--sz:26px;animation-duration:14s"></span>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="sv.eyebrow">// MEMORY CARD (PS2) / CARTÃO 1</span>
+    <span class="eyebrow" data-i18n="sv.eyebrow">REF: CM-05 · GAVETA DE PROJETOS</span>
     <h2 data-i18n="sv.title">Serviços</h2>
-    <p class="sec-sub" data-i18n="sv.sub">Escolha o que faz sentido para o seu canal agora.</p>
+    <p class="sec-sub" data-i18n="sv.sub">Quatro pastas. Escolha a que faz sentido para o seu canal agora.</p>
   </div>
   <div class="sgrid2">
-    <div class="mcard"><div class="mcard-top"><span>BLOCO 01</span><span>128KB</span></div>
-      <div class="mcard-body"><h3 data-i18n="sv.a.t">Vídeos Longos</h3><p class="mcard-desc" data-i18n="sv.a.d">Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.</p>
-      <ul class="mcard-list"><li data-i18n="sv.a.l1">Edição completa com ritmo e narrativa</li><li data-i18n="sv.a.l2">Trilha sonora e efeitos sonoros</li><li data-i18n="sv.a.l3">Color grading e tratamento de imagem</li><li data-i18n="sv.a.l4">Textos e legendas animadas</li><li data-i18n="sv.a.l5">Entrega em até 10 dias úteis</li></ul>
-      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="fold">
+      <div class="fold-tab"><span class="ext pr">PRPROJ</span>EDICAO_LONGA</div>
+      <div class="fold-body"><div class="sheet">
+        <h3 data-i18n="sv.a.t">Vídeos Longos</h3>
+        <p class="sheet-desc" data-i18n="sv.a.d">Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.</p>
+        <div class="sheet-props" data-i18n="sv.a.props">TIPO: Projeto Premiere · PRAZO: até 10 dias úteis</div>
+        <ul class="sheet-list"><li data-i18n="sv.a.l1">Edição completa com ritmo e narrativa</li><li data-i18n="sv.a.l2">Trilha sonora e efeitos sonoros</li><li data-i18n="sv.a.l3">Color grading e tratamento de imagem</li><li data-i18n="sv.a.l4">Textos e legendas animadas</li></ul>
+        <a href="#contato" class="sheet-cta" data-i18n="sv.cta">ABRIR PROJETO →</a>
+      </div></div>
     </div>
-    <div class="mcard feat"><div class="mcard-badge" data-i18n="sv.badge">Mais pedido</div><div class="mcard-top"><span>BLOCO 02</span><span>512KB</span></div>
-      <div class="mcard-body"><h3 data-i18n="sv.b.t">Pacote Completo</h3><p class="mcard-desc" data-i18n="sv.b.d">A solução total. Do vídeo longo ao short, passando pelo motion e pela arte — tudo com a mesma identidade.</p>
-      <ul class="mcard-list"><li data-i18n="sv.b.l1">Edição de vídeo longo</li><li data-i18n="sv.b.l2">Corte e edição de Shorts/Reels</li><li data-i18n="sv.b.l3">Motion graphics e intros</li><li data-i18n="sv.b.l4">Thumbnail personalizada</li><li data-i18n="sv.b.l5">Revisões incluídas</li></ul>
-      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="fold">
+      <div class="fold-badge" data-i18n="sv.badge">MAIS PEDIDO</div>
+      <div class="fold-tab"><span class="ext zip">ZIP</span>PACOTE_COMPLETO</div>
+      <div class="fold-body"><div class="sheet">
+        <h3 data-i18n="sv.b.t">Pacote Completo</h3>
+        <p class="sheet-desc" data-i18n="sv.b.d">A solução total. Do vídeo longo ao short, passando pelo motion e pela arte — tudo com a mesma identidade.</p>
+        <div class="sheet-props" data-i18n="sv.b.props">TIPO: Pacote comprimido · CONTÉM: 4 itens</div>
+        <ul class="sheet-list"><li data-i18n="sv.b.l1">Edição de vídeo longo</li><li data-i18n="sv.b.l2">Corte e edição de Shorts/Reels</li><li data-i18n="sv.b.l3">Motion graphics e intros</li><li data-i18n="sv.b.l4">Thumbnail personalizada</li></ul>
+        <a href="#contato" class="sheet-cta" data-i18n="sv.cta">ABRIR PROJETO →</a>
+      </div></div>
     </div>
-    <div class="mcard"><div class="mcard-top"><span>BLOCO 03</span><span>128KB</span></div>
-      <div class="mcard-body"><h3 data-i18n="sv.c.t">Shorts & Reels</h3><p class="mcard-desc" data-i18n="sv.c.d">Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.</p>
-      <ul class="mcard-list"><li data-i18n="sv.c.l1">Edição dinâmica e impactante</li><li data-i18n="sv.c.l2">Cortes sincronizados com a música</li><li data-i18n="sv.c.l3">Legendas estilizadas</li><li data-i18n="sv.c.l4">Formato 9:16 otimizado</li><li data-i18n="sv.c.l5">Entrega em até 4 dias úteis</li></ul>
-      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="fold">
+      <div class="fold-tab"><span class="ext pr">PRPROJ</span>SHORTS_REELS</div>
+      <div class="fold-body"><div class="sheet">
+        <h3 data-i18n="sv.c.t">Shorts & Reels</h3>
+        <p class="sheet-desc" data-i18n="sv.c.d">Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.</p>
+        <div class="sheet-props" data-i18n="sv.c.props">TIPO: Projeto Premiere · PRAZO: até 4 dias úteis</div>
+        <ul class="sheet-list"><li data-i18n="sv.c.l1">Edição dinâmica e impactante</li><li data-i18n="sv.c.l2">Cortes sincronizados com a música</li><li data-i18n="sv.c.l3">Legendas estilizadas</li><li data-i18n="sv.c.l4">Formato 9:16 otimizado</li></ul>
+        <a href="#contato" class="sheet-cta" data-i18n="sv.cta">ABRIR PROJETO →</a>
+      </div></div>
     </div>
-    <div class="mcard"><div class="mcard-top"><span>BLOCO 04</span><span>256KB</span></div>
-      <div class="mcard-body"><h3 data-i18n="sv.d.t">Motion + Thumb</h3><p class="mcard-desc" data-i18n="sv.d.d">A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.</p>
-      <ul class="mcard-list"><li data-i18n="sv.d.l1">Intro animada sob medida</li><li data-i18n="sv.d.l2">Outro de encerramento</li><li data-i18n="sv.d.l3">Lower thirds e overlays</li><li data-i18n="sv.d.l4">Thumbnail pensada para converter</li><li data-i18n="sv.d.l5">Arquivos editáveis na entrega</li></ul>
-      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="fold">
+      <div class="fold-tab"><span class="ext ae">AEP</span>MOTION_THUMB</div>
+      <div class="fold-body"><div class="sheet">
+        <h3 data-i18n="sv.d.t">Motion + Thumb</h3>
+        <p class="sheet-desc" data-i18n="sv.d.d">A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.</p>
+        <div class="sheet-props" data-i18n="sv.d.props">TIPO: After Effects + PSD · ENTREGA: editáveis</div>
+        <ul class="sheet-list"><li data-i18n="sv.d.l1">Intro animada sob medida</li><li data-i18n="sv.d.l2">Outro de encerramento</li><li data-i18n="sv.d.l3">Lower thirds e overlays</li><li data-i18n="sv.d.l4">Thumbnail pensada para converter</li></ul>
+        <a href="#contato" class="sheet-cta" data-i18n="sv.cta">ABRIR PROJETO →</a>
+      </div></div>
     </div>
   </div>
-  <div class="mc-footer">
-    <span data-i18n="sv.free">254 BLOCOS LIVRES</span>
-    <span data-i18n="sv.select">SELECIONE UM BLOCO PARA CONTINUAR ▸</span>
+  <div class="drawer-foot">
+    <span data-i18n="sv.foot1">GAVETA 02 — 4 PASTAS CATALOGADAS</span>
+    <span data-i18n="sv.foot2">ÚLTIMA ATUALIZAÇÃO: 2026</span>
   </div>
 </section>
 
-<!-- DEPOIMENTOS — camada PAPEL (jornal) -->
+<div class="torn" style="--pv:#3E4A42;--nx:#E2D7C1"></div>
+
+<!-- CORRESPONDÊNCIA RECEBIDA -->
 <section class="testimonials lazy-sec crop">
-  <div class="ghost" style="top:10px;right:-60px" aria-hidden="true">FEEDBACK</div>
+  <div class="ghost" style="top:10px;right:-60px" aria-hidden="true">CARTAS</div>
   <div class="band" style="bottom:24%;--rot:-14deg;--h:50px;--op:.06"></div>
   <span class="spark" style="top:16%;left:4%;--sz:32px"></span>
-  <div class="clip" style="top:90px;right:2vw;--tilt:4deg" data-i18n-html="deco.wanted"><b>Procurado</b> Editor que faz história. Recompensa: 1 inscrição.</div>
+  <div class="clipn" style="top:90px;right:2vw;--tilt:4deg" data-i18n-html="deco.wanted"><b>Procurado</b> Editor que faz história. Recompensa: 1 inscrição.</div>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="test.eyebrow">// GUESTBOOK.TXT</span>
+    <span class="eyebrow" data-i18n="test.eyebrow">REF: CM-06 · CORRESPONDÊNCIA RECEBIDA</span>
     <h2 data-i18n="test.title">O que dizem sobre mim</h2>
   </div>
   <div class="tgrid3">
-    <article class="tc"><div class="win-bar"><span class="fn">caioxapo.msg</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="tc-body"><div class="tc-stars">★★★★★</div><p class="tc-txt" data-i18n="test.a">Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!</p>
-      <div class="tc-foot"><div class="tc-av"><img loading="lazy" src="img/caioxapoProfile.png" alt="caioxapo"></div><div><strong>caioxapo</strong><span>@caioxapo · 1K+ views em 1 dia</span></div></div></div>
+    <article class="letter">
+      <div class="photo"><img loading="lazy" src="img/caioxapoProfile.png" alt="caioxapo"></div>
+      <div class="letter-head">DE: <b>caioxapo</b> · @caioxapo<br>ASSUNTO: <b data-i18n="test.a.s">edição + sprites</b></div>
+      <div class="letter-body" data-i18n="test.a">Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!</div>
+      <div class="letter-foot"><span>1K+ views em 1 dia</span><span class="stampink" style="--tilt:-4deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
-    <article class="tc feat"><div class="win-bar"><span class="fn">raposito.msg</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="tc-body"><div class="tc-stars">★★★★★</div><p class="tc-txt" data-i18n="test.b">A edição desse vídeo está impecável, de verdade. É um dos vídeos mais bonitos que já vi no YouTube ultimamente. Muito maneiro, e a qualidade ficou incrível.</p>
-      <div class="tc-foot"><div class="tc-av"><img loading="lazy" src="img/rapositoProfile.jpg" alt="Raposito"></div><div><strong>Raposito</strong><span>@Raposito · 229K inscritos</span></div></div></div>
+    <article class="letter">
+      <div class="photo"><img loading="lazy" src="img/rapositoProfile.jpg" alt="Raposito"></div>
+      <div class="letter-head">DE: <b>Raposito</b> · @Raposito<br>ASSUNTO: <b data-i18n="test.b.s">qualidade do vídeo</b></div>
+      <div class="letter-body" data-i18n="test.b">A edição desse vídeo está impecável, de verdade. É um dos vídeos mais bonitos que já vi no YouTube ultimamente. Muito maneiro, e a qualidade ficou incrível.</div>
+      <div class="letter-foot"><span>229K inscritos</span><span class="stampink" style="--tilt:3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
-    <article class="tc"><div class="win-bar"><span class="fn">vongusto.msg</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="tc-body"><div class="tc-stars">★★★★★</div><p class="tc-txt" data-i18n="test.c">Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.</p>
-      <div class="tc-foot"><div class="tc-av"><img loading="lazy" src="img/vonGustoProfile.jpeg" alt="Von Gusto"></div><div><strong>Von Gusto</strong><span>@v0ngusto · 800K+ views no 1º vídeo</span></div></div></div>
+    <article class="letter">
+      <div class="photo"><img loading="lazy" src="img/vonGustoProfile.jpeg" alt="Von Gusto"></div>
+      <div class="letter-head">DE: <b>Von Gusto</b> · @v0ngusto<br>ASSUNTO: <b data-i18n="test.c.s">vídeos do canal</b></div>
+      <div class="letter-body" data-i18n="test.c">Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.</div>
+      <div class="letter-foot"><span>800K+ views no 1º vídeo</span><span class="stampink" style="--tilt:-3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
   </div>
 </section>
 
-<!-- SOBRE — camada PAPEL (editorial) -->
+<!-- FICHA DO OPERADOR -->
 <section id="sobre" class="about lazy-sec crop">
-  <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">PROFILE</div>
+  <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">FICHA</div>
   <div class="band" style="top:20%;--rot:-14deg;--h:80px;--op:.08"></div>
   <span class="spark aero" style="top:12%;right:6%;--sz:36px"></span>
-  <div class="clip" style="bottom:80px;right:2vw;--tilt:-3deg" data-i18n-html="deco.n2"><b>VIRAL!</b> Vídeo estoura da noite pro dia; edição leva o crédito.</div>
+  <div class="clipn" style="bottom:80px;right:2vw;--tilt:-3deg" data-i18n-html="deco.n2"><b>VIRAL!</b> Vídeo estoura da noite pro dia; edição leva o crédito.</div>
 
   <div class="about-grid">
     <div>
-      <span class="eyebrow" data-i18n="about.eyebrow">// PROFILE.DAT</span>
+      <span class="eyebrow" data-i18n="about.eyebrow">REF: CM-07 · FICHA DO OPERADOR</span>
       <h2 class="about-h2" data-i18n-html="about.title">Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class="signal-txt">criador.</span></h2>
       <div class="about-hello">
         <span class="tapefix" style="--tilt:-3deg"></span>
         <img src="img/hello.png" alt="Hello, my name is Cadeirante Maromba">
       </div>
+      <div class="about-hn"><span class="handnote" data-i18n="about.note">qualidade &gt; quantidade.<br>sempre.</span></div>
     </div>
-    <div class="about-r">
-      <p data-i18n="about.p1">Meu nome é Eliseu — na internet, Cadeirante Maromba. Sou editor de vídeo focado em contar histórias que prendem a atenção do primeiro ao último segundo, especializado em documentários e conteúdo para YouTube.</p>
-      <p data-i18n="about.p2">Cresci consumindo conteúdo bom — PS2 depois da escola, documentário, internet dos anos 2000 — e é daí que vem meu maior defeito e minha maior qualidade: eu sou crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa — isso me incomoda de verdade.</p>
-      <p data-i18n="about.p3">O que me move é unir narrativa, ritmo e atenção obsessiva aos detalhes até o vídeo se destacar sozinho. Cada projeto é tratado com o cuidado de quem sabe a diferença entre "ficou pronto" e "ficou BOM" — priorizando qualidade acima de quantidade. Sempre.</p>
-      <p class="about-quote" data-i18n="about.quote">Você cria. Eu cuido do resto.</p>
-      <div class="lcd-row">
-        <div class="lcd"><strong>50+</strong><span data-i18n="about.st1">Parcerias feitas</span></div>
-        <div class="lcd"><strong>1M+</strong><span data-i18n="about.st2">Pessoas alcançadas</span></div>
-        <div class="lcd"><strong>100%</strong><span data-i18n="about.st3">De foco e cuidado</span></div>
+    <div class="file">
+      <div class="file-head"><span><b>DOC:</b> LEIA-ME.txt</span><span><b>ACESSO:</b> PÚBLICO</span></div>
+      <div class="file-fields">
+        <span data-i18n="about.f1">NOME: <b>Eliseu ("Cadeirante Maromba")</b></span>
+        <span data-i18n="about.f2">FUNÇÃO: <b>Editor & Documentarista</b></span>
+        <span data-i18n="about.f3">BASE: <b>Interior de SP, Brasil</b></span>
+        <span data-i18n="about.f4">STATUS: <b>Em atividade</b></span>
+      </div>
+      <div class="file-body">
+        <p data-i18n="about.p1">Meu nome é Eliseu — na internet, Cadeirante Maromba. Sou editor de vídeo focado em contar histórias que prendem a atenção do primeiro ao último segundo, especializado em documentários e conteúdo para YouTube.</p>
+        <p data-i18n="about.p2">Cresci consumindo conteúdo bom — PS2 depois da escola, documentário, internet dos anos 2000 — e é daí que vem meu maior defeito e minha maior qualidade: eu sou crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa — isso me incomoda de verdade.</p>
+        <p data-i18n="about.p3">O que me move é unir narrativa, ritmo e atenção obsessiva aos detalhes até o vídeo se destacar sozinho. Cada projeto é tratado com o cuidado de quem sabe a diferença entre "ficou pronto" e "ficou BOM" — priorizando qualidade acima de quantidade. Sempre.</p>
+        <p class="about-quote" data-i18n="about.quote">"Você cria. Eu cuido do resto."</p>
+      </div>
+      <div class="stamp-row">
+        <span class="stampink" style="--tilt:-5deg">50+<small data-i18n="about.st1">PARCERIAS</small></span>
+        <span class="stampink" style="--tilt:3deg;border-color:#1b7a4a;color:#1b7a4a">1M+<small data-i18n="about.st2">ALCANÇADOS</small></span>
+        <span class="stampink" style="--tilt:-2deg">100%<small data-i18n="about.st3">DE CUIDADO</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ — camada PAPEL -->
+<!-- MANUAL DO CLIENTE -->
 <section class="faq lazy-sec crop">
   <span class="spark amber" style="bottom:10%;left:4%;--sz:30px"></span>
   <div class="faq-in">
     <img class="faq-mascote" src="img/cadeirante_confuso.png" alt="">
-    <div class="sec-head"><span class="eyebrow" data-i18n="faq.eyebrow">// HELP.HLP</span><h2 data-i18n="faq.title">Perguntas frequentes</h2></div>
+    <div class="sec-head"><span class="eyebrow" data-i18n="faq.eyebrow">REF: CM-08 · MANUAL DO CLIENTE</span><h2 data-i18n="faq.title">Perguntas frequentes</h2></div>
     <div class="faq-list">
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q1">Como funciona a cobrança?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a1">A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q2">Qual é o prazo de entrega?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a2">Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q3">Quantas revisões estão incluídas?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a3">São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q4">Como funciona o pagamento?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a4"><strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q5">Em quais formatos você entrega?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a5"><strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q6">Como envio o material?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a6">Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.</p></div></div>
-      <div class="fq"><button class="fq-q" aria-expanded="false"><span data-i18n="faq.q7">E se eu cancelar o projeto?</span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a7"><strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.</p></div></div>
+      <div class="faq-doc-head"><span>MANUAL_DO_CLIENTE.pdf</span><span data-i18n="faq.page">PÁGINA 07</span></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§01</span><span data-i18n="faq.q1">Como funciona a cobrança?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a1">A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§02</span><span data-i18n="faq.q2">Qual é o prazo de entrega?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a2">Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§03</span><span data-i18n="faq.q3">Quantas revisões estão incluídas?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a3">São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§04</span><span data-i18n="faq.q4">Como funciona o pagamento?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a4"><strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§05</span><span data-i18n="faq.q5">Em quais formatos você entrega?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a5"><strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§06</span><span data-i18n="faq.q6">Como envio o material?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a6">Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.</p></div></div>
+      <div class="fq"><button class="fq-q" aria-expanded="false"><span><span class="qn">§07</span><span data-i18n="faq.q7">E se eu cancelar o projeto?</span></span><span class="fq-ic">+</span></button><div class="fq-a"><p data-i18n="faq.a7"><strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTATO — camada PAPEL + mascote gigante -->
+<!-- NOVO BRIEFING -->
 <section id="contato" class="contact crop">
-  <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">CONTATO</div>
+  <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">BRIEFING</div>
   <div class="band" style="top:60%;--rot:-14deg;--h:70px;--op:.07"></div>
   <span class="spark" style="bottom:12%;left:3%;--sz:36px"></span>
-  <div class="stamp" style="top:80px;right:3vw"><span>RESPONDO<br>EM ATÉ<br>24H</span></div>
 
   <div class="contact-in">
     <div class="contact-l">
-      <span class="eyebrow" data-i18n="ct.eyebrow">// TRANSMISSION</span>
-      <h2 data-i18n="ct.title">Pronto para criar algo que vale a pena assistir?</h2>
-      <p data-i18n="ct.sub">Respondo em até 24h. Procuro entender o seu canal antes de qualquer coisa.</p>
+      <span class="eyebrow" data-i18n="ct.eyebrow">REF: CM-09 · NOVO BRIEFING</span>
+      <h2 data-i18n="ct.title">Pronto para adicionar um projeto ao arquivo?</h2>
+      <p data-i18n="ct.sub">Preencha o briefing ao lado — ele entra direto na fila do acervo. Respondo em até 24h.</p>
       <a href="https://wa.me/5515998318065" target="_blank" rel="noopener" class="ctlink"><span class="ctlink-l" data-i18n="ct.wpp">WhatsApp</span><span class="ctlink-v">+55 (15) 99831-8065</span></a>
       <a href="mailto:cadeirantemaromba@gmail.com" class="ctlink"><span class="ctlink-l" data-i18n="ct.mail">E-mail</span><span class="ctlink-v">cadeirantemaromba@gmail.com</span></a>
       <div class="ct-soc">
@@ -367,12 +396,15 @@
         <a href="https://www.instagram.com/eliseuw._/" target="_blank" rel="noopener" class="soc">Instagram</a>
         <button class="soc" id="discordBtn" type="button" title="cadeirantemaromba">Discord</button>
       </div>
-      <div class="avail"><span class="avail-dot"></span><span data-i18n="ct.avail">Disponível para novos projetos</span></div>
+      <div class="avail"><span class="avail-dot"></span><span data-i18n="ct.avail">Arquivo aberto para novos projetos</span></div>
     </div>
 
-    <form class="cform win" id="contactForm" action="https://formspree.io/f/maqvenky" method="POST" novalidate>
-      <div class="win-bar"><span class="fn" data-i18n="ct.formTitle">novo_projeto.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div style="padding:20px">
+    <form class="brief" id="contactForm" action="https://formspree.io/f/maqvenky" method="POST" novalidate>
+      <div class="brief-head">
+        <span><b>DOC:</b> NOVO_BRIEFING.doc</span>
+        <span><b>Nº:</b> <span id="briefNo">CM-----</span></span>
+      </div>
+      <div class="brief-body">
       <div class="frow">
         <div class="ff"><label for="nome" data-i18n="form.name">Seu nome</label><input type="text" id="nome" name="nome" placeholder="João Silva" required autocomplete="name"></div>
         <div class="ff"><label for="canal" data-i18n="form.channel">Canal / Marca</label><input type="text" id="canal" name="canal" placeholder="@seucanal" autocomplete="off"></div>
@@ -381,7 +413,7 @@
         <div class="ff"><label for="email" data-i18n="form.email">Seu e-mail</label><input type="email" id="email" name="email" placeholder="voce@email.com" required autocomplete="email"></div>
         <div class="ff"><label for="telefone" data-i18n="form.phone">Telefone / WhatsApp</label><input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel"></div>
       </div>
-      <div class="ff"><label for="servico" data-i18n="form.service">O que você precisa?</label>
+      <div class="ff"><label for="servico" data-i18n="form.service">Qual pasta abrir?</label>
         <select id="servico" name="servico" required>
           <option value="" disabled selected data-i18n="form.select">Selecione um serviço</option>
           <option data-i18n="form.o1">Edição de vídeos longos</option>
@@ -392,14 +424,13 @@
           <option data-i18n="form.o6">Outro</option>
         </select>
       </div>
-      <div class="ff"><label for="mensagem" data-i18n="form.msg">Me conta mais</label><textarea id="mensagem" name="mensagem" rows="5" placeholder="Estilo do canal, referências, frequência de vídeos, prazo..." required></textarea></div>
-      <button type="submit" class="btn3d fbtn" id="submitBtn"><span data-i18n="form.submit">Enviar mensagem</span></button>
+      <div class="ff"><label for="mensagem" data-i18n="form.msg">Descreva o projeto</label><textarea id="mensagem" name="mensagem" rows="5" placeholder="Estilo do canal, referências, frequência de vídeos, prazo..." required></textarea></div>
+      <button type="submit" class="btn3d fbtn" id="submitBtn"><span data-i18n="form.submit">Protocolar briefing</span></button>
       <p class="fnote" data-i18n="form.note">Sem spam. Sem robô. Só eu do outro lado.</p>
       </div>
     </form>
   </div>
 
-  <!-- mascote gigante de costas: clique nele! -->
   <div class="mascote-zone">
     <div class="bubble mascote-bubble" id="mascoteBubble" data-i18n="ct.mascoteBubble">Vamos fazer HISTÓRIA juntos?</div>
     <img class="contact-mascote" id="contactMascote" src="img/cadeiranteMascote.png" alt="Mascote Cadeirante Maromba de costas — clique!">
@@ -411,10 +442,12 @@
 <footer class="footer">
   <div class="footer-brand">
     <img src="img/canal_cadeirante_maromba_redondo.png" alt="">
-    <span>© 2026 Cadeirante Maromba</span>
+    <span>© 2026 CADEIRANTE MAROMBA · <span data-i18n="footer.end">FIM DO ARQUIVO</span></span>
   </div>
-  <span data-i18n="footer.made">Feito com suor e muito café.</span>
-  <div class="barcode" aria-hidden="true"></div>
+  <button class="foot-secret" id="footSecret" type="button">?
+    <span class="secretnote" id="secretNote" data-i18n="footer.secret">você fuçou até o fim do arquivo. gostei de você. :)</span>
+  </button>
+  <div class="barcode" aria-hidden="true" title="CM-2026-ACERVO"></div>
 </footer>
 
 <script src="js/script.js"></script>
