@@ -13,56 +13,60 @@
 </head>
 <body>
 
+<!-- Filtro "Turbulent Displace" para os títulos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="turb" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011 0.019" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+  </filter>
+</svg>
+
 <!-- BOOT SCREEN -->
 <div id="boot">
   <img class="boot-face" src="img/canal_cadeirante_maromba_redondo.png" alt="Cadeirante Maromba">
   <div class="boot-logo">CADEIRANTE MAROMBA<br>SYSTEM v1.0</div>
   <div class="boot-bar"><div class="boot-fill"></div></div>
-  <div class="boot-tip" data-i18n="boot.tip">Carregando portfólio...</div>
+  <div class="boot-log" aria-hidden="true">
+    <span>&gt; montando /midia ............. OK</span>
+    <span>&gt; lendo memory card ........... OK</span>
+    <span>&gt; abrindo arquivo: ARCHIVE .... _</span>
+  </div>
 </div>
 
 <!-- TASKBAR -->
 <header class="taskbar" id="taskbar">
   <a href="#inicio" class="tb-start"><img src="img/canal_cadeirante_maromba_redondo.png" alt="">CM<span>.</span></a>
   <nav class="tb-mid">
-    <a href="#trabalhos" class="tb-btn" data-i18n="nav.port">Portfólio</a>
-    <a href="#servicos" class="tb-btn" data-i18n="nav.serv">Serviços</a>
-    <a href="#sobre" class="tb-btn" data-i18n="nav.about">Sobre</a>
-    <a href="#contato" class="tb-btn" data-i18n="nav.contact">Contato</a>
+    <a href="#trabalhos" class="tb-btn">ARCHIVE</a>
+    <a href="#servicos" class="tb-btn">MEMORY CARD</a>
+    <a href="#sobre" class="tb-btn">PROFILE.DAT</a>
+    <a href="#contato" class="tb-btn">TRANSMISSION</a>
   </nav>
   <div style="display:flex;gap:8px;align-items:center">
-    <div class="tb-clock">● <span id="tbSection">INÍCIO</span></div>
+    <div class="tb-clock">● <span id="tbSection">BOOT</span></div>
     <button class="tb-lang" id="langBtn"><span class="l-pt">PT</span>/<span class="l-en">EN</span></button>
   </div>
 </header>
-<div class="pbar"><div class="pbar-fill" id="pbarFill"></div></div>
-<img class="pbar-rider" id="pbarRider" src="img/cadeiranteMascote.png" alt="">
 
 <main>
 
-<!-- HERO -->
+<!-- HERO — camada PAPEL -->
 <section class="hero" id="inicio">
-  <div class="sunburst"></div>
+  <!-- faixas diagonais (a "linha atrás do nome") -->
+  <div class="band" style="top:32%;--rot:-14deg;--h:110px;--op:.12"></div>
+  <div class="band aero" style="top:52%;--rot:-14deg;--h:34px;--op:.10"></div>
+  <div class="band ink" style="top:12%;--rot:-14deg;--h:10px;--op:.08"></div>
 
   <span class="spark" style="top:16%;left:6%;--sz:52px"></span>
   <span class="spark amber" style="top:64%;left:3%;--sz:34px;animation-duration:18s"></span>
   <span class="spark aero" style="top:22%;right:8%;--sz:30px;animation-duration:16s"></span>
   <span class="spark ink" style="bottom:14%;left:12%;--sz:24px;animation-duration:20s"></span>
-  <div class="stamp" style="top:120px;left:4vw"><span>100%<br>FEITO À<br>MÃO</span></div>
 
   <p class="hero-eyebrow" data-i18n="hero.eyebrow">Editor de Vídeo · Motion Designer · Artista</p>
   <h1 class="hero-h1">CADEIRANTE<br>MAROMBA</h1>
   <p class="hero-sub" data-i18n="hero.sub">Bruto vira corte. Corte vira <strong>história.</strong></p>
 
   <div class="crt-zone">
-    <!-- raios de ação estilo mangá ao redor do Trinitron -->
-    <span class="ray"     style="left:-120px;top:12%;width:96px;--rot:-22deg"></span>
-    <span class="ray red" style="left:-140px;top:44%;width:120px;--rot:0deg;animation-delay:.3s"></span>
-    <span class="ray"     style="left:-110px;top:76%;width:86px;--rot:20deg;animation-delay:.6s"></span>
-    <span class="ray"     style="right:-120px;top:12%;width:96px;--rot:202deg"></span>
-    <span class="ray red" style="right:-140px;top:44%;width:120px;--rot:180deg;animation-delay:.45s"></span>
-    <span class="ray"     style="right:-110px;top:76%;width:86px;--rot:158deg;animation-delay:.15s"></span>
-
     <div class="crt">
       <span class="tapefix" style="top:-14px;left:34px;--tilt:-5deg"></span>
       <span class="tapefix" style="top:-14px;right:34px;--tilt:4deg"></span>
@@ -79,14 +83,12 @@
       <span class="crt-label">TRINITRON — REC001</span>
       <span class="crt-led" id="crtLed"></span>
       <div class="crt-ctrl" id="crtCtrl">
+        <button class="crt-pause" id="crtPause" aria-label="Pausar">⏸</button>
         <span>VOL</span>
         <input type="range" id="crtVol" min="0" max="100" value="60" aria-label="Volume da TV">
       </div>
     </div>
   </div>
-
-  <div class="bubble hero-bubble" data-i18n="hero.bubble">Se eu fosse você, apertava o play.</div>
-  <img class="stkr hero-mascote" src="img/cadeirante_confuso.png" alt="Mascote Cadeirante Maromba">
 
   <a href="#contato" class="btn3d" style="margin-top:36px;position:relative;z-index:2" data-i18n="hero.cta">Vamos trabalhar juntos →</a>
 </section>
@@ -94,83 +96,67 @@
 <!-- TAPE MARQUEE -->
 <div class="tape"><div class="tape-track" id="tapeTrack"></div></div>
 
-<!-- PORTFÓLIO -->
-<section id="trabalhos" class="portfolio lazy-sec crop">
-  <div class="ghost" style="top:10px;right:-40px" aria-hidden="true">PORTFOLIO</div>
-  <span class="spark aero" style="top:8%;right:4%;--sz:36px"></span>
-  <span class="spark" style="bottom:6%;left:3%;--sz:28px;animation-duration:15s"></span>
-  <!-- adesivo: controle de videogame -->
-  <div class="cutout" style="top:70px;right:4vw;width:110px;--tilt:8deg" aria-hidden="true">
-    <svg viewBox="0 0 120 76"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <rect x="6" y="14" width="108" height="50" rx="22" fill="#17130F"/>
-      <rect x="24" y="30" width="8" height="20" fill="#FBF6EA"/><rect x="18" y="36" width="20" height="8" fill="#FBF6EA"/>
-      <circle cx="86" cy="32" r="6" fill="#E13327"/><circle cx="98" cy="44" r="6" fill="#F0AE34"/>
-    </g></svg>
-  </div>
+<!-- PORTFÓLIO — camada SISTEMA (área de trabalho Win95) -->
+<section id="trabalhos" class="portfolio lazy-sec">
+  <div class="ghost light" style="top:10px;right:-40px" aria-hidden="true">ARCHIVE</div>
+  <span class="spark amber" style="top:8%;right:4%;--sz:36px"></span>
+  <span class="spark paperc" style="bottom:6%;left:3%;--sz:26px;animation-duration:15s"></span>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="port.eyebrow">// C:\PORTFOLIO</span>
+    <span class="eyebrow" data-i18n="port.eyebrow">// C:\ARCHIVE — trabalhos selecionados</span>
     <h2 data-i18n="port.title">Trabalhos selecionados</h2>
   </div>
 
   <div class="port-tabs">
-    <button class="folder active" data-cat="motion" data-i18n="port.motion">Motion</button>
-    <button class="folder" data-cat="longos" data-i18n="port.long">Vídeos Longos</button>
-    <button class="folder" data-cat="shorts" data-i18n="port.shorts">Shorts</button>
+    <button class="folder active" data-cat="motion"><span class="flabel" data-i18n="port.motion">Motion</span></button>
+    <button class="folder" data-cat="longos"><span class="flabel" data-i18n="port.long">Vídeos Longos</span></button>
+    <button class="folder" data-cat="shorts"><span class="flabel" data-i18n="port.shorts">Shorts</span></button>
   </div>
 
   <div id="cat-motion" class="cat active">
     <div class="vgrid">
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip01.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introIcebergCaioxpo_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip02.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editVonGusto.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip03.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/badboysRDR2_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip04.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introFnafDoom.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip05.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/cancerDeBOLA_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip06.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introPoppyPlaytime_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip07.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editDarthVader_1920x1080p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip08.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/VideoLisboa FINALIZADO_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vw local win halftone"><div class="win-bar"><span class="fn">clip09.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introRVTHEREYET_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip01.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introIcebergCaioxpo_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip02.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editVonGusto.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip03.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/badboysRDR2_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip04.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introFnafDoom.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip05.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/cancerDeBOLA_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip06.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introPoppyPlaytime_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip07.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/editDarthVader_1920x1080p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip08.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/VideoLisboa FINALIZADO_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vw local w95 halftone"><div class="w95-bar"><span class="fn">clip09.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/introRVTHEREYET_8mb.mp4" type="video/mp4"></video></div></div>
     </div>
   </div>
 
   <div id="cat-longos" class="cat">
     <div class="vgrid">
-      <div class="vw yt win halftone" data-vid="wfXfG8ULGDY"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt win halftone" data-vid="nnONog3UGMk"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt win halftone" data-vid="2TCUJv1k6Fc"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt win halftone" data-vid="jed83po7YzY"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt win halftone" data-vid="mYKNXIumILY"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
-      <div class="vw yt win halftone" data-vid="C0plDAADgWc"><div class="win-bar"><span class="fn">youtube.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="wfXfG8ULGDY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="nnONog3UGMk"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="2TCUJv1k6Fc"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="jed83po7YzY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="mYKNXIumILY"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
+      <div class="vw yt w95 halftone" data-vid="C0plDAADgWc"><div class="w95-bar"><span class="fn">youtube.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div></div>
     </div>
   </div>
 
   <div id="cat-shorts" class="cat">
     <div class="vgrid sgrid">
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short01.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/rageLol_1080x1920_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short02.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/eraHumano_CONFIA_1080x1920p.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short03.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustaoTapao_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short04.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/sonoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short05.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustoCS2_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short06.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/mavalgasBURRO_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
-      <div class="vp-wrap win halftone"><div class="win-bar"><span class="fn">short07.mp4</span><div class="win-dots"><span></span><span></span><span></span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gritoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short01.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/rageLol_1080x1920_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short02.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/eraHumano_CONFIA_1080x1920p.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short03.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustaoTapao_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short04.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/sonoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short05.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gustoCS2_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short06.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/mavalgasBURRO_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
+      <div class="vp-wrap w95 halftone"><div class="w95-bar"><span class="fn">short07.mp4</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div><div class="frame"><video muted loop controls class="lazy" preload="none"><source data-src="videos/gritoGusto_1080x1920p_8mb.mp4" type="video/mp4"></video></div></div>
     </div>
   </div>
 </section>
 
-<!-- THUMBNAILS -->
+<!-- THUMBNAILS — camada PAPEL -->
 <section class="thumbs lazy-sec crop">
   <div class="ghost" style="bottom:-20px;left:-30px" aria-hidden="true">ARTES</div>
+  <div class="band" style="top:14%;--rot:-14deg;--h:60px;--op:.07"></div>
   <span class="spark amber" style="top:12%;left:4%;--sz:30px"></span>
   <span class="spark" style="bottom:10%;right:5%;--sz:44px;animation-duration:17s"></span>
-  <!-- adesivo: disco de vinil -->
-  <div class="cutout" style="bottom:60px;right:3vw;width:100px;--tilt:-10deg" aria-hidden="true">
-    <svg viewBox="0 0 100 100"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke">
-      <circle cx="50" cy="50" r="44" fill="#17130F"/>
-      <circle cx="50" cy="50" r="16" fill="#E13327"/>
-      <circle cx="50" cy="50" r="4" fill="#FBF6EA"/>
-      <path d="M18 50a32 32 0 0 1 32-32" fill="none" stroke="#6b6154" stroke-width="2" paint-order="normal"/>
-    </g></svg>
-  </div>
   <div class="sec-head">
     <span class="eyebrow" data-i18n="thumb.eyebrow">// C:\ARTES</span>
     <h2 data-i18n="thumb.title">Thumbnails & Artes</h2>
@@ -195,21 +181,12 @@
   <img id="modalImg" src="" alt="Arte expandida">
 </div>
 
-<!-- WORKFLOW -->
+<!-- WORKFLOW — camada PAPEL -->
 <section class="workflow lazy-sec crop">
+  <div class="band aero" style="top:40%;--rot:-14deg;--h:40px;--op:.08"></div>
   <span class="spark aero" style="top:20%;left:5%;--sz:34px"></span>
-  <div class="stamp" style="bottom:40px;right:5vw"><span>DO BRUTO<br>AO<br>LUXO</span></div>
-  <!-- adesivo: fita VHS -->
-  <div class="cutout" style="top:80px;left:3vw;width:130px;--tilt:-6deg" aria-hidden="true">
-    <svg viewBox="0 0 130 80"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <rect x="5" y="8" width="120" height="64" rx="5" fill="#17130F"/>
-      <rect x="14" y="18" width="26" height="44" fill="#E13327"/>
-      <rect x="50" y="28" width="66" height="24" rx="3" fill="#3a342c"/>
-      <circle cx="64" cy="40" r="8" fill="#FBF6EA"/><circle cx="102" cy="40" r="8" fill="#FBF6EA"/>
-    </g></svg>
-  </div>
   <div class="sec-head" style="text-align:center">
-    <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">// C:\PROCESSO.MOV</span>
+    <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">// PROCESSO.MOV</span>
     <h2 data-i18n="wf.title">Do bruto ao luxo</h2>
   </div>
   <div class="wf-wrap">
@@ -232,34 +209,10 @@
   </div>
 </section>
 
-<!-- PROCESSO -->
+<!-- PROCESSO — camada SISTEMA (assistente de instalação) -->
 <section class="process lazy-sec crop">
   <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">SETUP</div>
   <span class="spark" style="top:14%;right:6%;--sz:38px"></span>
-  <!-- adesivo: claquete -->
-  <div class="cutout" style="top:60px;right:4vw;width:110px;--tilt:7deg" aria-hidden="true">
-    <svg viewBox="0 0 110 90"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <rect x="8" y="34" width="94" height="48" rx="4" fill="#17130F"/>
-      <g transform="rotate(-8 12 30)">
-        <rect x="8" y="14" width="94" height="18" fill="#17130F"/>
-        <polygon points="14,14 28,14 22,32 8,32" fill="#FBF6EA"/>
-        <polygon points="42,14 56,14 50,32 36,32" fill="#FBF6EA"/>
-        <polygon points="70,14 84,14 78,32 64,32" fill="#FBF6EA"/>
-      </g>
-      <rect x="18" y="46" width="52" height="6" fill="#6b6154"/>
-      <rect x="18" y="60" width="38" height="6" fill="#6b6154"/>
-    </g></svg>
-  </div>
-  <!-- adesivo: fita cassete -->
-  <div class="cutout" style="bottom:50px;left:3vw;width:120px;--tilt:-8deg" aria-hidden="true">
-    <svg viewBox="0 0 120 78"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <rect x="5" y="6" width="110" height="66" rx="6" fill="#17130F"/>
-      <rect x="14" y="14" width="92" height="26" rx="3" fill="#F0AE34"/>
-      <circle cx="40" cy="52" r="9" fill="#FBF6EA"/><circle cx="80" cy="52" r="9" fill="#FBF6EA"/>
-      <circle cx="40" cy="52" r="3" fill="#17130F"/><circle cx="80" cy="52" r="3" fill="#17130F"/>
-    </g></svg>
-  </div>
-  <!-- recorte de jornal -->
   <div class="clip" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
 
   <div class="sec-head">
@@ -267,72 +220,64 @@
     <h2 data-i18n="proc.title">Como trabalharemos juntos?</h2>
     <p class="sec-sub" data-i18n="proc.sub">Do primeiro "oi" até o arquivo na sua mão.</p>
   </div>
-  <div class="wiz">
-    <div class="wiz-steps"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-    <div class="wiz-grid">
-      <div class="wiz-card"><span class="wiz-n">PASSO 01</span><h3 data-i18n="proc.s1.t">Briefing</h3><p data-i18n="proc.s1.d">Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.</p></div>
-      <div class="wiz-card"><span class="wiz-n">PASSO 02</span><h3 data-i18n="proc.s2.t">Edição</h3><p data-i18n="proc.s2.d">Mergulho no material bruto. Cada corte, cada música e cada efeito marcam sua presença.</p></div>
-      <div class="wiz-card"><span class="wiz-n">PASSO 03</span><h3 data-i18n="proc.s3.t">Revisão</h3><p data-i18n="proc.s3.d">Você assiste, aponta o que quer ajustar, e eu faço acontecer.</p></div>
-      <div class="wiz-card"><span class="wiz-n">PASSO 04</span><h3 data-i18n="proc.s4.t">Entrega</h3><p data-i18n="proc.s4.d">Arquivo em alta qualidade, saindo direto do forno. Pronto pra postar, pronto pra crescer.</p></div>
+  <div class="wiz w95">
+    <div class="w95-bar"><span class="fn">instalador_cm.exe</span><div class="w95-btns"><span>_</span><span>□</span><span>×</span></div></div>
+    <div class="w95-body">
+      <div class="wiz-steps"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+      <div class="wiz-grid">
+        <div class="wiz-card"><span class="wiz-n">PASSO 01</span><h3 data-i18n="proc.s1.t">Briefing</h3><p data-i18n="proc.s1.d">Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.</p></div>
+        <div class="wiz-card"><span class="wiz-n">PASSO 02</span><h3 data-i18n="proc.s2.t">Edição</h3><p data-i18n="proc.s2.d">Mergulho no material bruto. Cada corte, cada música e cada efeito marcam sua presença.</p></div>
+        <div class="wiz-card"><span class="wiz-n">PASSO 03</span><h3 data-i18n="proc.s3.t">Revisão</h3><p data-i18n="proc.s3.d">Você assiste, aponta o que quer ajustar, e eu faço acontecer.</p></div>
+        <div class="wiz-card"><span class="wiz-n">PASSO 04</span><h3 data-i18n="proc.s4.t">Entrega</h3><p data-i18n="proc.s4.d">Arquivo em alta qualidade, saindo direto do forno. Pronto pra postar, pronto pra crescer.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section id="servicos" class="services lazy-sec crop">
-  <div class="ghost" style="bottom:0;right:-30px" aria-hidden="true">SERVIÇOS</div>
+<!-- SERVIÇOS — camada CONSOLE (memory card PS1/PS2) -->
+<section id="servicos" class="services lazy-sec">
+  <div class="ghost light" style="bottom:0;right:-30px" aria-hidden="true">MEMORY CARD</div>
   <span class="spark amber" style="top:10%;left:3%;--sz:40px"></span>
   <span class="spark aero" style="bottom:8%;right:4%;--sz:26px;animation-duration:14s"></span>
-  <!-- adesivo: estrela de xerife (velho oeste) -->
-  <div class="cutout" style="top:90px;left:3vw;width:90px;--tilt:10deg" aria-hidden="true">
-    <svg viewBox="0 0 90 90"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <polygon points="45,6 54,32 82,32 60,49 68,76 45,60 22,76 30,49 8,32 36,32" fill="#F0AE34"/>
-      <circle cx="45" cy="45" r="12" fill="#17130F"/>
-    </g></svg>
-  </div>
 
   <div class="sec-head">
-    <span class="eyebrow" data-i18n="sv.eyebrow">// C:\SERVICOS</span>
+    <span class="eyebrow" data-i18n="sv.eyebrow">// MEMORY CARD (PS2) / CARTÃO 1</span>
     <h2 data-i18n="sv.title">Serviços</h2>
     <p class="sec-sub" data-i18n="sv.sub">Escolha o que faz sentido para o seu canal agora.</p>
   </div>
   <div class="sgrid2">
-    <div class="scard win"><div class="win-bar"><span class="fn">longos.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="scard-body"><h3 data-i18n="sv.a.t">Vídeos Longos</h3><p class="scard-desc" data-i18n="sv.a.d">Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.</p>
-      <ul class="scard-list"><li data-i18n="sv.a.l1">Edição completa com ritmo e narrativa</li><li data-i18n="sv.a.l2">Trilha sonora e efeitos sonoros</li><li data-i18n="sv.a.l3">Color grading e tratamento de imagem</li><li data-i18n="sv.a.l4">Textos e legendas animadas</li><li data-i18n="sv.a.l5">Entrega em até 10 dias úteis</li></ul>
-      <a href="#contato" class="scard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="mcard"><div class="mcard-top"><span>BLOCO 01</span><span>128KB</span></div>
+      <div class="mcard-body"><h3 data-i18n="sv.a.t">Vídeos Longos</h3><p class="mcard-desc" data-i18n="sv.a.d">Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.</p>
+      <ul class="mcard-list"><li data-i18n="sv.a.l1">Edição completa com ritmo e narrativa</li><li data-i18n="sv.a.l2">Trilha sonora e efeitos sonoros</li><li data-i18n="sv.a.l3">Color grading e tratamento de imagem</li><li data-i18n="sv.a.l4">Textos e legendas animadas</li><li data-i18n="sv.a.l5">Entrega em até 10 dias úteis</li></ul>
+      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
     </div>
-    <div class="scard feat win"><div class="scard-badge" data-i18n="sv.badge">Mais pedido</div><div class="win-bar"><span class="fn">pacote.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="scard-body"><h3 data-i18n="sv.b.t">Pacote Completo</h3><p class="scard-desc" data-i18n="sv.b.d">A solução total. Do vídeo longo ao short, passando pelo motion e pela arte — tudo com a mesma identidade.</p>
-      <ul class="scard-list"><li data-i18n="sv.b.l1">Edição de vídeo longo</li><li data-i18n="sv.b.l2">Corte e edição de Shorts/Reels</li><li data-i18n="sv.b.l3">Motion graphics e intros</li><li data-i18n="sv.b.l4">Thumbnail personalizada</li><li data-i18n="sv.b.l5">Revisões incluídas</li></ul>
-      <a href="#contato" class="scard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="mcard feat"><div class="mcard-badge" data-i18n="sv.badge">Mais pedido</div><div class="mcard-top"><span>BLOCO 02</span><span>512KB</span></div>
+      <div class="mcard-body"><h3 data-i18n="sv.b.t">Pacote Completo</h3><p class="mcard-desc" data-i18n="sv.b.d">A solução total. Do vídeo longo ao short, passando pelo motion e pela arte — tudo com a mesma identidade.</p>
+      <ul class="mcard-list"><li data-i18n="sv.b.l1">Edição de vídeo longo</li><li data-i18n="sv.b.l2">Corte e edição de Shorts/Reels</li><li data-i18n="sv.b.l3">Motion graphics e intros</li><li data-i18n="sv.b.l4">Thumbnail personalizada</li><li data-i18n="sv.b.l5">Revisões incluídas</li></ul>
+      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
     </div>
-    <div class="scard win"><div class="win-bar"><span class="fn">shorts.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="scard-body"><h3 data-i18n="sv.c.t">Shorts & Reels</h3><p class="scard-desc" data-i18n="sv.c.d">Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.</p>
-      <ul class="scard-list"><li data-i18n="sv.c.l1">Edição dinâmica e impactante</li><li data-i18n="sv.c.l2">Cortes sincronizados com a música</li><li data-i18n="sv.c.l3">Legendas estilizadas</li><li data-i18n="sv.c.l4">Formato 9:16 otimizado</li><li data-i18n="sv.c.l5">Entrega em até 4 dias úteis</li></ul>
-      <a href="#contato" class="scard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="mcard"><div class="mcard-top"><span>BLOCO 03</span><span>128KB</span></div>
+      <div class="mcard-body"><h3 data-i18n="sv.c.t">Shorts & Reels</h3><p class="mcard-desc" data-i18n="sv.c.d">Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.</p>
+      <ul class="mcard-list"><li data-i18n="sv.c.l1">Edição dinâmica e impactante</li><li data-i18n="sv.c.l2">Cortes sincronizados com a música</li><li data-i18n="sv.c.l3">Legendas estilizadas</li><li data-i18n="sv.c.l4">Formato 9:16 otimizado</li><li data-i18n="sv.c.l5">Entrega em até 4 dias úteis</li></ul>
+      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
     </div>
-    <div class="scard win"><div class="win-bar"><span class="fn">motion.exe</span><div class="win-dots"><span></span><span></span><span></span></div></div>
-      <div class="scard-body"><h3 data-i18n="sv.d.t">Motion + Thumb</h3><p class="scard-desc" data-i18n="sv.d.d">A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.</p>
-      <ul class="scard-list"><li data-i18n="sv.d.l1">Intro animada sob medida</li><li data-i18n="sv.d.l2">Outro de encerramento</li><li data-i18n="sv.d.l3">Lower thirds e overlays</li><li data-i18n="sv.d.l4">Thumbnail pensada para converter</li><li data-i18n="sv.d.l5">Arquivos editáveis na entrega</li></ul>
-      <a href="#contato" class="scard-cta" data-i18n="sv.cta">Quero esse →</a></div>
+    <div class="mcard"><div class="mcard-top"><span>BLOCO 04</span><span>256KB</span></div>
+      <div class="mcard-body"><h3 data-i18n="sv.d.t">Motion + Thumb</h3><p class="mcard-desc" data-i18n="sv.d.d">A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.</p>
+      <ul class="mcard-list"><li data-i18n="sv.d.l1">Intro animada sob medida</li><li data-i18n="sv.d.l2">Outro de encerramento</li><li data-i18n="sv.d.l3">Lower thirds e overlays</li><li data-i18n="sv.d.l4">Thumbnail pensada para converter</li><li data-i18n="sv.d.l5">Arquivos editáveis na entrega</li></ul>
+      <a href="#contato" class="mcard-cta" data-i18n="sv.cta">Quero esse →</a></div>
     </div>
+  </div>
+  <div class="mc-footer">
+    <span data-i18n="sv.free">254 BLOCOS LIVRES</span>
+    <span data-i18n="sv.select">SELECIONE UM BLOCO PARA CONTINUAR ▸</span>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- DEPOIMENTOS — camada PAPEL (jornal) -->
 <section class="testimonials lazy-sec crop">
   <div class="ghost" style="top:10px;right:-60px" aria-hidden="true">FEEDBACK</div>
+  <div class="band" style="bottom:24%;--rot:-14deg;--h:50px;--op:.06"></div>
   <span class="spark" style="top:16%;left:4%;--sz:32px"></span>
-  <!-- adesivo: luva de boxe (aquele espírito de anime de luta) -->
-  <div class="cutout" style="bottom:60px;left:3vw;width:88px;--tilt:-9deg" aria-hidden="true">
-    <svg viewBox="0 0 88 96"><g stroke="#FBF6EA" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
-      <path d="M14 40a30 30 0 0 1 60 0v18a24 24 0 0 1-24 24H38a24 24 0 0 1-24-24z" fill="#E13327"/>
-      <path d="M14 44h18v22H14z" fill="#b8241a"/>
-      <rect x="26" y="78" width="40" height="14" rx="5" fill="#FBF6EA"/>
-    </g></svg>
-  </div>
-  <!-- recorte "PROCURADO" (velho oeste) -->
   <div class="clip" style="top:90px;right:2vw;--tilt:4deg" data-i18n-html="deco.wanted"><b>Procurado</b> Editor que faz história. Recompensa: 1 inscrição.</div>
 
   <div class="sec-head">
@@ -355,27 +300,27 @@
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- SOBRE — camada PAPEL (editorial) -->
 <section id="sobre" class="about lazy-sec crop">
-  <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">SOBRE</div>
+  <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">PROFILE</div>
+  <div class="band" style="top:20%;--rot:-14deg;--h:80px;--op:.08"></div>
   <span class="spark aero" style="top:12%;right:6%;--sz:36px"></span>
-  <!-- recorte de jornal -->
   <div class="clip" style="bottom:80px;right:2vw;--tilt:-3deg" data-i18n-html="deco.n2"><b>VIRAL!</b> Vídeo estoura da noite pro dia; edição leva o crédito.</div>
 
   <div class="about-grid">
     <div>
-      <span class="eyebrow" data-i18n="about.eyebrow">// README.TXT</span>
+      <span class="eyebrow" data-i18n="about.eyebrow">// PROFILE.DAT</span>
       <h2 class="about-h2" data-i18n-html="about.title">Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class="signal-txt">criador.</span></h2>
-      <!-- crachá HELLO desenhado pelo próprio -->
       <div class="about-hello">
         <span class="tapefix" style="--tilt:-3deg"></span>
         <img src="img/hello.png" alt="Hello, my name is Cadeirante Maromba">
       </div>
     </div>
     <div class="about-r">
-      <p data-i18n="about.p1">Cada segundo de vídeo que sai daqui foi pensado por alguém que entende o que é criar conteúdo — a pressão do prazo, a ansiedade da entrega, a esperança de que o vídeo vai funcionar.</p>
-      <p data-i18n="about.p2">Não edito no piloto automático. Cada projeto recebe atenção total, do primeiro corte à última trilha.</p>
-      <p class="about-quote" data-i18n="about.p3">Você cria. Eu cuido do resto.</p>
+      <p data-i18n="about.p1">Cresci na frente de telas. PS2 depois da escola, internet dos anos 2000, filme gravado em VHS e revista de videogame lida até a capa descolar. Antes de editar qualquer coisa, eu era — e continuo sendo — um consumidor obsessivo de conteúdo bom. É daí que vem meu maior defeito e minha maior qualidade: eu sou crítico.</p>
+      <p data-i18n="about.p2">Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa — isso me incomoda de verdade. Cada projeto que pego, eu trato como se fosse pro meu próprio canal: com ritmo, com identidade, com o cuidado de quem sabe a diferença entre "ficou pronto" e "ficou BOM".</p>
+      <p data-i18n="about.p3">Desenho meus próprios elementos, crio minhas próprias artes e penso cada entrega como uma peça de design — não como uma tarefa na fila. Se você também acredita que qualidade se percebe no primeiro segundo, a gente já se entendeu.</p>
+      <p class="about-quote" data-i18n="about.quote">Você cria. Eu cuido do resto.</p>
       <div class="lcd-row">
         <div class="lcd"><strong>50+</strong><span data-i18n="about.st1">Parcerias feitas</span></div>
         <div class="lcd"><strong>1M+</strong><span data-i18n="about.st2">Pessoas alcançadas</span></div>
@@ -385,7 +330,7 @@
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ — camada PAPEL -->
 <section class="faq lazy-sec crop">
   <span class="spark amber" style="bottom:10%;left:4%;--sz:30px"></span>
   <div class="faq-in">
@@ -403,15 +348,16 @@
   </div>
 </section>
 
-<!-- CONTATO -->
-<section id="contato" class="contact lazy-sec crop">
+<!-- CONTATO — camada PAPEL + mascote gigante -->
+<section id="contato" class="contact crop">
   <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">CONTATO</div>
+  <div class="band" style="top:60%;--rot:-14deg;--h:70px;--op:.07"></div>
   <span class="spark" style="bottom:12%;left:3%;--sz:36px"></span>
   <div class="stamp" style="top:80px;right:3vw"><span>RESPONDO<br>EM ATÉ<br>24H</span></div>
 
   <div class="contact-in">
     <div class="contact-l">
-      <span class="eyebrow" data-i18n="ct.eyebrow">// EXPORTAR.MP4</span>
+      <span class="eyebrow" data-i18n="ct.eyebrow">// TRANSMISSION</span>
       <h2 data-i18n="ct.title">Pronto para criar algo que vale a pena assistir?</h2>
       <p data-i18n="ct.sub">Respondo em até 24h. Procuro entender o seu canal antes de qualquer coisa.</p>
       <a href="https://wa.me/5515998318065" target="_blank" rel="noopener" class="ctlink"><span class="ctlink-l" data-i18n="ct.wpp">WhatsApp</span><span class="ctlink-v">+55 (15) 99831-8065</span></a>
@@ -453,9 +399,11 @@
     </form>
   </div>
 
-  <!-- mascote de costas: clique nele! -->
-  <div class="bubble mascote-bubble" id="mascoteBubble" data-i18n="ct.mascoteBubble">Vamos fazer HISTÓRIA juntos?</div>
-  <img class="contact-mascote" id="contactMascote" src="img/cadeiranteMascote.png" alt="Mascote Cadeirante Maromba de costas — clique!">
+  <!-- mascote gigante de costas: clique nele! -->
+  <div class="mascote-zone">
+    <div class="bubble mascote-bubble" id="mascoteBubble" data-i18n="ct.mascoteBubble">Vamos fazer HISTÓRIA juntos?</div>
+    <img class="contact-mascote" id="contactMascote" src="img/cadeiranteMascote.png" alt="Mascote Cadeirante Maromba de costas — clique!">
+  </div>
 </section>
 
 </main>
