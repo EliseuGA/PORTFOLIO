@@ -3,28 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Eliseu — Cadeirante Maromba. Editor de vídeo e motion designer especializado em documentários e conteúdo para YouTube.">
+<meta name="description" content="Eliseu Guilherme — Cadeirante Maromba. Arquivo pessoal de um editor de vídeo obcecado por contar histórias. Documentários, motion e conteúdo para YouTube.">
 <title>Cadeirante Maromba — O Arquivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;700&family=Special+Elite&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="icon.ico" type="image/x-icon">
+<!-- FAVICON = a fita MiniDV, ícone da marca -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='18' rx='3' fill='%2317130f'/%3E%3Crect x='6' y='10' width='20' height='7' rx='1' fill='%23FBF6EA'/%3E%3Ccircle cx='12' cy='21' r='3' fill='none' stroke='%23E13327' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='21' r='3' fill='none' stroke='%23E13327' stroke-width='1.5'/%3E%3C/svg%3E" type="image/svg+xml">
 </head>
 <body>
 
 <!-- Filtro "Turbulent Displace" (impressão desalinhada) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="turb" x="-10%" y="-10%" width="120%" height="120%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.011 0.019" numOctaves="2" seed="7" result="n"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.011 0.019" numOctaves="2" seed="7" result="n">
+      <animate attributeName="seed" values="7;41;13;29;5;33" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/>
+      <animate attributeName="baseFrequency" values="0.011 0.019;0.014 0.016;0.009 0.022;0.013 0.02" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/>
+    </feTurbulence>
     <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
   </filter>
+</svg>
+
+<!-- ÍCONE DA MARCA: fita MiniDV (SVG-symbol reutilizável) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="dv" viewBox="0 0 40 28">
+    <rect x="1.5" y="4" width="37" height="21" rx="3" fill="currentColor"/>
+    <rect x="5" y="7" width="30" height="8.5" rx="1.2" fill="#FBF6EA" opacity=".92"/>
+    <circle cx="15" cy="20" r="3.6" fill="none" stroke="#E13327" stroke-width="1.6"/>
+    <circle cx="25" cy="20" r="3.6" fill="none" stroke="#E13327" stroke-width="1.6"/>
+    <circle cx="15" cy="20" r="1" fill="#E13327"/><circle cx="25" cy="20" r="1" fill="#E13327"/>
+  </symbol>
 </svg>
 
 <!-- REGISTRO DE ACESSO -->
 <div id="boot">
   <div class="acard">
-    <div class="acard-band">ARQUIVO CADEIRANTE MAROMBA</div>
+    <div class="acard-band"><span class="dvicon"><svg><use href="#dv"/></svg></span> ARQUIVO CADEIRANTE MAROMBA</div>
     <div class="acard-body">
       REGISTRO DE ACESSO<br>
       VISITANTE Nº <b id="visId">----</b><br>
@@ -37,7 +52,7 @@
 
 <!-- BARRA DO ARQUIVO -->
 <header class="taskbar" id="taskbar">
-  <a href="#inicio" class="tb-start"><img src="img/canal_cadeirante_maromba_redondo.png" alt="">CM<span>.</span></a>
+  <a href="#inicio" class="tb-start"><span class="dvicon"><svg><use href="#dv"/></svg></span>CM<span>.</span></a>
   <nav class="tb-mid">
     <a href="#trabalhos" class="tb-btn" data-i18n="nav.port">INVENTÁRIO</a>
     <a href="#servicos" class="tb-btn" data-i18n="nav.serv">GAVETA</a>
@@ -60,33 +75,48 @@
   <span class="spark" style="top:16%;left:6%;--sz:52px"></span>
   <span class="spark amber" style="top:64%;left:3%;--sz:34px;animation-duration:18s"></span>
   <span class="spark aero" style="top:22%;right:8%;--sz:30px;animation-duration:16s"></span>
-  <span class="spark ink" style="bottom:14%;left:12%;--sz:24px;animation-duration:20s"></span>
+  <div class="coffee" style="top:30%;right:14%;--sz:120px"></div>
 
-  <div class="postit" style="right:6%;top:20%">
-    <span data-i18n="hero.postit">lembrete:<br>fazer HISTÓRIA.</span>
+  <!-- BILHETE COM A VIDA REAL — impossível de copiar -->
+  <div class="notepad" style="right:5%;top:15%;--tilt:3deg">
+    <h4 data-i18n="note.title">lembrete</h4>
+    <ul>
+      <li class="done"><span data-i18n="note.1">tratar do gado</span></li>
+      <li class="done"><span data-i18n="note.2">responder cliente</span></li>
+      <li><span data-i18n="note.3">renderizar episódio 8</span></li>
+      <li><span data-i18n="note.4">estudar p/ FATEC</span></li>
+      <li><span data-i18n="note.5">comprar sal mineral</span></li>
+    </ul>
   </div>
 
   <p class="hero-eyebrow" data-i18n="hero.eyebrow">Editor de Vídeo · Motion Designer · Documentarista</p>
   <h1 class="hero-h1">CADEIRANTE<br>MAROMBA</h1>
   <div class="idlabel">
     <div class="idlabel-band">CADEIRANTE MAROMBA — ARQUIVO GERAL</div>
-    <div class="idlabel-body" data-i18n="hero.label">ITEM Nº 001 · EM ATIVIDADE · INTERIOR DE SP</div>
+    <div class="idlabel-body" data-i18n="hero.label">ITEM Nº 001 · EM ATIVIDADE · ARQUIVO INICIADO EM 2022</div>
   </div>
 
   <div class="crt-zone">
+    <!-- o zelador deixou a fita encostada -->
+    <img class="hero-keeper" src="img/cadeiranteMascote.png" alt="" aria-hidden="true">
     <div class="crt">
       <span class="tapefix" style="top:-14px;left:34px;--tilt:-5deg"></span>
       <span class="tapefix" style="top:-14px;right:34px;--tilt:4deg"></span>
+      <span class="staple" style="top:6px;left:50%;--tilt:-4deg"></span>
       <div class="crt-screen" id="crtScreen">
         <div class="crt-colorbars" aria-hidden="true"></div>
         <img src="img/hero-poster.jpg" alt="Prévia do showreel" id="crtPoster" onerror="this.style.display='none'">
         <video muted loop playsinline preload="none" id="crtVideo">
           <source src="videos/introShowreelEXTENDIDA_8mb.mp4" type="video/mp4">
         </video>
+        <div class="crt-roll" id="crtRoll" aria-hidden="true"></div>
+        <div class="crt-static" id="crtStatic" aria-hidden="true"></div>
+        <div class="crt-tic" id="crtTic" aria-hidden="true"></div>
         <div class="crt-power" id="crtPower">
           <span class="crt-hint" data-i18n="hero.hint">insira a fita<br>pra assistir ↙</span>
         </div>
       </div>
+      <span class="crt-slot" aria-hidden="true"></span>
       <span class="crt-label">TRINITRON — REC001</span>
       <span class="crt-led" id="crtLed"></span>
       <div class="crt-ctrl" id="crtCtrl">
@@ -95,11 +125,12 @@
         <input type="range" id="crtVol" min="0" max="100" value="60" aria-label="Volume da TV">
       </div>
 
-      <!-- A FITA: o botão da cena -->
+      <!-- A FITA: ícone da marca + botão da cena -->
       <button class="minidv" id="tapeBtn" aria-label="Inserir a fita do showreel">
-        <span class="minidv-tag" data-i18n="hero.tapetag">assista! →</span>
+        <span class="minidv-tag" data-i18n="hero.tapetag">insira ↑</span>
         <span class="minidv-body">
-          <span class="minidv-sticker">SHOWREEL_2026 ▸</span>
+          <span class="minidv-sticker">SHOWREEL_2026</span>
+          <span class="minidv-warn" data-i18n="hero.warn">NÃO REMOVER</span>
           <span class="minidv-reels"><span></span><span></span></span>
         </span>
       </button>
@@ -123,7 +154,11 @@
   <div class="sec-head">
     <span class="eyebrow" data-i18n="port.eyebrow">REF: CM-01 · INVENTÁRIO DE MÍDIAS</span>
     <h2 data-i18n="port.title">Trabalhos selecionados</h2>
-    <p class="sec-sub" data-i18n="port.sub">Cada item foi catalogado. Toque para reproduzir.</p>
+    <p class="sec-sub" data-i18n="port.sub">Uma seleção do acervo. Nem tudo está catalogado aqui — o resto fica nas gavetas.</p>
+  </div>
+
+  <div class="port-line">
+    <div class="port-count" data-i18n="port.count">ACERVO EM EXPANSÃO · <b>DEZENAS DE ITENS</b> CATALOGADOS · 3 CAIXAS ABERTAS</div>
   </div>
 
   <div class="port-tabs">
@@ -148,7 +183,7 @@
   <div class="sec-head">
     <span class="eyebrow" data-i18n="thumb.eyebrow">REF: CM-02 · IMPRESSÕES E ARTES</span>
     <h2 data-i18n="thumb.title">Thumbnails & Artes</h2>
-    <p class="sec-sub" data-i18n="thumb.sub">Cada arte é pensada para converter o scroll em clique.</p>
+    <p class="sec-sub" data-i18n="thumb.sub">Provas de impressão que sobraram na mesa. Toque para ampliar.</p>
   </div>
   <div class="tgrid">
     <div class="ti halftone" onclick="openModal(this)"><img loading="lazy" src="img/THUMB RV THERE YET.png" alt="Thumbnail"></div>
@@ -192,6 +227,7 @@
           </div>
         </div>
       </div>
+      <div class="rec-foot"><span data-i18n="wf.mod">mod: 11/2025 · reexportado 2x</span><span>16:9 · H.264</span></div>
     </div>
     <p class="wf-cap" data-i18n="wf.cap">O segredo não está no corte. Está na <strong>intenção.</strong></p>
   </div>
@@ -201,6 +237,7 @@
 <section class="process lazy-sec crop">
   <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">PROTOCOLO</div>
   <span class="spark" style="top:14%;right:6%;--sz:38px"></span>
+  <div class="coffee" style="bottom:12%;left:8%;--sz:100px"></div>
   <div class="clipn" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
 
   <div class="sec-head">
@@ -209,10 +246,12 @@
     <p class="sec-sub" data-i18n="proc.sub">Do primeiro "oi" até o arquivo na sua mão.</p>
   </div>
   <div class="doc">
+    <span class="staple" style="top:-4px;left:40px;--tilt:-8deg"></span>
+    <span class="staple" style="top:-4px;left:70px;--tilt:5deg"></span>
     <div class="doc-head">
       <span><b>DOC:</b> PROTOCOLO_PADRAO.pdf</span>
       <span><b>PÁG:</b> 01/01</span>
-      <span><b>REV:</b> 2026</span>
+      <span><b>REV:</b> 04 · <span class="modtag">mod: 01/2026</span></span>
     </div>
     <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§01</span><span data-i18n="proc.s1.t">Briefing</span></h3><p data-i18n="proc.s1.d">Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.</p></div></div>
     <div class="doc-item"><span class="doc-check"></span><div><h3><span class="n">§02</span><span data-i18n="proc.s2.t">Edição</span></h3><p data-i18n="proc.s2.d">Mergulho no material bruto. Cada corte, cada música e cada efeito marcam sua presença.</p></div></div>
@@ -233,7 +272,7 @@
   <div class="sec-head">
     <span class="eyebrow" data-i18n="sv.eyebrow">REF: CM-05 · GAVETA DE PROJETOS</span>
     <h2 data-i18n="sv.title">Serviços</h2>
-    <p class="sec-sub" data-i18n="sv.sub">Quatro pastas. Escolha a que faz sentido para o seu canal agora.</p>
+    <p class="sec-sub" data-i18n="sv.sub">Quatro pastas na gaveta de cima. Escolha a que faz sentido pro seu canal agora.</p>
   </div>
   <div class="sgrid2">
     <div class="fold">
@@ -278,9 +317,17 @@
       </div></div>
     </div>
   </div>
+
+  <!-- pasta arquivada no fundo da gaveta: prova de que o acervo tem passado -->
+  <div class="deadfile">
+    <span class="dvicon"><svg><use href="#dv"/></svg></span>
+    <div class="deadfile-txt"><b>_ARQUIVO_MORTO/</b> — <span data-i18n="sv.dead">projetos antigos, testes e versões que ficaram pelo caminho. guardados, mas fora de catálogo.</span></div>
+    <span class="stampink" data-i18n="sv.deadstamp">Arquivado</span>
+  </div>
+
   <div class="drawer-foot">
-    <span data-i18n="sv.foot1">GAVETA 02 — 4 PASTAS CATALOGADAS</span>
-    <span data-i18n="sv.foot2">ÚLTIMA ATUALIZAÇÃO: 2026</span>
+    <span data-i18n="sv.foot1">GAVETA 02 — 4 PASTAS ATIVAS · 1 ARQUIVADA</span>
+    <span data-i18n="sv.foot2">ÚLTIMA REVISÃO DA GAVETA: 2026</span>
   </div>
 </section>
 
@@ -299,28 +346,34 @@
   </div>
   <div class="tgrid3">
     <article class="letter">
+      <span class="staple" style="top:-4px;left:24px;--tilt:-6deg"></span>
       <div class="photo"><img loading="lazy" src="img/caioxapoProfile.png" alt="caioxapo"></div>
-      <div class="letter-head">DE: <b>caioxapo</b> · @caioxapo<br>ASSUNTO: <b data-i18n="test.a.s">edição + sprites</b></div>
+      <div class="letter-head">DE: <b>caioxapo</b> · @caioxapo<br>ASSUNTO: <b data-i18n="test.a.s">edição + sprites</b><br>RECEBIDA: <b>2025</b></div>
       <div class="letter-body" data-i18n="test.a">Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!</div>
       <div class="letter-foot"><span>1K+ views em 1 dia</span><span class="stampink" style="--tilt:-4deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
     <article class="letter">
+      <span class="staple" style="top:-4px;left:24px;--tilt:4deg"></span>
       <div class="photo"><img loading="lazy" src="img/rapositoProfile.jpg" alt="Raposito"></div>
-      <div class="letter-head">DE: <b>Raposito</b> · @Raposito<br>ASSUNTO: <b data-i18n="test.b.s">qualidade do vídeo</b></div>
+      <div class="letter-head">DE: <b>Raposito</b> · @Raposito<br>ASSUNTO: <b data-i18n="test.b.s">qualidade do vídeo</b><br>RECEBIDA: <b>2025</b></div>
       <div class="letter-body" data-i18n="test.b">A edição desse vídeo está impecável, de verdade. É um dos vídeos mais bonitos que já vi no YouTube ultimamente. Muito maneiro, e a qualidade ficou incrível.</div>
       <div class="letter-foot"><span>229K inscritos</span><span class="stampink" style="--tilt:3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
     <article class="letter">
+      <span class="staple" style="top:-4px;left:24px;--tilt:-5deg"></span>
       <div class="photo"><img loading="lazy" src="img/vonGustoProfile.jpeg" alt="Von Gusto"></div>
-      <div class="letter-head">DE: <b>Von Gusto</b> · @v0ngusto<br>ASSUNTO: <b data-i18n="test.c.s">vídeos do canal</b></div>
+      <div class="letter-head">DE: <b>Von Gusto</b> · @v0ngusto<br>ASSUNTO: <b data-i18n="test.c.s">vídeos do canal</b><br>RECEBIDA: <b>2025</b></div>
       <div class="letter-body" data-i18n="test.c">Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.</div>
       <div class="letter-foot"><span>800K+ views no 1º vídeo</span><span class="stampink" style="--tilt:-3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
   </div>
 </section>
 
-<!-- FICHA DO OPERADOR -->
+<!-- FICHA DO ACERVO -->
 <section id="sobre" class="about lazy-sec crop">
+  <img class="about-collage pin" src="img/pin.png" alt="" aria-hidden="true">
+  <img class="about-collage vinyl" src="img/vinyl.png" alt="" aria-hidden="true">
+  <img class="about-collage dice" src="img/dice.png" alt="" aria-hidden="true">
   <div class="ghost" style="bottom:-10px;left:-20px" aria-hidden="true">FICHA</div>
   <div class="band" style="top:20%;--rot:-14deg;--h:80px;--op:.08"></div>
   <span class="spark aero" style="top:12%;right:6%;--sz:36px"></span>
@@ -328,7 +381,7 @@
 
   <div class="about-grid">
     <div>
-      <span class="eyebrow" data-i18n="about.eyebrow">REF: CM-07 · FICHA DO OPERADOR</span>
+      <span class="eyebrow" data-i18n="about.eyebrow">REF: CM-07 · FICHA DO ACERVO</span>
       <h2 class="about-h2" data-i18n-html="about.title">Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class="signal-txt">criador.</span></h2>
       <div class="about-hello">
         <span class="tapefix" style="--tilt:-3deg"></span>
@@ -337,12 +390,15 @@
       <div class="about-hn"><span class="handnote" data-i18n="about.note">qualidade &gt; quantidade.<br>sempre.</span></div>
     </div>
     <div class="file">
-      <div class="file-head"><span><b>DOC:</b> LEIA-ME.txt</span><span><b>ACESSO:</b> PÚBLICO</span></div>
+      <span class="staple" style="top:-4px;left:50px;--tilt:-7deg"></span>
+      <div class="file-head"><span><b>DOC:</b> FICHA_DO_ACERVO.txt</span><span><b>ACESSO:</b> PÚBLICO</span></div>
       <div class="file-fields">
-        <span data-i18n="about.f1">NOME: <b>Eliseu ("Cadeirante Maromba")</b></span>
-        <span data-i18n="about.f2">FUNÇÃO: <b>Editor & Documentarista</b></span>
-        <span data-i18n="about.f3">BASE: <b>Interior de SP, Brasil</b></span>
-        <span data-i18n="about.f4">STATUS: <b>Em atividade</b></span>
+        <div class="ffield"><span class="k" data-i18n="about.k1">Responsável</span><span class="v">Eliseu Guilherme</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k2">Especialidade</span><span class="v" data-i18n="about.v2">Narrativas e edição cinematográfica</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k3">Base</span><span class="v" data-i18n="about.v3">Interior de SP, Brasil</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k4">Arquivo iniciado</span><span class="v">2022</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k5">Estado</span><span class="v" data-i18n="about.v5">Em atividade</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k6">Última atualização</span><span class="v" id="aboutUpdate" data-i18n="about.v6">Hoje</span></div>
       </div>
       <div class="file-body">
         <p data-i18n="about.p1">Meu nome é Eliseu — na internet, Cadeirante Maromba. Sou editor de vídeo focado em contar histórias que prendem a atenção do primeiro ao último segundo, especializado em documentários e conteúdo para YouTube.</p>
@@ -351,7 +407,7 @@
         <p class="about-quote" data-i18n="about.quote">"Você cria. Eu cuido do resto."</p>
       </div>
       <div class="stamp-row">
-        <span class="stampink" style="--tilt:-5deg">50+<small data-i18n="about.st1">PARCERIAS</small></span>
+        <span class="stampink" style="--tilt:-5deg">40+<small data-i18n="about.st1">PARCERIAS</small></span>
         <span class="stampink" style="--tilt:3deg;border-color:#1b7a4a;color:#1b7a4a">1M+<small data-i18n="about.st2">ALCANÇADOS</small></span>
         <span class="stampink" style="--tilt:-2deg">100%<small data-i18n="about.st3">DE CUIDADO</small></span>
       </div>
@@ -380,6 +436,7 @@
 
 <!-- NOVO BRIEFING -->
 <section id="contato" class="contact crop">
+  <img src="img/hands.png" alt="" aria-hidden="true" style="position:absolute;z-index:1;top:6%;left:50%;transform:translateX(-50%);width:min(360px,60%);opacity:.16;pointer-events:none;filter:url(#turb)">
   <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">BRIEFING</div>
   <div class="band" style="top:60%;--rot:-14deg;--h:70px;--op:.07"></div>
   <span class="spark" style="bottom:12%;left:3%;--sz:36px"></span>
@@ -439,15 +496,33 @@
 
 </main>
 
-<footer class="footer">
-  <div class="footer-brand">
-    <img src="img/canal_cadeirante_maromba_redondo.png" alt="">
-    <span>© 2026 CADEIRANTE MAROMBA · <span data-i18n="footer.end">FIM DO ARQUIVO</span></span>
+<!-- FIM DO ARQUIVO — inventário do acervo (sem números inventados) -->
+<footer>
+  <div class="footer-arch">
+    <div class="footer-arch-in">
+      <div>
+        <div class="fa-title"><span class="dvicon"><svg><use href="#dv"/></svg></span> <span data-i18n="fa.title">Arquivo Cadeirante Maromba</span></div>
+        <p class="fa-sub" data-i18n="fa.sub">Um acervo pessoal de vídeos, artes e documentos de produção. Ainda em expansão — o visitante recebeu autorização temporária para explorar.</p>
+      </div>
+      <div class="fa-ledger">
+        <div class="row"><span data-i18n="fa.l1">Estado do acervo</span><b data-i18n="fa.v1">EM ATIVIDADE</b></div>
+        <div class="row"><span data-i18n="fa.l2">Iniciado em</span><b>2022</b></div>
+        <div class="row"><span data-i18n="fa.l3">Caixas de mídia abertas</span><b>3</b></div>
+        <div class="row"><span data-i18n="fa.l4">Documentado</span><b data-i18n="fa.v4">ANOS DE TRABALHO</b></div>
+        <div class="row"><span data-i18n="fa.l5">Última atualização</span><b id="faUpdate">—</b></div>
+      </div>
+    </div>
   </div>
-  <button class="foot-secret" id="footSecret" type="button">?
-    <span class="secretnote" id="secretNote" data-i18n="footer.secret">você fuçou até o fim do arquivo. gostei de você. :)</span>
-  </button>
-  <div class="barcode" aria-hidden="true" title="CM-2026-ACERVO"></div>
+  <div class="footer">
+    <div class="footer-brand">
+      <img src="img/canal_cadeirante_maromba_redondo.png" alt="">
+      <span>© 2026 CADEIRANTE MAROMBA · <span data-i18n="footer.end">FIM DO ARQUIVO</span></span>
+    </div>
+    <button class="foot-secret" id="footSecret" type="button">?
+      <span class="secretnote" id="secretNote" data-i18n="footer.secret">você fuçou até o fim do arquivo. gostei de você. :)</span>
+    </button>
+    <div class="barcode" aria-hidden="true" title="CM-2026-ACERVO"></div>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
