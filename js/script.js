@@ -304,6 +304,9 @@ function initCrt(){
   const ctrl = document.getElementById('crtCtrl');
   const vol = document.getElementById('crtVol');
   const pauseBtn = document.getElementById('crtPause');
+  const tic = document.getElementById('crtTic');
+  const stat = document.getElementById('crtStatic');
+  const roll = document.getElementById('crtRoll');
   let isOn = false;
   video.style.display='none';
 
