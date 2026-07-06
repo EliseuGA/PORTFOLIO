@@ -1,6 +1,8 @@
 /* =========================================================
    CADEIRANTE MAROMBA — THE LOST ARCHIVE
    "Nada é interface. Tudo é objeto."
+   O acervo já existia antes do visitante chegar.
+   Ícone da marca: a fita MiniDV.
    Materiais: papel creme (mesa) · kraft (caixa de mídias)
               verde-arquivo (gaveteiro) · papel envelhecido (docs)
 ========================================================= */
@@ -30,23 +32,25 @@ ul{list-style:none}
 
 /* ---------- TOKENS ---------- */
 :root{
-  --paper:   #EDE4D3;   /* mesa */
-  --paper2:  #E2D7C1;   /* papel envelhecido */
-  --kraft:   #C2A06E;   /* papelão da caixa de mídias */
-  --cabinet: #3E4A42;   /* gaveteiro de aço verde */
-  --manila:  #EFDCA9;   /* pasta manilha */
+  --paper:   #EDE4D3;
+  --paper2:  #E2D7C1;
+  --kraft:   #C2A06E;
+  --cabinet: #3E4A42;
+  --manila:  #EFDCA9;
   --ink:     #17130F;
   --card:    #FBF6EA;
-  --signal:  #E13327;   /* tinta de carimbo */
+  --signal:  #E13327;
   --aero:    #2FB6B0;
   --amber:   #F0AE34;
   --electric:#2B5BFF;
   --postit:  #F6E27A;
+  --coffee:  #6b4a2a;
   --line:    #17130f33;
   --muted:   #6b6154;
   --poster:  'Anton',sans-serif;
   --hand:    'Caveat',cursive;
   --mono:    'JetBrains Mono',monospace;
+  --type:    'Special Elite',monospace;
   --r:6px;
   --max:1180px;
   --pad:clamp(70px,9vw,120px) clamp(20px,4vw,56px);
@@ -67,12 +71,10 @@ ul{list-style:none}
 ========================================================= */
 section{position:relative;overflow:hidden;isolation:isolate}
 
-/* faixas diagonais (aprovadas) */
 .band{position:absolute;z-index:0;pointer-events:none;width:150%;left:-25%;height:var(--h,90px);background:var(--signal);opacity:var(--op,.10);transform:rotate(var(--rot,-14deg))}
 .band.aero{background:var(--aero)}
 .band.ink{background:var(--ink)}
 
-/* estrelas de 4 pontas (aprovadas) */
 .spark{position:absolute;z-index:0;pointer-events:none;width:var(--sz,42px);height:var(--sz,42px);background:var(--signal);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:sparkspin 12s linear infinite;will-change:transform}
 .spark.amber{background:var(--amber)}
 .spark.aero{background:var(--aero)}
@@ -83,13 +85,20 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .ghost{position:absolute;z-index:0;pointer-events:none;user-select:none;font-family:var(--poster);text-transform:uppercase;line-height:1;color:transparent;-webkit-text-stroke:1.5px #17130f18;font-size:clamp(6rem,18vw,15rem);letter-spacing:2px;white-space:nowrap}
 .ghost.light{-webkit-text-stroke:1.5px #ffffff14}
 
-/* recortes de jornal (aprovados) */
+/* recortes de jornal */
 .clipn{position:absolute;z-index:0;pointer-events:none;background:var(--card);border:1px solid var(--ink);padding:12px 14px;max-width:185px;font-family:var(--mono);font-size:.58rem;line-height:1.7;color:#3a342c;transform:rotate(var(--tilt,-3deg));box-shadow:3px 3px 0 var(--ink)}
 .clipn b{font-family:var(--poster);font-weight:400;display:block;font-size:.95rem;letter-spacing:.5px;margin-bottom:5px;color:var(--ink);text-transform:uppercase}
 .clipn::before{content:'';position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);width:56px;height:16px;background:#f5e9c8cc;border-left:1px dashed #17130f33;border-right:1px dashed #17130f33}
 
 /* fita crepe */
 .tapefix{position:absolute;width:90px;height:26px;background:#f5e9c8cc;border-left:1px dashed #17130f33;border-right:1px dashed #17130f33;transform:rotate(var(--tilt,-4deg));z-index:6;pointer-events:none}
+
+/* GRAMPO — marca de uso */
+.staple{position:absolute;width:22px;height:10px;border:2px solid #8a8072;border-bottom:none;border-radius:3px 3px 0 0;z-index:7;pointer-events:none;transform:rotate(var(--tilt,-6deg));opacity:.7}
+
+/* MARCA DE CAFÉ — anel deixado por uma xícara */
+.coffee{position:absolute;width:var(--sz,90px);height:var(--sz,90px);border-radius:50%;border:6px solid var(--coffee);opacity:.12;z-index:0;pointer-events:none}
+.coffee::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--coffee);opacity:.6}
 
 /* CARIMBO DE TINTA — o botão-objeto do arquivo */
 .stampink{
@@ -102,38 +111,59 @@ section{position:relative;overflow:hidden;isolation:isolate}
 }
 .stampink.abs{position:absolute;z-index:3;pointer-events:none}
 
-/* ETIQUETA DE INVENTÁRIO — faixa vermelha + corpo branco */
+/* ETIQUETA DE INVENTÁRIO */
 .idlabel{display:inline-block;background:var(--card);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);text-align:left}
 .idlabel-band{background:var(--signal);color:var(--card);font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:2px;padding:4px 12px;text-transform:uppercase}
 .idlabel-body{padding:8px 12px;font-family:var(--mono);font-size:.68rem;letter-spacing:.5px;color:var(--ink)}
 
-/* anotação à mão */
+/* texto RISCADO e reescrito — marca de história anterior */
+.struck{position:relative;text-decoration:line-through;text-decoration-color:var(--signal);text-decoration-thickness:2px;opacity:.6}
+.rewrite{font-family:var(--hand);color:var(--signal);font-size:1.15em;margin-left:6px}
+
 .handnote{font-family:var(--hand);color:var(--signal);font-size:1.35rem;line-height:1.25;transform:rotate(-2.5deg);display:inline-block}
 
-/* POST-IT */
-.postit{
-  position:absolute;z-index:5;width:150px;padding:16px 14px;
-  background:var(--postit);box-shadow:3px 5px 8px rgba(0,0,0,.18);
-  font-family:var(--hand);font-size:1.2rem;line-height:1.25;color:#4a3b10;
-  transform:rotate(4deg);
+/* BILHETE / LISTA DE TAREFAS — a vida real */
+.notepad{
+  position:absolute;z-index:5;width:196px;padding:16px 16px 18px;
+  background:var(--postit);box-shadow:3px 6px 10px rgba(0,0,0,.2);
+  transform:rotate(var(--tilt,3deg));
 }
+.notepad::before{content:'';position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:70px;height:20px;background:#f5e9c8bb;border-left:1px dashed #17130f33;border-right:1px dashed #17130f33}
+.notepad h4{font-family:var(--hand);font-size:1.5rem;color:#4a3b10;line-height:1;margin-bottom:10px;border-bottom:2px solid #00000022;padding-bottom:6px}
+.notepad ul{display:flex;flex-direction:column;gap:7px}
+.notepad li{font-family:var(--hand);font-size:1.24rem;color:#4a3b10;line-height:1.1;display:flex;gap:8px;align-items:flex-start}
+.notepad li::before{content:'☐';font-size:1rem;line-height:1.3}
+.notepad li.done{opacity:.55}
+.notepad li.done::before{content:'☑'}
+.notepad li.done span{text-decoration:line-through;text-decoration-color:#4a3b1099}
+
+.postit{position:absolute;z-index:5;width:150px;padding:16px 14px;background:var(--postit);box-shadow:3px 5px 8px rgba(0,0,0,.18);font-family:var(--hand);font-size:1.2rem;line-height:1.25;color:#4a3b10;transform:rotate(var(--tilt,4deg))}
 .postit::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);width:60px;height:18px;background:#f5e9c8cc;border-left:1px dashed #17130f33;border-right:1px dashed #17130f33}
 
 /* borda rasgada entre materiais */
 .torn{height:14px;background-color:var(--pv);background-image:linear-gradient(135deg,var(--nx) 50%,transparent 50%),linear-gradient(225deg,var(--nx) 50%,transparent 50%);background-size:22px 14px;background-repeat:repeat-x;background-position:bottom;position:relative;z-index:3}
 
-/* marcas de corte */
 .crop::before,.crop::after{content:'';position:absolute;width:18px;height:18px;z-index:1;pointer-events:none;border:2px solid #17130f55}
 .crop::before{top:14px;left:14px;border-right:none;border-bottom:none}
 .crop::after{bottom:14px;right:14px;border-left:none;border-top:none}
 
+/* SELO DE MODIFICAÇÃO — data no canto de fichas (envelhece o acervo) */
+.modtag{font-family:var(--mono);font-size:.5rem;letter-spacing:.5px;color:var(--muted);opacity:.8}
+
 /* =========================================================
-   REGISTRO DE ACESSO (abertura)
+   FITA MINIDV — ÍCONE DA MARCA (SVG reutilizável)
+========================================================= */
+.dvicon{display:inline-block;width:1em;height:.7em;vertical-align:-.08em}
+.dvicon svg{display:block;width:100%;height:100%}
+
+/* =========================================================
+   REGISTRO DE ACESSO (abertura) — a fita gira no loading
 ========================================================= */
 #boot{position:fixed;inset:0;z-index:10000;background:#0c0a08;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s}
 #boot.hide{opacity:0;visibility:hidden;pointer-events:none}
 .acard{width:300px;background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 #000;position:relative}
-.acard-band{background:var(--signal);color:var(--card);font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:2px;padding:6px 12px;text-transform:uppercase}
+.acard-band{background:var(--signal);color:var(--card);font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:2px;padding:6px 12px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.acard-band .dvicon{width:1.4em;height:1em}
 .acard-body{padding:16px 14px 46px;font-family:var(--mono);font-size:.66rem;line-height:2.1;color:var(--ink)}
 .acard-body b{color:var(--signal)}
 .acard .bigstamp{
@@ -141,7 +171,7 @@ section{position:relative;overflow:hidden;isolation:isolate}
   border:3px solid var(--signal);color:var(--signal);border-radius:5px;
   font-family:var(--poster);font-size:1.05rem;letter-spacing:1.5px;padding:6px 12px;text-transform:uppercase;
   opacity:0;transform:scale(2) rotate(-16deg);
-  animation:stampin .35s cubic-bezier(.2,1.4,.4,1) .55s forwards;
+  animation:stampin .35s cubic-bezier(.2,1.4,.4,1) .7s forwards;
   -webkit-mask-image:radial-gradient(rgba(0,0,0,1) 55%,rgba(0,0,0,.6));
           mask-image:radial-gradient(rgba(0,0,0,1) 55%,rgba(0,0,0,.6));
 }
@@ -152,7 +182,7 @@ section{position:relative;overflow:hidden;isolation:isolate}
 ========================================================= */
 .taskbar{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:8px 20px;background:var(--ink);color:var(--paper);border-bottom:3px solid var(--signal)}
 .tb-start{display:flex;align-items:center;gap:8px;background:var(--signal);color:var(--card);padding:6px 14px;border-radius:3px;font-family:var(--poster);font-size:.95rem;letter-spacing:.5px;text-transform:uppercase;box-shadow:var(--bevel-out)}
-.tb-start img{width:22px;height:22px;border-radius:50%}
+.tb-start .dvicon{width:1.6em;height:1.1em}
 .tb-start:active{box-shadow:var(--bevel-in)}
 .tb-mid{display:flex;gap:2px;flex:1;justify-content:center}
 .tb-btn{font-family:var(--mono);font-size:.66rem;letter-spacing:.5px;color:#cfc6b6;padding:7px 14px;border-radius:3px;transition:background .15s,color .15s}
@@ -187,7 +217,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
 input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--signal);border:2px solid var(--ink);border-radius:2px}
 
 /* =========================================================
-   HERO — A MESA DO EDITOR
+   HERO — A MESA DO EDITOR (cena, com sequência de fita)
 ========================================================= */
 .hero{padding:118px 20px 100px;display:flex;flex-direction:column;align-items:center;background:var(--paper)}
 .hero-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:3px;color:var(--signal);text-transform:uppercase;margin-bottom:20px;position:relative;z-index:2}
@@ -201,14 +231,60 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .hero .idlabel{position:relative;z-index:2;margin-bottom:38px;transform:rotate(-1.5deg)}
 
 .crt-zone{position:relative;z-index:2;width:min(880px,92vw)}
+
+/* zelador: o mascote deixou a fita e o bilhete "não remover" */
+.hero-keeper{
+  position:absolute;z-index:1;left:-90px;bottom:-10px;width:clamp(90px,12vw,150px);
+  transform:scaleX(-1) rotate(-3deg);opacity:.96;
+  filter:drop-shadow(6px 8px 0 rgba(0,0,0,.12));
+  animation:floaty 6s ease-in-out infinite alternate;
+}
+@keyframes floaty{from{transform:scaleX(-1) rotate(-3deg) translateY(0)}to{transform:scaleX(-1) rotate(-3deg) translateY(-10px)}}
+@media(max-width:760px){.hero-keeper{display:none}}
+
 .crt{position:relative;border-radius:22px;padding:22px 22px 58px;background:linear-gradient(160deg,#cfc6b3,#a89e88);box-shadow:0 18px 0 -6px #00000022, 0 24px 40px -10px #00000055}
 .crt-screen{position:relative;border-radius:8px;overflow:hidden;background:#000;aspect-ratio:16/9}
 .crt-screen video,.crt-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .crt-colorbars{position:absolute;inset:0;background:linear-gradient(90deg,#b9b9b9 0 14.28%,#e0cf47 14.28% 28.56%,#47cfd0 28.56% 42.84%,#45c25b 42.84% 57.12%,#c94fc9 57.12% 71.4%,#d34040 71.4% 85.68%,#4747d3 85.68% 100%)}
 .crt-screen::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.22) 0 1px,transparent 1px 3px)}
+
+/* estados da tela durante a sequência */
 .crt-power{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.42);transition:opacity .3s}
 .crt-power.off{opacity:0;pointer-events:none}
 .crt-hint{font-family:var(--hand);font-size:clamp(1.4rem,3vw,2rem);color:var(--postit);transform:rotate(-3deg);text-align:center;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+
+/* flash de TIC (3 batidas) */
+.crt-tic{position:absolute;inset:0;z-index:5;background:#dfe7ff;opacity:0;pointer-events:none}
+.crt-tic.run{animation:ticflash 1.05s steps(1,end) forwards}
+@keyframes ticflash{
+  0%,14%{opacity:0}
+  15%,17%{opacity:.9}   /* TIC 1 */
+  18%,45%{opacity:0}
+  46%,48%{opacity:.9}   /* TIC 2 */
+  49%,75%{opacity:0}
+  76%,78%{opacity:.95}  /* TIC 3 */
+  79%,100%{opacity:0}
+}
+/* interferência analógica: pura CSS, sem imagem */
+.crt-static{
+  position:absolute;inset:0;z-index:5;opacity:0;pointer-events:none;mix-blend-mode:screen;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.35) 0 1px, transparent 1px 2px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.10) 0 2px, transparent 2px 3px);
+  background-size:100% 3px, 4px 100%;
+}
+.crt-static.run{animation:staticrun .5s steps(6,end) forwards}
+@keyframes staticrun{
+  0%{opacity:0}
+  10%{opacity:.85}
+  70%{opacity:.7;transform:translateY(2px)}
+  100%{opacity:0}
+}
+/* faixa de sincronismo rolando (rolling bar) */
+.crt-roll{position:absolute;left:0;right:0;height:40%;z-index:5;opacity:0;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,255,255,.12),transparent)}
+.crt-roll.run{animation:rollbar .5s linear forwards}
+@keyframes rollbar{0%{opacity:.6;top:-40%}100%{opacity:0;top:120%}}
+
 .crt-label{position:absolute;bottom:12px;left:26px;font-family:var(--mono);font-size:.6rem;letter-spacing:2px;color:#4a4130}
 .crt-led{position:absolute;bottom:16px;right:26px;width:8px;height:8px;border-radius:50%;background:#333}
 .crt-led.on{background:#3ee06a;box-shadow:0 0 6px #3ee06a}
@@ -217,24 +293,28 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .crt-pause{width:30px;height:24px;background:#d9d0bd;color:#000;border:2px solid;border-color:#fff #7a715e #7a715e #fff;font-size:.62rem;display:flex;align-items:center;justify-content:center}
 .crt-pause:active{border-color:#7a715e #fff #fff #7a715e}
 
-/* A FITA MINIDV — o botão da cena */
+/* slot da fita — recebe a MiniDV */
+.crt-slot{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:150px;height:14px;background:#0c0a08;border-radius:2px 2px 0 0;z-index:2;box-shadow:inset 0 3px 5px #000}
+
+/* A FITA MINIDV com etiqueta "NÃO REMOVER" — o botão da cena */
 .minidv{
-  position:absolute;z-index:6;left:-30px;bottom:-26px;width:180px;
+  position:absolute;z-index:6;left:-14px;bottom:-30px;width:172px;
   transform:rotate(-7deg);transition:transform .25s ease;
   animation:tapepulse 2.6s ease-in-out infinite;
 }
 .minidv:hover{transform:rotate(-4deg) translateY(-6px)}
 @keyframes tapepulse{0%,100%{filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}50%{filter:drop-shadow(0 10px 14px rgba(0,0,0,.35))}}
-.minidv.inserted{animation:tapein .55s ease-in forwards}
+.minidv.inserted{animation:tapein .48s ease-in forwards}
 @keyframes tapein{
-  40%{transform:rotate(-2deg) translate(90px,-50px) scale(.85);opacity:1}
-  100%{transform:rotate(0deg) translate(190px,-110px) scale(.4);opacity:0}
+  40%{transform:rotate(-2deg) translate(80px,-46px) scale(.9);opacity:1}
+  100%{transform:rotate(0deg) translate(120px,-96px) scale(.34);opacity:0}
 }
-.minidv-body{background:#1d1a17;border:2px solid #000;border-radius:8px;padding:10px 12px 12px;box-shadow:inset 0 2px 0 #ffffff22}
-.minidv-sticker{background:var(--card);border:1px solid #00000055;padding:4px 8px;font-family:var(--hand);font-size:1.05rem;color:var(--ink);transform:rotate(-1deg);line-height:1.1}
-.minidv-reels{display:flex;justify-content:space-between;padding:8px 10px 0}
-.minidv-reels span{width:22px;height:22px;border-radius:50%;border:3px solid #4a443d;background:#2a2622}
-.minidv-tag{position:absolute;top:-16px;right:-8px;font-family:var(--hand);font-size:1.05rem;color:var(--signal);transform:rotate(6deg)}
+.minidv-body{position:relative;background:#1d1a17;border:2px solid #000;border-radius:8px;padding:10px 12px 12px;box-shadow:inset 0 2px 0 #ffffff22}
+.minidv-sticker{display:block;background:var(--card);border:1px solid #00000055;padding:5px 8px;font-family:var(--hand);font-size:1.15rem;color:var(--ink);transform:rotate(-1deg);line-height:1;box-shadow:1px 1px 2px #00000033}
+.minidv-warn{display:block;margin-top:4px;font-family:var(--mono);font-size:.5rem;font-weight:700;letter-spacing:1px;color:var(--signal);transform:rotate(-1deg)}
+.minidv-reels{display:flex;justify-content:space-between;padding:8px 12px 0}
+.minidv-reels span{width:20px;height:20px;border-radius:50%;border:3px solid #4a443d;background:#2a2622}
+.minidv-tag{position:absolute;top:-18px;right:-6px;font-family:var(--hand);font-size:1.1rem;color:var(--signal);transform:rotate(6deg);z-index:2}
 
 /* =========================================================
    TARJA DO ACERVO (marquee)
@@ -242,7 +322,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .tape{background:var(--ink);padding:12px 0;overflow:hidden;white-space:nowrap;border-top:2px solid var(--signal);border-bottom:2px solid var(--signal)}
 .tape-track{display:inline-flex;gap:26px;align-items:center;animation:mq 24s linear infinite}
 .tape-track span{font-family:var(--mono);font-weight:700;font-size:.64rem;letter-spacing:2.5px;color:var(--paper)}
-.tape-dot{width:7px;height:7px;background:var(--signal);transform:rotate(45deg);flex-shrink:0}
+.tape-dot{width:9px;height:7px;flex-shrink:0}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* =========================================================
@@ -255,6 +335,9 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .portfolio .eyebrow{color:#5c4a2c}
 .portfolio .sec-head h2{color:var(--paper);-webkit-text-stroke:1.5px var(--ink);text-shadow:3px 3px 0 var(--ink)}
 .portfolio .sec-sub{color:#5c4a2c}
+.port-line{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;max-width:var(--max);margin:0 auto 24px;position:relative;z-index:2}
+.port-count{font-family:var(--mono);font-size:.62rem;letter-spacing:1px;color:#4a3a20;background:var(--card);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);padding:8px 14px}
+.port-count b{color:var(--signal)}
 .port-tabs{display:flex;gap:14px;margin-bottom:44px;flex-wrap:wrap;position:relative;z-index:2}
 .btab{background:var(--card);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);overflow:hidden;transition:transform .15s;text-align:left;padding:0}
 .btab:hover{transform:translateY(-3px)}
@@ -268,7 +351,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:var(--max);margin:0 auto;position:relative;z-index:2}
 .sgrid{grid-template-columns:repeat(auto-fill,minmax(190px,240px));justify-content:center}
 
-/* FICHA DE MÍDIA — cada vídeo é um item do acervo */
+/* FICHA DE MÍDIA */
 .rec{background:var(--card);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .2s;position:relative;z-index:2}
 .rec:hover{transform:translateY(-4px)}
 .rec-label{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;border-bottom:2px solid var(--ink)}
@@ -286,6 +369,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .ytp span{width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:18px solid var(--card);margin-left:4px}
 .rec-meta{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;padding:9px 11px;font-family:var(--mono);font-size:.56rem;color:var(--muted);border-top:2px solid var(--ink);letter-spacing:.3px}
 .rec-meta b{color:var(--ink);font-weight:700}
+.rec-foot{display:flex;justify-content:space-between;padding:0 11px 8px;font-family:var(--mono);font-size:.5rem;color:var(--muted);opacity:.85}
 
 /* =========================================================
    IMPRESSÕES (thumbs) — papel envelhecido
@@ -366,6 +450,13 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .sheet-cta:hover{color:var(--signal)}
 .drawer-foot{max-width:var(--max);margin:26px auto 0;position:relative;z-index:2;font-family:var(--mono);font-size:.58rem;color:#BFCBC2;letter-spacing:1px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
+/* pasta ARQUIVO MORTO — objeto de envelhecimento */
+.deadfile{max-width:var(--max);margin:22px auto 0;position:relative;z-index:2;display:flex;align-items:center;gap:14px;background:#33403880;border:2px dashed #7d8a80;border-radius:4px;padding:12px 16px}
+.deadfile .dvicon{width:2em;height:1.4em;opacity:.6;flex-shrink:0}
+.deadfile-txt{font-family:var(--mono);font-size:.6rem;line-height:1.7;color:#c3cec6}
+.deadfile-txt b{color:#fff}
+.deadfile .stampink{margin-left:auto;font-size:.7rem;border-color:#9aa8a0;color:#9aa8a0;opacity:.7;flex-shrink:0}
+
 /* =========================================================
    CORRESPONDÊNCIA (depoimentos) — cartas arquivadas
 ========================================================= */
@@ -379,14 +470,24 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .letter-head b{color:var(--ink)}
 .photo{position:absolute;top:10px;right:12px;width:48px;height:48px;border:4px solid #fff;outline:1.5px solid var(--ink);transform:rotate(4deg);box-shadow:2px 3px 5px rgba(0,0,0,.25);overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
-.letter-body{padding:16px;font-size:.86rem;line-height:1.8;color:#3a342c}
+.letter-body{padding:16px;font-family:var(--type);font-size:.82rem;line-height:1.9;color:#3a342c}
 .letter-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 14px;font-family:var(--mono);font-size:.56rem;color:var(--muted)}
 .letter-foot .stampink{font-size:.72rem;padding:4px 9px;opacity:.55}
 
 /* =========================================================
-   FICHA DO OPERADOR (sobre)
+   FICHA DO ACERVO (sobre)
 ========================================================= */
-.about{padding:var(--pad);background:var(--paper)}
+.about{
+  padding:var(--pad);position:relative;
+  background:
+    linear-gradient(180deg,var(--paper) 0%,rgba(237,228,211,.55) 30%,rgba(237,228,211,.88) 60%,var(--paper) 100%),
+    url('../img/bliss_bg.gif') center 30%/cover no-repeat;
+}
+.about-collage{position:absolute;z-index:1;pointer-events:none}
+.about-collage.pin{top:18px;left:44%;width:44px;filter:drop-shadow(2px 3px 3px rgba(0,0,0,.35))}
+.about-collage.vinyl{bottom:6%;left:2%;width:110px;transform:rotate(-8deg);opacity:.94}
+.about-collage.dice{top:8%;right:6%;width:70px;transform:rotate(12deg)}
+.about-collage.speech{display:none}
 .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;max-width:var(--max);margin:0 auto;align-items:start;position:relative;z-index:2}
 .about-h2{font-family:var(--poster);font-weight:400;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.08;letter-spacing:.5px;text-transform:uppercase;filter:url(#turb)}
 .about-h2 .signal-txt{color:var(--signal)}
@@ -394,11 +495,14 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .about-hello .tapefix{top:-12px;left:90px}
 .about-hn{margin-top:26px}
 
-.file{background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.file{background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);position:relative}
 .file-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 18px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:.58rem;color:var(--muted)}
 .file-head b{color:var(--ink)}
-.file-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;padding:16px 18px;border-bottom:1px dashed var(--line);font-family:var(--mono);font-size:.62rem;letter-spacing:.4px;color:var(--muted)}
-.file-fields b{color:var(--ink)}
+/* ficha do acervo: campos rotulados */
+.file-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding:18px;border-bottom:1px dashed var(--line)}
+.ffield{font-family:var(--mono);font-size:.62rem;line-height:1.5}
+.ffield .k{display:block;color:var(--muted);font-size:.54rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px}
+.ffield .v{color:var(--ink);font-weight:700}
 .file-body{padding:18px}
 .file-body p{font-size:.9rem;color:#3a342c;line-height:1.85;margin-bottom:14px}
 .about-quote{font-family:var(--hand);font-size:1.5rem!important;color:var(--signal)!important;line-height:1.2!important;transform:rotate(-1.5deg);margin:6px 0 18px!important}
@@ -426,12 +530,12 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .fq.open .fq-a{max-height:400px}
 .fq-a p{padding:14px 18px 18px;font-size:.85rem;color:var(--muted);line-height:1.8}
 .fq-a strong{color:#2a251d}
-.faq-mascote{position:absolute;right:-20px;top:-30px;width:clamp(70px,9vw,120px);--tilt:8deg;z-index:1;animation:floaty 5s ease-in-out infinite alternate}
-@keyframes floaty{from{transform:translateY(0) rotate(var(--tilt,0deg))}to{transform:translateY(-14px) rotate(calc(var(--tilt,0deg) + 3deg))}}
+.faq-mascote{position:absolute;right:-20px;top:-30px;width:clamp(70px,9vw,120px);--tilt:8deg;z-index:1;animation:floaty2 5s ease-in-out infinite alternate}
+@keyframes floaty2{from{transform:translateY(0) rotate(8deg)}to{transform:translateY(-12px) rotate(11deg)}}
 @media(max-width:900px){.faq-mascote{display:none}}
 
 /* =========================================================
-   NOVO BRIEFING (contato) — protocolar no arquivo
+   NOVO BRIEFING (contato)
 ========================================================= */
 .contact{padding:var(--pad);padding-bottom:clamp(120px,14vw,200px);background:var(--paper);overflow:visible}
 .contact-in{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;max-width:var(--max);margin:0 auto;align-items:start;position:relative;z-index:2}
@@ -448,7 +552,6 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .avail{display:flex;align-items:center;gap:8px;padding-top:16px;font-family:var(--mono);font-size:.72rem;color:#1b7a4a;font-weight:700}
 .avail-dot{width:8px;height:8px;border-radius:50%;background:#3ee06a;box-shadow:0 0 6px #3ee06a}
 
-/* formulário = documento de briefing pra preencher à caneta */
 .brief{background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
 .brief-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 18px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:.58rem;color:var(--muted)}
 .brief-head b{color:var(--ink)}
@@ -467,17 +570,12 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .fbtn:disabled{opacity:.6}
 .fnote{font-family:var(--mono);font-size:.6rem;color:var(--muted);text-align:center;margin-top:12px}
 
-/* mascote gigante — o dono do arquivo */
 .mascote-zone{position:absolute;z-index:4;right:clamp(-10px,1vw,40px);bottom:calc(clamp(220px,26vw,420px) * -0.18);width:clamp(220px,26vw,420px)}
 .contact-mascote{width:100%;display:block;filter:drop-shadow(12px 12px 0 var(--electric));transition:transform .3s ease}
 .contact-mascote:hover{transform:rotate(-2deg)}
 .contact-mascote.pop{animation:mascotepop .7s ease-in-out}
 @keyframes mascotepop{0%{transform:scale(1)}35%{transform:scale(1.05) rotate(-2deg)}70%{transform:scale(.99)}100%{transform:scale(1)}}
-.bubble{
-  background:var(--card);border:2px solid var(--ink);border-radius:14px;
-  padding:10px 16px;font-family:var(--hand);font-size:1.25rem;font-weight:700;
-  box-shadow:3px 3px 0 var(--ink);color:var(--ink);
-}
+.bubble{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:10px 16px;font-family:var(--hand);font-size:1.25rem;font-weight:700;box-shadow:3px 3px 0 var(--ink);color:var(--ink)}
 .bubble::after{content:'';position:absolute;bottom:-11px;right:30px;width:0;height:0;border-right:10px solid transparent;border-left:4px solid transparent;border-top:12px solid var(--ink)}
 .bubble::before{content:'';position:absolute;bottom:-7px;right:32px;z-index:1;width:0;height:0;border-right:7px solid transparent;border-left:2px solid transparent;border-top:9px solid var(--card)}
 .mascote-bubble{position:absolute;top:-26px;left:-58%;min-width:230px;opacity:0;transform:scale(.7) translateY(8px);transform-origin:bottom right;transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:5}
@@ -488,21 +586,26 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 }
 
 /* =========================================================
-   FIM DO ARQUIVO (footer)
+   FIM DO ARQUIVO (footer) — inventário do acervo
 ========================================================= */
-.footer{padding:16px 20px;background:var(--ink);color:#8a8072;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:.6rem;border-top:2px solid var(--signal);position:relative;z-index:2}
+.footer-arch{background:var(--ink);color:#cfc6b6;padding:clamp(40px,6vw,70px) clamp(20px,4vw,56px) 30px;position:relative;z-index:2}
+.footer-arch-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.fa-title{font-family:var(--poster);font-size:clamp(1.4rem,3vw,2rem);text-transform:uppercase;letter-spacing:.5px;color:var(--paper);margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.fa-title .dvicon{width:1.5em;height:1.05em}
+.fa-sub{font-family:var(--mono);font-size:.62rem;line-height:1.9;color:#8a8072;max-width:340px}
+.fa-ledger{font-family:var(--mono);font-size:.64rem;line-height:1;color:#cfc6b6}
+.fa-ledger .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #3a3226}
+.fa-ledger .row:last-child{border-bottom:none}
+.fa-ledger b{color:var(--amber)}
+.footer{padding:16px 20px;background:#0c0a08;color:#8a8072;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:.6rem;border-top:2px solid var(--signal);position:relative;z-index:2}
 .footer-brand{display:flex;align-items:center;gap:10px}
 .footer-brand img{width:26px;height:26px;border-radius:50%;border:1px solid var(--signal)}
 .barcode{width:120px;height:26px;background:repeating-linear-gradient(90deg,#8a8072 0 2px,transparent 2px 4px,#8a8072 4px 5px,transparent 5px 9px,#8a8072 9px 12px,transparent 12px 14px)}
 .foot-secret{position:relative;font-family:var(--mono);font-size:.64rem;color:#8a8072;border:1px dashed #3a3226;padding:4px 10px;border-radius:3px}
 .foot-secret:hover{color:var(--paper);border-color:var(--signal)}
-.secretnote{
-  position:absolute;bottom:36px;right:0;width:190px;padding:14px;
-  background:var(--postit);color:#4a3b10;font-family:var(--hand);font-size:1.1rem;line-height:1.25;
-  transform:rotate(-3deg) scale(.7);opacity:0;transition:opacity .25s,transform .25s;
-  box-shadow:3px 5px 8px rgba(0,0,0,.3);pointer-events:none;
-}
+.secretnote{position:absolute;bottom:36px;right:0;width:190px;padding:14px;background:var(--postit);color:#4a3b10;font-family:var(--hand);font-size:1.1rem;line-height:1.25;transform:rotate(-3deg) scale(.7);opacity:0;transition:opacity .25s,transform .25s;box-shadow:3px 5px 8px rgba(0,0,0,.3);pointer-events:none}
 .secretnote.show{opacity:1;transform:rotate(-3deg) scale(1)}
+@media(max-width:760px){.footer-arch-in{grid-template-columns:1fr;gap:26px}}
 
 /* =========================================================
    RESPONSIVO
@@ -515,13 +618,14 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   .taskbar{padding:8px 14px}
   .ghost{font-size:5rem}
   .minidv{width:130px;left:-8px;bottom:-18px}
-  .postit{display:none}
+  .notepad,.postit{display:none}
+  .file-fields{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .vgrid{grid-template-columns:1fr}
   .tgrid{grid-template-columns:1fr}
   .sgrid{grid-template-columns:repeat(2,1fr)}
-  .spark,.clipn,.band{display:none}
+  .spark,.clipn,.band,.coffee,.staple{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
