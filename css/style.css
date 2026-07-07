@@ -284,7 +284,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .crt-roll.run{animation:rollbar .5s linear forwards}
 @keyframes rollbar{0%{opacity:.6;top:-40%}100%{opacity:0;top:120%}}
 
-.crt-label{position:absolute;bottom:12px;left:26px;font-family:var(--mono);font-size:.6rem;letter-spacing:2px;color:#4a4130}
+.crt-label{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.6rem;letter-spacing:2px;color:var(--muted);white-space:nowrap;z-index:2}
 .crt-led{position:absolute;bottom:16px;right:26px;width:8px;height:8px;border-radius:50%;background:#333}
 .crt-led.on{background:#3ee06a;box-shadow:0 0 6px #3ee06a}
 .crt-ctrl{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:none;align-items:center;gap:10px;font-family:var(--mono);font-size:.58rem;letter-spacing:2px;color:#4a4130}
@@ -403,7 +403,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   padding:var(--pad);position:relative;
   background:
     linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25) 70%,rgba(0,0,0,.4)),
-    url('../img/bliss_bg.gif') center 65%/cover no-repeat;
+    url('../img/windows%207%20wallpaper.gif') center 65%/cover no-repeat;
 }
 .xp-eyebrow{color:#eef6ff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .xp-eyebrow::before{background:#2B5BFF}
@@ -503,7 +503,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   padding:var(--pad);position:relative;
   background:
     linear-gradient(180deg,var(--paper) 0%,rgba(237,228,211,.55) 30%,rgba(237,228,211,.88) 60%,var(--paper) 100%),
-    url('../img/bliss_bg.gif') center 30%/cover no-repeat;
+    url('../img/windows%207%20wallpaper.gif') center 30%/cover no-repeat;
 }
 .about-collage{position:absolute;z-index:1;pointer-events:none}
 .about-collage.pin{top:18px;left:44%;width:44px;filter:drop-shadow(2px 3px 3px rgba(0,0,0,.35))}
@@ -514,7 +514,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .about-h2{font-family:var(--poster);font-weight:400;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.08;letter-spacing:.5px;text-transform:uppercase;filter:url(#turb)}
 .about-h2 .signal-txt{color:var(--signal)}
 .about-hello{width:min(420px,96%);margin-top:30px;position:relative;transform:rotate(-4deg)}
-.about-hello .tapefix{top:-12px;left:38%}
+.about-hello .tapefix{top:calc(21% - 13px);left:38%}
 .about-hn{margin-top:26px}
 
 .file{background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);position:relative}
