@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Eliseu Guilherme — Cadeirante Maromba. Arquivo pessoal de um editor de vídeo obcecado por contar histórias. Documentários, motion e conteúdo para YouTube.">
+<meta name="description" content="Eliseu — Cadeirante Maromba. Arquivo pessoal de um editor de vídeo obcecado por contar histórias. Documentários, motion e conteúdo para YouTube.">
 <title>Cadeirante Maromba — O Arquivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;700&family=Special+Elite&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <!-- FAVICON = a fita MiniDV, ícone da marca -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='18' rx='3' fill='%2317130f'/%3E%3Crect x='6' y='10' width='20' height='7' rx='1' fill='%23FBF6EA'/%3E%3Ccircle cx='12' cy='21' r='3' fill='none' stroke='%23E13327' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='21' r='3' fill='none' stroke='%23E13327' stroke-width='1.5'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
 
@@ -25,21 +25,12 @@
   </filter>
 </svg>
 
-<!-- ÍCONE DA MARCA: fita MiniDV (SVG-symbol reutilizável) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="dv" viewBox="0 0 40 28">
-    <rect x="1.5" y="4" width="37" height="21" rx="3" fill="currentColor"/>
-    <rect x="5" y="7" width="30" height="8.5" rx="1.2" fill="#FBF6EA" opacity=".92"/>
-    <circle cx="15" cy="20" r="3.6" fill="none" stroke="#E13327" stroke-width="1.6"/>
-    <circle cx="25" cy="20" r="3.6" fill="none" stroke="#E13327" stroke-width="1.6"/>
-    <circle cx="15" cy="20" r="1" fill="#E13327"/><circle cx="25" cy="20" r="1" fill="#E13327"/>
-  </symbol>
-</svg>
+
 
 <!-- REGISTRO DE ACESSO -->
 <div id="boot">
   <div class="acard">
-    <div class="acard-band"><span class="dvicon"><svg><use href="#dv"/></svg></span> ARQUIVO CADEIRANTE MAROMBA</div>
+    <div class="acard-band"><img class="dvicon-img" src="img/logo_icon.png" alt=""> ARQUIVO CADEIRANTE MAROMBA</div>
     <div class="acard-body">
       REGISTRO DE ACESSO<br>
       VISITANTE Nº <b id="visId">----</b><br>
@@ -52,7 +43,7 @@
 
 <!-- BARRA DO ARQUIVO -->
 <header class="taskbar" id="taskbar">
-  <a href="#inicio" class="tb-start"><span class="dvicon"><svg><use href="#dv"/></svg></span>CM<span>.</span></a>
+  <a href="#inicio" class="tb-start"><img class="dvicon-img" src="img/logo_icon.png" alt="">CM<span>.</span></a>
   <nav class="tb-mid">
     <a href="#trabalhos" class="tb-btn" data-i18n="nav.port">INVENTÁRIO</a>
     <a href="#servicos" class="tb-btn" data-i18n="nav.serv">GAVETA</a>
@@ -84,7 +75,6 @@
       <li class="done"><span data-i18n="note.1">tratar do gado</span></li>
       <li class="done"><span data-i18n="note.2">responder cliente</span></li>
       <li><span data-i18n="note.3">renderizar episódio 8</span></li>
-      <li><span data-i18n="note.4">estudar p/ FATEC</span></li>
       <li><span data-i18n="note.5">comprar sal mineral</span></li>
     </ul>
   </div>
@@ -97,7 +87,7 @@
   </div>
 
   <div class="crt-zone">
-    <!-- o zelador deixou a fita encostada -->
+    <!-- o zelador observa de longe, sem tapar a fita -->
     <img class="hero-keeper" src="img/cadeiranteMascote.png" alt="" aria-hidden="true">
     <div class="crt">
       <span class="tapefix" style="top:-14px;left:34px;--tilt:-5deg"></span>
@@ -112,9 +102,7 @@
         <div class="crt-roll" id="crtRoll" aria-hidden="true"></div>
         <div class="crt-static" id="crtStatic" aria-hidden="true"></div>
         <div class="crt-tic" id="crtTic" aria-hidden="true"></div>
-        <div class="crt-power" id="crtPower">
-          <span class="crt-hint" data-i18n="hero.hint">insira a fita<br>pra assistir ↙</span>
-        </div>
+        <div class="crt-power" id="crtPower"></div>
       </div>
       <span class="crt-slot" aria-hidden="true"></span>
       <span class="crt-label">TRINITRON — REC001</span>
@@ -125,7 +113,10 @@
         <input type="range" id="crtVol" min="0" max="100" value="60" aria-label="Volume da TV">
       </div>
 
-      <!-- A FITA: ícone da marca + botão da cena -->
+      <!-- a dica fica FORA da tela, ao lado da fita -->
+      <span class="tape-hint" id="tapeHint" data-i18n="hero.hint">insira a fita<br>pra assistir ↙</span>
+
+      <!-- A FITA: maior, destravada, sempre visível e clicável -->
       <button class="minidv" id="tapeBtn" aria-label="Inserir a fita do showreel">
         <span class="minidv-tag" data-i18n="hero.tapetag">insira ↑</span>
         <span class="minidv-body">
@@ -206,29 +197,29 @@
 
 <!-- PROVA DE PROCESSO -->
 <section class="workflow lazy-sec crop">
-  <div class="band aero" style="top:40%;--rot:-14deg;--h:40px;--op:.08"></div>
-  <span class="spark aero" style="top:20%;left:5%;--sz:34px"></span>
-  <div class="sec-head" style="text-align:center">
-    <span class="eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">REF: CM-03 · PROVA DE PROCESSO</span>
-    <h2 data-i18n="wf.title">Do bruto ao luxo</h2>
+  <div class="sec-head" style="text-align:center;position:relative;z-index:2">
+    <span class="eyebrow xp-eyebrow" style="margin:0 auto 14px" data-i18n="wf.eyebrow">REF: CM-03 · PROVA DE PROCESSO</span>
+    <h2 class="xp-title" data-i18n="wf.title">Do bruto ao luxo</h2>
   </div>
   <div class="wf-wrap">
-    <div class="rec halftone">
-      <div class="rec-label"><span class="rec-no">CM-0300</span><span class="rec-fn">COMPARATIVO_01.mov</span><span class="st exp">EXPORTADO</span></div>
-      <div class="wf-box" id="wfBox">
-        <div class="frame" style="aspect-ratio:16/9">
-          <video id="wfVideo" loop playsinline muted preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
-          <div class="wf-cover" id="wfCover"><button class="btn3d"><span>▶</span><span data-i18n="wf.play">Reproduzir</span></button></div>
-          <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
-          <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
-          <div class="wf-vol" id="wfVol">
-            <span>VOL</span>
-            <input type="range" id="wfVolRange" min="0" max="100" value="70" aria-label="Volume do vídeo">
-          </div>
-        </div>
+    <span class="idlabel wmp-tag" style="transform:rotate(-3deg)">
+      <span class="idlabel-band">CM-0300</span>
+      <span class="idlabel-body">COMPARATIVO_01.mov · <span class="st exp" style="border:none;padding:0">EXPORTADO</span></span>
+    </span>
+    <div class="wmp-window" id="wfBox">
+      <img class="wmp-frame" src="img/wmp_frame.jpg" alt="" aria-hidden="true">
+      <div class="wmp-video">
+        <video id="wfVideo" loop playsinline muted preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
+        <div class="wf-cover" id="wfCover"><button class="btn3d"><span>▶</span><span data-i18n="wf.play">Reproduzir</span></button></div>
+        <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
+        <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
       </div>
-      <div class="rec-foot"><span data-i18n="wf.mod">mod: 11/2025 · reexportado 2x</span><span>16:9 · H.264</span></div>
+      <div class="wf-vol" id="wfVol">
+        <span>VOL</span>
+        <input type="range" id="wfVolRange" min="0" max="100" value="70" aria-label="Volume do vídeo">
+      </div>
     </div>
+    <p class="wf-mod" data-i18n="wf.mod">mod: 11/2025 · reexportado 2x · 16:9 · H.264</p>
     <p class="wf-cap" data-i18n="wf.cap">O segredo não está no corte. Está na <strong>intenção.</strong></p>
   </div>
 </section>
@@ -238,7 +229,7 @@
   <div class="ghost" style="top:20px;left:-20px" aria-hidden="true">PROTOCOLO</div>
   <span class="spark" style="top:14%;right:6%;--sz:38px"></span>
   <div class="coffee" style="bottom:12%;left:8%;--sz:100px"></div>
-  <div class="clipn" style="top:110px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
+  <div class="clipn" style="top:30px;left:2vw;--tilt:-4deg" data-i18n-html="deco.n1"><b>EXTRA!</b> Editor local transforma bruto em ouro puro.</div>
 
   <div class="sec-head">
     <span class="eyebrow" data-i18n="proc.eyebrow">REF: CM-04 · PROTOCOLO DE PRODUÇÃO</span>
@@ -320,7 +311,7 @@
 
   <!-- pasta arquivada no fundo da gaveta: prova de que o acervo tem passado -->
   <div class="deadfile">
-    <span class="dvicon"><svg><use href="#dv"/></svg></span>
+    <span class="dvicon-img" style="display:inline-block"><img src="img/logo_icon.png" alt="" style="width:100%;height:100%;object-fit:contain"></span>
     <div class="deadfile-txt"><b>_ARQUIVO_MORTO/</b> — <span data-i18n="sv.dead">projetos antigos, testes e versões que ficaram pelo caminho. guardados, mas fora de catálogo.</span></div>
     <span class="stampink" data-i18n="sv.deadstamp">Arquivado</span>
   </div>
@@ -393,7 +384,7 @@
       <span class="staple" style="top:-4px;left:50px;--tilt:-7deg"></span>
       <div class="file-head"><span><b>DOC:</b> FICHA_DO_ACERVO.txt</span><span><b>ACESSO:</b> PÚBLICO</span></div>
       <div class="file-fields">
-        <div class="ffield"><span class="k" data-i18n="about.k1">Responsável</span><span class="v">Eliseu Guilherme</span></div>
+        <div class="ffield"><span class="k" data-i18n="about.k1">Responsável</span><span class="v">Eliseu</span></div>
         <div class="ffield"><span class="k" data-i18n="about.k2">Especialidade</span><span class="v" data-i18n="about.v2">Narrativas e edição cinematográfica</span></div>
         <div class="ffield"><span class="k" data-i18n="about.k3">Base</span><span class="v" data-i18n="about.v3">Interior de SP, Brasil</span></div>
         <div class="ffield"><span class="k" data-i18n="about.k4">Arquivo iniciado</span><span class="v">2022</span></div>
@@ -401,9 +392,10 @@
         <div class="ffield"><span class="k" data-i18n="about.k6">Última atualização</span><span class="v" id="aboutUpdate" data-i18n="about.v6">Hoje</span></div>
       </div>
       <div class="file-body">
-        <p data-i18n="about.p1">Meu nome é Eliseu — na internet, Cadeirante Maromba. Sou editor de vídeo focado em contar histórias que prendem a atenção do primeiro ao último segundo, especializado em documentários e conteúdo para YouTube.</p>
-        <p data-i18n="about.p2">Cresci consumindo conteúdo bom — PS2 depois da escola, documentário, internet dos anos 2000 — e é daí que vem meu maior defeito e minha maior qualidade: eu sou crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa — isso me incomoda de verdade.</p>
-        <p data-i18n="about.p3">O que me move é unir narrativa, ritmo e atenção obsessiva aos detalhes até o vídeo se destacar sozinho. Cada projeto é tratado com o cuidado de quem sabe a diferença entre "ficou pronto" e "ficou BOM" — priorizando qualidade acima de quantidade. Sempre.</p>
+        <p data-i18n="about.p1">Meu nome é Eliseu, mas provavelmente você me conhece como Cadeirante Maromba.</p>
+        <p data-i18n="about.p2">Eu edito vídeos porque gosto de descobrir o que faz uma história funcionar. Um corte no momento certo, uma trilha que entra alguns segundos depois, um silêncio bem colocado... são esses detalhes que fazem alguém continuar assistindo.</p>
+        <p data-i18n="about.p3">Cresci consumindo muito conteúdo na internet, documentários e jogos, e é daí que vem meu maior defeito e minha maior qualidade: eu sou EXTREMAMENTE crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa... isso realmente me incomoda.</p>
+        <p data-i18n="about.p4">Quando pego um projeto, meu objetivo não é simplesmente terminar a edição. É fazer com que ela pareça inevitável, como se cada escolha tivesse exatamente um motivo para existir.</p>
         <p class="about-quote" data-i18n="about.quote">"Você cria. Eu cuido do resto."</p>
       </div>
       <div class="stamp-row">
@@ -444,7 +436,7 @@
   <div class="contact-in">
     <div class="contact-l">
       <span class="eyebrow" data-i18n="ct.eyebrow">REF: CM-09 · NOVO BRIEFING</span>
-      <h2 data-i18n="ct.title">Pronto para adicionar um projeto ao arquivo?</h2>
+      <h2 data-i18n="ct.title">Pronto para adicionar um projeto ao NOSSO arquivo?</h2>
       <p data-i18n="ct.sub">Preencha o briefing ao lado — ele entra direto na fila do acervo. Respondo em até 24h.</p>
       <a href="https://wa.me/5515998318065" target="_blank" rel="noopener" class="ctlink"><span class="ctlink-l" data-i18n="ct.wpp">WhatsApp</span><span class="ctlink-v">+55 (15) 99831-8065</span></a>
       <a href="mailto:cadeirantemaromba@gmail.com" class="ctlink"><span class="ctlink-l" data-i18n="ct.mail">E-mail</span><span class="ctlink-v">cadeirantemaromba@gmail.com</span></a>
@@ -501,7 +493,7 @@
   <div class="footer-arch">
     <div class="footer-arch-in">
       <div>
-        <div class="fa-title"><span class="dvicon"><svg><use href="#dv"/></svg></span> <span data-i18n="fa.title">Arquivo Cadeirante Maromba</span></div>
+        <div class="fa-title"><img class="dvicon-img" src="img/logo_icon.png" alt=""> <span data-i18n="fa.title">Arquivo Cadeirante Maromba</span></div>
         <p class="fa-sub" data-i18n="fa.sub">Um acervo pessoal de vídeos, artes e documentos de produção. Ainda em expansão — o visitante recebeu autorização temporária para explorar.</p>
       </div>
       <div class="fa-ledger">
