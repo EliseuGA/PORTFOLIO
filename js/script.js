@@ -15,12 +15,12 @@ const ARCHIVE = {
     {f:'introIcebergCaioxpo_8mb.mp4',            label:'ICEBERG_INTRO.mov',   cliente:'caioxapo',       ano:'2025', peso:'7.4 GB', status:'EXPORTADO'},
     {f:'editVonGusto.mp4',                        label:'EDIT_VONGUSTO.mov',   cliente:'Von Gusto',      ano:'2025', peso:'3.2 GB', status:'APROVADO'},
     {f:'badboysRDR2_8mb.mp4',                     label:'BADBOYS_RDR2.mov',    cliente:'Acervo pessoal', ano:'2024', peso:'5.8 GB', status:'ARQUIVADO'},
-    {f:'introFnafDoom.mp4',                       label:'FNAF_DOOM.mov',       cliente:'caioxapo',       ano:'2025', peso:'4.1 GB', status:'EXPORTADO'},
-    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'—',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
-    {f:'introPoppyPlaytime_8mb.mp4',              label:'POPPY_INTRO.mov',     cliente:'caioxapo',       ano:'2025', peso:'5.0 GB', status:'APROVADO'},
+    {f:'introFnafDoom.mp4',                       label:'FNAF_DOOM.mov',       cliente:'Acervo pessoal',       ano:'2025', peso:'4.1 GB', status:'EXPORTADO'},
+    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'Acervo pessoal',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
+    {f:'introPoppyPlaytime_8mb.mp4',              label:'POPPY_INTRO.mov',     cliente:'Acervo pessoal',       ano:'2025', peso:'5.0 GB', status:'APROVADO'},
     {f:'editDarthVader_1920x1080p_8mb.mp4',       label:'VADER_EDIT.mov',      cliente:'Acervo pessoal', ano:'2024', peso:'2.9 GB', status:'ARQUIVADO'},
-    {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Particular',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
-    {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'RV There Yet',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
+    {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Acervo pessoal',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
+    {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'Acervo pessoal',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
   ],
   longos: [
     {yt:'wfXfG8ULGDY', label:'DOC_ARQUIVO_01.mp4', ano:'2025'},
@@ -31,13 +31,13 @@ const ARCHIVE = {
     {yt:'C0plDAADgWc', label:'DOC_ARQUIVO_06.mp4', ano:'2026'}
   ],
   shorts: [
-    {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Von Gusto', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
-    {f:'eraHumano_CONFIA_1080x1920p.mp4',  label:'ERA_HUMANO.mp4',    cliente:'caioxapo',  ano:'2025', peso:'640 MB', status:'ENTREGUE'},
-    {f:'gustaoTapao_1080x1920p_8mb.mp4',   label:'GUSTAO_TAPAO.mp4',  cliente:'Von Gusto', ano:'2025', peso:'710 MB', status:'ENTREGUE'},
-    {f:'sonoGusto_1080x1920p_8mb.mp4',     label:'SONO_GUSTO.mp4',    cliente:'Von Gusto', ano:'2025', peso:'590 MB', status:'ENTREGUE'},
-    {f:'gustoCS2_1080x1920p_8mb.mp4',      label:'GUSTO_CS2.mp4',     cliente:'Von Gusto', ano:'2026', peso:'880 MB', status:'ENTREGUE'},
-    {f:'mavalgasBURRO_1080x1920p_8mb.mp4', label:'MAVALGAS.mp4',      cliente:'Mavalgas',  ano:'2026', peso:'760 MB', status:'ENTREGUE'},
-    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2026', peso:'540 MB', status:'ENTREGUE'}
+    {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Acervo pessoal', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
+    {f:'eraHumano_CONFIA_1080x1920p.mp4',  label:'ERA_HUMANO.mp4',    cliente:'Acervo pessoal',  ano:'2025', peso:'640 MB', status:'ENTREGUE'},
+    {f:'gustaoTapao_1080x1920p_8mb.mp4',   label:'GUSTAO_TAPAO.mp4',  cliente:'Von Gusto', ano:'2024', peso:'710 MB', status:'ENTREGUE'},
+    {f:'sonoGusto_1080x1920p_8mb.mp4',     label:'SONO_GUSTO.mp4',    cliente:'Von Gusto', ano:'2024', peso:'590 MB', status:'ENTREGUE'},
+    {f:'gustoCS2_1080x1920p_8mb.mp4',      label:'GUSTO_CS2.mp4',     cliente:'Von Gusto', ano:'2024', peso:'880 MB', status:'ENTREGUE'},
+    {f:'mavalgasBURRO_1080x1920p_8mb.mp4', label:'MAVALGAS.mp4',      cliente:'Von Gusto',  ano:'2024', peso:'760 MB', status:'ENTREGUE'},
+    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2024', peso:'540 MB', status:'ENTREGUE'}
   ]
 };
 const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'pub', ENTREGUE:'ent'};
