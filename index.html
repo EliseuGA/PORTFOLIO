@@ -117,10 +117,10 @@
       <!-- A FITA: maior, destravada, sempre visível e clicável -->
       <button class="minidv" id="tapeBtn" aria-label="Inserir a fita do showreel">
         <span class="minidv-tag" data-i18n="hero.tapetag">insira ↑</span>
-        <span class="minidv-body">
+        <img class="minidv-img" src="img/vhs_tape.png" alt="Fita de vídeo SHOWREEL 2026">
+        <span class="minidv-label">
           <span class="minidv-sticker">SHOWREEL_2026</span>
           <span class="minidv-warn" data-i18n="hero.warn">NÃO REMOVER</span>
-          <span class="minidv-reels"><span></span><span></span></span>
         </span>
       </button>
     </div>
@@ -222,10 +222,13 @@
       <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
       <video id="wfVideo" loop playsinline preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
       <div class="wf-controls" id="wfControls">
+        <button class="wf-ctrl-btn" id="wfBack" aria-label="Voltar 5 segundos">⟲5</button>
         <button class="wf-ctrl-play" id="wfCtrlPlay" aria-label="Reproduzir/Pausar">▶</button>
+        <button class="wf-ctrl-btn" id="wfFwd" aria-label="Avançar 5 segundos">5⟳</button>
         <div class="wf-ctrl-track" id="wfCtrlTrack"><div class="wf-ctrl-fill" id="wfCtrlFill"></div></div>
         <span class="wf-ctrl-time" id="wfCtrlTime">0:00</span>
         <button class="wf-ctrl-mute" id="wfCtrlMute" aria-label="Mudo">🔊</button>
+        <input type="range" class="wf-ctrl-vol" id="wfCtrlVol" min="0" max="100" value="100" aria-label="Volume">
       </div>
     </div>
   </div>
