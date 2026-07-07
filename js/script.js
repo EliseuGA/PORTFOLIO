@@ -59,6 +59,7 @@ const translations = {
     "port.motion":"Caixa A — Motion","port.long":"Caixa B — Longos","port.shorts":"Caixa C — Shorts",
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
+    "wf.mod":"mod: 11/2025 · reexportado 2x · 16:9 · H.264",
     "wf.cap":"O segredo não está no corte. Está na <strong>intenção.</strong>",
     "proc.eyebrow":"REF: CM-04 · PROTOCOLO DE PRODUÇÃO","proc.title":"Como trabalharemos juntos?","proc.sub":"Do primeiro \"oi\" até o arquivo na sua mão.","proc.stamp":"Protocolo padrão",
     "proc.s1.t":"Briefing","proc.s1.d":"Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.",
@@ -81,13 +82,21 @@ const translations = {
     "test.a":"Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!",
     "test.b":"A edição desse vídeo está impecável, de verdade. É um dos vídeos mais bonitos que já vi no YouTube ultimamente. Muito maneiro, e a qualidade ficou incrível.",
     "test.c":"Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.",
-    "about.eyebrow":"REF: CM-07 · FICHA DO OPERADOR",
+    "about.eyebrow":"REF: CM-07 · FICHA DO ACERVO",
+    "note.title":"lembrete","note.1":"tratar do gado","note.2":"responder cliente","note.3":"renderizar episódio 8","note.5":"comprar sal mineral",
+    "hero.warn":"NÃO REMOVER",
+    "port.count":"ACERVO EM EXPANSÃO · <b>DEZENAS DE ITENS</b> CATALOGADOS · 3 CAIXAS ABERTAS",
+    "sv.dead":"projetos antigos, testes e versões que ficaram pelo caminho. guardados, mas fora de catálogo.","sv.deadstamp":"Arquivado",
+    "about.k1":"Responsável","about.k2":"Especialidade","about.v2":"Narrativas e edição cinematográfica","about.k3":"Base","about.v3":"Interior de SP, Brasil","about.k4":"Arquivo iniciado","about.k5":"Estado","about.v5":"Em atividade","about.k6":"Última atualização","about.v6":"Hoje",
+    "fa.title":"Arquivo Cadeirante Maromba","fa.sub":"Um acervo pessoal de vídeos, artes e documentos de produção. Ainda em expansão — o visitante recebeu autorização temporária para explorar.",
+    "fa.l1":"Estado do acervo","fa.v1":"EM ATIVIDADE","fa.l2":"Iniciado em","fa.l3":"Caixas de mídia abertas","fa.l4":"Documentado","fa.v4":"ANOS DE TRABALHO","fa.l5":"Última atualização",
     "about.title":"Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class=\"signal-txt\">criador.</span>",
     "about.note":"qualidade &gt; quantidade.<br>sempre.",
     "about.f1":"NOME: <b>Eliseu (\"Cadeirante Maromba\")</b>","about.f2":"FUNÇÃO: <b>Editor & Documentarista</b>","about.f3":"BASE: <b>Interior de SP, Brasil</b>","about.f4":"STATUS: <b>Em atividade</b>",
-    "about.p1":"Meu nome é Eliseu — na internet, Cadeirante Maromba. Sou editor de vídeo focado em contar histórias que prendem a atenção do primeiro ao último segundo, especializado em documentários e conteúdo para YouTube.",
-    "about.p2":"Cresci consumindo conteúdo bom — PS2 depois da escola, documentário, internet dos anos 2000 — e é daí que vem meu maior defeito e minha maior qualidade: eu sou crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa — isso me incomoda de verdade.",
-    "about.p3":"O que me move é unir narrativa, ritmo e atenção obsessiva aos detalhes até o vídeo se destacar sozinho. Cada projeto é tratado com o cuidado de quem sabe a diferença entre \"ficou pronto\" e \"ficou BOM\" — priorizando qualidade acima de quantidade. Sempre.",
+    "about.p1":"Meu nome é Eliseu, mas provavelmente você me conhece como Cadeirante Maromba.",
+    "about.p2":"Eu edito vídeos porque gosto de descobrir o que faz uma história funcionar. Um corte no momento certo, uma trilha que entra alguns segundos depois, um silêncio bem colocado... são esses detalhes que fazem alguém continuar assistindo.",
+    "about.p3":"Cresci consumindo muito conteúdo na internet, documentários e jogos, e é daí que vem meu maior defeito e minha maior qualidade: eu sou EXTREMAMENTE crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa... isso realmente me incomoda.",
+    "about.p4":"Quando pego um projeto, meu objetivo não é simplesmente terminar a edição. É fazer com que ela pareça inevitável, como se cada escolha tivesse exatamente um motivo para existir.",
     "about.quote":"\"Você cria. Eu cuido do resto.\"",
     "about.st1":"PARCERIAS","about.st2":"ALCANÇADOS","about.st3":"DE CUIDADO",
     "faq.eyebrow":"REF: CM-08 · MANUAL DO CLIENTE","faq.title":"Perguntas frequentes","faq.page":"PÁGINA 07",
@@ -98,7 +107,7 @@ const translations = {
     "faq.q5":"Em quais formatos você entrega?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.",
     "faq.q6":"Como envio o material?","faq.a6":"Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.",
     "faq.q7":"E se eu cancelar o projeto?","faq.a7":"<strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.",
-    "ct.eyebrow":"REF: CM-09 · NOVO BRIEFING","ct.title":"Pronto para adicionar um projeto ao arquivo?",
+    "ct.eyebrow":"REF: CM-09 · NOVO BRIEFING","ct.title":"Pronto para adicionar um projeto ao NOSSO arquivo?",
     "ct.sub":"Preencha o briefing ao lado — ele entra direto na fila do acervo. Respondo em até 24h.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Arquivo aberto para novos projetos",
     "ct.discordCopied":"copiado! ✓",
@@ -126,6 +135,7 @@ const translations = {
     "port.motion":"Box A — Motion","port.long":"Box B — Long-form","port.shorts":"Box C — Shorts",
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
+    "wf.mod":"mod: 11/2025 · re-exported 2x · 16:9 · H.264",
     "wf.cap":"The secret isn't in the cut. It's in the <strong>intention.</strong>",
     "proc.eyebrow":"REF: CM-04 · PRODUCTION PROTOCOL","proc.title":"How we'll work together?","proc.sub":"From the first message to the final file in your hands.","proc.stamp":"Protocolo padrão",
     "proc.s1.t":"Briefing","proc.s1.d":"You tell me your idea and what you want to say. The more I understand your channel, the better the final cut.",
@@ -149,12 +159,20 @@ const translations = {
     "test.b":"The editing on this video is truly flawless. It's one of the nicest-looking videos I've seen on YouTube lately. Really cool, and the quality was incredible.",
     "test.c":"I needed someone who understood games and could edit with energy. The videos got exactly the vibe I wanted — the first one I posted got over 800K views, and everyone praised the edit.",
     "about.eyebrow":"REF: CM-07 · OPERATOR FILE",
+    "note.title":"reminder","note.1":"tend to the cattle","note.2":"reply to client","note.3":"render episode 8","note.5":"buy mineral salt",
+    "hero.warn":"DO NOT REMOVE",
+    "port.count":"ARCHIVE EXPANDING · <b>DOZENS OF ITEMS</b> CATALOGUED · 3 BOXES OPEN",
+    "sv.dead":"old projects, tests and versions that fell by the wayside. kept, but off the catalog.","sv.deadstamp":"Arquivado",
+    "about.k1":"Responsible","about.k2":"Specialty","about.v2":"Narrative and cinematic editing","about.k3":"Base","about.v3":"São Paulo countryside, Brazil","about.k4":"Archive started","about.k5":"Status","about.v5":"Active","about.k6":"Last updated","about.v6":"Today",
+    "fa.title":"Cadeirante Maromba Archive","fa.sub":"A personal archive of videos, art and production documents. Still expanding — the visitor was granted temporary authorization to explore.",
+    "fa.l1":"Archive status","fa.v1":"ACTIVE","fa.l2":"Started in","fa.l3":"Open media boxes","fa.l4":"Documented","fa.v4":"YEARS OF WORK","fa.l5":"Last updated",
     "about.title":"I'm an editor. A designer.<br>But above all, I'm a <span class=\"signal-txt\">creator.</span>",
     "about.note":"quality &gt; quantity.<br>always.",
     "about.f1":"NAME: <b>Eliseu (\"Cadeirante Maromba\")</b>","about.f2":"ROLE: <b>Editor & Documentary Maker</b>","about.f3":"BASE: <b>São Paulo countryside, Brazil</b>","about.f4":"STATUS: <b>Active</b>",
-    "about.p1":"My name is Eliseu — online, Cadeirante Maromba. I'm a video editor focused on telling stories that hold attention from the first second to the last, specialized in documentaries and YouTube content.",
-    "about.p2":"I grew up consuming good content — PS2 after school, documentaries, 2000s internet — and that's where my biggest flaw and my biggest quality come from: I'm critical. I can't stand generic videos. Cuts with no intention, music thrown in carelessly, lazy thumbnails — that genuinely bothers me.",
-    "about.p3":"What drives me is combining narrative, rhythm and obsessive attention to detail until the video stands out on its own. Every project is treated with the care of someone who knows the difference between \"it's done\" and \"it's GOOD\" — always prioritizing quality over quantity.",
+    "about.p1":"My name is Eliseu, but you probably know me as Cadeirante Maromba.",
+    "about.p2":"I edit videos because I like figuring out what makes a story work. A cut at the right moment, a track that comes in a few seconds late, a well-placed silence... those are the details that make someone keep watching.",
+    "about.p3":"I grew up consuming a lot of content online, documentaries and games, and that's where my biggest flaw and my biggest quality come from: I'm EXTREMELY critical. I can't stand generic videos. Cuts with no intention, music thrown in carelessly, lazy thumbnails... that genuinely bothers me.",
+    "about.p4":"When I take on a project, my goal isn't just to finish the edit. It's to make it feel inevitable, as if every choice had exactly one reason to exist.",
     "about.quote":"\"You create. I handle the rest.\"",
     "about.st1":"PARTNERSHIPS","about.st2":"REACHED","about.st3":"OF CARE",
     "faq.eyebrow":"REF: CM-08 · CLIENT MANUAL","faq.title":"Frequently asked questions","faq.page":"PAGE 07",
@@ -165,7 +183,7 @@ const translations = {
     "faq.q5":"What formats do you deliver in?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> in the right ratio for each platform — 16:9 for YouTube, 9:16 for Shorts/Reels/TikTok. Need something else? Just ask.",
     "faq.q6":"How do I send you the footage?","faq.a6":"I prefer <strong>Google Drive or WeTransfer</strong>. Send the link with everything and I'll start once the deposit is confirmed.",
     "faq.q7":"What if I cancel the project?","faq.a7":"<strong>Before start:</strong> full refund. <strong>After start, before the first preview:</strong> 50% refund. <strong>After the first preview:</strong> no refund — the work has already been done.",
-    "ct.eyebrow":"REF: CM-09 · NEW BRIEFING","ct.title":"Ready to add a project to the archive?",
+    "ct.eyebrow":"REF: CM-09 · NEW BRIEFING","ct.title":"Ready to add a project to OUR archive?",
     "ct.sub":"Fill in the briefing — it goes straight into the archive queue. I reply within 24h.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Archive open for new projects",
     "ct.discordCopied":"copied! ✓",
@@ -333,11 +351,17 @@ function initCrt(){
     if(isOn) return;
     tape.classList.add('inserted');
     tape.disabled = true;
-    setTimeout(powerOn, 480);
+    const hint = document.getElementById('tapeHint');
+    if(hint) hint.classList.add('hide');
+    tic.classList.add('run');
+    setTimeout(()=>{
+      stat.classList.add('run');
+      roll.classList.add('run');
+    }, 820);
+    setTimeout(powerOn, 1180);
   }
   tape.addEventListener('click', insertTape);
-  /* a dica na tela também insere a fita (mobile-friendly) */
-  power.addEventListener('click', insertTape);
+  power.addEventListener('click', insertTape); /* tela também aceita clique — acessibilidade mobile */
 
   function togglePlay(){
     if(!isOn) return;
