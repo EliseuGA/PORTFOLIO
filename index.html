@@ -204,23 +204,24 @@
       <span class="idlabel-band">CM-0300</span>
       <span class="idlabel-body">COMPARATIVO_01.mov · <span class="st exp" style="border:none;padding:0">EXPORTADO</span></span>
     </span>
-    <div class="wmp-window" id="wfBox">
-      <img class="wmp-frame" src="img/windows%20media%20player.jpg" alt="" aria-hidden="true">
-      <div class="wmp-video">
-        <video id="wfVideo" loop playsinline muted preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
-        <div class="wf-cover" id="wfCover"><button class="wf-playbtn" aria-label="Reproduzir"><span>▶</span></button></div>
-        <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
-        <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
-      </div>
-      <div class="wf-vol" id="wfVol">
-        <span>VOL</span>
-        <input type="range" id="wfVolRange" min="0" max="100" value="70" aria-label="Volume do vídeo">
-      </div>
-    </div>
-    <!-- legenda dentro de um cartão-ficha, não solta sobre o Bliss -->
+    <button class="wmp-window" id="wfOpen" aria-label="Ampliar o comparativo">
+      <img class="wmp-frame" src="img/windows%20media%20player.jpg" alt="Janela do Windows Media Player" loading="lazy">
+      <span class="wmp-play"><span>▶</span></span>
+      <span class="wmp-hint" data-i18n="wf.open">clique para ampliar</span>
+    </button>
     <div class="wf-caption">
       <p class="wf-cap" data-i18n="wf.cap">O segredo não está no corte. Está na <strong>intenção.</strong></p>
       <p class="wf-mod" data-i18n="wf.mod">mod: 11/2025 · reexportado 2x · 16:9 · H.264</p>
+    </div>
+  </div>
+
+  <!-- MODAL: vídeo ampliado com Bliss desfocado atrás -->
+  <div class="wf-modal" id="wfModal" role="dialog" aria-modal="true" aria-label="Comparativo em tela cheia">
+    <button class="wf-modal-x" id="wfModalX" aria-label="Fechar">&times;</button>
+    <div class="wf-modal-stage">
+      <div class="wf-tag wf-l" data-i18n="wf.raw">BRUTO</div>
+      <div class="wf-tag wf-r" data-i18n="wf.edit">EDITADO</div>
+      <video id="wfVideo" loop playsinline controls preload="none"><source src="videos/workflow_8mb.mp4" type="video/mp4"></video>
     </div>
   </div>
 </section>
@@ -429,7 +430,6 @@
 
 <!-- NOVO BRIEFING -->
 <section id="contato" class="contact crop">
-  <img src="img/maos.png" alt="" aria-hidden="true" class="contact-hands">
   <div class="ghost" style="top:20px;right:-40px" aria-hidden="true">BRIEFING</div>
   <div class="band" style="top:60%;--rot:-14deg;--h:70px;--op:.07"></div>
   <span class="spark" style="bottom:12%;left:3%;--sz:36px"></span>
