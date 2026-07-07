@@ -212,7 +212,7 @@ function renderArchive(){
     const no = 'CM-01' + String(i+1).padStart(2,'0');
     return `<div class="rec h16 halftone">
       <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st ${ST_CLASS[it.status]}">${it.status}</span></div>
-      <div class="frame"><video muted loop controls playsinline class="lazy" preload="none"><source data-src="videos/${it.f}" type="video/mp4"></video></div>
+      <div class="frame"><video muted loop controls playsinline class="lazy" preload="none"><source data-src="videos/${it.f}" type="video/mp4"></video><div class="vhs-fx" aria-hidden="true"></div></div>
       <div class="rec-meta">${metaCell('CLIENTE',it.cliente)}${metaCell('ANO',it.ano)}${metaCell('PESO',it.peso)}${metaCell('FORMATO','16:9')}</div>
     </div>`;
   }).join('');
@@ -234,7 +234,7 @@ function renderArchive(){
     const no = 'CM-04' + String(i+1).padStart(2,'0');
     return `<div class="rec v916 halftone">
       <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st ${ST_CLASS[it.status]}">${it.status}</span></div>
-      <div class="frame"><video muted loop controls playsinline class="lazy" preload="none"><source data-src="videos/${it.f}" type="video/mp4"></video></div>
+      <div class="frame"><video muted loop controls playsinline class="lazy" preload="none"><source data-src="videos/${it.f}" type="video/mp4"></video><div class="vhs-fx" aria-hidden="true"></div></div>
       <div class="rec-meta">${metaCell('CLIENTE',it.cliente)}${metaCell('ANO',it.ano)}${metaCell('PESO',it.peso)}${metaCell('FORMATO','9:16')}</div>
     </div>`;
   }).join('');
@@ -411,7 +411,14 @@ function initVideoObserver(){
       else v.pause();
     });
   }, {threshold:.3});
-  document.querySelectorAll('.lazy').forEach(v=>io.observe(v));
+  document.querySelectorAll('.lazy').forEach(v=>{
+    io.observe(v);
+    const frame = v.closest('.frame');
+    if(frame){
+      v.addEventListener('playing', ()=>frame.classList.add('playing'));
+      v.addEventListener('pause', ()=>frame.classList.remove('playing'));
+    }
+  });
 }
 
 /* ---------- YOUTUBE ---------- */
