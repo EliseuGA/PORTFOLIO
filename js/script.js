@@ -460,6 +460,8 @@ function initWorkflow(){
     document.body.style.overflow='hidden';
     video.currentTime = 0;
     video.muted = false;
+    video.volume = 1;
+    const vs = document.getElementById('wfCtrlVol'); if(vs) vs.value = 100;
     video.play().catch(()=>{ video.muted=true; video.play().catch(()=>{}); syncMute(); });
     syncPlay(); syncMute();
   }
@@ -483,6 +485,30 @@ function initWorkflow(){
   if(track) track.addEventListener('click', e=>{
     const r = track.getBoundingClientRect();
     if(video.duration) video.currentTime = ((e.clientX-r.left)/r.width) * video.duration;
+  });
+
+  /* ±5 segundos */
+  const backBtn = document.getElementById('wfBack');
+  const fwdBtn = document.getElementById('wfFwd');
+  const volSlider = document.getElementById('wfCtrlVol');
+  function seek(delta){ if(video.duration) video.currentTime = Math.min(video.duration, Math.max(0, video.currentTime + delta)); }
+  if(backBtn) backBtn.addEventListener('click', ()=>seek(-5));
+  if(fwdBtn) fwdBtn.addEventListener('click', ()=>seek(5));
+
+  /* volume */
+  function applyVol(v){ video.volume = Math.min(1, Math.max(0, v)); video.muted = (video.volume===0); if(volSlider) volSlider.value = video.volume*100; syncMute(); }
+  if(volSlider) volSlider.addEventListener('input', ()=>applyVol(volSlider.value/100));
+
+  /* teclado — só quando o modal está aberto: ←→ pula 5s, ↑↓ volume, espaço play/pause */
+  document.addEventListener('keydown', e=>{
+    if(!modal.classList.contains('open')) return;
+    switch(e.key){
+      case 'ArrowLeft':  e.preventDefault(); seek(-5); break;
+      case 'ArrowRight': e.preventDefault(); seek(5); break;
+      case 'ArrowUp':    e.preventDefault(); applyVol(video.volume + 0.1); break;
+      case 'ArrowDown':  e.preventDefault(); applyVol(video.volume - 0.1); break;
+      case ' ': case 'k': e.preventDefault(); if(video.paused) video.play(); else video.pause(); break;
+    }
   });
 }
 
