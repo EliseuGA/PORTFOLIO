@@ -60,7 +60,6 @@ const translations = {
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
     "wf.mod":"mod: 11/2025 · reexportado 2x · 16:9 · H.264",
-    "wf.open":"clique para ampliar",
     "wf.cap":"O segredo não está no corte. Está na <strong>intenção.</strong>",
     "proc.eyebrow":"REF: CM-04 · PROTOCOLO DE PRODUÇÃO","proc.title":"Como trabalharemos juntos?","proc.sub":"Do primeiro \"oi\" até o arquivo na sua mão.","proc.stamp":"Protocolo padrão",
     "proc.s1.t":"Briefing","proc.s1.d":"Você me conta sua ideia e o que quer transmitir. Quanto mais eu entender do seu canal, melhor o corte final.",
@@ -137,7 +136,6 @@ const translations = {
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
     "wf.mod":"mod: 11/2025 · re-exported 2x · 16:9 · H.264",
-    "wf.open":"click to expand",
     "wf.cap":"The secret isn't in the cut. It's in the <strong>intention.</strong>",
     "proc.eyebrow":"REF: CM-04 · PRODUCTION PROTOCOL","proc.title":"How we'll work together?","proc.sub":"From the first message to the final file in your hands.","proc.stamp":"Protocolo padrão",
     "proc.s1.t":"Briefing","proc.s1.d":"You tell me your idea and what you want to say. The more I understand your channel, the better the final cut.",
@@ -446,12 +444,24 @@ function initWorkflow(){
   const video = document.getElementById('wfVideo');
   if(!openBtn || !modal) return;
 
+  const playBtn = document.getElementById('wfCtrlPlay');
+  const muteBtn = document.getElementById('wfCtrlMute');
+  const track = document.getElementById('wfCtrlTrack');
+  const fill = document.getElementById('wfCtrlFill');
+  const timeEl = document.getElementById('wfCtrlTime');
+
+  function fmt(s){ s=Math.floor(s||0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  function syncPlay(){ if(playBtn) playBtn.textContent = video.paused ? '▶' : '❚❚'; }
+  function syncMute(){ if(muteBtn) muteBtn.textContent = video.muted ? '🔇' : '🔊'; }
+
   function open(){
     if(video.readyState===0) video.load();
     modal.classList.add('open');
     document.body.style.overflow='hidden';
     video.currentTime = 0;
-    video.play().catch(()=>{});
+    video.muted = false;
+    video.play().catch(()=>{ video.muted=true; video.play().catch(()=>{}); syncMute(); });
+    syncPlay(); syncMute();
   }
   function close(){
     modal.classList.remove('open');
@@ -462,6 +472,18 @@ function initWorkflow(){
   closeBtn.addEventListener('click', close);
   modal.addEventListener('click', e=>{ if(e.target===modal) close(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+
+  if(playBtn) playBtn.addEventListener('click', ()=>{ if(video.paused) video.play(); else video.pause(); });
+  video.addEventListener('play', syncPlay);
+  video.addEventListener('pause', syncPlay);
+  if(muteBtn) muteBtn.addEventListener('click', ()=>{ video.muted = !video.muted; syncMute(); });
+  video.addEventListener('timeupdate', ()=>{
+    if(video.duration){ fill.style.width = (video.currentTime/video.duration*100)+'%'; timeEl.textContent = fmt(video.currentTime); }
+  });
+  if(track) track.addEventListener('click', e=>{
+    const r = track.getBoundingClientRect();
+    if(video.duration) video.currentTime = ((e.clientX-r.left)/r.width) * video.duration;
+  });
 }
 
 /* ---------- MODAL ---------- */
