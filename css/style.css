@@ -192,16 +192,26 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .tb-lang:hover{color:var(--paper);border-color:var(--signal)}
 .tb-a11y{border:1px solid #3a3226;border-radius:3px;padding:5px 9px;font-size:.9rem;line-height:1;color:#cfc6b6;background:none}
 .tb-a11y:hover,.tb-a11y.active{color:var(--paper);border-color:var(--signal)}
-/* painel de acessibilidade */
-.a11y-panel{position:absolute;top:52px;right:12px;width:min(300px,90vw);background:var(--card);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:16px;z-index:1100}
-.a11y-panel[hidden]{display:none}
-.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.a11y-label{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--ink);letter-spacing:.3px}
+/* JANELA DE AVISO estilo XP — cores do site, canto sup. direito */
+.xpwin{position:fixed;top:60px;right:14px;width:min(340px,calc(100vw - 28px));z-index:1100;background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 rgba(23,19,15,.35), 0 12px 30px -8px rgba(0,0,0,.4);font-family:var(--mono)}
+.xpwin[hidden]{display:none}
+.xpwin-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,var(--signal),#b8281d);padding:5px 6px 5px 10px;border-bottom:2px solid var(--ink)}
+.xpwin-ttl{color:var(--card);font-size:.66rem;font-weight:700;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+.xpwin-ico{font-size:.8rem}
+.xpwin-btns{display:flex;gap:3px}
+.xpwin-b{width:20px;height:18px;background:var(--card);border:1px solid var(--ink);color:var(--ink);font-size:.6rem;font-weight:700;line-height:1;display:flex;align-items:center;justify-content:center;border-radius:2px}
+.xpwin-x:hover{background:var(--signal);color:var(--card)}
+.xpwin-body{padding:14px}
+.xpwin-img{display:block;width:min(190px,60%);height:auto;margin:0 auto 12px}
+.xpwin-warn{font-size:.62rem;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.xpwin-warn b{color:var(--signal)}
+.xpwin-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:2px solid var(--ink)}
+.a11y-label{font-size:.68rem;font-weight:700;color:var(--ink);letter-spacing:.3px}
 .a11y-switch{width:44px;height:24px;border-radius:12px;background:var(--signal);border:2px solid var(--ink);position:relative;transition:background .2s;flex-shrink:0;padding:0}
 .a11y-switch[aria-checked="false"]{background:#9a938a}
 .a11y-knob{position:absolute;top:1px;left:1px;width:18px;height:18px;border-radius:50%;background:var(--card);border:1px solid var(--ink);transition:transform .2s}
 .a11y-switch[aria-checked="false"] .a11y-knob{transform:translateX(20px)}
-.a11y-note{font-family:var(--mono);font-size:.58rem;line-height:1.6;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.a11y-note{font-size:.55rem;line-height:1.6;color:var(--muted);margin-top:8px}
 /* aviso de fotossensibilidade no boot */
 .acard-warn{font-family:var(--mono);font-size:.56rem;line-height:1.6;color:var(--signal);background:#fff3f0;border:1px solid var(--signal);padding:8px 10px;margin-top:12px;letter-spacing:.2px}
 .acard-warn b{font-size:.8rem;vertical-align:-1px}
