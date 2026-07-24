@@ -91,7 +91,7 @@ const translations = {
     "about.eyebrow":"REF: CM-07 · FICHA DO ACERVO",
     "note.title":"lembrete","note.1":"tratar do gado","note.2":"responder cliente","note.3":"renderizar episódio 8","note.5":"comprar sal mineral",
     "boot.warn":"⚠ AVISO: este acervo contém edições com efeitos visuais intensos, flashes e movimento. Se você tem sensibilidade a isso, desative as animações no botão <b>◐</b> no topo da tela.",
-    "a11y.motion":"Animações e efeitos","a11y.note":"Desativa fades, tremidas e movimento. Recomendado para sensibilidade a flashes ou epilepsia fotossensível.",
+    "a11y.motion":"Animações e efeitos","a11y.note":"Desativa fades, tremidas e movimento em todo o site.","a11y.warn":"Este acervo contém edições com <b>flashes, movimento e efeitos visuais intensos</b>. Se você tem sensibilidade a isso ou epilepsia fotossensível, desative as animações abaixo.",
     "hero.warn":"NÃO REMOVER",
     "port.count":"ACERVO EM EXPANSÃO · <b>DEZENAS DE ITENS</b> CATALOGADOS · 3 CAIXAS ABERTAS",
     "sv.dead":"projetos antigos, testes e versões que ficaram pelo caminho. guardados, mas fora de catálogo.","sv.deadstamp":"Arquivado",
@@ -170,7 +170,7 @@ const translations = {
     "about.eyebrow":"REF: CM-07 · OPERATOR FILE",
     "note.title":"reminder","note.1":"tend to the cattle","note.2":"reply to client","note.3":"render episode 8","note.5":"buy mineral salt",
     "boot.warn":"⚠ WARNING: this archive contains edits with intense visual effects, flashes and motion. If you're sensitive to these, disable animations using the <b>◐</b> button at the top of the screen.",
-    "a11y.motion":"Animations and effects","a11y.note":"Disables fades, jitter and motion. Recommended for flash sensitivity or photosensitive epilepsy.",
+    "a11y.motion":"Animations and effects","a11y.note":"Disables fades, jitter and motion across the whole site.","a11y.warn":"This archive contains edits with <b>flashes, motion and intense visual effects</b>. If you're sensitive to these or have photosensitive epilepsy, turn off animations below.",
     "hero.warn":"DO NOT REMOVE",
     "port.count":"ARCHIVE EXPANDING · <b>DOZENS OF ITEMS</b> CATALOGUED · 3 BOXES OPEN",
     "sv.dead":"old projects, tests and versions that fell by the wayside. kept, but off the catalog.","sv.deadstamp":"Arquivado",
@@ -292,6 +292,7 @@ function toggleLang(){
 function initA11y(){
   const btn = document.getElementById('a11yBtn');
   const panel = document.getElementById('a11yPanel');
+  const closeBtn = document.getElementById('a11yClose');
   const sw = document.getElementById('motionSwitch');
   if(!btn || !panel || !sw) return;
 
@@ -300,22 +301,32 @@ function initA11y(){
     sw.setAttribute('aria-checked', motionOn ? 'true' : 'false');
     btn.classList.toggle('active', !motionOn);
   }
-  // estado salvo (padrão: animação ligada)
   let motionOn = localStorage.getItem('cm-motion') !== 'off';
   apply(motionOn);
+
+  // aparece automaticamente na primeira visita
+  if(!localStorage.getItem('cm-warn-seen')){
+    panel.hidden = false;
+  }
 
   btn.addEventListener('click', e=>{
     e.stopPropagation();
     panel.hidden = !panel.hidden;
+  });
+  if(closeBtn) closeBtn.addEventListener('click', ()=>{
+    panel.hidden = true;
+    localStorage.setItem('cm-warn-seen', '1');
   });
   sw.addEventListener('click', ()=>{
     motionOn = !motionOn;
     localStorage.setItem('cm-motion', motionOn ? 'on' : 'off');
     apply(motionOn);
   });
-  // fecha o painel ao clicar fora
   document.addEventListener('click', e=>{
-    if(!panel.hidden && !panel.contains(e.target) && e.target !== btn) panel.hidden = true;
+    if(!panel.hidden && !panel.contains(e.target) && e.target !== btn){
+      panel.hidden = true;
+      localStorage.setItem('cm-warn-seen', '1');
+    }
   });
 }
 function initBoot(){
