@@ -55,7 +55,6 @@
       DATA: <b id="visDate">--/--/----</b><br>
       SETOR: ACERVO GERAL
     </div>
-    <div class="acard-warn" data-i18n-html="boot.warn">⚠ AVISO: este acervo contém edições com efeitos visuais intensos, flashes e movimento. Se você tem sensibilidade a isso, desative as animações no botão <b>◐</b> no topo da tela.</div>
     <span class="bigstamp">Acesso autorizado</span>
   </div>
 </div>
@@ -74,13 +73,25 @@
     <button class="tb-a11y" id="a11yBtn" aria-label="Acessibilidade" title="Acessibilidade">◐</button>
     <button class="tb-lang" id="langBtn"><span class="l-pt">PT</span>/<span class="l-en">EN</span></button>
   </div>
-  <!-- painel de acessibilidade -->
-  <div class="a11y-panel" id="a11yPanel" hidden>
-    <div class="a11y-row">
-      <span class="a11y-label" data-i18n="a11y.motion">Animações e efeitos</span>
-      <button class="a11y-switch" id="motionSwitch" role="switch" aria-checked="true"><span class="a11y-knob"></span></button>
+  <!-- janela de aviso estilo XP (cores do site) -->
+  <div class="xpwin" id="a11yPanel" role="dialog" aria-label="Aviso de acessibilidade" hidden>
+    <div class="xpwin-bar">
+      <span class="xpwin-ttl"><span class="xpwin-ico">⚠</span> aviso_do_sistema.exe</span>
+      <span class="xpwin-btns">
+        <button class="xpwin-b" aria-hidden="true" tabindex="-1">_</button>
+        <button class="xpwin-b" aria-hidden="true" tabindex="-1">□</button>
+        <button class="xpwin-b xpwin-x" id="a11yClose" aria-label="Fechar">✕</button>
+      </span>
     </div>
-    <p class="a11y-note" data-i18n="a11y.note">Desativa fades, tremidas e movimento. Recomendado para sensibilidade a flashes ou epilepsia fotossensível.</p>
+    <div class="xpwin-body">
+      <img class="xpwin-img" src="img/aviso_pare_mascote.png" alt="Personagem fazendo sinal de pare" onerror="this.style.display='none'">
+      <p class="xpwin-warn" data-i18n-html="a11y.warn">Este acervo contém edições com <b>flashes, movimento e efeitos visuais intensos</b>. Se você tem sensibilidade a isso ou epilepsia fotossensível, desative as animações abaixo.</p>
+      <div class="xpwin-row">
+        <span class="a11y-label" data-i18n="a11y.motion">Animações e efeitos</span>
+        <button class="a11y-switch" id="motionSwitch" role="switch" aria-checked="true"><span class="a11y-knob"></span></button>
+      </div>
+      <p class="a11y-note" data-i18n="a11y.note">Desativa fades, tremidas e movimento em todo o site.</p>
+    </div>
   </div>
 </header>
 
