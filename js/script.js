@@ -15,12 +15,12 @@ const ARCHIVE = {
     {f:'introIcebergCaioxpo_8mb.mp4',            label:'ICEBERG_INTRO.mov',   cliente:'caioxapo',       ano:'2025', peso:'7.4 GB', status:'EXPORTADO'},
     {f:'editVonGusto.mp4',                        label:'EDIT_VONGUSTO.mov',   cliente:'Von Gusto',      ano:'2025', peso:'3.2 GB', status:'APROVADO'},
     {f:'badboysRDR2_8mb.mp4',                     label:'BADBOYS_RDR2.mov',    cliente:'Acervo pessoal', ano:'2024', peso:'5.8 GB', status:'ARQUIVADO'},
-    {f:'introFnafDoom.mp4',                       label:'FNAF_DOOM.mov',       cliente:'Acervo pessoal',       ano:'2025', peso:'4.1 GB', status:'EXPORTADO'},
-    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'Acervo pessoal',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
-    {f:'introPoppyPlaytime_8mb.mp4',              label:'POPPY_INTRO.mov',     cliente:'Acervo pessoal',       ano:'2025', peso:'5.0 GB', status:'APROVADO'},
+    {f:'introFnafDoom.mp4',                       label:'FNAF_DOOM.mov',       cliente:'caioxapo',       ano:'2025', peso:'4.1 GB', status:'EXPORTADO'},
+    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'—',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
+    {f:'introPoppyPlaytime_8mb.mp4',              label:'POPPY_INTRO.mov',     cliente:'caioxapo',       ano:'2025', peso:'5.0 GB', status:'APROVADO'},
     {f:'editDarthVader_1920x1080p_8mb.mp4',       label:'VADER_EDIT.mov',      cliente:'Acervo pessoal', ano:'2024', peso:'2.9 GB', status:'ARQUIVADO'},
-    {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Acervo pessoal',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
-    {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'Acervo pessoal',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
+    {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Particular',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
+    {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'RV There Yet',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
   ],
   longos: [
     {yt:'wfXfG8ULGDY', label:'DOC_ARQUIVO_01.mp4', ano:'2025'},
@@ -31,13 +31,13 @@ const ARCHIVE = {
     {yt:'C0plDAADgWc', label:'DOC_ARQUIVO_06.mp4', ano:'2026'}
   ],
   shorts: [
-    {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Acervo pessoal', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
-    {f:'eraHumano_CONFIA_1080x1920p.mp4',  label:'ERA_HUMANO.mp4',    cliente:'Acervo pessoal',  ano:'2025', peso:'640 MB', status:'ENTREGUE'},
-    {f:'gustaoTapao_1080x1920p_8mb.mp4',   label:'GUSTAO_TAPAO.mp4',  cliente:'Von Gusto', ano:'2024', peso:'710 MB', status:'ENTREGUE'},
-    {f:'sonoGusto_1080x1920p_8mb.mp4',     label:'SONO_GUSTO.mp4',    cliente:'Von Gusto', ano:'2024', peso:'590 MB', status:'ENTREGUE'},
-    {f:'gustoCS2_1080x1920p_8mb.mp4',      label:'GUSTO_CS2.mp4',     cliente:'Von Gusto', ano:'2024', peso:'880 MB', status:'ENTREGUE'},
-    {f:'mavalgasBURRO_1080x1920p_8mb.mp4', label:'MAVALGAS.mp4',      cliente:'Von Gusto',  ano:'2024', peso:'760 MB', status:'ENTREGUE'},
-    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2024', peso:'540 MB', status:'ENTREGUE'}
+    {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Von Gusto', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
+    {f:'eraHumano_CONFIA_1080x1920p.mp4',  label:'ERA_HUMANO.mp4',    cliente:'caioxapo',  ano:'2025', peso:'640 MB', status:'ENTREGUE'},
+    {f:'gustaoTapao_1080x1920p_8mb.mp4',   label:'GUSTAO_TAPAO.mp4',  cliente:'Von Gusto', ano:'2025', peso:'710 MB', status:'ENTREGUE'},
+    {f:'sonoGusto_1080x1920p_8mb.mp4',     label:'SONO_GUSTO.mp4',    cliente:'Von Gusto', ano:'2025', peso:'590 MB', status:'ENTREGUE'},
+    {f:'gustoCS2_1080x1920p_8mb.mp4',      label:'GUSTO_CS2.mp4',     cliente:'Von Gusto', ano:'2026', peso:'880 MB', status:'ENTREGUE'},
+    {f:'mavalgasBURRO_1080x1920p_8mb.mp4', label:'MAVALGAS.mp4',      cliente:'Mavalgas',  ano:'2026', peso:'760 MB', status:'ENTREGUE'},
+    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2026', peso:'540 MB', status:'ENTREGUE'}
   ]
 };
 const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'pub', ENTREGUE:'ent'};
@@ -57,6 +57,7 @@ const translations = {
     "port.eyebrow":"REF: CM-01 · INVENTÁRIO DE MÍDIAS","port.title":"Trabalhos selecionados",
     "port.sub":"Cada item foi catalogado. Toque para reproduzir.",
     "port.motion":"Caixa A — Motion","port.long":"Caixa B — Longos","port.shorts":"Caixa C — Shorts",
+    "port.featured":"PEÇA CENTRAL DO ACERVO","port.featuredhint":"produção própria · clique para assistir","port.mtipo":"TIPO","port.mtipoval":"Documentário autoral","port.mano":"ANO","port.mdur":"DURAÇÃO","port.mrole":"FUNÇÃO","port.mroleval":"Direção e edição",
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
     "wf.mod":"mod: 11/2025 · reexportado 2x · 16:9 · H.264",
@@ -78,9 +79,9 @@ const translations = {
     "sv.d.t":"Motion + Thumb","sv.d.d":"A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.","sv.d.props":"TIPO: After Effects + PSD · ENTREGA: editáveis",
     "sv.d.l1":"Intro animada sob medida","sv.d.l2":"Outro de encerramento","sv.d.l3":"Lower thirds e overlays","sv.d.l4":"Thumbnail pensada para converter",
     "test.eyebrow":"REF: CM-06 · CORRESPONDÊNCIA RECEBIDA","test.title":"O que dizem sobre mim","test.stamp":"Arquivada",
-    "test.a.s":"edição + sprites","test.b.s":"qualidade do vídeo","test.c.s":"vídeos do canal",
+    "test.a.s":"edição + sprites","test.b.s":"edição do iceberg","test.c.s":"vídeos do canal",
     "test.a":"Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!",
-    "test.b":"A edição desse vídeo está impecável, de verdade. É um dos vídeos mais bonitos que já vi no YouTube ultimamente. Muito maneiro, e a qualidade ficou incrível.",
+    "test.b":"Pô, a edição tá muito boa, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!",
     "test.c":"Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.",
     "about.eyebrow":"REF: CM-07 · FICHA DO ACERVO",
     "note.title":"lembrete","note.1":"tratar do gado","note.2":"responder cliente","note.3":"renderizar episódio 8","note.5":"comprar sal mineral",
@@ -133,6 +134,7 @@ const translations = {
     "port.eyebrow":"REF: CM-01 · MEDIA INVENTORY","port.title":"Selected work",
     "port.sub":"Every item has been catalogued. Tap to play.",
     "port.motion":"Box A — Motion","port.long":"Box B — Long-form","port.shorts":"Box C — Shorts",
+    "port.featured":"CENTERPIECE OF THE ARCHIVE","port.featuredhint":"own production · click to watch","port.mtipo":"TYPE","port.mtipoval":"Authorial documentary","port.mano":"YEAR","port.mdur":"LENGTH","port.mrole":"ROLE","port.mroleval":"Direction and editing",
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
     "wf.mod":"mod: 11/2025 · re-exported 2x · 16:9 · H.264",
@@ -154,9 +156,9 @@ const translations = {
     "sv.d.t":"Motion + Thumb","sv.d.d":"Your channel's visual identity. Intros, outros, overlays and thumbnails that make the algorithm stop scrolling.","sv.d.props":"TYPE: After Effects + PSD · DELIVERY: editable files",
     "sv.d.l1":"Custom animated intro","sv.d.l2":"End screen / outro","sv.d.l3":"Lower thirds and overlays","sv.d.l4":"Click-optimized thumbnail",
     "test.eyebrow":"REF: CM-06 · RECEIVED CORRESPONDENCE","test.title":"What they say about me","test.stamp":"Arquivada",
-    "test.a.s":"editing + sprites","test.b.s":"video quality","test.c.s":"channel videos",
+    "test.a.s":"editing + sprites","test.b.s":"iceberg editing","test.c.s":"channel videos",
     "test.a":"When I saw the editing quality, I didn't think twice before reaching out. The edit got praised by a lot of people, and he also designed my character sprites and thumbnail. Great work!",
-    "test.b":"The editing on this video is truly flawless. It's one of the nicest-looking videos I've seen on YouTube lately. Really cool, and the quality was incredible.",
+    "test.b":"Man, the editing is really good. It's not a topic I'm into, I'm not much of an Analog Horror fan, but the video turned out great. The quality is really good. Congrats!",
     "test.c":"I needed someone who understood games and could edit with energy. The videos got exactly the vibe I wanted — the first one I posted got over 800K views, and everyone praised the edit.",
     "about.eyebrow":"REF: CM-07 · OPERATOR FILE",
     "note.title":"reminder","note.1":"tend to the cattle","note.2":"reply to client","note.3":"render episode 8","note.5":"buy mineral salt",
@@ -208,7 +210,22 @@ function metaCell(k,v){ return `<span>${k}: <b>${v}</b></span>`; }
 function renderArchive(){
   /* Caixa A — motion (16:9 locais) */
   const gm = document.querySelector('#cat-motion .vgrid');
-  gm.innerHTML = ARCHIVE.motion.map((it,i)=>{
+  const featured = `
+    <div class="rec-featured" id="recFeatured">
+      <div class="rf-tag"><span class="rf-band">CM-DESTAQUE</span><span class="rf-fn">INTRO_DOCUMENTARIO_ANJ.mov</span><span class="rf-seal" data-i18n="port.featured">PEÇA CENTRAL DO ACERVO</span></div>
+      <div class="rf-frame">
+        <video muted loop controls playsinline preload="none" id="rfVideo"><source data-src="videos/introDocumentarioANJ_destaque.mp4" type="video/mp4"></video>
+        <div class="vhs-fx" aria-hidden="true"></div>
+        <div class="rf-cover" id="rfCover"><button class="rf-play" aria-label="Reproduzir"><span>▶</span></button><span class="rf-hint" data-i18n="port.featuredhint">produção própria · clique para assistir</span></div>
+      </div>
+      <div class="rf-meta">
+        <span class="rf-mcell"><b data-i18n="port.mtipo">TIPO</b><i data-i18n="port.mtipoval">Documentário autoral</i></span>
+        <span class="rf-mcell"><b data-i18n="port.mano">ANO</b><i>2026</i></span>
+        <span class="rf-mcell"><b data-i18n="port.mdur">DURAÇÃO</b><i>1:40</i></span>
+        <span class="rf-mcell"><b data-i18n="port.mrole">FUNÇÃO</b><i data-i18n="port.mroleval">Direção e edição</i></span>
+      </div>
+    </div>`;
+  gm.innerHTML = featured + ARCHIVE.motion.map((it,i)=>{
     const no = 'CM-01' + String(i+1).padStart(2,'0');
     return `<div class="rec h16 halftone">
       <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st ${ST_CLASS[it.status]}">${it.status}</span></div>
@@ -386,6 +403,22 @@ function loadLazy(container){
       if(!s.getAttribute('src')) s.setAttribute('src', s.getAttribute('data-src'));
     });
     if(video.readyState===0) video.load();
+  });
+}
+function initFeatured(){
+  const video = document.getElementById('rfVideo');
+  const cover = document.getElementById('rfCover');
+  const frame = video ? video.closest('.rf-frame') : null;
+  if(!video || !cover) return;
+  cover.addEventListener('click', ()=>{
+    video.querySelectorAll('source[data-src]').forEach(s=>{
+      if(!s.getAttribute('src')) s.setAttribute('src', s.getAttribute('data-src'));
+    });
+    if(video.readyState===0) video.load();
+    video.muted = false;
+    video.play().catch(()=>{ video.muted=true; video.play().catch(()=>{}); });
+    cover.classList.add('off');
+    if(frame) frame.classList.add('playing');
   });
 }
 function initPortfolio(){
@@ -642,6 +675,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initChrome();
   initCrt();
   initPortfolio();
+  initFeatured();
   initVideoObserver();
   initYouTube();
   initWorkflow();
