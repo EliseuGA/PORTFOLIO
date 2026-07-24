@@ -55,6 +55,7 @@
       DATA: <b id="visDate">--/--/----</b><br>
       SETOR: ACERVO GERAL
     </div>
+    <div class="acard-warn" data-i18n-html="boot.warn">⚠ AVISO: este acervo contém edições com efeitos visuais intensos, flashes e movimento. Se você tem sensibilidade a isso, desative as animações no botão <b>◐</b> no topo da tela.</div>
     <span class="bigstamp">Acesso autorizado</span>
   </div>
 </div>
@@ -70,7 +71,16 @@
   </nav>
   <div style="display:flex;gap:8px;align-items:center">
     <div class="tb-clock">REF: <span id="tbSection">CM-00</span></div>
+    <button class="tb-a11y" id="a11yBtn" aria-label="Acessibilidade" title="Acessibilidade">◐</button>
     <button class="tb-lang" id="langBtn"><span class="l-pt">PT</span>/<span class="l-en">EN</span></button>
+  </div>
+  <!-- painel de acessibilidade -->
+  <div class="a11y-panel" id="a11yPanel" hidden>
+    <div class="a11y-row">
+      <span class="a11y-label" data-i18n="a11y.motion">Animações e efeitos</span>
+      <button class="a11y-switch" id="motionSwitch" role="switch" aria-checked="true"><span class="a11y-knob"></span></button>
+    </div>
+    <p class="a11y-note" data-i18n="a11y.note">Desativa fades, tremidas e movimento. Recomendado para sensibilidade a flashes ou epilepsia fotossensível.</p>
   </div>
 </header>
 
@@ -375,15 +385,15 @@
       <span class="staple" style="top:-4px;left:24px;--tilt:4deg"></span>
       <div class="photo"><img loading="lazy" src="img/rapositoProfile.jpg" alt="Raposito"></div>
       <div class="letter-head">DE: <b>Raposito</b> · @Raposito<br>ASSUNTO: <b data-i18n="test.b.s">edição do iceberg</b><br>RECEBIDA: <b>2025</b></div>
-      <div class="letter-body" data-i18n="test.b">Pô, a edição tá muito p#ca, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!</div>
+      <div class="letter-body" data-i18n="test.b">Pô, a edição tá muito boa, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!</div>
       <div class="letter-foot"><span>235 mil inscritos · jul/2026</span><span class="stampink" style="--tilt:3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
     <article class="letter">
       <span class="staple" style="top:-4px;left:24px;--tilt:-5deg"></span>
       <div class="photo"><img loading="lazy" src="img/vonGustoProfile.jpeg" alt="Von Gusto"></div>
       <div class="letter-head">DE: <b>Von Gusto</b> · @v0ngusto<br>ASSUNTO: <b data-i18n="test.c.s">vídeos do canal</b><br>RECEBIDA: <b>2025</b></div>
-      <div class="letter-body" data-i18n="test.c">Precisava de alguém que entendesse de jogos e soubesse editar com energia. Os vídeos ficaram com a cara que eu queria — o primeiro que postei teve mais de 800K de views, e todos elogiaram a edição.</div>
-      <div class="letter-foot"><span>800K+ views no 1º vídeo</span><span class="stampink" style="--tilt:-3deg" data-i18n="test.stamp">Arquivada</span></div>
+      <div class="letter-body" data-i18n="test.c">Precisava de alguém que entendesse de jogos e soubesse editar com energia. O primeiro vídeo que postei no canal passou de 851 mil views, e a edição foi muito elogiada.</div>
+      <div class="letter-foot"><span>851 mil views · 1º vídeo do canal</span><span class="stampink" style="--tilt:-3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
   </div>
 </section>
