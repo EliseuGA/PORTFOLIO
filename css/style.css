@@ -190,6 +190,25 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .tb-clock{font-family:var(--mono);font-size:.64rem;background:#0c0a08;border:1px solid #3a3226;padding:6px 12px;border-radius:3px;color:var(--aero);display:flex;gap:6px;align-items:center}
 .tb-lang{border:1px solid #3a3226;border-radius:3px;padding:6px 10px;font-family:var(--mono);font-size:.65rem;letter-spacing:1px;color:#cfc6b6;display:flex;gap:4px}
 .tb-lang:hover{color:var(--paper);border-color:var(--signal)}
+.tb-a11y{border:1px solid #3a3226;border-radius:3px;padding:5px 9px;font-size:.9rem;line-height:1;color:#cfc6b6;background:none}
+.tb-a11y:hover,.tb-a11y.active{color:var(--paper);border-color:var(--signal)}
+/* painel de acessibilidade */
+.a11y-panel{position:absolute;top:52px;right:12px;width:min(300px,90vw);background:var(--card);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:16px;z-index:1100}
+.a11y-panel[hidden]{display:none}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.a11y-label{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--ink);letter-spacing:.3px}
+.a11y-switch{width:44px;height:24px;border-radius:12px;background:var(--signal);border:2px solid var(--ink);position:relative;transition:background .2s;flex-shrink:0;padding:0}
+.a11y-switch[aria-checked="false"]{background:#9a938a}
+.a11y-knob{position:absolute;top:1px;left:1px;width:18px;height:18px;border-radius:50%;background:var(--card);border:1px solid var(--ink);transition:transform .2s}
+.a11y-switch[aria-checked="false"] .a11y-knob{transform:translateX(20px)}
+.a11y-note{font-family:var(--mono);font-size:.58rem;line-height:1.6;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+/* aviso de fotossensibilidade no boot */
+.acard-warn{font-family:var(--mono);font-size:.56rem;line-height:1.6;color:var(--signal);background:#fff3f0;border:1px solid var(--signal);padding:8px 10px;margin-top:12px;letter-spacing:.2px}
+.acard-warn b{font-size:.8rem;vertical-align:-1px}
+/* MODO SEM MOVIMENTO — ativado pela classe no html */
+html.no-motion *{animation:none!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+html.no-motion .reveal{opacity:1!important;transform:none!important}
+html.no-motion #turb feTurbulence,html.no-motion #turb feDisplacementMap{display:none}
 @media(max-width:860px){.tb-mid{display:none}}
 
 /* =========================================================
@@ -708,7 +727,4 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   .sgrid{grid-template-columns:repeat(2,1fr)}
   .spark,.clipn,.band,.coffee,.staple{display:none}
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-}
+/* animações sempre ativas — decisão de projeto (ver histórico) */
