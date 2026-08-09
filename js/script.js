@@ -85,6 +85,19 @@ const REVIEW_FEATURED = {
   en:"If you're looking to work with a professional, this is the guy! By far the best experience I've had with an editor. The work went way beyond my expectations 🔥"
 };
 
+/* =========================================================
+   CARROSSEL DE DEPOIMENTOS — CORRESPONDÊNCIA
+   3 cartas visíveis por vez, girando sozinho; ao navegar manualmente
+   (setas ou bolinhas), pausa nesse depoimento por um tempo e depois
+   volta a girar sozinho de onde parou.
+========================================================= */
+const TESTIMONIALS = [
+  {photo:'img/caioxapoProfile.png',   name:'caioxapo',  handle:'@caioxapo',  subjectKey:'test.a.s', bodyKey:'test.a', foot:'12 mil views no 2º vídeo',                        year:'2025'},
+  {photo:'img/rapositoProfile.jpg',   name:'Raposito',  handle:'@Raposito',  subjectKey:'test.b.s', bodyKey:'test.b', foot:'235 mil inscritos · jul/2026',                     year:'2025'},
+  {photo:'img/aminAvatar.jpg',        name:'Amin Wake', handle:'@aminwake',  subjectKey:'test.d.s', bodyKey:'test.d', foot:'documentário completo · caso de estudo acima ↑',  year:'2026'},
+  {photo:'img/vonGustoProfile.jpeg',  name:'Von Gusto', handle:'@v0ngusto',  subjectKey:'test.c.s', bodyKey:'test.c', foot:'851 mil views · 1º vídeo do canal',                year:'2025'}
+];
+
 /* ---------- TRADUÇÕES ----------
    Artefatos do acervo (carimbos, status, nomes de documento)
    permanecem em PT mesmo no modo EN: objetos encontrados não se traduzem. */
@@ -370,6 +383,115 @@ function initCaseStudy(){
     });
     setClip(0);
   });
+}
+
+/* ---------- CORRESPONDÊNCIA: render das cartas dentro do carrossel ---------- */
+function renderTestimonials(){
+  const track = document.querySelector('.testimonials .corr-track');
+  if(!track) return;
+  track.innerHTML = TESTIMONIALS.map((t,i)=>`
+    <article class="letter">
+      <span class="staple" style="top:-4px;left:24px;--tilt:${i%2===0?-6:5}deg"></span>
+      <div class="photo"><img loading="lazy" src="${t.photo}" alt="${t.name}"></div>
+      <div class="letter-head">DE: <b>${t.name}</b> · ${t.handle}<br>ASSUNTO: <b data-i18n="${t.subjectKey}"></b><br>RECEBIDA: <b>${t.year}</b></div>
+      <div class="letter-body" data-i18n="${t.bodyKey}"></div>
+      <div class="letter-foot"><span>${t.foot}</span><span class="stampink" style="--tilt:-4deg" data-i18n="test.stamp">Arquivada</span></div>
+    </article>`
+  ).join('');
+}
+
+/* ---------- CORRESPONDÊNCIA: motor do carrossel (autoplay + pausa em interação) ---------- */
+function initCorrCarousel(){
+  const wrap = document.querySelector('.testimonials .corr-carousel');
+  if(!wrap) return;
+  const viewport = wrap.querySelector('.corr-viewport');
+  const track = wrap.querySelector('.corr-track');
+  const prevBtn = wrap.querySelector('.corr-prev');
+  const nextBtn = wrap.querySelector('.corr-next');
+  const dotsWrap = document.querySelector('.testimonials .corr-dots');
+  if(!viewport || !track) return;
+
+  const total = TESTIMONIALS.length;
+  const GAP = 20;
+  const DWELL = 5500;       // quanto tempo cada trio fica parado antes de girar sozinho
+  const RESUME_AFTER = 9000; // quanto tempo espera depois de um clique manual pra voltar a girar
+  let index = 0;
+  let autoTimer = null;
+  let resumeTimer = null;
+
+  function cardsPerView(){
+    const w = window.innerWidth;
+    if(w >= 900) return Math.min(3, total);
+    if(w >= 620) return Math.min(2, total);
+    return 1;
+  }
+
+  function layout(){
+    const perView = cardsPerView();
+    const viewportW = viewport.clientWidth;
+    const cardW = (viewportW - GAP * (perView - 1)) / perView;
+    Array.from(track.children).forEach(c => { c.style.flex = `0 0 ${cardW}px`; });
+    render(false);
+  }
+
+  function render(animate){
+    const cardW = track.children[0] ? track.children[0].getBoundingClientRect().width : 0;
+    track.style.transition = animate === false ? 'none' : '';
+    track.style.transform = `translateX(-${index * (cardW + GAP)}px)`;
+    if(animate === false) void track.offsetWidth; // força reflow antes de reabilitar a transição
+    track.style.transition = '';
+    updateDots();
+  }
+
+  function goTo(i){
+    index = ((i % total) + total) % total;
+    render();
+  }
+
+  function updateDots(){
+    if(!dotsWrap) return;
+    dotsWrap.querySelectorAll('.corr-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+  function buildDots(){
+    if(!dotsWrap) return;
+    dotsWrap.innerHTML = TESTIMONIALS.map((_, i) =>
+      `<button class="corr-dot${i===0?' active':''}" data-i="${i}" type="button" aria-label="Ir para depoimento ${i+1}"></button>`
+    ).join('');
+    dotsWrap.addEventListener('click', e=>{
+      const btn = e.target.closest('.corr-dot');
+      if(!btn) return;
+      manualGo(+btn.dataset.i);
+    });
+  }
+
+  function play(){
+    stop();
+    autoTimer = setInterval(()=> goTo(index + 1), DWELL);
+  }
+  function stop(){
+    if(autoTimer) clearInterval(autoTimer);
+    autoTimer = null;
+  }
+  /* navegação manual: pausa o giro automático nesse depoimento por um tempo, depois retoma sozinho */
+  function manualGo(i){
+    stop();
+    clearTimeout(resumeTimer);
+    goTo(i);
+    resumeTimer = setTimeout(play, RESUME_AFTER);
+  }
+
+  if(prevBtn) prevBtn.addEventListener('click', ()=> manualGo(index - 1));
+  if(nextBtn) nextBtn.addEventListener('click', ()=> manualGo(index + 1));
+
+  let resizeTimer = null;
+  window.addEventListener('resize', ()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layout, 150);
+  });
+
+  buildDots();
+  layout();
+  play();
 }
 
 /* ---------- REVIEWS: carrossel de reações ---------- */
@@ -857,6 +979,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderArchive();               /* o inventário nasce dos dados */
   renderCaseStudy();              /* estudo de caso — Amin Wake */
   renderReviews();                /* carrossel de reações */
+  renderTestimonials();           /* cartas da correspondência */
   applyTranslations(currentLang);
   buildTape();
   document.getElementById('imgModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
@@ -874,6 +997,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initYouTube();
   initWorkflow();
   initCaseStudy();                /* carrossel do estudo de caso */
+  initCorrCarousel();             /* carrossel de depoimentos */
   initFaq();
   initForm();
   initDiscord();
