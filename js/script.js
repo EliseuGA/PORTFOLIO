@@ -50,13 +50,15 @@ const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'p
 /* =========================================================
    ESTUDO DE CASO — AMIN WAKE
    Cinco trechos da abertura do documentário + reações do público.
+   poster = frame extraído de cada clipe, usado no card do carrossel
+   e como poster do <video> (evita quadro cinza/preto na troca de clipe).
 ========================================================= */
 const CASE_STUDY = [
-  {f:'Iceberg_8mb.mp4',          tab:'COLD_OPEN.mov',    desc:'gancho de abertura do vídeo',   time:'0:25'},
-  {f:'IntroAMINWAKE_8mb.mp4',    tab:'IDENT_CANAL.mov',  desc:'abertura assinatura do canal',  time:'0:29'},
-  {f:'IntroCHINA_8mb.mp4',       tab:'ABERTURA_TEMA.mov',desc:'introdução do tema central',    time:'0:30'},
-  {f:'IntroTOPICO1_8mb.mp4',     tab:'TOPICO_01.mov',    desc:'abertura do primeiro capítulo', time:'1:14'},
-  {f:'JoyceChu_Climax_8mb.mp4',  tab:'CLIMAX.mov',       desc:'clímax do primeiro ato',        time:'2:12'}
+  {f:'Iceberg_8mb.mp4',          poster:'img/posters/Iceberg_8mb_poster.jpg',         tab:'COLD_OPEN.mov',    desc:'gancho de abertura do vídeo',   time:'0:25'},
+  {f:'IntroAMINWAKE_8mb.mp4',    poster:'img/posters/IntroAMINWAKE_8mb_poster.jpg',   tab:'IDENT_CANAL.mov',  desc:'abertura assinatura do canal',  time:'0:29'},
+  {f:'IntroCHINA_8mb.mp4',       poster:'img/posters/IntroCHINA_8mb_poster.jpg',      tab:'ABERTURA_TEMA.mov',desc:'introdução do tema central',    time:'0:30'},
+  {f:'IntroTOPICO1_8mb.mp4',     poster:'img/posters/IntroTOPICO1_8mb_poster.jpg',    tab:'TOPICO_01.mov',    desc:'abertura do primeiro capítulo', time:'1:14'},
+  {f:'JoyceChu_Climax_8mb.mp4',  poster:'img/posters/JoyceChu_Climax_8mb_poster.jpg', tab:'CLIMAX.mov',       desc:'clímax do primeiro ato',        time:'2:12'}
 ];
 
 const REVIEWS = {
@@ -103,9 +105,10 @@ const translations = {
     "cs.eyebrow":"REF: CM-CS · ESTUDO DE CASO",
     "cs.title":"Do roteiro à tela",
     "cs.sub":"Cinco trechos da abertura que constroem o clima antes do primeiro corte duro. Documentário completo para o canal de Amin Wake.",
-    "cs.meta":"CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2025</b> · FORMATO: <b>16:9</b>",
+    "cs.meta":"CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2026</b> · FORMATO: <b>16:9</b>",
     "cs.watchfull":"Assistir completo →",
     "cs.reveyebrow":"REF: CM-CS-R · REAÇÕES DO PÚBLICO",
+    "cs.err":"não foi possível carregar este clipe — confira o arquivo em /videos",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
     "wf.mod":"mod: 11/2025 · reexportado 2x · 16:9 · H.264",
     "wf.cap":"O segredo não está no corte. Está na <strong>intenção.</strong>",
@@ -130,6 +133,8 @@ const translations = {
     "test.a":"Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!",
     "test.b":"Pô, a edição tá muito boa, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!",
     "test.c":"Precisava de alguém que entendesse de jogos e soubesse editar com energia. O primeiro vídeo que postei no canal passou de 851 mil views, e a edição foi muito elogiada.",
+    "test.d.s":"documentário completo",
+    "test.d":"Se você busca trabalhar com alguém profissional, esse é o cara! De longe a melhor experiência que tive com um editor. O trabalho superou demais as minhas expectativas 🔥",
     "about.eyebrow":"REF: CM-07 · FICHA DO ACERVO",
     "note.title":"lembrete","note.1":"tratar do gado","note.2":"responder cliente","note.3":"renderizar episódio 8","note.5":"comprar sal mineral",
     "boot.warn":"⚠ AVISO: este acervo contém edições com efeitos visuais intensos, flashes e movimento. Se você tem sensibilidade a isso, desative as animações no botão <b>◐</b> no topo da tela.",
@@ -188,9 +193,10 @@ const translations = {
     "cs.eyebrow":"REF: CM-CS · CASE STUDY",
     "cs.title":"From script to screen",
     "cs.sub":"Five moments from the opening that build the mood before the first hard cut. A full documentary made for Amin Wake's channel.",
-    "cs.meta":"CLIENT: <b>Amin Wake</b> · DELIVERY: <b>2025</b> · FORMAT: <b>16:9</b>",
+    "cs.meta":"CLIENT: <b>Amin Wake</b> · DELIVERY: <b>2026</b> · FORMAT: <b>16:9</b>",
     "cs.watchfull":"Watch the full video →",
     "cs.reveyebrow":"REF: CM-CS-R · AUDIENCE REACTIONS",
+    "cs.err":"couldn't load this clip — check the file in /videos",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
     "wf.mod":"mod: 11/2025 · re-exported 2x · 16:9 · H.264",
     "wf.cap":"The secret isn't in the cut. It's in the <strong>intention.</strong>",
@@ -215,6 +221,8 @@ const translations = {
     "test.a":"When I saw the editing quality, I didn't think twice before reaching out. The edit got praised by a lot of people, and he also designed my character sprites and thumbnail. Great work!",
     "test.b":"Man, the editing is really good. It's not a topic I'm into, I'm not much of an Analog Horror fan, but the video turned out great. The quality is really good. Congrats!",
     "test.c":"I needed someone who understood games and could edit with energy. The first video I posted on the channel passed 851K views, and the edit was highly praised.",
+    "test.d.s":"full documentary",
+    "test.d":"If you're looking to work with a professional, this is the guy! By far the best experience I've had with an editor. The work went way beyond my expectations 🔥",
     "about.eyebrow":"REF: CM-07 · OPERATOR FILE",
     "note.title":"reminder","note.1":"tend to the cattle","note.2":"reply to client","note.3":"render episode 8","note.5":"buy mineral salt",
     "boot.warn":"⚠ WARNING: this archive contains edits with intense visual effects, flashes and motion. If you're sensitive to these, disable animations using the <b>◐</b> button at the top of the screen.",
@@ -314,56 +322,75 @@ function renderArchive(){
   }).join('');
 }
 
-/* ---------- ESTUDO DE CASO: player + abas ---------- */
+/* ---------- ESTUDO DE CASO: carrossel visual de clipes ----------
+   Usa querySelectorAll('.case-study') + classes (nunca IDs) nos elementos
+   internos. Isso torna a função imune a HTML duplicado por engano —
+   se por acaso existir mais de uma seção .case-study na página, cada
+   uma funciona de forma independente, em vez de uma ficar "órfã". */
 function renderCaseStudy(){
-  const tabsEl = document.getElementById('csTabs');
-  if(!tabsEl) return;
-  tabsEl.innerHTML = CASE_STUDY.map((c,i)=>
-    `<button class="cs-tab${i===0?' active':''}" data-i="${i}" type="button">${c.tab}</button>`
-  ).join('');
+  document.querySelectorAll('.case-study').forEach(section=>{
+    const carousel = section.querySelector('.cs-carousel');
+    if(!carousel) return;
+    carousel.innerHTML = CASE_STUDY.map((c,i)=>`
+      <button class="cs-clip${i===0?' active':''}" data-i="${i}" type="button" aria-label="${c.tab}">
+        <div class="cs-clip-thumb"><img src="${c.poster}" alt="" loading="lazy"></div>
+        <div class="cs-clip-meta">
+          <span class="cs-clip-label">${c.tab}</span>
+          <span class="cs-clip-time">${c.time}</span>
+        </div>
+      </button>`
+    ).join('');
+  });
 }
 function initCaseStudy(){
-  const tabsEl = document.getElementById('csTabs');
-  const video = document.getElementById('csVideo');
-  const caption = document.getElementById('csCaption');
-  if(!tabsEl || !video) return;
+  document.querySelectorAll('.case-study').forEach(section=>{
+    const carousel = section.querySelector('.cs-carousel');
+    const frame = section.querySelector('.cs-frame');
+    const video = frame ? frame.querySelector('video') : null;
+    const caption = section.querySelector('.cs-caption');
+    if(!carousel || !video) return;
 
-  function setClip(i){
-    const c = CASE_STUDY[i];
-    video.pause();
-    video.querySelector('source').setAttribute('src', 'videos/' + c.f);
-    video.load();
-    video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
-    if(caption) caption.innerHTML = `<span><b>${c.tab}</b> — ${c.desc}</span><span>${c.time}</span>`;
-    tabsEl.querySelectorAll('.cs-tab').forEach(b => b.classList.toggle('active', +b.dataset.i === i));
-  }
-  tabsEl.addEventListener('click', e=>{
-    const btn = e.target.closest('.cs-tab');
-    if(!btn) return;
-    setClip(+btn.dataset.i);
+    function setClip(i){
+      const c = CASE_STUDY[i];
+      frame.classList.remove('err');
+      video.pause();
+      video.setAttribute('poster', c.poster);
+      video.querySelector('source').setAttribute('src', c.f.indexOf('/')===-1 ? 'videos/'+c.f : c.f);
+      video.load();
+      video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
+      if(caption) caption.innerHTML = `<span><b>${c.tab}</b> — ${c.desc}</span><span>${c.time}</span>`;
+      carousel.querySelectorAll('.cs-clip').forEach(b => b.classList.toggle('active', +b.dataset.i === i));
+    }
+    video.addEventListener('error', ()=> frame.classList.add('err'));
+
+    carousel.addEventListener('click', e=>{
+      const btn = e.target.closest('.cs-clip');
+      if(!btn) return;
+      setClip(+btn.dataset.i);
+    });
+    setClip(0);
   });
-  setClip(0);
 }
 
 /* ---------- REVIEWS: carrossel de reações ---------- */
 function renderReviews(){
-  const row = document.getElementById('revRow');
-  if(!row) return;
-  const feat = `
-    <div class="revcard revcard-feat">
-      <div class="rev-top">
-        <img class="rev-avatar" src="img/aminAvatar.jpg" alt="Amin Wake">
-        <div>
-          <div class="rev-name">Amin Wake</div>
-          <div class="rev-role">cliente · documentário completo</div>
+  document.querySelectorAll('.revrow').forEach(row=>{
+    const feat = `
+      <div class="revcard revcard-feat">
+        <div class="rev-top">
+          <img class="rev-avatar" src="img/aminAvatar.jpg" alt="Amin Wake">
+          <div>
+            <div class="rev-name">Amin Wake</div>
+            <div class="rev-role">cliente · documentário completo</div>
+          </div>
         </div>
-      </div>
-      <p>"${REVIEW_FEATURED[currentLang]}"</p>
-    </div>`;
-  const cards = REVIEWS[currentLang].map(r =>
-    `<div class="revcard"><span class="rev-h">${r.h}</span>${r.t}</div>`
-  ).join('');
-  row.innerHTML = feat + cards;
+        <p>"${REVIEW_FEATURED[currentLang]}"</p>
+      </div>`;
+    const cards = REVIEWS[currentLang].map(r =>
+      `<div class="revcard"><span class="rev-h">${r.h}</span>${r.t}</div>`
+    ).join('');
+    row.innerHTML = feat + cards;
+  });
 }
 
 /* ---------- I18N ---------- */
@@ -846,7 +873,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initVideoObserver();
   initYouTube();
   initWorkflow();
-  initCaseStudy();                /* abas do estudo de caso */
+  initCaseStudy();                /* carrossel do estudo de caso */
   initFaq();
   initForm();
   initDiscord();
