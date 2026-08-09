@@ -753,6 +753,12 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 }
 .cs-sub{font-size:.94rem;color:#cfc6b6;max-width:480px;line-height:1.7;margin-top:16px}
  
+.cs-channel{display:flex;align-items:center;gap:12px;max-width:var(--max);margin:0 auto 22px;position:relative;z-index:2}
+.cs-channel-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--signal);flex-shrink:0}
+.cs-channel-info{display:flex;flex-direction:column;gap:2px}
+.cs-channel-name{font-family:var(--poster);font-size:1.05rem;text-transform:uppercase;color:var(--paper);letter-spacing:.5px}
+.cs-channel-stats{font-family:var(--mono);font-size:.62rem;color:#cfc6b6;letter-spacing:.3px}
+
 .cs-idrow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;max-width:var(--max);margin:0 auto 30px;position:relative;z-index:2}
 .cs-idlabel{transform:rotate(-1deg)}
 .cs-full{border-color:var(--aero);color:var(--aero)}
@@ -807,22 +813,32 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   .cs-clip{flex-basis:128px}
 }
 
-/* ---- CM-04 · fundo escuro do Protocolo de Produção (estava preso dentro
-   do media query de celular por engano — corrigido: agora é global) ---- */
+/* ---- CM-04 · fundo cinza com detalhes vermelhos do Protocolo de Produção
+   (identidade própria — não reaproveita mais a imagem do Amin Wake) ---- */
 .process{
   padding:var(--pad);position:relative;color:var(--paper);
   background:
-    linear-gradient(180deg, rgba(23,19,15,.5) 0%, rgba(23,19,15,.88) 45%, var(--ink) 78%, var(--ink) 100%),
-    url('../img/aminBannerBg.jpg') center/cover no-repeat;
-  border-top:5px solid var(--signal);
+    repeating-linear-gradient(-14deg, rgba(225,51,39,.10) 0 3px, transparent 3px 130px),
+    repeating-linear-gradient(-14deg, rgba(225,51,39,.16) 0 2px, transparent 2px 260px),
+    linear-gradient(150deg, #333331 0%, #3c3c3a 55%, #2a2a28 100%);
+  border-top:5px solid var(--signal);border-bottom:5px solid var(--signal);
 }
-.process .eyebrow{color:var(--aero)}
-.process .eyebrow::before{background:var(--aero)}
+.process::before{
+  content:'';position:absolute;z-index:0;pointer-events:none;
+  width:160%;left:-30%;top:16%;height:4px;background:var(--signal);opacity:.35;transform:rotate(-14deg);
+}
+.process::after{
+  content:'';position:absolute;z-index:0;pointer-events:none;
+  width:160%;left:-30%;bottom:10%;height:2px;background:var(--signal);opacity:.22;transform:rotate(-14deg);
+}
+.process .eyebrow{color:var(--signal)}
+.process .eyebrow::before{background:var(--signal)}
 .process .sec-head h2{
-  color:var(--paper);-webkit-text-stroke:1.5px var(--ink);text-shadow:3px 3px 0 var(--signal);
+  color:var(--paper);-webkit-text-stroke:1.5px #000;text-shadow:3px 3px 0 var(--signal);
 }
-.process .sec-sub{color:#cfc6b6}
+.process .sec-sub{color:#c9c5bd}
 .process .ghost{-webkit-text-stroke:1.5px rgba(255,255,255,.08)}
+.process .doc{z-index:2}
 .process .doc{box-shadow:6px 6px 0 var(--signal)}
 
 .port-subtabs{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;justify-content:center}
