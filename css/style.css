@@ -840,5 +840,43 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   transition:background .15s,color .15s,transform .15s;
 }
 .stab:hover{transform:translateY(-2px)}
+
+/* =========================================================
+   CARTÃO DE PROTOCOLO RECEBIDO — confirmação personalizada
+   Cole no final de style.css.
+========================================================= */
+
+.brief-success{
+  padding:34px 26px;text-align:center;
+  animation:bsIn .4s ease both;
+}
+@keyframes bsIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.bs-stamp{
+  display:inline-block;margin-bottom:16px;padding:10px 24px;
+  border:3px solid var(--signal);color:var(--signal);border-radius:6px;
+  font-family:var(--poster);font-size:1.3rem;letter-spacing:2px;text-transform:uppercase;
+  opacity:0;transform:scale(1.7) rotate(-12deg);
+  animation:bsStamp .4s cubic-bezier(.2,1.4,.4,1) .15s forwards;
+}
+@keyframes bsStamp{to{opacity:.92;transform:scale(1) rotate(-6deg)}}
+
+.bs-proto{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;color:var(--muted);margin-bottom:14px;text-transform:uppercase}
+.bs-proto b{color:var(--signal)}
+
+.brief-success h3{
+  font-family:var(--poster);font-weight:400;font-size:1.7rem;letter-spacing:.5px;
+  text-transform:uppercase;color:var(--ink);margin-bottom:12px;
+}
+.brief-success p{font-size:.88rem;color:#3a342c;line-height:1.7;max-width:380px;margin:0 auto 14px}
+.brief-success p b{color:var(--ink)}
+.bs-note{font-size:.76rem;color:var(--muted)}
+
+.bs-wpp{margin:4px auto 16px;display:inline-flex}
+.bs-again{
+  display:block;margin:0 auto;font-family:var(--mono);font-size:.64rem;letter-spacing:.5px;
+  color:var(--muted);border-bottom:1px dashed var(--muted);padding-bottom:2px;
+}
+.bs-again:hover{color:var(--signal);border-color:var(--signal)}
 .stab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
  
