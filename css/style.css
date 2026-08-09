@@ -377,7 +377,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .port-line{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;max-width:var(--max);margin:0 auto 24px;position:relative;z-index:2}
 .port-count{font-family:var(--mono);font-size:.62rem;letter-spacing:1px;color:#4a3a20;background:var(--card);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);padding:8px 14px}
 .port-count b{color:var(--signal)}
-.port-tabs{display:flex;gap:14px;margin-bottom:44px;flex-wrap:wrap;position:relative;z-index:2}
+.port-tabs{display:flex;gap:14px;margin-bottom:44px;flex-wrap:wrap;position:relative;z-index:2;justify-content:center}
 .btab{background:var(--card);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);overflow:hidden;transition:transform .15s;text-align:left;padding:0}
 .btab:hover{transform:translateY(-3px)}
 .btab-band{display:block;height:8px;background:var(--signal)}
@@ -832,7 +832,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
   .cs-clip{flex-basis:128px}
 }
 
-.port-subtabs{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.port-subtabs{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;justify-content:center}
 .stab{
   background:transparent;border:2px solid var(--ink);border-radius:20px;
   padding:6px 16px;font-family:var(--mono);font-weight:700;font-size:.62rem;
@@ -880,3 +880,33 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .bs-again:hover{color:var(--signal);border-color:var(--signal)}
 .stab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
  
+
+/* =========================================================
+   CARROSSEL DE DEPOIMENTOS — CORRESPONDÊNCIA
+   (bloco que faltava — sem ele o JS movia os cards sem
+   overflow:hidden/largura fixa, causando o efeito de
+   "esticar e teleportar" pro canto esquerdo)
+========================================================= */
+.corr-carousel{display:flex;align-items:center;gap:14px;max-width:var(--max);margin:0 auto;position:relative;z-index:2}
+.corr-viewport{overflow:hidden;flex:1}
+.corr-track{display:flex;gap:20px;will-change:transform;transition:transform .75s cubic-bezier(.65,0,.35,1)}
+
+.corr-track .letter{transform:none}
+.corr-track .letter:hover{transform:translateY(-4px)}
+
+.corr-nav{
+  flex-shrink:0;width:42px;height:42px;border-radius:50%;
+  background:var(--card);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);
+  font-size:1.3rem;line-height:1;display:flex;align-items:center;justify-content:center;
+  transition:transform .15s;
+}
+.corr-nav:hover{transform:translateY(-2px)}
+.corr-nav:active{transform:translateY(0);box-shadow:1px 1px 0 var(--ink)}
+
+.corr-dots{display:flex;justify-content:center;gap:9px;margin-top:22px;position:relative;z-index:2}
+.corr-dot{width:9px;height:9px;border-radius:50%;background:var(--paper2);border:1.5px solid var(--ink);padding:0;transition:background .2s,transform .2s}
+.corr-dot.active{background:var(--signal);transform:scale(1.25)}
+
+@media(max-width:640px){
+  .corr-nav{width:34px;height:34px;font-size:1.1rem}
+}
