@@ -403,21 +403,6 @@ function initCaseStudy(){
   });
 }
 
-/* ---------- CORRESPONDÊNCIA: render das cartas dentro do carrossel ---------- */
-function renderTestimonials(){
-  const track = document.querySelector('.testimonials .corr-track');
-  if(!track) return;
-  track.innerHTML = TESTIMONIALS.map((t,i)=>`
-    <article class="letter">
-      <span class="staple" style="top:-4px;left:24px;--tilt:${i%2===0?-6:5}deg"></span>
-      <div class="photo"><img loading="lazy" src="${t.photo}" alt="${t.name}"></div>
-      <div class="letter-head">DE: <b>${t.name}</b> · ${t.handle}<br>ASSUNTO: <b data-i18n="${t.subjectKey}"></b><br>RECEBIDA: <b>${t.year}</b></div>
-      <div class="letter-body" data-i18n="${t.bodyKey}"></div>
-      <div class="letter-foot"><span>${t.foot}</span><span class="stampink" style="--tilt:-4deg" data-i18n="test.stamp">Arquivada</span></div>
-    </article>`
-  ).join('');
-}
-
 /* ---------- CORRESPONDÊNCIA: motor do carrossel (autoplay + pausa em interação) ---------- */
 function initCorrCarousel(){
   const wrap = document.querySelector('.testimonials .corr-carousel');
