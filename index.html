@@ -203,6 +203,8 @@
 <div class="torn" style="--pv:#C2A06E;--nx:#17130F"></div>
 
 <!-- ESTUDO DE CASO — AMIN WAKE -->
+<div class="torn" style="--pv:#C2A06E;--nx:#17130F"></div>
+
 <section id="case-amin" class="case-study lazy-sec crop">
   <div class="cs-bg" aria-hidden="true"></div>
 
@@ -223,14 +225,16 @@
   <div class="cs-wrap">
     <div class="cs-player">
       <div class="cs-frame" id="csFrame">
-        <video muted loop controls playsinline preload="none" id="csVideo">
+        <video muted loop controls playsinline preload="none" id="csVideo" poster="img/posters/Iceberg_8mb_poster.jpg">
           <source data-src="videos/Iceberg_8mb.mp4" type="video/mp4">
         </video>
-        <div class="vhs-fx" aria-hidden="true"></div>
+        <div class="cs-err" data-i18n="cs.err">não foi possível carregar este clipe — confira o arquivo em /videos</div>
       </div>
       <div class="cs-caption" id="csCaption"></div>
     </div>
-    <div class="cs-tabs" id="csTabs"></div>
+
+    <!-- CARROSSEL — cards com miniatura real de cada clipe -->
+    <div class="cs-carousel" id="csCarousel"></div>
   </div>
 
   <div class="cs-reviews">
@@ -242,6 +246,8 @@
 </section>
 
 <div class="torn" style="--pv:#17130F;--nx:#E2D7C1"></div>
+
+
   
 <div class="torn" style="--pv:#C2A06E;--nx:#E2D7C1"></div>
 
@@ -483,6 +489,13 @@
       <div class="letter-body" data-i18n="test.b">Pô, a edição tá muito boa, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!</div>
       <div class="letter-foot"><span>235 mil inscritos · jul/2026</span><span class="stampink" style="--tilt:3deg" data-i18n="test.stamp">Arquivada</span></div>
     </article>
+    <article class="letter">
+  <span class="staple" style="top:-4px;left:24px;--tilt:5deg"></span>
+  <div class="photo"><img loading="lazy" src="img/aminAvatar.jpg" alt="Amin Wake"></div>
+  <div class="letter-head">DE: <b>Amin Wake</b> · @aminwake<br>ASSUNTO: <b data-i18n="test.d.s">documentário completo</b><br>RECEBIDA: <b>2025</b></div>
+  <div class="letter-body" data-i18n="test.d">Se você busca trabalhar com alguém profissional, esse é o cara! De longe a melhor experiência que tive com um editor. O trabalho superou demais as minhas expectativas 🔥</div>
+  <div class="letter-foot"><span>documentário completo · caso de estudo acima ↑</span><span class="stampink" style="--tilt:4deg" data-i18n="test.stamp">Arquivada</span></div>
+</article> 
     <article class="letter">
       <span class="staple" style="top:-4px;left:24px;--tilt:-5deg"></span>
       <div class="photo"><img loading="lazy" src="img/vonGustoProfile.jpeg" alt="Von Gusto"></div>
