@@ -47,6 +47,42 @@ const ARCHIVE = {
 };
 const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'pub', ENTREGUE:'ent'};
 
+/* =========================================================
+   ESTUDO DE CASO — AMIN WAKE
+   Cinco trechos da abertura do documentário + reações do público.
+========================================================= */
+const CASE_STUDY = [
+  {f:'Iceberg_8mb.mp4',          tab:'COLD_OPEN.mov',    desc:'gancho de abertura do vídeo',   time:'0:25'},
+  {f:'IntroAMINWAKE_8mb.mp4',    tab:'IDENT_CANAL.mov',  desc:'abertura assinatura do canal',  time:'0:29'},
+  {f:'IntroCHINA_8mb.mp4',       tab:'ABERTURA_TEMA.mov',desc:'introdução do tema central',    time:'0:30'},
+  {f:'IntroTOPICO1_8mb.mp4',     tab:'TOPICO_01.mov',    desc:'abertura do primeiro capítulo', time:'1:14'},
+  {f:'JoyceChu_Climax_8mb.mp4',  tab:'CLIMAX.mov',       desc:'clímax do primeiro ato',        time:'2:12'}
+];
+
+const REVIEWS = {
+  pt: [
+    {h:'@er1czn',          t:'que edição é essa meus amigos, sensacional!'},
+    {h:'@miyazune',        t:'Eu tô tão feliz de ver esse vídeo antecipadamente, principalmente porque ele é o mais bem editado de todo o canal 🐯'},
+    {h:'@p1xelzon',        t:'QUE EDIÇÃO É ESSA? AMEI, o cara capricha muito na edição'},
+    {h:'@miyamotlethmor',  t:'Brabíssimo, adorei a edição!'},
+    {h:'@Matheuxx-q5g',    t:'mano... eu pensei que eu tava assistindo a um filme de enorme produção por causa dessa introdução, se superou demais, muito fera a intro kkkkk'},
+    {h:'@shinokagess',     t:'Só de ver os primeiros segundos já fiquei impressionado com a qualidade dessa edição, parabéns ao Amin e a todos envolvidos 🙏'}
+  ],
+  en: [
+    {h:'@er1czn',          t:'what editing is this, incredible!'},
+    {h:'@miyazune',        t:"I'm so happy to see this video early, especially because it's the best-edited one on the whole channel 🐯"},
+    {h:'@p1xelzon',        t:'WHAT EDITING IS THIS? LOVED IT, this guy puts so much care into the editing'},
+    {h:'@miyamotlethmor',  t:'Incredible, loved the editing!'},
+    {h:'@Matheuxx-q5g',    t:"dude... I thought I was watching a huge production movie because of that intro, it went above and beyond, such a great intro haha"},
+    {h:'@shinokagess',     t:'Just from the first seconds I was already impressed by the editing quality, congrats to Amin and everyone involved 🙏'}
+  ]
+};
+
+const REVIEW_FEATURED = {
+  pt:'Se você busca trabalhar com alguém profissional, esse é o cara! De longe a melhor experiência que tive com um editor. O trabalho superou demais as minhas expectativas 🔥',
+  en:"If you're looking to work with a professional, this is the guy! By far the best experience I've had with an editor. The work went way beyond my expectations 🔥"
+};
+
 /* ---------- TRADUÇÕES ----------
    Artefatos do acervo (carimbos, status, nomes de documento)
    permanecem em PT mesmo no modo EN: objetos encontrados não se traduzem. */
@@ -64,6 +100,12 @@ const translations = {
     "port.motion":"Caixa A — Motion","port.long":"Caixa B — Longos","port.shorts":"Caixa C — Shorts",
     "port.featured":"PEÇA CENTRAL DO ACERVO","port.featuredhint":"produção própria · clique para assistir","port.mtipo":"TIPO","port.mtipoval":"Documentário autoral","port.mano":"ANO","port.mdur":"DURAÇÃO","port.mrole":"FUNÇÃO","port.mroleval":"Direção e edição",
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
+    "cs.eyebrow":"REF: CM-CS · ESTUDO DE CASO",
+    "cs.title":"Do roteiro à tela",
+    "cs.sub":"Cinco trechos da abertura que constroem o clima antes do primeiro corte duro. Documentário completo para o canal de Amin Wake.",
+    "cs.meta":"CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2025</b> · FORMATO: <b>16:9</b>",
+    "cs.watchfull":"Assistir completo →",
+    "cs.reveyebrow":"REF: CM-CS-R · REAÇÕES DO PÚBLICO",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
     "wf.mod":"mod: 11/2025 · reexportado 2x · 16:9 · H.264",
     "wf.cap":"O segredo não está no corte. Está na <strong>intenção.</strong>",
@@ -143,6 +185,12 @@ const translations = {
     "port.motion":"Box A — Motion","port.long":"Box B — Long-form","port.shorts":"Box C — Shorts",
     "port.featured":"CENTERPIECE OF THE ARCHIVE","port.featuredhint":"own production · click to watch","port.mtipo":"TYPE","port.mtipoval":"Authorial documentary","port.mano":"YEAR","port.mdur":"LENGTH","port.mrole":"ROLE","port.mroleval":"Direction and editing",
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
+    "cs.eyebrow":"REF: CM-CS · CASE STUDY",
+    "cs.title":"From script to screen",
+    "cs.sub":"Five moments from the opening that build the mood before the first hard cut. A full documentary made for Amin Wake's channel.",
+    "cs.meta":"CLIENT: <b>Amin Wake</b> · DELIVERY: <b>2025</b> · FORMAT: <b>16:9</b>",
+    "cs.watchfull":"Watch the full video →",
+    "cs.reveyebrow":"REF: CM-CS-R · AUDIENCE REACTIONS",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
     "wf.mod":"mod: 11/2025 · re-exported 2x · 16:9 · H.264",
     "wf.cap":"The secret isn't in the cut. It's in the <strong>intention.</strong>",
@@ -266,6 +314,58 @@ function renderArchive(){
   }).join('');
 }
 
+/* ---------- ESTUDO DE CASO: player + abas ---------- */
+function renderCaseStudy(){
+  const tabsEl = document.getElementById('csTabs');
+  if(!tabsEl) return;
+  tabsEl.innerHTML = CASE_STUDY.map((c,i)=>
+    `<button class="cs-tab${i===0?' active':''}" data-i="${i}" type="button">${c.tab}</button>`
+  ).join('');
+}
+function initCaseStudy(){
+  const tabsEl = document.getElementById('csTabs');
+  const video = document.getElementById('csVideo');
+  const caption = document.getElementById('csCaption');
+  if(!tabsEl || !video) return;
+
+  function setClip(i){
+    const c = CASE_STUDY[i];
+    video.pause();
+    video.querySelector('source').setAttribute('src', 'videos/' + c.f);
+    video.load();
+    video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
+    if(caption) caption.innerHTML = `<span><b>${c.tab}</b> — ${c.desc}</span><span>${c.time}</span>`;
+    tabsEl.querySelectorAll('.cs-tab').forEach(b => b.classList.toggle('active', +b.dataset.i === i));
+  }
+  tabsEl.addEventListener('click', e=>{
+    const btn = e.target.closest('.cs-tab');
+    if(!btn) return;
+    setClip(+btn.dataset.i);
+  });
+  setClip(0);
+}
+
+/* ---------- REVIEWS: carrossel de reações ---------- */
+function renderReviews(){
+  const row = document.getElementById('revRow');
+  if(!row) return;
+  const feat = `
+    <div class="revcard revcard-feat">
+      <div class="rev-top">
+        <img class="rev-avatar" src="img/aminAvatar.jpg" alt="Amin Wake">
+        <div>
+          <div class="rev-name">Amin Wake</div>
+          <div class="rev-role">cliente · documentário completo</div>
+        </div>
+      </div>
+      <p>"${REVIEW_FEATURED[currentLang]}"</p>
+    </div>`;
+  const cards = REVIEWS[currentLang].map(r =>
+    `<div class="revcard"><span class="rev-h">${r.h}</span>${r.t}</div>`
+  ).join('');
+  row.innerHTML = feat + cards;
+}
+
 /* ---------- I18N ---------- */
 function applyTranslations(lang){
   const t = translations[lang];
@@ -286,6 +386,7 @@ function toggleLang(){
   applyTranslations(currentLang);
   localStorage.setItem('cm-lang', currentLang);
   buildTape();
+  renderReviews();
 }
 
 /* ---------- REGISTRO DE ACESSO ---------- */
@@ -727,6 +828,8 @@ function buildTape(){
 /* ---------- INIT ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
   renderArchive();               /* o inventário nasce dos dados */
+  renderCaseStudy();              /* estudo de caso — Amin Wake */
+  renderReviews();                /* carrossel de reações */
   applyTranslations(currentLang);
   buildTape();
   document.getElementById('imgModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
@@ -743,6 +846,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initVideoObserver();
   initYouTube();
   initWorkflow();
+  initCaseStudy();                /* abas do estudo de caso */
   initFaq();
   initForm();
   initDiscord();
