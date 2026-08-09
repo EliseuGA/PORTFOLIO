@@ -27,13 +27,21 @@ const ARCHIVE = {
     {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Particular',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
     {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'RV There Yet',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
   ],
+  /* cat: 'explicativo' (documentário/análise/iceberg, estilo Amin Wake e caioxapo)
+           | 'gameplay' (você jogando) — usado pelas sub-abas da Caixa B */
   longos: [
-    {yt:'wfXfG8ULGDY', label:'DOC_ARQUIVO_01.mp4', ano:'2025'},
-    {yt:'nnONog3UGMk', label:'DOC_ARQUIVO_02.mp4', ano:'2025'},
-    {yt:'2TCUJv1k6Fc', label:'DOC_ARQUIVO_03.mp4', ano:'2025'},
-    {yt:'jed83po7YzY', label:'DOC_ARQUIVO_04.mp4', ano:'2026'},
-    {yt:'mYKNXIumILY', label:'DOC_ARQUIVO_05.mp4', ano:'2026'},
-    {yt:'C0plDAADgWc', label:'DOC_ARQUIVO_06.mp4', ano:'2026'}
+    {yt:'nnONog3UGMk', label:'DOC_ARQUIVO_02.mp4', ano:'2025', cat:'explicativo'},
+    {yt:'iGDj6OzDSZc', label:'DOC_ARQUIVO_07.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'019QUG1fmro', label:'DOC_ARQUIVO_08.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'1ixhxSVZtIo', label:'DOC_ARQUIVO_09.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'wfXfG8ULGDY', label:'DOC_ARQUIVO_01.mp4', ano:'2025', cat:'gameplay'},
+    {yt:'2TCUJv1k6Fc', label:'DOC_ARQUIVO_03.mp4', ano:'2025', cat:'gameplay'},
+    {yt:'jed83po7YzY', label:'DOC_ARQUIVO_04.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'mYKNXIumILY', label:'DOC_ARQUIVO_05.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'C0plDAADgWc', label:'DOC_ARQUIVO_06.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'HAG4VlghNrE', label:'DOC_ARQUIVO_10.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'hrvagCX452I', label:'DOC_ARQUIVO_11.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'jAbU6qjZBKM', label:'DOC_ARQUIVO_12.mp4', ano:'2026', cat:'gameplay'}
   ],
   shorts: [
     {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Von Gusto', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
@@ -113,6 +121,7 @@ const translations = {
     "port.eyebrow":"REF: CM-01 · INVENTÁRIO DE MÍDIAS","port.title":"Trabalhos selecionados",
     "port.sub":"Cada item foi catalogado. Toque para reproduzir.",
     "port.motion":"Caixa A — Motion","port.long":"Caixa B — Longos","port.shorts":"Caixa C — Shorts",
+    "port.sub.explicativo":"Explicativo","port.sub.gameplay":"Gameplay",
     "port.featured":"PEÇA CENTRAL DO ACERVO","port.featuredhint":"produção própria · clique para assistir","port.mtipo":"TIPO","port.mtipoval":"Documentário autoral","port.mano":"ANO","port.mdur":"DURAÇÃO","port.mrole":"FUNÇÃO","port.mroleval":"Direção e edição",
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
     "cs.eyebrow":"REF: CM-CS · ESTUDO DE CASO",
@@ -187,6 +196,10 @@ const translations = {
     "form.service":"Qual pasta abrir?","form.select":"Selecione um serviço",
     "form.o1":"Edição de vídeos longos","form.o2":"Edição de Shorts / Reels","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Arte","form.o5":"Pacote completo","form.o6":"Outro",
     "form.msg":"Descreva o projeto","form.submit":"Protocolar briefing","form.note":"Sem spam. Sem robô. Só eu do outro lado.",
+    "bs.stamp":"Recebido","bs.protolabel":"PROTOCOLO","bs.greet":"Valeu,",
+    "bs.bodytpl":"Seu pedido de <b>{servico}</b> acabou de entrar na fila do arquivo.",
+    "bs.note":"Respondo pelo e-mail ou WhatsApp que você deixou, em até 24h. Se for urgente, me chama direto:",
+    "bs.wpp":"Chamar no WhatsApp →","bs.again":"enviar outro pedido",
     "footer.end":"FIM DO ARQUIVO","footer.made":"Feito com suor e muito café.",
     "footer.secret":"você fuçou até o fim do arquivo. gostei de você. :)"
   },
@@ -201,6 +214,7 @@ const translations = {
     "port.eyebrow":"REF: CM-01 · MEDIA INVENTORY","port.title":"Selected work",
     "port.sub":"Every item has been catalogued. Tap to play.",
     "port.motion":"Box A — Motion","port.long":"Box B — Long-form","port.shorts":"Box C — Shorts",
+    "port.sub.explicativo":"Explainer","port.sub.gameplay":"Gameplay",
     "port.featured":"CENTERPIECE OF THE ARCHIVE","port.featuredhint":"own production · click to watch","port.mtipo":"TYPE","port.mtipoval":"Authorial documentary","port.mano":"YEAR","port.mdur":"LENGTH","port.mrole":"ROLE","port.mroleval":"Direction and editing",
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
     "cs.eyebrow":"REF: CM-CS · CASE STUDY",
@@ -275,6 +289,10 @@ const translations = {
     "form.service":"Which folder to open?","form.select":"Select a service",
     "form.o1":"Long video editing","form.o2":"Shorts / Reels editing","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Art","form.o5":"Full package","form.o6":"Other",
     "form.msg":"Describe the project","form.submit":"File the briefing","form.note":"No spam. No bots. Just me on the other end.",
+    "bs.stamp":"Received","bs.protolabel":"PROTOCOL","bs.greet":"Thanks,",
+    "bs.bodytpl":"Your <b>{servico}</b> request just entered the archive queue.",
+    "bs.note":"I'll reply by the e-mail or WhatsApp you left, within 24h. If it's urgent, message me directly:",
+    "bs.wpp":"Message on WhatsApp →","bs.again":"send another request",
     "footer.end":"END OF ARCHIVE","footer.made":"Made with sweat and lots of coffee.",
     "footer.secret":"you dug all the way to the end of the archive. i like you. :)"
   }
@@ -312,11 +330,11 @@ function renderArchive(){
     </div>`;
   }).join('');
 
-  /* Caixa B — longos (YouTube) */
+  /* Caixa B — longos (YouTube), com sub-abas Explicativo / Gameplay */
   const gl = document.querySelector('#cat-longos .vgrid');
   gl.innerHTML = ARCHIVE.longos.map((it,i)=>{
     const no = 'CM-02' + String(i+1).padStart(2,'0');
-    return `<div class="rec h16 yt halftone" data-vid="${it.yt}">
+    return `<div class="rec h16 yt halftone" data-vid="${it.yt}" data-sub="${it.cat}">
       <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st pub">PUBLICADO</span></div>
       <div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div>
       <div class="rec-meta">${metaCell('PLATAFORMA','YouTube')}${metaCell('ANO',it.ano)}${metaCell('PESO','ONLINE')}${metaCell('FORMATO','16:9')}</div>
@@ -735,6 +753,25 @@ function initPortfolio(){
     });
   });
 }
+/* ---------- SUB-ABAS DA CAIXA B (Explicativo / Gameplay) ---------- */
+function initLongSubtabs(){
+  const bar = document.getElementById('longSubtabs');
+  const grid = document.querySelector('#cat-longos .vgrid');
+  if(!bar || !grid) return;
+  function apply(sub){
+    grid.querySelectorAll('.rec').forEach(card=>{
+      card.style.display = (card.dataset.sub === sub) ? '' : 'none';
+    });
+    bar.querySelectorAll('.stab').forEach(b=> b.classList.toggle('active', b.dataset.sub === sub));
+  }
+  bar.addEventListener('click', e=>{
+    const btn = e.target.closest('.stab');
+    if(!btn) return;
+    apply(btn.dataset.sub);
+  });
+  apply('explicativo');
+}
+
 function initVideoObserver(){
   const io = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
@@ -853,7 +890,9 @@ function openModal(el){
   modal.classList.add('open'); document.body.style.overflow='hidden';
 }
 function closeModal(){
-  document.getElementById('imgModal').classList.remove('open');
+  const m = document.getElementById('imgModal');
+  if(!m) return; /* seção de thumbnails removida — sem modal de imagem na página */
+  m.classList.remove('open');
   document.body.style.overflow='';
 }
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
@@ -873,15 +912,73 @@ function initFaq(){
   });
 }
 
-/* ---------- FORM ---------- */
+/* ---------- FORM ----------
+   Envia via fetch (fica na mesma página) e troca o formulário por um
+   cartão de protocolo personalizado, com o nome do cliente, o serviço
+   escolhido e o mesmo número de protocolo mostrado no topo do formulário. */
+function successHTML({firstName, servico, protoNo}){
+  const t = translations[currentLang];
+  const servicoText = servico || (currentLang==='pt' ? 'seu projeto' : 'your project');
+  const bodyTpl = (t['bs.bodytpl']||'').replace('{servico}', servicoText);
+  return `
+    <div class="bs-stamp">${t['bs.stamp']}</div>
+    <p class="bs-proto">${t['bs.protolabel']} <b>${protoNo}</b></p>
+    <h3>${t['bs.greet']} ${firstName}!</h3>
+    <p>${bodyTpl}</p>
+    <p class="bs-note">${t['bs.note']}</p>
+    <a class="btn3d bs-wpp" href="https://wa.me/5515998318065" target="_blank" rel="noopener">${t['bs.wpp']}</a>
+    <button class="bs-again" type="button">${t['bs.again']}</button>
+  `;
+}
 function initForm(){
   const form = document.getElementById('contactForm');
   const btn = document.getElementById('submitBtn');
-  form.addEventListener('submit', ()=>{
-    btn.disabled = true;
+  const success = document.getElementById('briefSuccess');
+  if(!form || !btn) return;
+
+  if(success){
+    success.addEventListener('click', e=>{
+      if(e.target.closest('.bs-again')){
+        success.hidden = true;
+        form.hidden = false;
+      }
+    });
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
     const span = btn.querySelector('span');
+    const originalLabel = span.textContent;
+    btn.disabled = true;
     span.textContent = currentLang==='pt' ? 'Protocolando...' : 'Filing...';
-    setTimeout(()=>{ btn.disabled=false; span.textContent = translations[currentLang]['form.submit']; }, 6000);
+
+    const data = new FormData(form);
+    const nomeRaw = (data.get('nome') || '').toString().trim();
+    const firstName = nomeRaw ? nomeRaw.split(' ')[0] : (currentLang==='pt' ? 'você' : 'you');
+    const servico = (data.get('servico') || '').toString().trim();
+    const briefNoEl = document.getElementById('briefNo');
+    const protoNo = briefNoEl ? briefNoEl.textContent : 'CM-0000';
+
+    try{
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if(!res.ok) throw new Error('formspree_error');
+
+      if(success){
+        success.innerHTML = successHTML({firstName, servico, protoNo});
+        form.hidden = true;
+        success.hidden = false;
+      }
+      form.reset();
+      btn.disabled = false;
+      span.textContent = originalLabel;
+    }catch(err){
+      span.textContent = currentLang==='pt' ? 'Erro — tenta de novo?' : 'Error — try again?';
+      setTimeout(()=>{ btn.disabled = false; span.textContent = originalLabel; }, 3000);
+    }
   });
 }
 
@@ -982,8 +1079,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderTestimonials();           /* cartas da correspondência */
   applyTranslations(currentLang);
   buildTape();
-  document.getElementById('imgModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
-  document.getElementById('langBtn').addEventListener('click', toggleLang);
+  const imgModalEl = document.getElementById('imgModal');
+  if(imgModalEl) imgModalEl.addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+  const langBtnEl = document.getElementById('langBtn');
+  if(langBtnEl) langBtnEl.addEventListener('click', toggleLang);
   const activeCat = document.querySelector('.cat.active');
   if(activeCat) loadLazy(activeCat);
 
@@ -992,6 +1091,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initChrome();
   initCrt();
   initPortfolio();
+  initLongSubtabs();
   initFeatured();
   initVideoObserver();
   initYouTube();
