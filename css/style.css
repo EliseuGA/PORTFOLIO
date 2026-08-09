@@ -804,5 +804,30 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 @media(max-width:640px){
   .revcard{flex-basis:200px}
   .revcard-feat{flex-basis:250px}
+
+   .process{
+  padding:var(--pad);position:relative;color:var(--paper);
+  background:
+    linear-gradient(180deg, rgba(23,19,15,.5) 0%, rgba(23,19,15,.88) 45%, var(--ink) 78%, var(--ink) 100%),
+    url('../img/aminBannerBg.jpg') center/cover no-repeat;
+  border-top:5px solid var(--signal);
+}
+ 
+/* textos de cabeçalho precisam de contraste novo — a versão padrão
+   (.eyebrow/.sec-head h2/.sec-sub) foi pensada pra fundo claro */
+.process .eyebrow{color:var(--aero)}
+.process .eyebrow::before{background:var(--aero)}
+.process .sec-head h2{
+  color:var(--paper);-webkit-text-stroke:1.5px var(--ink);text-shadow:3px 3px 0 var(--signal);
+}
+.process .sec-sub{color:#cfc6b6}
+ 
+/* a marca-d'água "PROTOCOLO" também precisa de um contorno claro no lugar do escuro */
+.process .ghost{-webkit-text-stroke:1.5px rgba(255,255,255,.08)}
+ 
+/* o documento branco (.doc) já funciona bem sobre fundo escuro — só troco a
+   sombra de "ink" (que sumia no fundo escuro) por vermelho, pra manter o "pop" */
+.process .doc{box-shadow:6px 6px 0 var(--signal)}
+ 
   .cs-clip{flex-basis:128px}
 }
