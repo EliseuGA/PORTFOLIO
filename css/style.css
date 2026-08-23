@@ -1,5 +1,5 @@
 /* =========================================================
-   CADEIRANTE MAROMBA — THE LOST ARCHIVE
+   CADEIRANTE MAROMBA - THE LOST ARCHIVE
    "Nada é interface. Tudo é objeto."
    O acervo já existia antes do visitante chegar.
    Ícone da marca: a fita MiniDV.
@@ -11,7 +11,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;
+  font-family:'Work Sans',sans-serif;
   background:var(--paper);color:var(--ink);
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
   cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='32'><rect x='0' y='0' width='2' height='2' fill='%23000'/><rect x='0' y='2' width='2' height='2' fill='%23000'/><rect x='2' y='2' width='2' height='2' fill='%23000'/><rect x='0' y='4' width='2' height='2' fill='%23000'/><rect x='2' y='4' width='2' height='2' fill='%23fff'/><rect x='4' y='4' width='2' height='2' fill='%23000'/><rect x='0' y='6' width='2' height='2' fill='%23000'/><rect x='2' y='6' width='2' height='2' fill='%23fff'/><rect x='4' y='6' width='2' height='2' fill='%23fff'/><rect x='6' y='6' width='2' height='2' fill='%23000'/><rect x='0' y='8' width='2' height='2' fill='%23000'/><rect x='2' y='8' width='2' height='2' fill='%23fff'/><rect x='4' y='8' width='2' height='2' fill='%23fff'/><rect x='6' y='8' width='2' height='2' fill='%23fff'/><rect x='8' y='8' width='2' height='2' fill='%23000'/><rect x='0' y='10' width='2' height='2' fill='%23000'/><rect x='2' y='10' width='2' height='2' fill='%23fff'/><rect x='4' y='10' width='2' height='2' fill='%23fff'/><rect x='6' y='10' width='2' height='2' fill='%23fff'/><rect x='8' y='10' width='2' height='2' fill='%23fff'/><rect x='10' y='10' width='2' height='2' fill='%23000'/><rect x='0' y='12' width='2' height='2' fill='%23000'/><rect x='2' y='12' width='2' height='2' fill='%23fff'/><rect x='4' y='12' width='2' height='2' fill='%23fff'/><rect x='6' y='12' width='2' height='2' fill='%23fff'/><rect x='8' y='12' width='2' height='2' fill='%23fff'/><rect x='10' y='12' width='2' height='2' fill='%23fff'/><rect x='12' y='12' width='2' height='2' fill='%23000'/><rect x='0' y='14' width='2' height='2' fill='%23000'/><rect x='2' y='14' width='2' height='2' fill='%23fff'/><rect x='4' y='14' width='2' height='2' fill='%23fff'/><rect x='6' y='14' width='2' height='2' fill='%23fff'/><rect x='8' y='14' width='2' height='2' fill='%23fff'/><rect x='10' y='14' width='2' height='2' fill='%23fff'/><rect x='12' y='14' width='2' height='2' fill='%23fff'/><rect x='14' y='14' width='2' height='2' fill='%23000'/><rect x='0' y='16' width='2' height='2' fill='%23000'/><rect x='2' y='16' width='2' height='2' fill='%23fff'/><rect x='4' y='16' width='2' height='2' fill='%23fff'/><rect x='6' y='16' width='2' height='2' fill='%23fff'/><rect x='8' y='16' width='2' height='2' fill='%23fff'/><rect x='10' y='16' width='2' height='2' fill='%23fff'/><rect x='12' y='16' width='2' height='2' fill='%23fff'/><rect x='14' y='16' width='2' height='2' fill='%23fff'/><rect x='16' y='16' width='2' height='2' fill='%23000'/><rect x='0' y='18' width='2' height='2' fill='%23000'/><rect x='2' y='18' width='2' height='2' fill='%23fff'/><rect x='4' y='18' width='2' height='2' fill='%23fff'/><rect x='6' y='18' width='2' height='2' fill='%23fff'/><rect x='8' y='18' width='2' height='2' fill='%23fff'/><rect x='10' y='18' width='2' height='2' fill='%23fff'/><rect x='12' y='18' width='2' height='2' fill='%23fff'/><rect x='14' y='18' width='2' height='2' fill='%23fff'/><rect x='16' y='18' width='2' height='2' fill='%23fff'/><rect x='18' y='18' width='2' height='2' fill='%23000'/><rect x='0' y='20' width='2' height='2' fill='%23000'/><rect x='2' y='20' width='2' height='2' fill='%23fff'/><rect x='4' y='20' width='2' height='2' fill='%23fff'/><rect x='6' y='20' width='2' height='2' fill='%23fff'/><rect x='8' y='20' width='2' height='2' fill='%23fff'/><rect x='10' y='20' width='2' height='2' fill='%23000'/><rect x='12' y='20' width='2' height='2' fill='%23000'/><rect x='14' y='20' width='2' height='2' fill='%23000'/><rect x='16' y='20' width='2' height='2' fill='%23000'/><rect x='18' y='20' width='2' height='2' fill='%23000'/><rect x='0' y='22' width='2' height='2' fill='%23000'/><rect x='2' y='22' width='2' height='2' fill='%23fff'/><rect x='4' y='22' width='2' height='2' fill='%23fff'/><rect x='6' y='22' width='2' height='2' fill='%23000'/><rect x='8' y='22' width='2' height='2' fill='%23fff'/><rect x='10' y='22' width='2' height='2' fill='%23fff'/><rect x='12' y='22' width='2' height='2' fill='%23000'/><rect x='0' y='24' width='2' height='2' fill='%23000'/><rect x='2' y='24' width='2' height='2' fill='%23fff'/><rect x='4' y='24' width='2' height='2' fill='%23000'/><rect x='6' y='24' width='2' height='2' fill='%23000'/><rect x='8' y='24' width='2' height='2' fill='%23000'/><rect x='10' y='24' width='2' height='2' fill='%23fff'/><rect x='12' y='24' width='2' height='2' fill='%23fff'/><rect x='14' y='24' width='2' height='2' fill='%23000'/><rect x='0' y='26' width='2' height='2' fill='%23000'/><rect x='2' y='26' width='2' height='2' fill='%23000'/><rect x='8' y='26' width='2' height='2' fill='%23000'/><rect x='10' y='26' width='2' height='2' fill='%23fff'/><rect x='12' y='26' width='2' height='2' fill='%23fff'/><rect x='14' y='26' width='2' height='2' fill='%23000'/><rect x='10' y='28' width='2' height='2' fill='%23000'/><rect x='12' y='28' width='2' height='2' fill='%23fff'/><rect x='14' y='28' width='2' height='2' fill='%23fff'/><rect x='16' y='28' width='2' height='2' fill='%23000'/><rect x='12' y='30' width='2' height='2' fill='%23000'/><rect x='14' y='30' width='2' height='2' fill='%23000'/></svg>") 0 0, auto;
@@ -67,7 +67,7 @@ ul{list-style:none}
 .lazy-sec{content-visibility:auto;contain-intrinsic-size:1px 900px}
 
 /* =========================================================
-   OBJETOS DO ARQUIVO — componentes-assinatura
+   OBJETOS DO ARQUIVO - componentes-assinatura
 ========================================================= */
 section{position:relative;overflow:hidden;isolation:isolate}
 
@@ -93,14 +93,14 @@ section{position:relative;overflow:hidden;isolation:isolate}
 /* fita crepe */
 .tapefix{position:absolute;width:90px;height:26px;background:#f5e9c8cc;border-left:1px dashed #17130f33;border-right:1px dashed #17130f33;transform:rotate(var(--tilt,-4deg));z-index:6;pointer-events:none}
 
-/* GRAMPO — marca de uso */
+/* GRAMPO - marca de uso */
 .staple{position:absolute;width:22px;height:10px;border:2px solid #8a8072;border-bottom:none;border-radius:3px 3px 0 0;z-index:7;pointer-events:none;transform:rotate(var(--tilt,-6deg));opacity:.7}
 
-/* MARCA DE CAFÉ — anel deixado por uma xícara */
+/* MARCA DE CAFÉ - anel deixado por uma xícara */
 .coffee{position:absolute;width:var(--sz,90px);height:var(--sz,90px);border-radius:50%;border:6px solid var(--coffee);opacity:.12;z-index:0;pointer-events:none}
 .coffee::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--coffee);opacity:.6}
 
-/* CARIMBO DE TINTA — o botão-objeto do arquivo */
+/* CARIMBO DE TINTA - o botão-objeto do arquivo */
 .stampink{
   display:inline-block;padding:8px 14px;
   border:3px solid var(--signal);color:var(--signal);border-radius:5px;
@@ -116,13 +116,13 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .idlabel-band{background:var(--signal);color:var(--card);font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:2px;padding:4px 12px;text-transform:uppercase}
 .idlabel-body{padding:8px 12px;font-family:var(--mono);font-size:.68rem;letter-spacing:.5px;color:var(--ink)}
 
-/* texto RISCADO e reescrito — marca de história anterior */
+/* texto RISCADO e reescrito - marca de história anterior */
 .struck{position:relative;text-decoration:line-through;text-decoration-color:var(--signal);text-decoration-thickness:2px;opacity:.6}
 .rewrite{font-family:var(--hand);color:var(--signal);font-size:1.15em;margin-left:6px}
 
 .handnote{font-family:var(--hand);color:var(--signal);font-size:1.35rem;line-height:1.25;transform:rotate(-2.5deg);display:inline-block}
 
-/* BILHETE / LISTA DE TAREFAS — a vida real */
+/* BILHETE / LISTA DE TAREFAS - a vida real */
 .notepad{
   position:absolute;z-index:5;width:196px;padding:16px 16px 18px;
   background:var(--postit);box-shadow:3px 6px 10px rgba(0,0,0,.2);
@@ -147,18 +147,18 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .crop::before{top:14px;left:14px;border-right:none;border-bottom:none}
 .crop::after{bottom:14px;right:14px;border-left:none;border-top:none}
 
-/* SELO DE MODIFICAÇÃO — data no canto de fichas (envelhece o acervo) */
+/* SELO DE MODIFICAÇÃO - data no canto de fichas (envelhece o acervo) */
 .modtag{font-family:var(--mono);font-size:.5rem;letter-spacing:.5px;color:var(--muted);opacity:.8}
 
 /* =========================================================
-   FITA MINIDV — ÍCONE DA MARCA (SVG reutilizável)
+   FITA MINIDV - ÍCONE DA MARCA (SVG reutilizável)
 ========================================================= */
 .dvicon{display:inline-block;width:1em;height:.7em;vertical-align:-.08em}
 .dvicon svg{display:block;width:100%;height:100%}
 .dvicon-img{width:22px;height:22px;border-radius:50%;object-fit:cover;vertical-align:middle}
 
 /* =========================================================
-   REGISTRO DE ACESSO (abertura) — a fita gira no loading
+   REGISTRO DE ACESSO (abertura) - a fita gira no loading
 ========================================================= */
 #boot{position:fixed;inset:0;z-index:10000;background:#0c0a08;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s}
 #boot.hide{opacity:0;visibility:hidden;pointer-events:none}
@@ -181,7 +181,22 @@ section{position:relative;overflow:hidden;isolation:isolate}
 /* =========================================================
    BARRA DO ARQUIVO (nav)
 ========================================================= */
-.taskbar{position:fixed;top:0;left:0;width:100%;height:52px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(23,19,15,.72);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);color:var(--paper);border-bottom:2px solid rgba(225,51,39,.5)}
+.taskbar{position:fixed;top:0;left:0;width:100%;min-height:52px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:env(safe-area-inset-top,0px) calc(20px + env(safe-area-inset-right,0px)) 0 calc(20px + env(safe-area-inset-left,0px));box-sizing:border-box;background:rgba(23,19,15,.72);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);color:var(--paper);border-bottom:2px solid rgba(225,51,39,.5)}
+
+/* -------- skip link, foco por teclado antes de qualquer outra coisa -------- */
+.skip-link{
+  position:absolute;top:-100px;left:12px;z-index:10001;
+  background:var(--signal);color:var(--card);padding:10px 18px;
+  font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.5px;
+  border-radius:3px;transition:top .15s ease;
+}
+.skip-link:focus{top:12px}
+
+/* -------- pontos de âncora não ficam colados atrás da taskbar fixa -------- */
+section[id], #main{scroll-margin-top:64px}
+
+/* -------- evita título grande quebrando com uma palavra sozinha na última linha -------- */
+.hero-h1,.sec-head h2,.cs-title,.about-h2,.contact-l h2{text-wrap:balance}
 .tb-start{display:flex;align-items:center;gap:8px;background:rgba(225,51,39,.9);color:var(--card);padding:5px 12px;border-radius:3px;font-family:var(--poster);font-size:.9rem;letter-spacing:.5px;text-transform:uppercase}
 .tb-start .dvicon-img{width:24px;height:24px;border-radius:50%;object-fit:cover}
 .tb-mid{display:flex;gap:2px;flex:1;justify-content:center}
@@ -192,7 +207,7 @@ section{position:relative;overflow:hidden;isolation:isolate}
 .tb-lang:hover{color:var(--paper);border-color:var(--signal)}
 .tb-a11y{border:1px solid #3a3226;border-radius:3px;padding:5px 9px;font-size:.9rem;line-height:1;color:#cfc6b6;background:none}
 .tb-a11y:hover,.tb-a11y.active{color:var(--paper);border-color:var(--signal)}
-/* JANELA DE AVISO estilo XP — cores do site, canto sup. direito */
+/* JANELA DE AVISO estilo XP - cores do site, canto sup. direito */
 .xpwin{position:fixed;top:60px;right:14px;width:min(340px,calc(100vw - 28px));z-index:1100;background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 rgba(23,19,15,.35), 0 12px 30px -8px rgba(0,0,0,.4);font-family:var(--mono)}
 .xpwin[hidden]{display:none}
 .xpwin-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,var(--signal),#b8281d);padding:5px 6px 5px 10px;border-bottom:2px solid var(--ink)}
@@ -215,7 +230,7 @@ section{position:relative;overflow:hidden;isolation:isolate}
 /* aviso de fotossensibilidade no boot */
 .acard-warn{font-family:var(--mono);font-size:.56rem;line-height:1.6;color:var(--signal);background:#fff3f0;border:1px solid var(--signal);padding:8px 10px;margin-top:12px;letter-spacing:.2px}
 .acard-warn b{font-size:.8rem;vertical-align:-1px}
-/* MODO SEM MOVIMENTO — ativado pela classe no html */
+/* MODO SEM MOVIMENTO - ativado pela classe no html */
 html.no-motion *{animation:none!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 html.no-motion .reveal{opacity:1!important;transform:none!important}
 html.no-motion #turb feTurbulence,html.no-motion #turb feDisplacementMap{display:none}
@@ -246,7 +261,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
 input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--signal);border:2px solid var(--ink);border-radius:2px}
 
 /* =========================================================
-   HERO — A MESA DO EDITOR (cena, com sequência de fita)
+   HERO - A MESA DO EDITOR (cena, com sequência de fita)
 ========================================================= */
 .hero{padding:118px 20px 100px;display:flex;flex-direction:column;align-items:center;background:var(--paper)}
 .hero-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:3px;color:var(--signal);text-transform:uppercase;margin-bottom:20px;position:relative;z-index:2}
@@ -321,10 +336,10 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .crt-pause{width:30px;height:24px;background:#d9d0bd;color:#000;border:2px solid;border-color:#fff #7a715e #7a715e #fff;font-size:.62rem;display:flex;align-items:center;justify-content:center}
 .crt-pause:active{border-color:#7a715e #fff #fff #7a715e}
 
-/* slot da fita — recebe a MiniDV */
+/* slot da fita - recebe a MiniDV */
 .crt-slot{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:150px;height:14px;background:#0c0a08;border-radius:2px 2px 0 0;z-index:2;box-shadow:inset 0 3px 5px #000}
 
-/* A FITA MINIDV com etiqueta "NÃO REMOVER" — o botão da cena */
+/* A FITA MINIDV com etiqueta "NÃO REMOVER" - o botão da cena */
 .minidv{
   position:absolute;z-index:7;left:-26px;bottom:-42px;width:210px;
   transform:rotate(-7deg);transition:transform .25s ease;
@@ -365,7 +380,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* =========================================================
-   INVENTÁRIO — a caixa de mídias (kraft)
+   INVENTÁRIO - a caixa de mídias (kraft)
 ========================================================= */
 .portfolio{
   padding:var(--pad);background:var(--kraft);
@@ -388,7 +403,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .cat.active{display:block;animation:catIn .3s ease both}
 @keyframes catIn{from{opacity:0}to{opacity:1}}
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:var(--max);margin:0 auto;position:relative;z-index:2}
-/* CARD DESTAQUE — a peça-vitrine, ocupa a largura toda */
+/* CARD DESTAQUE - a peça-vitrine, ocupa a largura toda */
 .rec-featured{grid-column:1/-1;background:var(--card);border:3px solid var(--signal);box-shadow:8px 8px 0 var(--ink);position:relative;margin-bottom:8px}
 .rec-featured::before{content:'★';position:absolute;top:-16px;left:-14px;width:34px;height:34px;background:var(--signal);color:var(--card);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;z-index:3;box-shadow:2px 2px 0 var(--ink)}
 .rf-tag{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-bottom:3px solid var(--signal);flex-wrap:wrap}
@@ -423,7 +438,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .rec video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rec .frame>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rec iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
-/* chuvisco VHS: fita "esperando play" — CSS puro, custo ~zero, some ao tocar */
+/* chuvisco VHS: fita "esperando play" - CSS puro, custo ~zero, some ao tocar */
 .vhs-fx{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;mix-blend-mode:screen;
   background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 1px,transparent 1px 2px),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 2px,transparent 2px 4px);
   background-size:100% 3px,100% 5px;animation:vhsroll 1.2s steps(8) infinite}
@@ -438,7 +453,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .rec-foot{display:flex;justify-content:space-between;padding:0 11px 8px;font-family:var(--mono);font-size:.5rem;color:var(--muted);opacity:.85}
 
 /* =========================================================
-   IMPRESSÕES (thumbs) — papel envelhecido
+   IMPRESSÕES (thumbs) - papel envelhecido
 ========================================================= */
 .thumbs{padding:var(--pad);background:var(--paper2)}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;max-width:var(--max);margin:0 auto;position:relative;z-index:2}
@@ -498,7 +513,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .wf-modal .wf-r{right:12px;left:auto;top:12px;bottom:auto;background:var(--signal);color:var(--card)}
 .wf-modal-x{position:absolute;top:clamp(12px,3vw,30px);right:clamp(16px,4vw,40px);z-index:3;color:var(--paper);font-size:2.6rem;line-height:1;background:none;border:none}
 .wf-modal-x:hover{color:var(--signal)}
-/* controles próprios — coerentes com o resto do arquivo, sem player nativo genérico */
+/* controles próprios - coerentes com o resto do arquivo, sem player nativo genérico */
 .wf-controls{position:absolute;left:0;right:0;bottom:0;z-index:4;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(transparent,rgba(8,10,20,.85));opacity:0;transition:opacity .25s}
 .wf-modal-stage:hover .wf-controls,.wf-controls.show{opacity:1}
 .wf-ctrl-play,.wf-ctrl-mute,.wf-ctrl-btn{background:none;border:none;color:var(--paper);font-size:1.1rem;line-height:1;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center}
@@ -513,7 +528,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .wf-ctrl-time{font-family:var(--mono);font-size:.62rem;color:var(--paper);flex-shrink:0;min-width:36px;text-align:right}
 
 /* =========================================================
-   PROTOCOLO DE PRODUÇÃO (processo) — documento fotocopiado
+   PROTOCOLO DE PRODUÇÃO (processo) - documento fotocopiado
 ========================================================= */
 .process{padding:var(--pad);background:var(--paper2)}
 .doc{max-width:840px;margin:0 auto;background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);position:relative;z-index:2}
@@ -529,7 +544,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .doc .stampink.abs{bottom:14px;right:16px}
 
 /* =========================================================
-   GAVETA DE PROJETOS (serviços) — gaveteiro + pastas manilha
+   GAVETA DE PROJETOS (serviços) - gaveteiro + pastas manilha
 ========================================================= */
 .services{
   padding:calc(clamp(70px,9vw,120px) + 26px) clamp(20px,4vw,56px) clamp(70px,9vw,120px);
@@ -559,7 +574,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .sheet-cta:hover{color:var(--signal)}
 .drawer-foot{max-width:var(--max);margin:26px auto 0;position:relative;z-index:2;font-family:var(--mono);font-size:.58rem;color:#BFCBC2;letter-spacing:1px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
-/* pasta ARQUIVO MORTO — objeto de envelhecimento */
+/* pasta ARQUIVO MORTO - objeto de envelhecimento */
 .deadfile{max-width:var(--max);margin:22px auto 0;position:relative;z-index:2;display:flex;align-items:center;gap:16px;background:#33403880;border:2px dashed #7d8a80;border-radius:4px;padding:14px 18px;min-height:96px}
 .deadfile .dvicon{width:2em;height:1.4em;opacity:.6;flex-shrink:0}
 .deadfile-mem{width:110px;height:auto;flex-shrink:0;filter:drop-shadow(3px 4px 6px rgba(0,0,0,.5))}
@@ -568,7 +583,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .deadfile .stampink{margin-left:auto;font-size:.7rem;border-color:#9aa8a0;color:#9aa8a0;opacity:.7;flex-shrink:0}
 
 /* =========================================================
-   CORRESPONDÊNCIA (depoimentos) — cartas arquivadas
+   CORRESPONDÊNCIA (depoimentos) - cartas arquivadas
 ========================================================= */
 .testimonials{padding:var(--pad);background:var(--paper2)}
 .tgrid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:var(--max);margin:0 auto;position:relative;z-index:2}
@@ -580,7 +595,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .letter-head b{color:var(--ink)}
 .photo{position:absolute;top:10px;right:12px;width:48px;height:48px;border:4px solid #fff;outline:1.5px solid var(--ink);transform:rotate(4deg);box-shadow:2px 3px 5px rgba(0,0,0,.25);overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
-.letter-body{padding:16px;font-family:var(--type);font-size:.82rem;line-height:1.9;color:#3a342c}
+.letter-body{padding:16px;font-family:var(--type);font-size:.82rem;line-height:1.9;color:#3a342c;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}
 .letter-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 14px;font-family:var(--mono);font-size:.56rem;color:var(--muted)}
 .letter-foot .stampink{font-size:.72rem;padding:4px 9px;opacity:.55}
 
@@ -669,16 +684,24 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .ff{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
 .ff label{font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
-.ff input{background:transparent;border:none;border-bottom:2px dashed var(--ink);border-radius:0;color:var(--ink);font-size:.92rem;padding:8px 2px;outline:none}
+.ff input{background:transparent;border:none;border-bottom:2px dashed var(--ink);border-radius:0;color:var(--ink);font-size:16px;padding:8px 2px;outline:none}
 .ff input:focus{border-bottom-color:var(--signal);border-bottom-style:solid}
 .ff input::placeholder,.ff textarea::placeholder{color:#b3a88f;font-family:var(--hand);font-size:1.05rem}
-.ff select{background:var(--card);border:2px solid var(--ink);border-radius:2px;color:var(--ink);font-size:.88rem;padding:10px 12px;outline:none;-webkit-appearance:none;appearance:none;box-shadow:var(--bevel-in)}
+.ff select{background:var(--card);border:2px solid var(--ink);border-radius:2px;color:var(--ink);font-size:16px;padding:10px 12px;outline:none;-webkit-appearance:none;appearance:none;box-shadow:var(--bevel-in)}
 .ff select:focus{border-color:var(--signal)}
-.ff textarea{background:transparent;border:2px dashed var(--ink);border-radius:2px;color:var(--ink);font-size:.92rem;padding:12px;outline:none;resize:vertical;width:100%}
+.ff textarea{background:transparent;border:2px dashed var(--ink);border-radius:2px;color:var(--ink);font-size:16px;padding:12px;outline:none;resize:vertical;width:100%}
 .ff textarea:focus{border-color:var(--signal);border-style:solid}
 .fbtn{width:100%;justify-content:center;margin-top:4px;transform:rotate(-.6deg)}
+.btn-spinner{
+  display:none;width:15px;height:15px;flex-shrink:0;
+  border:2px solid rgba(255,255,255,.35);border-top-color:var(--card);
+  border-radius:50%;animation:btnspin .7s linear infinite;
+}
+.fbtn.loading .btn-spinner{display:inline-block}
+@keyframes btnspin{to{transform:rotate(360deg)}}
 .fbtn:disabled{opacity:.6}
 .fnote{font-family:var(--mono);font-size:.6rem;color:var(--muted);text-align:center;margin-top:12px}
+.form-error{font-family:var(--mono);font-size:.68rem;color:var(--signal);text-align:center;margin-top:12px;line-height:1.6}
 
 .mascote-zone{position:absolute;z-index:4;right:clamp(-10px,1vw,40px);bottom:calc(clamp(220px,26vw,420px) * -0.18);width:clamp(220px,26vw,420px)}
 .contact-mascote{width:100%;display:block;filter:url(#turb) drop-shadow(12px 12px 0 var(--electric));transition:transform .3s ease}
@@ -696,7 +719,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 }
 
 /* =========================================================
-   FIM DO ARQUIVO (footer) — inventário do acervo
+   FIM DO ARQUIVO (footer) - inventário do acervo
 ========================================================= */
 .footer-arch{background:var(--ink);color:#cfc6b6;padding:clamp(40px,6vw,70px) clamp(20px,4vw,56px) 30px;position:relative;z-index:2}
 .footer-arch-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
@@ -800,6 +823,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .revrow::-webkit-scrollbar{height:8px}
 .revrow::-webkit-scrollbar-thumb{background:var(--signal)}
 .revcard{scroll-snap-align:start;flex:0 0 230px;background:var(--card);color:var(--ink);border:2px solid var(--paper2);box-shadow:4px 4px 0 rgba(0,0,0,.45);padding:14px 16px;font-family:var(--type);font-size:.76rem;line-height:1.6}
+.revcard .rev-text,.revcard-feat p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}
 .revcard .rev-h{font-family:var(--mono);font-size:.56rem;color:var(--signal);font-weight:700;letter-spacing:.5px;margin-bottom:8px;display:block;text-transform:uppercase}
 .revcard-feat{flex:0 0 290px;border:3px solid var(--signal)}
 .revcard-feat .rev-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -814,7 +838,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 }
 
 /* ---- CM-04 · fundo cinza com detalhes vermelhos do Protocolo de Produção
-   (identidade própria — não reaproveita mais a imagem do Amin Wake) ---- */
+   (identidade própria - não reaproveita mais a imagem do Amin Wake) ---- */
 .process{
   padding:var(--pad);position:relative;color:var(--paper);
   background:
@@ -851,7 +875,7 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .stab:hover{transform:translateY(-2px)}
 
 /* =========================================================
-   CARTÃO DE PROTOCOLO RECEBIDO — confirmação personalizada
+   CARTÃO DE PROTOCOLO RECEBIDO - confirmação personalizada
    Cole no final de style.css.
 ========================================================= */
 
@@ -891,8 +915,8 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
  
 
 /* =========================================================
-   CARROSSEL DE DEPOIMENTOS — CORRESPONDÊNCIA
-   (bloco que faltava — sem ele o JS movia os cards sem
+   CARROSSEL DE DEPOIMENTOS - CORRESPONDÊNCIA
+   (bloco que faltava - sem ele o JS movia os cards sem
    overflow:hidden/largura fixa, causando o efeito de
    "esticar e teleportar" pro canto esquerdo)
 ========================================================= */
@@ -913,9 +937,65 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .corr-nav:active{transform:translateY(0);box-shadow:1px 1px 0 var(--ink)}
 
 .corr-dots{display:flex;justify-content:center;gap:9px;margin-top:22px;position:relative;z-index:2}
-.corr-dot{width:9px;height:9px;border-radius:50%;background:var(--paper2);border:1.5px solid var(--ink);padding:0;transition:background .2s,transform .2s}
-.corr-dot.active{background:var(--signal);transform:scale(1.25)}
+.corr-dot{
+  width:24px;height:24px;padding:0;background:none;border:none;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.corr-dot::after{
+  content:'';width:9px;height:9px;border-radius:50%;
+  background:var(--paper2);border:1.5px solid var(--ink);
+  transition:background .2s,transform .2s;
+}
+.corr-dot.active::after{background:var(--signal);transform:scale(1.25)}
 
 @media(max-width:640px){
   .corr-nav{width:34px;height:34px;font-size:1.1rem}
+}
+
+/* =========================================================
+   CONSENTIMENTO DO FORMULÁRIO + MODAL DE TERMOS/PRIVACIDADE
+========================================================= */
+.ff-consent{
+  display:flex;align-items:flex-start;gap:9px;margin:2px 0 16px;
+}
+.ff-consent input[type=checkbox]{
+  appearance:none;-webkit-appearance:none;flex-shrink:0;
+  width:20px;height:20px;margin-top:1px;
+  border:2px solid var(--ink);border-radius:3px;background:var(--card);
+  position:relative;cursor:pointer;
+}
+.ff-consent input[type=checkbox]:checked{background:var(--signal);border-color:var(--signal)}
+.ff-consent input[type=checkbox]:checked::after{
+  content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--card);font-size:.85rem;font-weight:700;
+}
+.ff-consent input[type=checkbox]:focus-visible{outline:2px solid var(--aero);outline-offset:2px}
+.ff-consent label{font-size:.76rem;line-height:1.5;color:var(--muted)}
+.ff-consent label a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+.ff-consent label a:hover{color:var(--signal)}
+
+.footer-legal{display:flex;gap:16px;font-family:var(--mono);font-size:.6rem}
+.footer-legal a{color:#8a8072;text-decoration:underline;text-underline-offset:2px}
+.footer-legal a:hover{color:var(--paper)}
+
+.legal-modal{display:none;position:fixed;inset:0;z-index:7000;background:rgba(10,8,6,.82);align-items:center;justify-content:center;padding:24px}
+.legal-modal.open{display:flex}
+.legal-modal-stage{
+  position:relative;width:min(680px,100%);max-height:82vh;overflow-y:auto;
+  background:var(--card);border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,.5);
+  padding:36px 30px 30px;
+}
+.legal-modal-x{position:absolute;top:14px;right:16px;font-size:1.8rem;line-height:1;color:var(--muted);background:none;border:none}
+.legal-modal-x:hover{color:var(--signal)}
+.legal-modal-body h2{font-family:var(--poster);font-weight:400;font-size:1.6rem;text-transform:uppercase;margin-bottom:6px;color:var(--ink)}
+.legal-modal-body .legal-updated{font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-bottom:20px;display:block}
+.legal-modal-body h3{font-family:var(--poster);font-weight:400;font-size:1.05rem;text-transform:uppercase;color:var(--signal);margin:22px 0 8px}
+.legal-modal-body p,.legal-modal-body li{font-size:.86rem;line-height:1.75;color:#3a342c;margin-bottom:10px}
+.legal-modal-body ul{padding-left:20px;margin-bottom:10px}
+.legal-modal-body li{margin-bottom:6px}
+.legal-modal-body strong{color:var(--ink)}
+.legal-modal-body a{color:var(--ink);text-decoration:underline}
+
+@media(max-width:640px){
+  .legal-modal-stage{padding:28px 18px 22px}
 }
