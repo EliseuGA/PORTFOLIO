@@ -1,5 +1,5 @@
 /* =========================================================
-   CADEIRANTE MAROMBA — THE LOST ARCHIVE — script.js
+   CADEIRANTE MAROMBA - THE LOST ARCHIVE - script.js
    "Nada é interface. Tudo é objeto."
 ========================================================= */
 
@@ -9,11 +9,11 @@ if(localStorage.getItem('cm-motion') === 'off'){
 }
 
 /* =========================================================
-   O INVENTÁRIO — cada vídeo é um item catalogado do acervo.
+   O INVENTÁRIO - cada vídeo é um item catalogado do acervo.
    Para adicionar um projeto: copie uma linha e edite os campos.
    f = arquivo em videos/ · yt = ID do YouTube
    status: EXPORTADO | APROVADO | ARQUIVADO | PUBLICADO | ENTREGUE
-   (os metadados abaixo são plausíveis — confira e corrija à vontade)
+   (os metadados abaixo são plausíveis - confira e corrija à vontade)
 ========================================================= */
 const ARCHIVE = {
   motion: [
@@ -21,14 +21,14 @@ const ARCHIVE = {
     {f:'editVonGusto.mp4',                        label:'EDIT_VONGUSTO.mov',   cliente:'Von Gusto',      ano:'2025', peso:'3.2 GB', status:'APROVADO'},
     {f:'badboysRDR2_8mb.mp4',                     label:'BADBOYS_RDR2.mov',    cliente:'Acervo pessoal', ano:'2024', peso:'5.8 GB', status:'ARQUIVADO'},
     {f:'introFnafDoom.mp4',                       label:'FNAF_DOOM.mov',       cliente:'caioxapo',       ano:'2025', peso:'4.1 GB', status:'EXPORTADO'},
-    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'—',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
+    {f:'cancerDeBOLA_8mb.mp4',                    label:'PROJETO_CDB.mov',     cliente:'-',              ano:'2025', peso:'6.6 GB', status:'EXPORTADO'},
     {f:'introPoppyPlaytime_8mb.mp4',              label:'POPPY_INTRO.mov',     cliente:'caioxapo',       ano:'2025', peso:'5.0 GB', status:'APROVADO'},
     {f:'editDarthVader_1920x1080p_8mb.mp4',       label:'VADER_EDIT.mov',      cliente:'Acervo pessoal', ano:'2024', peso:'2.9 GB', status:'ARQUIVADO'},
     {f:'VideoLisboa FINALIZADO_8mb.mp4',          label:'LISBOA_FINAL.mov',    cliente:'Particular',     ano:'2024', peso:'9.3 GB', status:'EXPORTADO'},
     {f:'introRVTHEREYET_8mb.mp4',                 label:'RV_THERE_YET.mov',    cliente:'RV There Yet',   ano:'2026', peso:'7.7 GB', status:'EXPORTADO'}
   ],
   /* cat: 'explicativo' (documentário/análise/iceberg, estilo Amin Wake e caioxapo)
-           | 'gameplay' (você jogando) — usado pelas sub-abas da Caixa B */
+           | 'gameplay' (você jogando) - usado pelas sub-abas da Caixa B */
   longos: [
     {yt:'nnONog3UGMk', label:'DOC_ARQUIVO_02.mp4', ano:'2025', cat:'explicativo'},
     {yt:'iGDj6OzDSZc', label:'DOC_ARQUIVO_07.mp4', ano:'2026', cat:'explicativo'},
@@ -56,7 +56,7 @@ const ARCHIVE = {
 const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'pub', ENTREGUE:'ent'};
 
 /* =========================================================
-   ESTUDO DE CASO — AMIN WAKE
+   ESTUDO DE CASO - AMIN WAKE
    Cinco trechos da abertura do documentário + reações do público.
    poster = frame extraído de cada clipe, usado no card do carrossel
    e como poster do <video> (evita quadro cinza/preto na troca de clipe).
@@ -94,7 +94,7 @@ const REVIEW_FEATURED = {
 };
 
 /* =========================================================
-   CARROSSEL DE DEPOIMENTOS — CORRESPONDÊNCIA
+   CARROSSEL DE DEPOIMENTOS - CORRESPONDÊNCIA
    3 cartas visíveis por vez, girando sozinho; ao navegar manualmente
    (setas ou bolinhas), pausa nesse depoimento por um tempo e depois
    volta a girar sozinho de onde parou.
@@ -105,6 +105,90 @@ const TESTIMONIALS = [
   {photo:'img/aminAvatar.jpg',        name:'Amin Wake', handle:'@aminwake',  subjectKey:'test.d.s', bodyKey:'test.d', foot:'documentário completo · caso de estudo acima ↑',  year:'2026'},
   {photo:'img/vonGustoProfile.jpeg',  name:'Von Gusto', handle:'@v0ngusto',  subjectKey:'test.c.s', bodyKey:'test.c', foot:'851 mil views · 1º vídeo do canal',                year:'2025'}
 ];
+
+/* =========================================================
+   TERMOS DE USO E POLÍTICA DE PRIVACIDADE
+   Conteúdo simples e direto, sem textão. Aberto num modal a partir
+   dos links do rodapé e da checkbox de consentimento do briefing.
+========================================================= */
+const LEGAL = {
+  privacy: {
+    pt: `
+      <h2>Política de Privacidade</h2>
+      <span class="legal-updated">Última atualização: 2026</span>
+      <p>Este site é o portfólio pessoal de Eliseu (Cadeirante Maromba), editor de vídeo autônomo. Esta página explica, de forma direta, quais dados são coletados por aqui e para que servem.</p>
+      <h3>Quais dados eu coleto</h3>
+      <p>Só o que você mesmo digita no formulário de briefing: nome, canal ou marca (opcional), e-mail, telefone/WhatsApp (opcional) e a descrição do projeto.</p>
+      <h3>Para que uso esses dados</h3>
+      <p>Exclusivamente para responder ao seu pedido de orçamento e manter contato sobre o projeto. Não uso para outra finalidade, não vendo e não compartilho com terceiros para fins de marketing.</p>
+      <h3>Como esses dados são processados</h3>
+      <p>O formulário é enviado através do <strong>Formspree</strong> (formspree.io), um serviço terceirizado de processamento de formulários, e chega direto no meu e-mail. Não mantenho um banco de dados próprio com essas informações.</p>
+      <h3>Armazenamento no navegador</h3>
+      <p>O site guarda algumas preferências no armazenamento local do seu navegador (localStorage), como idioma escolhido e se as animações estão ativadas. Isso fica só no seu aparelho, não é enviado pra mim, e não é usado para rastreamento. Este site não usa cookies de rastreamento nem ferramentas de analytics de terceiros.</p>
+      <h3>Seus direitos</h3>
+      <p>Conforme a LGPD (Lei Geral de Proteção de Dados), você pode pedir a qualquer momento para eu confirmar quais dados tenho sobre você, corrigi-los ou apagá-los. É só chamar pelo e-mail ou WhatsApp que aparecem no rodapé do site.</p>
+      <h3>Por quanto tempo guardo os dados</h3>
+      <p>Pelo tempo necessário para conduzir o projeto conversado, ou até você pedir a remoção.</p>
+      <h3>Mudanças nesta política</h3>
+      <p>Esta política pode ser atualizada de vez em quando. A versão que vale é sempre a publicada aqui.</p>
+    `,
+    en: `
+      <h2>Privacy Policy</h2>
+      <span class="legal-updated">Last updated: 2026</span>
+      <p>This site is the personal portfolio of Eliseu (Cadeirante Maromba), an independent video editor. This page explains, plainly, what data is collected here and why.</p>
+      <h3>What data I collect</h3>
+      <p>Only what you type into the briefing form yourself: name, channel or brand (optional), email, phone/WhatsApp (optional), and the project description.</p>
+      <h3>What I use it for</h3>
+      <p>Exclusively to respond to your quote request and stay in touch about the project. I do not use it for any other purpose, do not sell it, and do not share it with third parties for marketing.</p>
+      <h3>How this data is processed</h3>
+      <p>The form is sent through <strong>Formspree</strong> (formspree.io), a third-party form processing service, and lands directly in my email. I do not keep my own database of this information.</p>
+      <h3>Browser storage</h3>
+      <p>The site stores a few preferences in your browser's local storage (localStorage), such as chosen language and whether animations are enabled. That stays on your device, is never sent to me, and is not used for tracking. This site does not use tracking cookies or third-party analytics tools.</p>
+      <h3>Your rights</h3>
+      <p>You can ask at any time for me to confirm what data I hold about you, correct it, or delete it. Just reach out through the email or WhatsApp listed in the footer.</p>
+      <h3>How long I keep it</h3>
+      <p>For as long as needed to run the project we discussed, or until you ask me to remove it.</p>
+      <h3>Changes to this policy</h3>
+      <p>This policy may be updated occasionally. The version that applies is always the one published here.</p>
+    `
+  },
+  terms: {
+    pt: `
+      <h2>Termos de Uso</h2>
+      <span class="legal-updated">Última atualização: 2026</span>
+      <p>Este site é o portfólio pessoal de Eliseu (Cadeirante Maromba), com o objetivo de apresentar trabalhos de edição de vídeo e motion design, e receber pedidos de orçamento.</p>
+      <h3>Propriedade dos conteúdos</h3>
+      <p>Os vídeos, artes e textos exibidos aqui pertencem a Eliseu ou aos respectivos clientes que autorizaram a exibição como parte do portfólio. Não é permitido copiar, redistribuir ou reutilizar esse material sem autorização prévia.</p>
+      <h3>Sobre o formulário de briefing</h3>
+      <p>Preencher o formulário não gera compromisso automático de contratação nem de prestação de serviço. É apenas o primeiro contato. Prazo, valor e forma de pagamento de cada projeto são combinados diretamente por e-mail ou WhatsApp, conforme descrito na seção de perguntas frequentes.</p>
+      <h3>Uso do site</h3>
+      <p>O conteúdo é fornecido como está. Partes do site podem ser atualizadas, corrigidas ou removidas a qualquer momento, sem aviso prévio.</p>
+      <h3>Isenção de responsabilidade</h3>
+      <p>Eliseu não se responsabiliza por decisões tomadas com base apenas nas informações deste site, sem conversa direta antes de fechar um projeto.</p>
+      <h3>Legislação aplicável</h3>
+      <p>Estes termos são regidos pelas leis brasileiras.</p>
+      <h3>Dúvidas</h3>
+      <p>Qualquer dúvida sobre estes termos, é só chamar pelos contatos do rodapé.</p>
+    `,
+    en: `
+      <h2>Terms of Use</h2>
+      <span class="legal-updated">Last updated: 2026</span>
+      <p>This site is the personal portfolio of Eliseu (Cadeirante Maromba), showcasing video editing and motion design work and collecting quote requests.</p>
+      <h3>Content ownership</h3>
+      <p>The videos, art, and text shown here belong to Eliseu or to the respective clients who authorized their display as part of the portfolio. Copying, redistributing, or reusing this material without prior authorization is not allowed.</p>
+      <h3>About the briefing form</h3>
+      <p>Filling in the form does not automatically create a commitment to hire or to deliver a service. It is only the first point of contact. Timeline, price, and payment terms for each project are agreed directly by email or WhatsApp, as described in the FAQ section.</p>
+      <h3>Use of the site</h3>
+      <p>Content is provided as is. Parts of the site may be updated, corrected, or removed at any time, without prior notice.</p>
+      <h3>Disclaimer</h3>
+      <p>Eliseu is not responsible for decisions made based solely on the information on this site, without a direct conversation before starting a project.</p>
+      <h3>Governing law</h3>
+      <p>These terms are governed by Brazilian law.</p>
+      <h3>Questions</h3>
+      <p>Any questions about these terms, just reach out through the contacts in the footer.</p>
+    `
+  }
+};
 
 /* ---------- TRADUÇÕES ----------
    Artefatos do acervo (carimbos, status, nomes de documento)
@@ -120,7 +204,7 @@ const translations = {
     "hero.cta":"Protocolar um briefing →",
     "port.eyebrow":"REF: CM-01 · INVENTÁRIO DE MÍDIAS","port.title":"Trabalhos selecionados",
     "port.sub":"Cada item foi catalogado. Toque para reproduzir.",
-    "port.motion":"Caixa A — Motion","port.long":"Caixa B — Longos","port.shorts":"Caixa C — Shorts",
+    "port.motion":"Caixa A · Motion","port.long":"Caixa B · Longos","port.shorts":"Caixa C · Shorts",
     "port.sub.explicativo":"Explicativo","port.sub.gameplay":"Gameplay",
     "port.featured":"PEÇA CENTRAL DO ACERVO","port.featuredhint":"produção própria · clique para assistir","port.mtipo":"TIPO","port.mtipoval":"Documentário autoral","port.mano":"ANO","port.mdur":"DURAÇÃO","port.mrole":"FUNÇÃO","port.mroleval":"Direção e edição",
     "thumb.eyebrow":"REF: CM-02 · IMPRESSÕES E ARTES","thumb.title":"Thumbnails & Artes","thumb.sub":"Cada arte é pensada para converter o scroll em clique.",
@@ -130,7 +214,7 @@ const translations = {
     "cs.meta":"CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2026</b> · FORMATO: <b>16:9</b>",
     "cs.watchfull":"Assistir completo →",
     "cs.reveyebrow":"REF: CM-CS-R · REAÇÕES DO PÚBLICO",
-    "cs.err":"não foi possível carregar este clipe — confira o arquivo em /videos",
+    "cs.err":"não foi possível carregar este clipe. Confira o arquivo em /videos",
     "cs.channelname":"Canal: Amin Wake",
     "cs.channelstats":"236 mil inscritos · 16.901.375 visualizações",
     "wf.eyebrow":"REF: CM-03 · PROVA DE PROCESSO","wf.title":"Do bruto ao luxo","wf.play":"Reproduzir","wf.raw":"BRUTO","wf.edit":"EDITADO",
@@ -143,10 +227,10 @@ const translations = {
     "proc.s4.t":"Entrega","proc.s4.d":"Arquivo em alta qualidade, saindo direto do forno. Pronto pra postar, pronto pra crescer.",
     "sv.eyebrow":"REF: CM-05 · GAVETA DE PROJETOS","sv.title":"Serviços","sv.sub":"Quatro pastas. Escolha a que faz sentido para o seu canal agora.",
     "sv.badge":"MAIS PEDIDO","sv.cta":"ABRIR PROJETO →",
-    "sv.foot1":"GAVETA 02 — 4 PASTAS CATALOGADAS","sv.foot2":"ÚLTIMA ATUALIZAÇÃO: 2026",
-    "sv.a.t":"Vídeos Longos","sv.a.d":"Para quem precisa que o público fique até o final — vlogs, podcasts, gameplays, documentários.","sv.a.props":"TIPO: Projeto Premiere · PRAZO: até 10 dias úteis",
+    "sv.foot1":"GAVETA 02 · 4 PASTAS CATALOGADAS","sv.foot2":"ÚLTIMA ATUALIZAÇÃO: 2026",
+    "sv.a.t":"Vídeos Longos","sv.a.d":"Para quem precisa que o público fique até o final: vlogs, podcasts, gameplays, documentários.","sv.a.props":"TIPO: Projeto Premiere · PRAZO: até 10 dias úteis",
     "sv.a.l1":"Edição completa com ritmo e narrativa","sv.a.l2":"Trilha sonora e efeitos sonoros","sv.a.l3":"Color grading e tratamento de imagem","sv.a.l4":"Textos e legendas animadas",
-    "sv.b.t":"Pacote Completo","sv.b.d":"A solução total. Do vídeo longo ao short, passando pelo motion e pela arte — tudo com a mesma identidade.","sv.b.props":"TIPO: Pacote comprimido · CONTÉM: 4 itens",
+    "sv.b.t":"Pacote Completo","sv.b.d":"A solução total. Do vídeo longo ao short, passando pelo motion e pela arte, tudo com a mesma identidade.","sv.b.props":"TIPO: Pacote comprimido · CONTÉM: 4 itens",
     "sv.b.l1":"Edição de vídeo longo","sv.b.l2":"Corte e edição de Shorts/Reels","sv.b.l3":"Motion graphics e intros","sv.b.l4":"Thumbnail personalizada",
     "sv.c.t":"Shorts & Reels","sv.c.d":"Conteúdo vertical que prende em menos de 3 segundos. Feito para viralizar no YouTube Shorts, Instagram e TikTok.","sv.c.props":"TIPO: Projeto Premiere · PRAZO: até 4 dias úteis",
     "sv.c.l1":"Edição dinâmica e impactante","sv.c.l2":"Cortes sincronizados com a música","sv.c.l3":"Legendas estilizadas","sv.c.l4":"Formato 9:16 otimizado",
@@ -167,27 +251,27 @@ const translations = {
     "port.count":"ACERVO EM EXPANSÃO · <b>DEZENAS DE ITENS</b> CATALOGADOS · 3 CAIXAS ABERTAS",
     "sv.dead":"projetos antigos, testes e versões que ficaram pelo caminho. guardados, mas fora de catálogo.","sv.deadstamp":"Arquivado",
     "about.k1":"Responsável","about.k2":"Especialidade","about.v2":"Narrativas e edição cinematográfica","about.k3":"Base","about.v3":"Interior de SP, Brasil","about.k4":"Arquivo iniciado","about.k5":"Estado","about.v5":"Em atividade","about.k6":"Última atualização","about.v6":"Hoje",
-    "fa.title":"Arquivo Cadeirante Maromba","fa.sub":"Um acervo pessoal de vídeos, artes e documentos de produção. Ainda em expansão — o visitante recebeu autorização temporária para explorar.",
+    "fa.title":"Arquivo Cadeirante Maromba","fa.sub":"Um acervo pessoal de vídeos, artes e documentos de produção. Ainda em expansão. O visitante recebeu autorização temporária para explorar.",
     "fa.l1":"Estado do acervo","fa.v1":"EM ATIVIDADE","fa.l2":"Iniciado em","fa.l3":"Caixas de mídia abertas","fa.l4":"Documentado","fa.v4":"ANOS DE TRABALHO","fa.l5":"Última atualização",
     "about.title":"Sou editor. Sou designer.<br>Mas antes de tudo, sou <span class=\"signal-txt\">criador.</span>",
     "about.note":"qualidade &gt; quantidade.<br>sempre.",
     "about.f1":"NOME: <b>Eliseu (\"Cadeirante Maromba\")</b>","about.f2":"FUNÇÃO: <b>Editor & Documentarista</b>","about.f3":"BASE: <b>Interior de SP, Brasil</b>","about.f4":"STATUS: <b>Em atividade</b>",
     "about.p1":"Meu nome é Eliseu, mas provavelmente você me conhece como Cadeirante Maromba.",
-    "about.p2":"Eu edito vídeos porque gosto de descobrir o que faz uma história funcionar. Um corte no momento certo, uma trilha que entra alguns segundos depois, um silêncio bem colocado... são esses detalhes que fazem alguém continuar assistindo.",
-    "about.p3":"Cresci consumindo muito conteúdo na internet, documentários e jogos, e é daí que vem meu maior defeito e minha maior qualidade: eu sou EXTREMAMENTE crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa... isso realmente me incomoda.",
+    "about.p2":"Eu edito vídeos porque gosto de descobrir o que faz uma história funcionar. Um corte no momento certo, uma trilha que entra alguns segundos depois, um silêncio bem colocado… são esses detalhes que fazem alguém continuar assistindo.",
+    "about.p3":"Cresci consumindo muito conteúdo na internet, documentários e jogos, e é daí que vem meu maior defeito e minha maior qualidade: eu sou EXTREMAMENTE crítico. Não aguento vídeo genérico. Corte sem intenção, trilha jogada de qualquer jeito, thumbnail preguiçosa… isso realmente me incomoda.",
     "about.p4":"Quando pego um projeto, meu objetivo não é simplesmente terminar a edição. É fazer com que ela pareça inevitável, como se cada escolha tivesse exatamente um motivo para existir.",
-    "about.quote":"\"Você cria. Eu cuido do resto.\"",
+    "about.quote":"“Você cria. Eu cuido do resto.”",
     "about.st1":"PARCERIAS","about.st2":"ALCANÇADOS","about.st3":"DE CUIDADO",
     "faq.eyebrow":"REF: CM-08 · MANUAL DO CLIENTE","faq.title":"Perguntas frequentes","faq.page":"PÁGINA 07",
     "faq.q1":"Como funciona a cobrança?","faq.a1":"A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.",
     "faq.q2":"Qual é o prazo de entrega?","faq.a2":"Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.",
-    "faq.q3":"Quantas revisões estão incluídas?","faq.a3":"São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.",
+    "faq.q3":"Quantas revisões estão incluídas?","faq.a3":"São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos. O objetivo é você ficar 100% satisfeito.",
     "faq.q4":"Como funciona o pagamento?","faq.a4":"<strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.",
-    "faq.q5":"Em quais formatos você entrega?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.",
-    "faq.q6":"Como envio o material?","faq.a6":"Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.",
-    "faq.q7":"E se eu cancelar o projeto?","faq.a7":"<strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.",
+    "faq.q5":"Em quais formatos você entrega?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma: 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.",
+    "faq.q6":"Como envio o material?","faq.a6":"Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo (gravações, áudios, referências) e eu começo assim que a entrada for confirmada.",
+    "faq.q7":"E se eu cancelar o projeto?","faq.a7":"<strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso. O trabalho já foi feito.",
     "ct.eyebrow":"REF: CM-09 · NOVO BRIEFING","ct.title":"Pronto para adicionar um projeto ao NOSSO arquivo?",
-    "ct.sub":"Preencha o briefing ao lado — ele entra direto na fila do acervo. Respondo em até 24h.",
+    "ct.sub":"Preencha o briefing ao lado. Ele entra direto na fila do acervo, respondo em até 24h.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Arquivo aberto para novos projetos",
     "ct.discordCopied":"copiado! ✓",
     "ct.mascoteBubble":"Vamos fazer HISTÓRIA juntos?",
@@ -198,11 +282,14 @@ const translations = {
     "form.service":"Qual pasta abrir?","form.select":"Selecione um serviço",
     "form.o1":"Edição de vídeos longos","form.o2":"Edição de Shorts / Reels","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Arte","form.o5":"Pacote completo","form.o6":"Outro",
     "form.msg":"Descreva o projeto","form.submit":"Protocolar briefing","form.note":"Sem spam. Sem robô. Só eu do outro lado.",
+    "form.error":"Não deu pra enviar agora. Tenta de novo em instantes, ou manda direto pelo WhatsApp.",
     "bs.stamp":"Recebido","bs.protolabel":"PROTOCOLO","bs.greet":"Valeu,",
     "bs.bodytpl":"Seu pedido de <b>{servico}</b> acabou de entrar na fila do arquivo.",
     "bs.note":"Respondo pelo e-mail ou WhatsApp que você deixou, em até 24h. Se for urgente, me chama direto:",
     "bs.wpp":"Chamar no WhatsApp →","bs.again":"enviar outro pedido",
     "footer.end":"FIM DO ARQUIVO","footer.made":"Feito com suor e muito café.",
+    "footer.privacy":"Política de Privacidade","footer.terms":"Termos de Uso",
+    "form.consent":"Li e aceito os <a href=\"#\" data-legal=\"terms\">Termos de Uso</a> e a <a href=\"#\" data-legal=\"privacy\">Política de Privacidade</a>.",
     "footer.secret":"você fuçou até o fim do arquivo. gostei de você. :)"
   },
   en: {
@@ -215,7 +302,7 @@ const translations = {
     "hero.cta":"File a briefing →",
     "port.eyebrow":"REF: CM-01 · MEDIA INVENTORY","port.title":"Selected work",
     "port.sub":"Every item has been catalogued. Tap to play.",
-    "port.motion":"Box A — Motion","port.long":"Box B — Long-form","port.shorts":"Box C — Shorts",
+    "port.motion":"Box A · Motion","port.long":"Box B · Long-form","port.shorts":"Box C · Shorts",
     "port.sub.explicativo":"Explainer","port.sub.gameplay":"Gameplay",
     "port.featured":"CENTERPIECE OF THE ARCHIVE","port.featuredhint":"own production · click to watch","port.mtipo":"TYPE","port.mtipoval":"Authorial documentary","port.mano":"YEAR","port.mdur":"LENGTH","port.mrole":"ROLE","port.mroleval":"Direction and editing",
     "thumb.eyebrow":"REF: CM-02 · PRINTS & ART","thumb.title":"Thumbnails & Art","thumb.sub":"Every thumbnail is built to turn a scroll into a click.",
@@ -225,7 +312,7 @@ const translations = {
     "cs.meta":"CLIENT: <b>Amin Wake</b> · DELIVERY: <b>2026</b> · FORMAT: <b>16:9</b>",
     "cs.watchfull":"Watch the full video →",
     "cs.reveyebrow":"REF: CM-CS-R · AUDIENCE REACTIONS",
-    "cs.err":"couldn't load this clip — check the file in /videos",
+    "cs.err":"couldn't load this clip. Check the file in /videos",
     "cs.channelname":"Channel: Amin Wake",
     "cs.channelstats":"236K subscribers · 16,901,375 views",
     "wf.eyebrow":"REF: CM-03 · PROCESS PROOF","wf.title":"From raw to polished","wf.play":"Play","wf.raw":"RAW","wf.edit":"EDITED",
@@ -238,10 +325,10 @@ const translations = {
     "proc.s4.t":"Delivery","proc.s4.d":"High-quality file, hot off the press. Ready to post, ready to grow.",
     "sv.eyebrow":"REF: CM-05 · PROJECT DRAWER","sv.title":"Services","sv.sub":"Four folders. Pick the one that makes sense for your channel right now.",
     "sv.badge":"MOST REQUESTED","sv.cta":"OPEN PROJECT →",
-    "sv.foot1":"DRAWER 02 — 4 FOLDERS CATALOGUED","sv.foot2":"LAST UPDATE: 2026",
-    "sv.a.t":"Long Videos","sv.a.d":"For creators who need their audience to stay until the end — vlogs, podcasts, gameplays, documentaries.","sv.a.props":"TYPE: Premiere project · TURNAROUND: up to 10 business days",
+    "sv.foot1":"DRAWER 02 · 4 FOLDERS CATALOGUED","sv.foot2":"LAST UPDATE: 2026",
+    "sv.a.t":"Long Videos","sv.a.d":"For creators who need their audience to stay until the end: vlogs, podcasts, gameplays, documentaries.","sv.a.props":"TYPE: Premiere project · TURNAROUND: up to 10 business days",
     "sv.a.l1":"Full edit with pacing and narrative","sv.a.l2":"Soundtrack and sound effects","sv.a.l3":"Color grading and image treatment","sv.a.l4":"Animated text and subtitles",
-    "sv.b.t":"Full Package","sv.b.d":"The all-in-one solution. Long video, shorts, motion and art — all with the same identity.","sv.b.props":"TYPE: Compressed package · CONTAINS: 4 items",
+    "sv.b.t":"Full Package","sv.b.d":"The all-in-one solution. Long video, shorts, motion and art, all with the same identity.","sv.b.props":"TYPE: Compressed package · CONTAINS: 4 items",
     "sv.b.l1":"Long video editing","sv.b.l2":"Shorts/Reels cutting and editing","sv.b.l3":"Motion graphics and intros","sv.b.l4":"Custom thumbnail",
     "sv.c.t":"Shorts & Reels","sv.c.d":"Vertical content that hooks in under 3 seconds. Made to go viral on YouTube Shorts, Instagram and TikTok.","sv.c.props":"TYPE: Premiere project · TURNAROUND: up to 4 business days",
     "sv.c.l1":"Dynamic, impactful editing","sv.c.l2":"Cuts synced to the music","sv.c.l3":"Styled subtitles","sv.c.l4":"Optimized 9:16 format",
@@ -262,27 +349,27 @@ const translations = {
     "port.count":"ARCHIVE EXPANDING · <b>DOZENS OF ITEMS</b> CATALOGUED · 3 BOXES OPEN",
     "sv.dead":"old projects, tests and versions that fell by the wayside. kept, but off the catalog.","sv.deadstamp":"Arquivado",
     "about.k1":"Responsible","about.k2":"Specialty","about.v2":"Narrative and cinematic editing","about.k3":"Base","about.v3":"São Paulo countryside, Brazil","about.k4":"Archive started","about.k5":"Status","about.v5":"Active","about.k6":"Last updated","about.v6":"Today",
-    "fa.title":"Cadeirante Maromba Archive","fa.sub":"A personal archive of videos, art and production documents. Still expanding — the visitor was granted temporary authorization to explore.",
+    "fa.title":"Cadeirante Maromba Archive","fa.sub":"A personal archive of videos, art and production documents. Still expanding. The visitor was granted temporary authorization to explore.",
     "fa.l1":"Archive status","fa.v1":"ACTIVE","fa.l2":"Started in","fa.l3":"Open media boxes","fa.l4":"Documented","fa.v4":"YEARS OF WORK","fa.l5":"Last updated",
     "about.title":"I'm an editor. A designer.<br>But above all, I'm a <span class=\"signal-txt\">creator.</span>",
     "about.note":"quality &gt; quantity.<br>always.",
     "about.f1":"NAME: <b>Eliseu (\"Cadeirante Maromba\")</b>","about.f2":"ROLE: <b>Editor & Documentary Maker</b>","about.f3":"BASE: <b>São Paulo countryside, Brazil</b>","about.f4":"STATUS: <b>Active</b>",
     "about.p1":"My name is Eliseu, but you probably know me as Cadeirante Maromba.",
-    "about.p2":"I edit videos because I like figuring out what makes a story work. A cut at the right moment, a track that comes in a few seconds late, a well-placed silence... those are the details that make someone keep watching.",
-    "about.p3":"I grew up consuming a lot of content online, documentaries and games, and that's where my biggest flaw and my biggest quality come from: I'm EXTREMELY critical. I can't stand generic videos. Cuts with no intention, music thrown in carelessly, lazy thumbnails... that genuinely bothers me.",
+    "about.p2":"I edit videos because I like figuring out what makes a story work. A cut at the right moment, a track that comes in a few seconds late, a well-placed silence… those are the details that make someone keep watching.",
+    "about.p3":"I grew up consuming a lot of content online, documentaries and games, and that's where my biggest flaw and my biggest quality come from: I'm EXTREMELY critical. I can't stand generic videos. Cuts with no intention, music thrown in carelessly, lazy thumbnails… that genuinely bothers me.",
     "about.p4":"When I take on a project, my goal isn't just to finish the edit. It's to make it feel inevitable, as if every choice had exactly one reason to exist.",
-    "about.quote":"\"You create. I handle the rest.\"",
+    "about.quote":"“You create. I handle the rest.”",
     "about.st1":"PARTNERSHIPS","about.st2":"REACHED","about.st3":"OF CARE",
     "faq.eyebrow":"REF: CM-08 · CLIENT MANUAL","faq.title":"Frequently asked questions","faq.page":"PAGE 07",
     "faq.q1":"How does pricing work?","faq.a1":"Pricing is a <strong>fixed rate per project</strong>, agreed on during the briefing. For larger projects I can also work hourly.",
     "faq.q2":"What's the turnaround time?","faq.a2":"Long videos ship in <strong>3 to 10 business days</strong> after I receive the footage. Shorts and Reels within <strong>4 business days</strong>. Motion and identity projects depend on the briefing. Art, thumbnails and sprites take 4 to 14 days after payment is confirmed.",
-    "faq.q3":"How many revisions are included?","faq.a3":"<strong>3 revision rounds</strong> are included. Need more? We'll sort it out together — the goal is for you to be 100% happy.",
+    "faq.q3":"How many revisions are included?","faq.a3":"<strong>3 revision rounds</strong> are included. Need more? We'll sort it out together. The goal is for you to be 100% happy.",
     "faq.q4":"How does payment work?","faq.a4":"<strong>50% upfront</strong> before I start, the remaining 50% on delivery. I accept Pix, PayPal, bank transfer and other methods arranged via WhatsApp.",
-    "faq.q5":"What formats do you deliver in?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> in the right ratio for each platform — 16:9 for YouTube, 9:16 for Shorts/Reels/TikTok. Need something else? Just ask.",
+    "faq.q5":"What formats do you deliver in?","faq.a5":"<strong>MP4 (H.264/H.265)</strong> in the right ratio for each platform: 16:9 for YouTube, 9:16 for Shorts/Reels/TikTok. Need something else? Just ask.",
     "faq.q6":"How do I send you the footage?","faq.a6":"I prefer <strong>Google Drive or WeTransfer</strong>. Send the link with everything and I'll start once the deposit is confirmed.",
-    "faq.q7":"What if I cancel the project?","faq.a7":"<strong>Before start:</strong> full refund. <strong>After start, before the first preview:</strong> 50% refund. <strong>After the first preview:</strong> no refund — the work has already been done.",
+    "faq.q7":"What if I cancel the project?","faq.a7":"<strong>Before start:</strong> full refund. <strong>After start, before the first preview:</strong> 50% refund. <strong>After the first preview:</strong> no refund. The work has already been done.",
     "ct.eyebrow":"REF: CM-09 · NEW BRIEFING","ct.title":"Ready to add a project to OUR archive?",
-    "ct.sub":"Fill in the briefing — it goes straight into the archive queue. I reply within 24h.",
+    "ct.sub":"Fill in the briefing. It goes straight into the archive queue, I reply within 24h.",
     "ct.wpp":"WhatsApp","ct.mail":"E-mail","ct.avail":"Archive open for new projects",
     "ct.discordCopied":"copied! ✓",
     "ct.mascoteBubble":"Shall we make HISTORY together?",
@@ -293,11 +380,14 @@ const translations = {
     "form.service":"Which folder to open?","form.select":"Select a service",
     "form.o1":"Long video editing","form.o2":"Shorts / Reels editing","form.o3":"Motion Graphics / Intro","form.o4":"Thumbnail / Art","form.o5":"Full package","form.o6":"Other",
     "form.msg":"Describe the project","form.submit":"File the briefing","form.note":"No spam. No bots. Just me on the other end.",
+    "form.error":"Couldn't send it right now. Try again in a moment, or message me directly on WhatsApp.",
     "bs.stamp":"Received","bs.protolabel":"PROTOCOL","bs.greet":"Thanks,",
     "bs.bodytpl":"Your <b>{servico}</b> request just entered the archive queue.",
     "bs.note":"I'll reply by the e-mail or WhatsApp you left, within 24h. If it's urgent, message me directly:",
     "bs.wpp":"Message on WhatsApp →","bs.again":"send another request",
     "footer.end":"END OF ARCHIVE","footer.made":"Made with sweat and lots of coffee.",
+    "footer.privacy":"Privacy Policy","footer.terms":"Terms of Use",
+    "form.consent":"I have read and accept the <a href=\"#\" data-legal=\"terms\">Terms of Use</a> and the <a href=\"#\" data-legal=\"privacy\">Privacy Policy</a>.",
     "footer.secret":"you dug all the way to the end of the archive. i like you. :)"
   }
 };
@@ -308,7 +398,7 @@ let currentLang = localStorage.getItem('cm-lang') || 'pt';
 /* ---------- RENDER DO INVENTÁRIO ---------- */
 function metaCell(k,v){ return `<span>${k}: <b>${v}</b></span>`; }
 function renderArchive(){
-  /* Caixa A — motion (16:9 locais) */
+  /* Caixa A - motion (16:9 locais) */
   const gm = document.querySelector('#cat-motion .vgrid');
   const featured = `
     <div class="rec-featured" id="recFeatured">
@@ -334,7 +424,7 @@ function renderArchive(){
     </div>`;
   }).join('');
 
-  /* Caixa B — longos (YouTube), com sub-abas Explicativo / Gameplay */
+  /* Caixa B - longos (YouTube), com sub-abas Explicativo / Gameplay */
   const gl = document.querySelector('#cat-longos .vgrid');
   gl.innerHTML = ARCHIVE.longos.map((it,i)=>{
     const no = 'CM-02' + String(i+1).padStart(2,'0');
@@ -345,7 +435,7 @@ function renderArchive(){
     </div>`;
   }).join('');
 
-  /* Caixa C — shorts (9:16 locais) */
+  /* Caixa C - shorts (9:16 locais) */
   const gs = document.querySelector('#cat-shorts .vgrid');
   gs.innerHTML = ARCHIVE.shorts.map((it,i)=>{
     const no = 'CM-04' + String(i+1).padStart(2,'0');
@@ -359,7 +449,7 @@ function renderArchive(){
 
 /* ---------- ESTUDO DE CASO: carrossel visual de clipes ----------
    Usa querySelectorAll('.case-study') + classes (nunca IDs) nos elementos
-   internos. Isso torna a função imune a HTML duplicado por engano —
+   internos. Isso torna a função imune a HTML duplicado por engano -
    se por acaso existir mais de uma seção .case-study na página, cada
    uma funciona de forma independente, em vez de uma ficar "órfã". */
 function renderCaseStudy(){
@@ -393,7 +483,7 @@ function initCaseStudy(){
       video.querySelector('source').setAttribute('src', c.f.indexOf('/')===-1 ? 'videos/'+c.f : c.f);
       video.load();
       video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
-      if(caption) caption.innerHTML = `<span><b>${c.tab}</b> — ${c.desc}</span><span>${c.time}</span>`;
+      if(caption) caption.innerHTML = `<span><b>${c.tab}</b>: ${c.desc}</span><span>${c.time}</span>`;
       carousel.querySelectorAll('.cs-clip').forEach(b => b.classList.toggle('active', +b.dataset.i === i));
     }
     video.addEventListener('error', ()=> frame.classList.add('err'));
@@ -528,10 +618,10 @@ function renderReviews(){
             <div class="rev-role">cliente · documentário completo</div>
           </div>
         </div>
-        <p>"${REVIEW_FEATURED[currentLang]}"</p>
+        <p>“${REVIEW_FEATURED[currentLang]}”</p>
       </div>`;
     const cards = REVIEWS[currentLang].map(r =>
-      `<div class="revcard"><span class="rev-h">${r.h}</span>${r.t}</div>`
+      `<div class="revcard"><span class="rev-h">${r.h}</span><p class="rev-text">${r.t}</p></div>`
     ).join('');
     row.innerHTML = feat + cards;
   });
@@ -613,7 +703,7 @@ function initBoot(){
   setTimeout(()=>document.getElementById('boot').classList.add('hide'), 1700);
 }
 
-/* ---------- BARRA DO ARQUIVO — REF da seção atual ---------- */
+/* ---------- BARRA DO ARQUIVO - REF da seção atual ---------- */
 function initChrome(){
   const tbSection = document.getElementById('tbSection');
   const sections = [
@@ -699,7 +789,7 @@ function initCrt(){
     setTimeout(powerOn, 1180);
   }
   tape.addEventListener('click', insertTape);
-  power.addEventListener('click', insertTape); /* tela também aceita clique — acessibilidade mobile */
+  power.addEventListener('click', insertTape); /* tela também aceita clique - acessibilidade mobile */
 
   function togglePlay(){
     if(!isOn) return;
@@ -872,7 +962,7 @@ function initWorkflow(){
   function applyVol(v){ video.volume = Math.min(1, Math.max(0, v)); video.muted = (video.volume===0); if(volSlider) volSlider.value = video.volume*100; syncMute(); }
   if(volSlider) volSlider.addEventListener('input', ()=>applyVol(volSlider.value/100));
 
-  /* teclado — só quando o modal está aberto: ←→ pula 5s, ↑↓ volume, espaço play/pause */
+  /* teclado - só quando o modal está aberto: ←→ pula 5s, ↑↓ volume, espaço play/pause */
   document.addEventListener('keydown', e=>{
     if(!modal.classList.contains('open')) return;
     switch(e.key){
@@ -895,7 +985,7 @@ function openModal(el){
 }
 function closeModal(){
   const m = document.getElementById('imgModal');
-  if(!m) return; /* seção de thumbnails removida — sem modal de imagem na página */
+  if(!m) return; /* seção de thumbnails removida - sem modal de imagem na página */
   m.classList.remove('open');
   document.body.style.overflow='';
 }
@@ -951,10 +1041,11 @@ function initForm(){
 
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    const span = btn.querySelector('span');
-    const originalLabel = span.textContent;
+    /* mantém o texto original do botão visível; só liga o spinner ao lado */
     btn.disabled = true;
-    span.textContent = currentLang==='pt' ? 'Protocolando...' : 'Filing...';
+    btn.classList.add('loading');
+    const errEl0 = document.getElementById('formError');
+    if(errEl0) errEl0.hidden = true;
 
     const data = new FormData(form);
     const nomeRaw = (data.get('nome') || '').toString().trim();
@@ -978,10 +1069,15 @@ function initForm(){
       }
       form.reset();
       btn.disabled = false;
-      span.textContent = originalLabel;
+      btn.classList.remove('loading');
     }catch(err){
-      span.textContent = currentLang==='pt' ? 'Erro — tenta de novo?' : 'Error — try again?';
-      setTimeout(()=>{ btn.disabled = false; span.textContent = originalLabel; }, 3000);
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      const errEl = document.getElementById('formError');
+      if(errEl){
+        errEl.hidden = false;
+        setTimeout(()=>{ errEl.hidden = true; }, 6000);
+      }
     }
   });
 }
@@ -1038,6 +1134,40 @@ function initFootSecret(){
   btn.addEventListener('click', ()=>note.classList.toggle('show'));
 }
 
+/* ---------- MODAL LEGAL: Termos de Uso / Política de Privacidade ----------
+   Abre a partir de qualquer link com data-legal="privacy" ou data-legal="terms"
+   (rodapé e checkbox do briefing). Não bloqueia o envio do formulário sozinho
+   por leitura: quem faz isso é o atributo `required` da checkbox no HTML. */
+function initLegalModal(){
+  const modal = document.getElementById('legalModal');
+  const body = document.getElementById('legalModalBody');
+  const closeBtn = document.getElementById('legalModalX');
+  if(!modal || !body) return;
+
+  function open(kind){
+    const content = LEGAL[kind];
+    if(!content) return;
+    body.innerHTML = content[currentLang] || content.pt;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    body.scrollTop = 0;
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', e=>{
+    const link = e.target.closest('[data-legal]');
+    if(!link) return;
+    e.preventDefault();
+    open(link.dataset.legal);
+  });
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e=>{ if(e.target === modal) close(); });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && modal.classList.contains('open')) close(); });
+}
+
 /* ---------- REVEAL ON SCROLL ---------- */
 function initReveal(){
   const els = document.querySelectorAll('.rec,.letter,.fold,.doc-item,.ti,.sec-head');
@@ -1078,7 +1208,7 @@ function buildTape(){
 /* ---------- INIT ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
   renderArchive();               /* o inventário nasce dos dados */
-  renderCaseStudy();              /* estudo de caso — Amin Wake */
+  renderCaseStudy();              /* estudo de caso - Amin Wake */
   renderReviews();                /* carrossel de reações */
   renderTestimonials();           /* cartas da correspondência */
   applyTranslations(currentLang);
@@ -1107,6 +1237,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initDiscord();
   initMascote();
   initFootSecret();
+  initLegalModal();
   initReveal();
 
   console.log('%cARQUIVO CADEIRANTE MAROMBA%c\nvocê abriu o console. curioso do jeito certo.\nREF: CM-2026 · acesso registrado.', 'font-family:monospace;font-size:14px;font-weight:bold;color:#E13327', 'font-family:monospace;color:#6b6154');
