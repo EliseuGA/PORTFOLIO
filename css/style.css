@@ -599,6 +599,15 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 .letter-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 14px;font-family:var(--mono);font-size:.56rem;color:var(--muted)}
 .letter-foot .stampink{font-size:.72rem;padding:4px 9px;opacity:.55}
 
+.letter-case{cursor:pointer}
+.letter-case:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.letter-case-hint{
+  display:block;margin:0 16px 16px;padding:9px 10px;text-align:center;
+  font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--paper);background:var(--signal);transition:background .15s;
+}
+.letter-case:hover .letter-case-hint,.letter-case:focus-visible .letter-case-hint{background:var(--ink)}
+
 /* =========================================================
    FICHA DO ACERVO (sobre)
 ========================================================= */
@@ -998,4 +1007,24 @@ input[type=range]::-moz-range-thumb{width:12px;height:16px;background:var(--sign
 
 @media(max-width:640px){
   .legal-modal-stage{padding:28px 18px 22px}
+}
+
+/* ---------- MODAL: ESTUDO DE CASO (AMIN WAKE) ---------- */
+.case-modal{display:none;position:fixed;inset:0;z-index:7000;background:rgba(10,8,6,.86);align-items:center;justify-content:center;padding:20px}
+.case-modal.open{display:flex}
+.case-modal-stage{
+  position:relative;width:min(760px,100%);max-height:90vh;overflow-y:auto;overscroll-behavior:contain;
+  background:var(--ink);border:3px solid var(--signal);box-shadow:8px 8px 0 rgba(0,0,0,.5);
+}
+.case-modal-x{
+  position:absolute;top:8px;right:10px;z-index:5;min-width:44px;min-height:44px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;line-height:1;color:var(--paper);background:none;border:none;
+}
+.case-modal-x:hover,.case-modal-x:focus-visible{color:var(--signal)}
+.case-modal .case-study{border:none;padding:46px 26px 30px}
+
+@media(max-width:640px){
+  .case-modal{padding:12px}
+  .case-modal .case-study{padding:42px 18px 26px}
 }
