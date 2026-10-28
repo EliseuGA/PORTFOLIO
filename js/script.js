@@ -41,7 +41,13 @@ const ARCHIVE = {
     {yt:'C0plDAADgWc', label:'DOC_ARQUIVO_06.mp4', ano:'2026', cat:'gameplay'},
     {yt:'HAG4VlghNrE', label:'DOC_ARQUIVO_10.mp4', ano:'2026', cat:'gameplay'},
     {yt:'hrvagCX452I', label:'DOC_ARQUIVO_11.mp4', ano:'2026', cat:'gameplay'},
-    {yt:'jAbU6qjZBKM', label:'DOC_ARQUIVO_12.mp4', ano:'2026', cat:'gameplay'}
+    {yt:'jAbU6qjZBKM', label:'DOC_ARQUIVO_12.mp4', ano:'2026', cat:'gameplay'},
+    {yt:'rq8P4PSiKN4', label:'DOC_ARQUIVO_13.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'oRYek-iYhSs', label:'DOC_ARQUIVO_14.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'lcnxmuy5ZQM', label:'DOC_ARQUIVO_15.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'YPgtCl1oKVA', label:'DOC_ARQUIVO_16.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'I3MrwuUUFzE', label:'DOC_ARQUIVO_17.mp4', ano:'2026', cat:'explicativo'},
+    {yt:'nomhRpPynyg', label:'DOC_ARQUIVO_18.mp4', ano:'2026', cat:'explicativo'}
   ],
   shorts: [
     {f:'rageLol_1080x1920_8mb.mp4',        label:'RAGE_LOL.mp4',      cliente:'Von Gusto', ano:'2025', peso:'820 MB', status:'ENTREGUE'},
@@ -50,7 +56,8 @@ const ARCHIVE = {
     {f:'sonoGusto_1080x1920p_8mb.mp4',     label:'SONO_GUSTO.mp4',    cliente:'Von Gusto', ano:'2025', peso:'590 MB', status:'ENTREGUE'},
     {f:'gustoCS2_1080x1920p_8mb.mp4',      label:'GUSTO_CS2.mp4',     cliente:'Von Gusto', ano:'2026', peso:'880 MB', status:'ENTREGUE'},
     {f:'mavalgasBURRO_1080x1920p_8mb.mp4', label:'MAVALGAS.mp4',      cliente:'Mavalgas',  ano:'2026', peso:'760 MB', status:'ENTREGUE'},
-    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2026', peso:'540 MB', status:'ENTREGUE'}
+    {f:'gritoGusto_1080x1920p_8mb.mp4',    label:'GRITO_GUSTO.mp4',   cliente:'Von Gusto', ano:'2026', peso:'540 MB', status:'ENTREGUE'},
+    {yt:'fnE-hNGZh1g',                     label:'NEEDY_OVERDOSE.mp4', cliente:'caioxapo', ano:'2026'}
   ]
 };
 const ST_CLASS = {EXPORTADO:'exp', APROVADO:'apr', ARQUIVADO:'arc', PUBLICADO:'pub', ENTREGUE:'ent'};
@@ -102,7 +109,7 @@ const REVIEW_FEATURED = {
 const TESTIMONIALS = [
   {photo:'img/caioxapoProfile.png',   name:'caioxapo',  handle:'@caioxapo',  subjectKey:'test.a.s', bodyKey:'test.a', foot:'12 mil views no 2º vídeo',                        year:'2025'},
   {photo:'img/rapositoProfile.jpg',   name:'Raposito',  handle:'@Raposito',  subjectKey:'test.b.s', bodyKey:'test.b', foot:'235 mil inscritos · jul/2026',                     year:'2025'},
-  {photo:'img/aminAvatar.jpg',        name:'Amin Wake', handle:'@aminwake',  subjectKey:'test.d.s', bodyKey:'test.d', foot:'documentário completo · caso de estudo acima ↑',  year:'2026'},
+  {photo:'img/aminAvatar.jpg',        name:'Amin Wake', handle:'@aminwake',  subjectKey:'test.d.s', bodyKey:'test.d', foot:'documentário completo',  year:'2026', caseStudy:'amin'},
   {photo:'img/vonGustoProfile.jpeg',  name:'Von Gusto', handle:'@v0ngusto',  subjectKey:'test.c.s', bodyKey:'test.c', foot:'851 mil views · 1º vídeo do canal',                year:'2025'}
 ];
 
@@ -236,7 +243,7 @@ const translations = {
     "sv.c.l1":"Edição dinâmica e impactante","sv.c.l2":"Cortes sincronizados com a música","sv.c.l3":"Legendas estilizadas","sv.c.l4":"Formato 9:16 otimizado",
     "sv.d.t":"Motion + Thumb","sv.d.d":"A identidade visual do seu canal. Intros, encerramento, overlays e thumbnails que fazem o algoritmo parar de rolar.","sv.d.props":"TIPO: After Effects + PSD · ENTREGA: editáveis",
     "sv.d.l1":"Intro animada sob medida","sv.d.l2":"Outro de encerramento","sv.d.l3":"Lower thirds e overlays","sv.d.l4":"Thumbnail pensada para converter",
-    "test.eyebrow":"REF: CM-06 · CORRESPONDÊNCIA RECEBIDA","test.title":"O que dizem sobre mim","test.stamp":"Arquivada",
+    "test.eyebrow":"REF: CM-06 · CORRESPONDÊNCIA RECEBIDA","test.title":"O que dizem sobre mim","test.stamp":"Arquivada","test.caseHint":"Ver estudo de caso completo →",
     "test.a.s":"edição + sprites","test.b.s":"edição do iceberg","test.c.s":"vídeos do canal",
     "test.a":"Quando vi o nível da edição, não pensei duas vezes antes de entrar em contato. Ele fez uma edição elogiada por muitos, e ainda desenhou os sprites do meu personagem e a thumbnail. Grande trabalho!",
     "test.b":"Pô, a edição tá muito boa, mano. Não é um assunto que eu curto, não sou muito fã de Analog Horror, mas o vídeo ficou mó bom. A qualidade tá muito boa. Parabéns!",
@@ -334,7 +341,7 @@ const translations = {
     "sv.c.l1":"Dynamic, impactful editing","sv.c.l2":"Cuts synced to the music","sv.c.l3":"Styled subtitles","sv.c.l4":"Optimized 9:16 format",
     "sv.d.t":"Motion + Thumb","sv.d.d":"Your channel's visual identity. Intros, outros, overlays and thumbnails that make the algorithm stop scrolling.","sv.d.props":"TYPE: After Effects + PSD · DELIVERY: editable files",
     "sv.d.l1":"Custom animated intro","sv.d.l2":"End screen / outro","sv.d.l3":"Lower thirds and overlays","sv.d.l4":"Click-optimized thumbnail",
-    "test.eyebrow":"REF: CM-06 · RECEIVED CORRESPONDENCE","test.title":"What they say about me","test.stamp":"Arquivada",
+    "test.eyebrow":"REF: CM-06 · RECEIVED CORRESPONDENCE","test.title":"What they say about me","test.stamp":"Arquivada","test.caseHint":"See the full case study →",
     "test.a.s":"editing + sprites","test.b.s":"iceberg editing","test.c.s":"channel videos",
     "test.a":"When I saw the editing quality, I didn't think twice before reaching out. The edit got praised by a lot of people, and he also designed my character sprites and thumbnail. Great work!",
     "test.b":"Man, the editing is really good. It's not a topic I'm into, I'm not much of an Analog Horror fan, but the video turned out great. The quality is really good. Congrats!",
@@ -435,10 +442,17 @@ function renderArchive(){
     </div>`;
   }).join('');
 
-  /* Caixa C - shorts (9:16 locais) */
+  /* Caixa C - shorts (9:16, locais ou YouTube Shorts) */
   const gs = document.querySelector('#cat-shorts .vgrid');
   gs.innerHTML = ARCHIVE.shorts.map((it,i)=>{
     const no = 'CM-04' + String(i+1).padStart(2,'0');
+    if(it.yt){
+      return `<div class="rec v916 yt halftone" data-vid="${it.yt}">
+        <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st pub">PUBLICADO</span></div>
+        <div class="frame"><img loading="lazy" alt="Vídeo do YouTube"><div class="ytp"><span></span></div></div>
+        <div class="rec-meta">${metaCell('CLIENTE',it.cliente)}${metaCell('ANO',it.ano)}${metaCell('PLATAFORMA','YouTube')}${metaCell('FORMATO','9:16')}</div>
+      </div>`;
+    }
     return `<div class="rec v916 halftone">
       <div class="rec-label"><span class="rec-no">${no}</span><span class="rec-fn">${it.label}</span><span class="st ${ST_CLASS[it.status]}">${it.status}</span></div>
       <div class="frame"><video muted loop controls playsinline class="lazy" preload="none"><source data-src="videos/${it.f}" type="video/mp4"></video><div class="vhs-fx" aria-hidden="true"></div></div>
@@ -501,15 +515,23 @@ function initCaseStudy(){
 function renderTestimonials(){
   const track = document.querySelector('.testimonials .corr-track');
   if(!track) return;
-  track.innerHTML = TESTIMONIALS.map((t,i)=>`
-    <article class="letter">
+  track.innerHTML = TESTIMONIALS.map((t,i)=>{
+    const caseAttrs = t.caseStudy
+      ? ` data-case="${t.caseStudy}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="${t.name}: ver estudo de caso completo"`
+      : '';
+    const caseHint = t.caseStudy
+      ? `<span class="letter-case-hint" aria-hidden="true" data-i18n="test.caseHint">Ver estudo de caso completo →</span>`
+      : '';
+    return `
+    <article class="letter${t.caseStudy ? ' letter-case' : ''}"${caseAttrs}>
       <span class="staple" style="top:-4px;left:24px;--tilt:${i%2===0?-6:5}deg"></span>
       <div class="photo"><img loading="lazy" src="${t.photo}" alt="${t.name}"></div>
       <div class="letter-head">DE: <b>${t.name}</b> · ${t.handle}<br>ASSUNTO: <b data-i18n="${t.subjectKey}"></b><br>RECEBIDA: <b>${t.year}</b></div>
       <div class="letter-body" data-i18n="${t.bodyKey}"></div>
       <div class="letter-foot"><span>${t.foot}</span><span class="stampink" style="--tilt:-4deg" data-i18n="test.stamp">Arquivada</span></div>
-    </article>`
-  ).join('');
+      ${caseHint}
+    </article>`;
+  }).join('');
 }
 
 /* ---------- CORRESPONDÊNCIA: motor do carrossel (autoplay + pausa em interação) ---------- */
@@ -1168,6 +1190,48 @@ function initLegalModal(){
   document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && modal.classList.contains('open')) close(); });
 }
 
+/* ---------- MODAL: ESTUDO DE CASO AMIN WAKE -----------
+   Aberto a partir da carta do Amin em CORRESPONDÊNCIA (clique ou Enter/Espaço
+   com o foco na carta). O carrossel de clipes e as reações só são montados
+   na primeira abertura, pra não carregar vídeo de fundo numa seção escondida. */
+function initCaseModal(){
+  const modal = document.getElementById('caseModal');
+  if(!modal) return;
+  const closeBtn = document.getElementById('caseModalX');
+  let built = false;
+
+  function open(){
+    if(!built){
+      renderCaseStudy();
+      initCaseStudy();
+      built = true;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    const video = modal.querySelector('.cs-frame video');
+    if(video) video.pause();
+  }
+
+  document.addEventListener('click', e=>{
+    const trigger = e.target.closest('[data-case]');
+    if(trigger){ open(); }
+  });
+  document.addEventListener('keydown', e=>{
+    const focused = document.activeElement;
+    if((e.key === 'Enter' || e.key === ' ') && focused && focused.closest && focused.closest('[data-case]')){
+      e.preventDefault();
+      open();
+    }
+    if(e.key === 'Escape' && modal.classList.contains('open')) close();
+  });
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e=>{ if(e.target === modal) close(); });
+}
+
 /* ---------- REVEAL ON SCROLL ---------- */
 function initReveal(){
   const els = document.querySelectorAll('.rec,.letter,.fold,.doc-item,.ti,.sec-head');
@@ -1208,8 +1272,7 @@ function buildTape(){
 /* ---------- INIT ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
   renderArchive();               /* o inventário nasce dos dados */
-  renderCaseStudy();              /* estudo de caso - Amin Wake */
-  renderReviews();                /* carrossel de reações */
+  renderReviews();                /* carrossel de reações (dentro do modal do estudo de caso) */
   renderTestimonials();           /* cartas da correspondência */
   applyTranslations(currentLang);
   buildTape();
@@ -1230,7 +1293,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initVideoObserver();
   initYouTube();
   initWorkflow();
-  initCaseStudy();                /* carrossel do estudo de caso */
   initCorrCarousel();             /* carrossel de depoimentos */
   initFaq();
   initForm();
@@ -1238,6 +1300,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initMascote();
   initFootSecret();
   initLegalModal();
+  initCaseModal();                /* popup do estudo de caso - Amin Wake */
   initReveal();
 
   console.log('%cARQUIVO CADEIRANTE MAROMBA%c\nvocê abriu o console. curioso do jeito certo.\nREF: CM-2026 · acesso registrado.', 'font-family:monospace;font-size:14px;font-weight:bold;color:#E13327', 'font-family:monospace;color:#6b6154');
