@@ -209,59 +209,7 @@
 </section>
 
   <div class="torn" style="--pv:#C2A06E;--nx:#17130F"></div>
- 
-<!-- ESTUDO DE CASO - AMIN WAKE -->
-<section id="case-amin" class="case-study lazy-sec crop">
-  <div class="cs-bg" aria-hidden="true"></div>
- 
-  <div class="sec-head">
-    <span class="eyebrow cs-eyebrow" data-i18n="cs.eyebrow">REF: CM-CS · ESTUDO DE CASO</span>
-    <h2 class="cs-title" data-i18n="cs.title">Do roteiro à tela</h2>
-    <p class="sec-sub cs-sub" data-i18n="cs.sub">Cinco trechos da abertura que constroem o clima antes do primeiro corte duro. Documentário completo para o canal de Amin Wake.</p>
-  </div>
- 
-  <div class="cs-channel">
-    <img class="cs-channel-avatar" src="img/aminAvatar.jpg" alt="Amin Wake">
-    <div class="cs-channel-info">
-      <span class="cs-channel-name" data-i18n="cs.channelname">Canal: Amin Wake</span>
-      <span class="cs-channel-stats" data-i18n="cs.channelstats">236 mil inscritos · 16.901.375 visualizações</span>
-    </div>
-  </div>
- 
-  <div class="cs-idrow">
-    <div class="idlabel cs-idlabel">
-      <div class="idlabel-band">PROJETO CM-CS · AMIN WAKE</div>
-      <div class="idlabel-body" data-i18n-html="cs.meta">CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2026</b> · FORMATO: <b>16:9</b></div>
-    </div>
-    <a class="stampink cs-full" href="https://www.youtube.com/watch?v=Bt28FbjuNAc" target="_blank" rel="noopener" style="--tilt:-3deg" data-i18n="cs.watchfull">Assistir completo →</a>
-  </div>
- 
-  <div class="cs-wrap">
-    <div class="cs-player">
-      <!-- cs-frame já serve de "gancho" pro JS (não precisa mais de id) -->
-      <div class="cs-frame">
-        <video muted loop controls playsinline preload="none" poster="img/posters/Iceberg_8mb_poster.jpg">
-          <source data-src="videos/Iceberg_8mb.mp4" type="video/mp4">
-        </video>
-        <div class="cs-err" data-i18n="cs.err">não foi possível carregar este clipe. Confira o arquivo em /videos</div>
-      </div>
-      <div class="cs-caption"></div>
-    </div>
- 
-    <!-- CARROSSEL - clique em qualquer miniatura pra trocar o clipe que toca ao lado -->
-    <div class="cs-carousel"></div>
-  </div>
- 
-  <div class="cs-reviews">
-    <div class="cs-rev-head">
-      <span class="eyebrow" data-i18n="cs.reveyebrow">REF: CM-CS-R · REAÇÕES DO PÚBLICO</span>
-    </div>
-    <div class="revrow"></div>
-  </div>
-</section>
- 
-<div class="torn" style="--pv:#17130F;-
-  
+
 <div id="imgModal" class="modal" role="dialog" aria-modal="true">
   <button class="modal-x" onclick="closeModal()" aria-label="Fechar">&times;</button>
   <img id="modalImg" src="" alt="Arte expandida">
@@ -600,6 +548,60 @@
     <div class="legal-modal-stage">
       <button class="legal-modal-x" id="legalModalX" aria-label="Fechar">&times;</button>
       <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: ESTUDO DE CASO - AMIN WAKE (aberto a partir da carta dele em CORRESPONDÊNCIA) -->
+  <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="case-modal-stage">
+      <button class="case-modal-x" id="caseModalX" aria-label="Fechar">&times;</button>
+      <div class="case-study">
+        <div class="cs-bg" aria-hidden="true"></div>
+
+        <div class="sec-head">
+          <span class="eyebrow cs-eyebrow" data-i18n="cs.eyebrow">REF: CM-CS · ESTUDO DE CASO</span>
+          <h2 class="cs-title" id="caseModalTitle" data-i18n="cs.title">Do roteiro à tela</h2>
+          <p class="sec-sub cs-sub" data-i18n="cs.sub">Cinco trechos da abertura que constroem o clima antes do primeiro corte duro. Documentário completo para o canal de Amin Wake.</p>
+        </div>
+
+        <div class="cs-channel">
+          <img class="cs-channel-avatar" src="img/aminAvatar.jpg" alt="Amin Wake">
+          <div class="cs-channel-info">
+            <span class="cs-channel-name" data-i18n="cs.channelname">Canal: Amin Wake</span>
+            <span class="cs-channel-stats" data-i18n="cs.channelstats">236 mil inscritos · 16.901.375 visualizações</span>
+          </div>
+        </div>
+
+        <div class="cs-idrow">
+          <div class="idlabel cs-idlabel">
+            <div class="idlabel-band">PROJETO CM-CS · AMIN WAKE</div>
+            <div class="idlabel-body" data-i18n-html="cs.meta">CLIENTE: <b>Amin Wake</b> · ENTREGA: <b>2026</b> · FORMATO: <b>16:9</b></div>
+          </div>
+          <a class="stampink cs-full" href="https://www.youtube.com/watch?v=Bt28FbjuNAc" target="_blank" rel="noopener" style="--tilt:-3deg" data-i18n="cs.watchfull">Assistir completo →</a>
+        </div>
+
+        <div class="cs-wrap">
+          <div class="cs-player">
+            <div class="cs-frame">
+              <video muted loop controls playsinline preload="none" poster="img/posters/Iceberg_8mb_poster.jpg">
+                <source data-src="videos/Iceberg_8mb.mp4" type="video/mp4">
+              </video>
+              <div class="cs-err" data-i18n="cs.err">não foi possível carregar este clipe. Confira o arquivo em /videos</div>
+            </div>
+            <div class="cs-caption"></div>
+          </div>
+
+          <!-- CARROSSEL - clique em qualquer miniatura pra trocar o clipe que toca ao lado -->
+          <div class="cs-carousel"></div>
+        </div>
+
+        <div class="cs-reviews">
+          <div class="cs-rev-head">
+            <span class="eyebrow" data-i18n="cs.reveyebrow">REF: CM-CS-R · REAÇÕES DO PÚBLICO</span>
+          </div>
+          <div class="revrow"></div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
